@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# by Boris
 # before running, you need to install homer.v4.9 into the project directory
 
 # uncomment and run the following line if HOMER refuses to work - installs itself
@@ -11,29 +12,37 @@
 
 
 # count how many promoter sequences we have in target file
-N=$(grep -c "^>" fasta_complete.fasta)
+Npos=$(grep -c "^>" fasta_complete_pos_ex.fa)
+Nneg=$(grep -c "^>" fasta_complete_neg_ex.fa)
+
+# BEDs for laters
+
+bioawk -c fastx '{print $name"\t0\t"length($seq)}' fasta_complete_pos_ex.fa > fasta_complete_pos_ex.bed
+bioawk -c fastx '{print $name"\t0\t"length($seq)}' fasta_complete_neg_ex.fa > fasta_complete_neg_ex.bed
+
+./homer.v4.9/bin/homer2 denovo -i fasta_complete_pos_ex.fa -b fasta_complete_neg_ex.fa > HOMERoutput.txt
 
 
-#randomly chosen genomic sequences once - don't rerun if you want to reproduce
-#bedtools random -g hg19.genome -n $N -l 150 > background_chunk_coords.bed
+### RANDOM GENOME BACKGROUND SECTION - MAY BE USEFUL LATER ###
 
-BED=background_chunk_coords.bed
+#N=$(grep -c "^>" fasta_complete.fasta)
+# randomly chosen genomic sequences once - don't rerun if you want to reproduce
+# bedtools random -g hg19.genome -n $N -l 150 > background_chunk_coords.bed
 
-#this downloads most of hg19 - 3 GB, so takes some time, comment out when you do this once
+#BED=background_chunk_coords.bed
 
-for chr in `seq 1 22` X Y
-do
-    wget -O - -q http://hgdownload.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr$chr.fa.gz | gunzip -c >> hg19.fa
-    echo "Chr $chr done"
-done
-echo "Done hg19.fa download"
+# this downloads most of hg19 - 3 GB, so takes some time, comment out when you do this once
 
+#for chr in `seq 1 22` X Y
+#do
+#    wget -O - -q http://hgdownload.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr$chr.fa.gz | gunzip -c >> hg19.fa
+#    echo "Chr $chr done"
+#done
+#echo "Done hg19.fa download"
 
-#getting the randomly chosen sequence coords in bed file into an actual sequence file
+# getting the randomly chosen sequence coords in bed file into an actual sequence file
 
-echo "getting fasta from bedfile"
-fastaFromBed -fi hg19.fa -bed $BED -fo $BED.fasta
-echo "done fasta from bedfile"
+#echo "getting fasta from bedfile"
+#fastaFromBed -fi hg19.fa -bed $BED -fo $BED.fasta
+#echo "done fasta from bedfile"
 
-
-./homer.v4.9/bin/homer2 denovo -i fasta_complete.fasta -b background_chunk_coords.bed.fasta > output.txt
