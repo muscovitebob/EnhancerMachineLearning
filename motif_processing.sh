@@ -15,12 +15,13 @@
 Npos=$(grep -c "^>" fasta_complete_pos_ex.fa)
 Nneg=$(grep -c "^>" fasta_complete_neg_ex.fa)
 
-# BEDs for laters
-
-bioawk -c fastx '{print $name"\t0\t"length($seq)}' fasta_complete_pos_ex.fa > fasta_complete_pos_ex.bed
-bioawk -c fastx '{print $name"\t0\t"length($seq)}' fasta_complete_neg_ex.fa > fasta_complete_neg_ex.bed
+# HOMER running!
 
 ./homer.v4.9/bin/homer2 denovo -i fasta_complete_pos_ex.fa -b fasta_complete_neg_ex.fa > HOMERoutput.txt
+
+# feed HOMER into ClusterBuster
+
+./cbust-src/cbust -l HOMERoutput.txt fasta_complete_pos_ex.fa > CBUSToutput.txt
 
 
 ### RANDOM GENOME BACKGROUND SECTION - MAY BE USEFUL LATER ###

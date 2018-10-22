@@ -1,0 +1,11 @@
+CLUSTER-BUSTER
+Compiled on Oct 22 2018
+
+Sequence file: fasta_complete_pos_ex.fa (136 sequences)
+Matrix file: HOMERoutput.txt (18 matrices)
+Expected gap: 35
+Range for local abundances: 100
+Lowercase filtering ON
+Pseudocount: 0.375
+Cluster score threshold: 5
+Motif score threshold: 6
