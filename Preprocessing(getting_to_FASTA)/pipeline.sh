@@ -5,11 +5,15 @@
 
 # STEP1: get original data
 # -----
-# Get GSE75661_7.5k_collapsed_counts.txt.gz from https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE75661
+# Get GSE75661_7.5k_collapsed_counts.txt.gz from
+
+curl -O ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE75nnn/GSE75661/suppl/GSE75661%5F79k%5Fcollapsed%5Fcounts%2Etxt%2Egz
 
 # STEP2: parsing via IBP_data_wranglin.py
 # -----
 # Use python script IBP_data_wranglin.py to create
+
+python IBP_data_wrangling.py
 
 # o	bed_v1.csv : csvfile in bed like format => oligoID / chrom / start / end
 #		the positive examples already have the right range (the SNV sits in the middle (starting at -74bp ending at +75bp, giving a range of 150bp
@@ -40,9 +44,9 @@ awk -F"," '{ print $3 "\t" $4  "\t" $5 }'  bed_withrsadded.csv |uniq | tr -d ' '
 
 # STEP6: use BED-tools to get fasta from bed file
 
-# o   retrieve HG19 fasta file : GCF_000001405.25_GRCh37.p13_genomic.fna
+# o retrieve HG19 fasta file : GCF_000001405.25_GRCh37.p13_genomic.fna
 
-# o	change headers of chromosomes to match the bed-file
+# o change headers of chromosomes to match the bed-file
 sed -i -E 's/>NC_0*([^.]*).(.*)/>chr\1/' GCF_000001405.25_GRCh37.p13_genomic.fna
 
 # o	create fasta file via bed-tools
