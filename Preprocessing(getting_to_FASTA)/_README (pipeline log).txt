@@ -13,17 +13,17 @@ o	bed_v1.csv : csvfile in bed like format => oligoID / chrom / start / end
 		the negative examples (rs number).  The range for these are still blank.  (need to be obtained in the following step)
 o	rs_list.txt : text file of all the negatives. = list of SNP-id (eg. rs427230)
 
-STEP3 obtaining the location of the SNP’s  
+STEP3 obtaining the location of the SNPï¿½s  
 -----
-o	get BEDfile of hg19 snp’s: 
+o	get BEDfile of hg19 snps:
 mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A -N -D hg19 -e 'SELECT chrom, chromStart, chromEnd, name FROM snp147Common' > snp147Common.bed
 
-o	get ranges of the SNP’s :
+o	get ranges of the SNPs :
 awk 'NR==FNR {h[$1] = 1; next} {if(h[$4]==1) print$4 ,"\t",$1 ,"\t",$2 ,"\t",$3}' rs_list.txt snp147Common.bed > rs_out.bed
 
 STEP4  create bed_withrsadded.csv via excel
 ------
--via simple copy paste in excel :  add the ranges of the SNP’s to the bed_v1.csv. 
+-via simple copy paste in excel :  add the ranges of the SNPï¿½s to the bed_v1.csv. 
 -mark the positive and negative examples via an extra column (for future reference)
 -expand the range of the snp's to 150bp (with SNP centered)
 
