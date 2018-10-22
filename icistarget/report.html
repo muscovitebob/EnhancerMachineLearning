@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    		            <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="description" content="Motif, enhancer, and target gene prediction"/>
+<meta name="keywords"
+	  content="transcriptional regulation, regulatory sequence analysis, gene regulatory networks, transcription factor binding site, enhancer, promoter, transcription factor"/>
+<meta name="author" content="Gert Hulselmans &amp; Hana Imrichova"/>
+
+<title>i-cisTarget: results for Project2</title>
+<link rel="stylesheet" type="text/css" href="1024px.css" media="all"/>
+<style type="text/css" media="all">
+  table tr th {color: #4088b8;}
+  form fieldset {border: none;}
+  .important {color:#4088b8; font-weight:700; text-decoration:none;}
+</style>
+    <script type="text/javascript">
+    
+        // Refresh from on any change ...
+        function refreshForm() {
+            var filter = document.getElementById("filter")
+            var scan = document.getElementById("scan")
+            var sif = document.getElementById("sif")
+            if (filter.checked || sif.checked) {
+                crm_type.disabled = true
+            } else if(scan.checked) {
+                crm_type.disabled = false
+            }
+
+            return true
+        }
+    
+        function get_selected_feature_ids() {
+            var ids = new Array()
+            var form = document.analyze;
+            var items = document.getElementsByClassName("feature");
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].checked) { ids.push(items[i].value) }
+            }
+            return ids
+        }
+
+        function get_db_names_for_selected_feature_ids() {
+            var dbs = new Array();
+            var form = document.analyze;
+            var items = document.getElementsByClassName("feature");
+            var db_items = document.getElementsByClassName("db");
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].checked) {
+                    dbs.push(db_items[i].firstChild.nodeValue);
+                }
+            }
+            return dbs;
+        }
+
+        function checkSelectedFeatures() {
+            var ids = get_selected_feature_ids()
+            if (ids.length == 0) {
+                alert("No features selected!")
+                return false
+            } else if (ids.length > 10) {
+                alert("You cannot select more than 10 features.")
+                return false
+            }
+            return true
+        }
+
+    
+        function assembleParameters() {
+            var form = document.analyze;
+
+            form.feature_combinations.value = get_selected_feature_ids().join(';')
+            form.selected_db_names.value = get_db_names_for_selected_feature_ids().join(';')
+
+            var filter = document.getElementById("filter")
+            var scan = document.getElementById("scan")
+            var sif = document.getElementById("sif")
+            if (filter.checked || sif.checked) {
+                form.action = "https://gbiomed.kuleuven.be/apps/lcb/i-cisTarget/execute.php"
+            } else if (scan.checked) {
+                form.action = "https://gbiomed.kuleuven.be/apps/lcb/i-cisTarget/scanparam.php"
+            }
+
+            return true
+        }
+    
+        function onSubmit() {
+            assembleParameters()
+            return checkSelectedFeatures()
+        }
+    </script>
+</head>
+<body onload="refreshForm()">
+<div id="wrap">
+    <div id="header">
+	<br />
+	<h1><a href="https://gbiomed.kuleuven.be/apps/lcb/i-cisTarget/index.php"><span class="fade">i-</span><i>cis</i><span class="fade">Target</span></a></h1>
+ 	<p id="slogan">An integrative genomics method for the prediction of regulatory features
+ 	  and cis-regulatory modules.</p>
+</div>
+
+    <div id="content">
+                    <h2>Parameters and statistics for Project2</h2>
+                <table>
+            <tr>
+                <td>Number of features</td>
+                <td>1331</td>
+            </tr>
+            <tr>
+                <td>Number of enriched features (NES > 3.0)</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>Total number of ranked regions</td>
+                <td>1223024</td>
+            </tr>
+                        <tr>
+                <td>Type of input query</td>
+                <td>bed</td>
+            </tr>
+                                    <tr>
+                <td>Number of <a href="query.id.txt">i-cisTarget regions in input set</a></td>
+                <td>52
+                                    (<a href="input_mapped_to_icistarget_regions.bed">Results of the region mapping</a>)
+                                </td>
+            </tr>
+                        <tr>
+                <td>Minimum fraction of overlap</td>
+                <td>0.4</td>
+            </tr>
+                        <tr>
+                <td>Normalized enrichment score (NES) threshold</td>
+                <td>3.0</td>
+            </tr>
+            <tr>
+                <td>AUC threshold (fraction / # of ranked regions)</td>
+                <td>0.005 (6115)</td>
+            </tr>
+            <tr>
+                <td>Recovery curve threshold (# of regions)</td>
+                <td>20000</td>
+            </tr>
+        </table>
+        <table style="table-layout: fixed; width: 100%; text-align: center">
+            <tr>
+            <th>AUC distribution</th>
+                            <th>Recovery of best feature</th>
+                        </tr>
+            <tr>
+            <td><a href="aucdistributions.png"><img src="aucdistributions.png" alt="AUC distribution image"
+                                                         width="100%" height="200px"/></a></td>
+                            <td><a href="rccoverview.png"><img src="rccoverview.png"
+                                                                alt="RCC of best feature image"
+                                                                width="100%" height="200px"/></a></td>
+                        </tr>
+        </table>
+                    <h2>Results for Project2</h2>
+                <form name="analyze" method="post" onsubmit="return onSubmit()">
+            <p>Select features in the table below, select an operation and <input type="submit" value="proceed" />.</p>
+            <ol>
+                                <li><input type="radio" id="filter" name="operation" value="filter_regions" onchange="refreshForm();"/>Use
+                    candidate target regions as
+                    <span class="important">filter</span> and use as input for i-cisTarget again.
+                </li>
+                <li><input type="radio" id="scan" name="operation" value="scan_regions" onchange="refreshForm();"/>
+                    <span class="important">Scan</span> candidate target regions of selected features for
+                        <select id="crm_type" name="crm_type" size="1" onchange="refreshForm();">
+                            <option value="homo">multiple homotypic</option>
+                            <option value="hetero">heterotypic</option>
+                        </select>CRMs.
+                </li>
+                <li><input type="radio" id="sif" name="operation" value="create_sif" onchange="refreshForm();"/>
+                    <span class="important">Create SIF file</span> for the selected features.
+                </li>
+            </ol>
+            <p>This report is also available as an <a href="archive.zip">archive</a>.</p>
+
+		    
+			<fieldset>
+                <input type="hidden" id="job_id" name="job_id" value="21241" />
+                <input type="hidden" id="feature_combinations" name="feature_combinations" value="" />
+                <input type="hidden" id="selected_db_names" name="selected_db_names" value="" />
+            </fieldset>
+
+            <table>
+                
+                <colgroup>
+                    <col style="width: 3%; min-width: 30px;">
+                    <col style="width: 32%; min-width: 100px;">
+                    <col style="width: 5%; min-width: 65px;">
+                    <col style="width: 20%; min-width: 100px;">
+                    <col style="width: 25%; min-width: 100px;">
+                    <col style="width: 5%; min-width: 75px;">
+                    <col style="width: 5%; min-width: 55px;">
+                    <col style="width: 5%; min-width: 80px;">
+                </colgroup>
+                                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Feature</th>
+                    <th>NES</th>
+                    <th>Logo</th>
+                    <th>Recovery Curve</th>
+                    <th>Candidate targets</th>
+                    <th>All regions in top 20000</th>
+                    <th>Database</th>
+                                    </tr>
+                </thead>
+                <tbody>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>1</td>
+                    <td><input type="checkbox" class="feature" id="selection_1" name="selection_1" value="ENCFF001UPL"/>
+					 ENCFF001UPL
+					 					 <br/>Description:&nbsp;MAX ChIP-seq protocol v042211.1 on human SK-N-SH
+					 					 					</td>
+                    <td><i>4.17824</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001UPL.png"><img src="TF binding sites/ENCFF001UPL.png" alt="RCC of ENCFF001UPL" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001UPL.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001UPL.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>2</td>
+                    <td><input type="checkbox" class="feature" id="selection_2" name="selection_2" value="ENCFF001TTL"/>
+					 ENCFF001TTL
+					 					 <br/>Description:&nbsp;SIN3A ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%
+					 					 					</td>
+                    <td><i>4.16112</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001TTL.png"><img src="TF binding sites/ENCFF001TTL.png" alt="RCC of ENCFF001TTL" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001TTL.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001TTL.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>3</td>
+                    <td><input type="checkbox" class="feature" id="selection_3" name="selection_3" value="ENCFF001USG"/>
+					 ENCFF001USG
+					 					 <br/>Description:&nbsp;MYC ChIP-seq on human GM12878
+					 					 					</td>
+                    <td><i>4.10704</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001USG.png"><img src="TF binding sites/ENCFF001USG.png" alt="RCC of ENCFF001USG" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001USG.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001USG.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>4</td>
+                    <td><input type="checkbox" class="feature" id="selection_4" name="selection_4" value="ENCFF001TSY"/>
+					 ENCFF001TSY
+					 					 <br/>Description:&nbsp;MAX ChIP-seq protocol v042211.1 on human A549
+					 					 					</td>
+                    <td><i>4.08408</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001TSY.png"><img src="TF binding sites/ENCFF001TSY.png" alt="RCC of ENCFF001TSY" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001TSY.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001TSY.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>5</td>
+                    <td><input type="checkbox" class="feature" id="selection_5" name="selection_5" value="ENCFF001TTM"/>
+					 ENCFF001TTM
+					 					 <br/>Description:&nbsp;SIN3A ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%
+					 					 					</td>
+                    <td><i>3.97670</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001TTM.png"><img src="TF binding sites/ENCFF001TTM.png" alt="RCC of ENCFF001TTM" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001TTM.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001TTM.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>6</td>
+                    <td><input type="checkbox" class="feature" id="selection_6" name="selection_6" value="ENCFF001UAB"/>
+					 ENCFF001UAB
+					 					 <br/>Description:&nbsp;POU2F2 ChIP-seq protocol PCR1x on human GM12891
+					 					 					</td>
+                    <td><i>3.81154</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001UAB.png"><img src="TF binding sites/ENCFF001UAB.png" alt="RCC of ENCFF001UAB" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001UAB.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001UAB.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>7</td>
+                    <td><input type="checkbox" class="feature" id="selection_7" name="selection_7" value="ENCFF001TSX"/>
+					 ENCFF001TSX
+					 					 <br/>Description:&nbsp;MAX ChIP-seq protocol v042211.1 on human A549
+					 					 					</td>
+                    <td><i>3.72322</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001TSX.png"><img src="TF binding sites/ENCFF001TSX.png" alt="RCC of ENCFF001TSX" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001TSX.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001TSX.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>8</td>
+                    <td><input type="checkbox" class="feature" id="selection_8" name="selection_8" value="ENCFF001TYM"/>
+					 ENCFF001TYM
+					 					 <br/>Description:&nbsp;POU2F2 ChIP-seq protocol PCR1x on human GM12878
+					 					 					</td>
+                    <td><i>3.66155</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001TYM.png"><img src="TF binding sites/ENCFF001TYM.png" alt="RCC of ENCFF001TYM" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001TYM.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001TYM.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>9</td>
+                    <td><input type="checkbox" class="feature" id="selection_9" name="selection_9" value="GSM1208654_batch1_chrom1_LoVo_MYC_PassedQC_peaks_hg19"/>
+					 GSM1208654_batch1_chrom1_LoVo_MYC_PassedQC_peaks_hg19
+					 					 <br/>Description:&nbsp;MYC ChIP-seq in LoVo
+					 					 					</td>
+                    <td><i>3.59404</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/GSM1208654_batch1_chrom1_LoVo_MYC_PassedQC_peaks_hg19.png"><img src="TF binding sites/GSM1208654_batch1_chrom1_LoVo_MYC_PassedQC_peaks_hg19.png" alt="RCC of GSM1208654_batch1_chrom1_LoVo_MYC_PassedQC_peaks_hg19" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/GSM1208654_batch1_chrom1_LoVo_MYC_PassedQC_peaks_hg19.targets.html">link</a></td>
+                    <td><a href="TF binding sites/GSM1208654_batch1_chrom1_LoVo_MYC_PassedQC_peaks_hg19.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>10</td>
+                    <td><input type="checkbox" class="feature" id="selection_10" name="selection_10" value="ENCFF001UND"/>
+					 ENCFF001UND
+					 					 <br/>Description:&nbsp;MAX ChIP-seq protocol v042211.1 on human MCF-7
+					 					 					</td>
+                    <td><i>3.28064</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001UND.png"><img src="TF binding sites/ENCFF001UND.png" alt="RCC of ENCFF001UND" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001UND.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001UND.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>11</td>
+                    <td><input type="checkbox" class="feature" id="selection_11" name="selection_11" value="ENCFF001TRY"/>
+					 ENCFF001TRY
+					 					 <br/>Description:&nbsp;E2F6 ChIP-seq protocol v042211.1 on human A549
+					 					 					</td>
+                    <td><i>3.24465</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001TRY.png"><img src="TF binding sites/ENCFF001TRY.png" alt="RCC of ENCFF001TRY" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001TRY.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001TRY.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>12</td>
+                    <td><input type="checkbox" class="feature" id="selection_12" name="selection_12" value="GSM1208771_batch2_chrom1_LoVo_MNT_PassedQC_peaks_hg19"/>
+					 GSM1208771_batch2_chrom1_LoVo_MNT_PassedQC_peaks_hg19
+					 					 <br/>Description:&nbsp;MNT ChIP-seq in LoVo
+					 					 					</td>
+                    <td><i>3.14252</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/GSM1208771_batch2_chrom1_LoVo_MNT_PassedQC_peaks_hg19.png"><img src="TF binding sites/GSM1208771_batch2_chrom1_LoVo_MNT_PassedQC_peaks_hg19.png" alt="RCC of GSM1208771_batch2_chrom1_LoVo_MNT_PassedQC_peaks_hg19" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/GSM1208771_batch2_chrom1_LoVo_MNT_PassedQC_peaks_hg19.targets.html">link</a></td>
+                    <td><a href="TF binding sites/GSM1208771_batch2_chrom1_LoVo_MNT_PassedQC_peaks_hg19.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>13</td>
+                    <td><input type="checkbox" class="feature" id="selection_13" name="selection_13" value="ENCFF001UTL"/>
+					 ENCFF001UTL
+					 					 <br/>Description:&nbsp;MYC ChIP-seq on human MCF-7 treated with serum stimulated media
+					 					 					</td>
+                    <td><i>3.12190</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001UTL.png"><img src="TF binding sites/ENCFF001UTL.png" alt="RCC of ENCFF001UTL" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001UTL.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001UTL.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>14</td>
+                    <td><input type="checkbox" class="feature" id="selection_14" name="selection_14" value="GSM1208767_batch2_chrom1_LoVo_LYL1_PassedQC_peaks_hg19"/>
+					 GSM1208767_batch2_chrom1_LoVo_LYL1_PassedQC_peaks_hg19
+					 					 <br/>Description:&nbsp;LYL1 ChIP-seq in LoVo
+					 					 					</td>
+                    <td><i>3.11801</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/GSM1208767_batch2_chrom1_LoVo_LYL1_PassedQC_peaks_hg19.png"><img src="TF binding sites/GSM1208767_batch2_chrom1_LoVo_LYL1_PassedQC_peaks_hg19.png" alt="RCC of GSM1208767_batch2_chrom1_LoVo_LYL1_PassedQC_peaks_hg19" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/GSM1208767_batch2_chrom1_LoVo_LYL1_PassedQC_peaks_hg19.targets.html">link</a></td>
+                    <td><a href="TF binding sites/GSM1208767_batch2_chrom1_LoVo_LYL1_PassedQC_peaks_hg19.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>15</td>
+                    <td><input type="checkbox" class="feature" id="selection_15" name="selection_15" value="ENCFF001UPM"/>
+					 ENCFF001UPM
+					 					 <br/>Description:&nbsp;MAX ChIP-seq protocol v042211.1 on human SK-N-SH
+					 					 					</td>
+                    <td><i>3.02035</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001UPM.png"><img src="TF binding sites/ENCFF001UPM.png" alt="RCC of ENCFF001UPM" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001UPM.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001UPM.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                
+                                        <tr bgcolor="FFFFFF">
+                                        <td>16</td>
+                    <td><input type="checkbox" class="feature" id="selection_16" name="selection_16" value="ENCFF001VHL"/>
+					 ENCFF001VHL
+					 					 <br/>Description:&nbsp;ELK4 ChIP-seq on human HEK293
+					 					 					</td>
+                    <td><i>3.01568</i></td>
+                    
+                        <td>&nbsp;</td>
+                                        <td><a href="TF binding sites/ENCFF001VHL.png"><img src="TF binding sites/ENCFF001VHL.png" alt="RCC of ENCFF001VHL" width="100%"/></a>
+                    </td>
+                    <td><a href="TF binding sites/ENCFF001VHL.targets.html">link</a></td>
+                    <td><a href="TF binding sites/ENCFF001VHL.top20000.html">link</a></td>
+                    <td class="db">TF binding sites</td>
+                                    </tr>
+                                </tbody>
+            </table>
+        </form>
+    </div>
+     <div id="footer">&copy; 2015 <a href="#">KULeuven</a> | Authors: Gert Hulselmans &amp; Hana Imrichova | Web design (CSS) by <a
+            href="http://andreasviklund.com/">Andreas Viklund</a>.
+</div>
+</div>
+</body>
+</html>

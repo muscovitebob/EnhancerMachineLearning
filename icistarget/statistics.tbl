@@ -1,0 +1,1332 @@
+#GeneSignatureID	Rank	FeatureID	FeatureDescription	FeatureAnnotations	FeatureDatabase	AUC	NES	CandidateTargetIDs	TopTargetIDs	TopTargetRanks
+Project2	1	ENCFF001UPL	MAX ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.08148311215	4.178239948	chr17-reg2695;chr19-reg44926;chr19-reg45045;chr15-reg42951;chr17-reg36607	chr17-reg2695;chr19-reg44926;chr19-reg45045;chr15-reg42951;chr17-reg36607;chr17-reg44032;chr19-reg16189	235;394;1182;1800;2221;4954;16653
+Project2	2	ENCFF001TTL	SIN3A ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.08120636518	4.16112061	chr15-reg42951;chr19-reg44926;chr17-reg36607;chr19-reg43563;chr19-reg45045;chr17-reg2695;chr17-reg44032	chr15-reg42951;chr19-reg44926;chr17-reg36607;chr19-reg43563;chr19-reg45045;chr17-reg2695;chr17-reg44032;chr16-reg50597	450;624;2020;2415;2481;3453;5547;11863
+Project2	3	ENCFF001USG	MYC ChIP-seq on human GM12878		TF binding sites	0.08033209636	4.107039063	chr11-reg10310;chr17-reg36607;chr19-reg44926;chr17-reg2695	chr11-reg10310;chr17-reg36607;chr19-reg44926;chr17-reg2695;chr19-reg45045;chr17-reg44032	198;389;835;1218;3229;5283
+Project2	4	ENCFF001TSY	MAX ChIP-seq protocol v042211.1 on human A549		TF binding sites	0.07996100384	4.084083586	chr17-reg2695;chr19-reg45045;chr19-reg44926;chr15-reg42951;chr17-reg36607;chr11-reg10310	chr17-reg2695;chr19-reg45045;chr19-reg44926;chr15-reg42951;chr17-reg36607;chr11-reg10310;chr17-reg44032;chr10-reg44316	635;880;1443;1502;3263;3547;6847;19694
+Project2	5	ENCFF001TTM	SIN3A ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.0782250456	3.976698644	chr15-reg42951;chr17-reg36607;chr19-reg45045;chr19-reg44926;chr19-reg43563	chr15-reg42951;chr17-reg36607;chr19-reg45045;chr19-reg44926;chr19-reg43563;chr17-reg2695;chr17-reg44032	628;639;1209;1212;2018;6324;6715
+Project2	6	ENCFF001UAB	POU2F2 ChIP-seq protocol PCR1x on human GM12891		TF binding sites	0.07555506636	3.811535934	chr13-reg20314;chr19-reg44926;chr17-reg36607;chr10-reg77710;chr14-reg24719;chr19-reg43563;chr18-reg14106	chr13-reg20314;chr19-reg44926;chr17-reg36607;chr10-reg77710;chr14-reg24719;chr19-reg43563;chr18-reg14106	400;586;1629;1877;3449;4730;7087
+Project2	7	ENCFF001TSX	MAX ChIP-seq protocol v042211.1 on human A549		TF binding sites	0.0741273036	3.72321571	chr19-reg45045;chr17-reg2695;chr15-reg42951;chr15-reg42952;chr19-reg44926;chr11-reg10310;chr17-reg36607;chr17-reg44032	chr19-reg45045;chr17-reg2695;chr15-reg42951;chr15-reg42952;chr19-reg44926;chr11-reg10310;chr17-reg36607;chr17-reg44032;chr16-reg50597	157;1646;1785;1786;3842;3909;8122;8545;18790
+Project2	8	ENCFF001TYM	POU2F2 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.07313038556	3.661547184	chr10-reg77710;chr19-reg44926;chr14-reg24719;chr13-reg20314;chr19-reg43563;chr17-reg36607	chr10-reg77710;chr19-reg44926;chr14-reg24719;chr13-reg20314;chr19-reg43563;chr17-reg36607;chr10-reg28241;chr19-reg16189	671;716;2312;2612;3432;3699;12130;15144
+Project2	9	GSM1208654_batch1_chrom1_LoVo_MYC_PassedQC_peaks_hg19	MYC ChIP-seq in LoVo		TF binding sites	0.07203912196	3.594042519	chr15-reg42951;chr15-reg42952;chr17-reg36607;chr19-reg44926	chr15-reg42951;chr15-reg42952;chr17-reg36607;chr19-reg44926;chr19-reg45045;chr11-reg10310	106;107;601;743;6987;14663
+Project2	10	ENCFF001UND	MAX ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.06697276558	3.2806419	chr17-reg2695;chr15-reg42951;chr19-reg44926;chr19-reg45045;chr17-reg36607	chr17-reg2695;chr15-reg42951;chr19-reg44926;chr19-reg45045;chr17-reg36607;chr17-reg44032;chr11-reg10310;chr10-reg44316	718;1302;1612;2716;2936;6842;17637;19912
+Project2	11	ENCFF001TRY	E2F6 ChIP-seq protocol v042211.1 on human A549		TF binding sites	0.06639096799	3.244652382	chr19-reg45045;chr19-reg44926;chr17-reg2695;chr11-reg10310;chr17-reg44032;chr10-reg44316	chr19-reg45045;chr19-reg44926;chr17-reg2695;chr11-reg10310;chr17-reg44032;chr10-reg44316;chr10-reg77729	23;131;1976;2935;4404;6757;19048
+Project2	12	GSM1208771_batch2_chrom1_LoVo_MNT_PassedQC_peaks_hg19	MNT ChIP-seq in LoVo		TF binding sites	0.06473992075	3.142519964	chr17-reg44032;chr19-reg44926;chr15-reg42951;chr15-reg42952	chr17-reg44032;chr19-reg44926;chr15-reg42951;chr15-reg42952;chr17-reg36607;chr11-reg10310;chr19-reg45045;chr17-reg2695;chr16-reg50597	425;952;1250;1251;7191;8155;11050;17974;19579
+Project2	13	ENCFF001UTL	MYC ChIP-seq on human MCF-7 treated with serum stimulated media		TF binding sites	0.06440656645	3.121898942	chr17-reg2695;chr19-reg44926;chr11-reg10310;chr17-reg36607;chr19-reg16189	chr17-reg2695;chr19-reg44926;chr11-reg10310;chr17-reg36607;chr19-reg16189;chr19-reg45045;chr10-reg44316	253;366;2018;3638;3825;10572;16011
+Project2	14	GSM1208767_batch2_chrom1_LoVo_LYL1_PassedQC_peaks_hg19	LYL1 ChIP-seq in LoVo		TF binding sites	0.06434366941	3.118008184	chr19-reg44926;chr17-reg44032;chr15-reg42951;chr17-reg36607;chr11-reg10310	chr19-reg44926;chr17-reg44032;chr15-reg42951;chr17-reg36607;chr11-reg10310;chr19-reg45045;chr17-reg2695	901;1225;1896;2971;3127;11857;16841
+Project2	15	ENCFF001UPM	MAX ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.06276495377	3.020350139	chr19-reg45045;chr19-reg44926;chr17-reg36607;chr17-reg44032;chr17-reg2695	chr19-reg45045;chr19-reg44926;chr17-reg36607;chr17-reg44032;chr17-reg2695;chr10-reg3823;chr18-reg14106;chr19-reg16189	335;565;2201;3577;3944;12459;16197;18367
+Project2	16	ENCFF001VHL	ELK4 ChIP-seq on human HEK293		TF binding sites	0.06268947733	3.015681228	chr19-reg16189;chr17-reg2695;chr17-reg36607;chr19-reg45045	chr19-reg16189;chr17-reg2695;chr17-reg36607;chr19-reg45045;chr10-reg77729	128;192;2023;2187;15749
+Project2	17	ENCFF001UTN	MYC ChIP-seq on human MCF-7 treated with vehicle		TF binding sites	0.06133404617	2.931835377			
+Project2	18	ENCFF001TSA	ELF1 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.06028681049	2.867054243			
+Project2	19	ENCFF001TYE	PML ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.06010126423	2.855576505			
+Project2	20	ENCFF001USW	POLR2A ChIP-seq on human HeLa-S3		TF binding sites	0.05977734449	2.835539097			
+Project2	21	ENCFF001UFQ	ELF1 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.059638971	2.826979428			
+Project2	22	ENCFF001UNE	MAX ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.05906346311	2.791378985			
+Project2	23	GSM1208627_batch1_chrom1_LoVo_HBP1_PassedQC_peaks_hg19	HBP1 ChIP-seq in LoVo		TF binding sites	0.05833700233	2.746440721			
+Project2	24	ENCFF001TRR	CREB1 ChIP-seq (protocol v041610.2) on A549 treated with dexamethasone at 100nM		TF binding sites	0.05776778414	2.711229354			
+Project2	25	GSM1208593_batch1_chrom1_LoVo_BARX2_PassedQC_peaks_hg19	BARX2 ChIP-seq in LoVo		TF binding sites	0.05708535128	2.669014622			
+Project2	26	ENCFF001VII	ELK4 ChIP-seq on human HeLa-S3		TF binding sites	0.0569532675	2.660844028			
+Project2	27	ENCFF001UAA	POU2F2 ChIP-seq protocol PCR1x on human GM12891		TF binding sites	0.05678659035	2.650533518			
+Project2	28	ENCFF001TWW	ELF1 ChIP-seq protocol v041610.1 on human GM12878		TF binding sites	0.05676772124	2.64936629			
+Project2	29	ENCFF001TZE	STAT5A ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.05593119064	2.597619198			
+Project2	30	ENCFF001UFR	ELF1 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.05571419586	2.584196081			
+Project2	31	ENCFF001USZ	MYC ChIP-seq on human HUVEC		TF binding sites	0.05555380842	2.574274646			
+Project2	32	ENCFF001TUC	USF1 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.05533366878	2.56065699			
+Project2	33	ENCFF001UTK	MYC ChIP-seq on human MCF-7 treated with estrogen		TF binding sites	0.05516699163	2.550346479			
+Project2	34	ENCFF001UGM	MAX ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.05479904397	2.52758554			
+Project2	35	ENCFF001TZY	POLR2A ChIP-seq protocol PCR1x on human GM12891		TF binding sites	0.05444682055	2.505797291			
+Project2	36	ENCFF001VHA	NRF1 ChIP-seq on human H1-hESC		TF binding sites	0.05428643311	2.495875856			
+Project2	37	ENCFF001TRX	E2F6 ChIP-seq protocol v042211.1 on human A549		TF binding sites	0.05406000377	2.481869125			
+Project2	38	ENCFF001TUG	ZBTB33 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.05322661803	2.430316571			
+Project2	39	ENCFF001USX	MYC ChIP-seq on human HepG2		TF binding sites	0.0531763004	2.427203964			
+Project2	40	ENCFF001VGE	POLR2A ChIP-seq on human GM18505		TF binding sites	0.0527643248	2.401719494			
+Project2	41	GSM1208662_batch1_chrom1_LoVo_NPAT_PassedQC_peaks_hg19	NPAT ChIP-seq in LoVo		TF binding sites	0.05256305428	2.389269066			
+Project2	42	ENCFF001TRL	ATF3 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.05242782565	2.380903935			
+Project2	43	GSM1208796_batch2_chrom1_LoVo_SP2_PassedQC_peaks_hg19	SP2 ChIP-seq in LoVo		TF binding sites	0.05215422354	2.363979134			
+Project2	44	GSM1208777_batch2_chrom1_LoVo_NFYA_PassedQC_peaks_hg19	NFYA ChIP-seq in LoVo		TF binding sites	0.0514246179	2.318846332			
+Project2	45	ENCFF001TTO	SIX5 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.05103151142	2.29452909			
+Project2	46	ENCFF001TTT	TCF12 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.05093716586	2.288692952			
+Project2	47	ENCFF001UJU	ELF1 ChIP-seq protocol v041610.2 on human K562		TF binding sites	0.05093402101	2.288498414			
+Project2	48	ENCFF001TSB	ETS1 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.0509277313	2.288109338			
+Project2	49	GSM1208620_batch1_chrom1_LoVo_GATA4_PassedQC_peaks_hg19	GATA4 ChIP-seq in LoVo		TF binding sites	0.05086168941	2.284024042			
+Project2	50	ENCFF001VPY	POLR2A ChIP-seq on human MCF10A-Er-Src treated with 0.01% ethanol		TF binding sites	0.05034907856	2.252314358			
+Project2	51	ENCFF001VIE	E2F1 ChIP-seq on human HeLa-S3		TF binding sites	0.05026102271	2.246867295			
+Project2	52	ENCFF001TVB	MAX ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.0500912007	2.236362247			
+Project2	53	ENCFF001UTM	MYC ChIP-seq on human MCF-7 treated with serum starved media		TF binding sites	0.05	2.230720646			
+Project2	54	ENCFF001TZF	STAT5A ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.04972954274	2.213990384			
+Project2	55	GSM1208625_batch1_chrom1_LoVo_GMEB1_PassedQC_peaks_hg19	GMEB1 ChIP-seq in LoVo		TF binding sites	0.04963205233	2.207959708			
+Project2	56	ENCFF001TYF	PML ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.04961003837	2.206597942			
+Project2	57	ENCFF001TVC	MAX ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.04954399648	2.202512645			
+Project2	58	ENCFF001TYY	SP1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.04920120762	2.18130801			
+Project2	59	ENCFF001TXE	GABPA ChIP-seq protocol PCR2x on human GM12878		TF binding sites	0.04910686207	2.175471872			
+Project2	60	ENCFF001UPA	ELF1 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.04901566136	2.169830272			
+Project2	61	ENCFF001UJT	ELF1 ChIP-seq protocol v041610.2 on human K562		TF binding sites	0.04890244669	2.162826906			
+Project2	62	ENCFF001TYK	POU2F2 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.04867916221	2.149014712			
+Project2	63	ENCFF001VKP	NRF1 ChIP-seq on human HepG2		TF binding sites	0.04865085854	2.147263871			
+Project2	64	ENCFF001TSC	ETS1 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.04844329832	2.134424367			
+Project2	65	GSM1208683_batch1_chrom1_LoVo_SP1_PassedQC_peaks_hg19	SP1 ChIP-seq in LoVo		TF binding sites	0.04801874332	2.108161745			
+Project2	66	GSM1208691_batch1_chrom1_LoVo_TFDP1_PassedQC_peaks_hg19	TFDP1 ChIP-seq in LoVo		TF binding sites	0.04789609409	2.100574766			
+Project2	67	ENCFF001UTC	MYC ChIP-seq on human K562		TF binding sites	0.04768853387	2.087735262			
+Project2	68	ENCFF001TUF	ZBTB33 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.04765079565	2.085400806			
+Project2	69	ENCFF001UEW	GABPA ChIP-seq protocol PCR1x on human HeLa-S3		TF binding sites	0.04762249198	2.083649965			
+Project2	70	GSM1208657_batch1_chrom1_LoVo_NFAT5_PassedQC_peaks_hg19	NFAT5 ChIP-seq in LoVo		TF binding sites	0.04760047802	2.082288199			
+Project2	71	ENCFF001TRN	BCL3 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.04744323542	2.072561302			
+Project2	72	ENCFF001TRZ	ELF1 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.04727970313	2.06244533			
+Project2	73	ENCFF001TUA	USF1 ChIP-seq (protocol PCR1x) on A549 treated with ethanol at 0.02%		TF binding sites	0.04721995094	2.058749109			
+Project2	74	GSM1208592_batch1_chrom1_LoVo_ATOH1_PassedQC_peaks_hg19	ATOH1 ChIP-seq in LoVo		TF binding sites	0.04715390905	2.054663812			
+Project2	75	GSM1208738_batch2_chrom1_LoVo_ETS2_PassedQC_peaks_hg19	ETS2 ChIP-seq in LoVo		TF binding sites	0.04694949368	2.042018846			
+Project2	76	ENCFF431CUI	CREM ChIP-seq on human GM12878		TF binding sites	0.04666016731	2.024121356			
+Project2	77	GSM1208605_batch1_chrom1_LoVo_DBP_PassedQC_peaks_hg19	DBP ChIP-seq in LoVo		TF binding sites	0.04647462105	2.012643617			
+Project2	78	ENCFF001UOR	SIN3A ChIP-seq protocol v041610.1 on human PFSK-1		TF binding sites	0.04644002767	2.0105037			
+Project2	79	ENCFF001VRA	NRF1 ChIP-seq on human SK-N-SH produced by the Snyder lab		TF binding sites	0.04630479904	2.002138569			
+Project2	80	ENCFF001VDO	MYC ChIP-seq on human A549 produced by the Snyder lab		TF binding sites	0.04627964023	2.000582265			
+Project2	81	ENCFF001VLK	MAX ChIP-seq on human HUVEC produced by the Snyder lab		TF binding sites	0.04620416378	1.995913355			
+Project2	82	ENCFF001ULU	THAP1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.04585508523	1.974319643			
+Project2	83	ENCFF001UJP	E2F6 ChIP-seq protocol v041610.2 on human K562		TF binding sites	0.04577646393	1.969456195			
+Project2	84	ENCFF001UDV	ELF1 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0.04546512359	1.950196939			
+Project2	85	ENCFF001VFA	POLR2A ChIP-seq on human GM12878		TF binding sites	0.04538964715	1.945528029			
+Project2	86	ENCFF001UCU	TAF7 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.04533618467	1.942220884			
+Project2	87	ENCFF001VOA	NRF1 ChIP-seq on human K562		TF binding sites	0.04511918989	1.928797766			
+Project2	88	ENCFF001UGN	MAX ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.0445499717	1.893586399			
+Project2	89	ENCFF001UCH	SIN3A ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.04433297692	1.880163281			
+Project2	90	GSM1208802_batch2_chrom1_LoVo_TEAD2_PassedQC_peaks_hg19	TEAD2 ChIP-seq in LoVo		TF binding sites	0.04422605195	1.873548991			
+Project2	91	ENCFF001VNF	GTF2B ChIP-seq on human K562		TF binding sites	0.04397131895	1.857791418			
+Project2	92	ENCFF001VMR	MYC ChIP-seq on human K562 treated with IFNa for 6 hours		TF binding sites	0.0438832631	1.852344356			
+Project2	93	ENCFF001UKH	MAX ChIP-seq protocol v041610.2 on human K562		TF binding sites	0.04357821247	1.833474176			
+Project2	94	ENCFF001TZN	USF1 ChIP-seq protocol PCR2x on human GM12878		TF binding sites	0.04347443235	1.827054424			
+Project2	95	GSM1208659_batch1_chrom1_LoVo_NFE2L2_PassedQC_peaks_hg19	NFE2L2 ChIP-seq in LoVo		TF binding sites	0.04299012517	1.797095582			
+Project2	96	ENCFF001TYZ	SP1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.04298069061	1.796511968			
+Project2	97	ENCFF001UMP	ELF1 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.0429681112	1.795733816			
+Project2	98	ENCFF001TZM	USF1 ChIP-seq protocol PCR2x on human GM12878		TF binding sites	0.04254670105	1.769665732			
+Project2	99	GSM1208789_batch2_chrom1_LoVo_RBCK1_PassedQC_peaks_hg19	RBCK1 ChIP-seq in LoVo		TF binding sites	0.0421315806	1.743986724			
+Project2	100	ENCFF001TTY	USF1 ChIP-seq (protocol PCR1x) on A549 treated with dexamethasone at 100nM		TF binding sites	0.04208126297	1.740874117			
+Project2	101	GSM1208794_batch2_chrom1_LoVo_SOX2_PassedQC_peaks_hg19	SOX2 ChIP-seq in LoVo		TF binding sites	0.04194603434	1.732508986			
+Project2	102	ENCFF285UDU	CREM ChIP-seq on human GM12878		TF binding sites	0.04178879175	1.722782089			
+Project2	103	ENCFF001UOZ	ELF1 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.04168186678	1.716167799			
+Project2	104	ENCFF001UHP	SP2 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.04137052645	1.696908543			
+Project2	105	ENCFF001TTZ	USF1 ChIP-seq (protocol PCR1x) on A549 treated with ethanol at 0.02%		TF binding sites	0.04133907793	1.694963164			
+Project2	106	ENCFF001UCV	TAF7 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.04102459274	1.67550937			
+Project2	107	ENCFF001UAN	POLR2A ChIP-seq protocol v041610.2 on human GM12892		TF binding sites	0.04098370967	1.672980377			
+Project2	108	ENCFF001UMQ	ELF1 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.04089879867	1.667727852			
+Project2	109	ENCFF001VEI	KAT2A ChIP-seq on human GM12878		TF binding sites	0.04080445311	1.661891714			
+Project2	110	ENCFF001UCP	SP4 ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.04079501855	1.6613081			
+Project2	111	ENCFF001TTN	SIX5 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.04072897667	1.657222804			
+Project2	112	ENCFF001TXB	ETS1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.04070381785	1.6556665			
+Project2	113	ENCFF001UCK	SP1 ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.04023523492	1.626680347			
+Project2	114	ENCFF001TYT	RXRA ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.04018491729	1.62356774			
+Project2	115	ENCFF001TRQ	CREB1 ChIP-seq (protocol v041610.2) on A549 treated with dexamethasone at 100nM		TF binding sites	0.04009686144	1.618120678			
+Project2	116	ENCFF504NHD	CREM ChIP-seq on human K562		TF binding sites	0.04006541292	1.616175299			
+Project2	117	ENCFF001TUB	USF1 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.0400276747	1.613840843			
+Project2	118	ENCFF001VFQ	USF2 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0.03990188062	1.606059326			
+Project2	119	ENCFF001UPF	GABPA ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.03979181081	1.599250498			
+Project2	120	ENCFF001UJZ	GABPA ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.03957796088	1.586021918			
+Project2	121	ENCFF001UTF	POLR2A ChIP-seq on human K562		TF binding sites	0.03956538147	1.585243767			
+Project2	122	ENCFF001UEX	GABPA ChIP-seq protocol PCR1x on human HeLa-S3		TF binding sites	0.0394395874	1.577462249			
+Project2	123	ENCFF001UGB	GABPA ChIP-seq protocol PCR2x on human HepG2		TF binding sites	0.03897414932	1.548670634			
+Project2	124	ENCFF001TYW	SIX5 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.03893012139	1.545947103			
+Project2	125	GSM1208681_batch1_chrom1_LoVo_SOX4_PassedQC_peaks_hg19	SOX4 ChIP-seq in LoVo		TF binding sites	0.03889552802	1.543807186			
+Project2	126	ENCFF001TYL	POU2F2 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.0382822819	1.505872288			
+Project2	127	ENCFF113SFO	SMAD5 ChIP-seq on human K562		TF binding sites	0.03822567457	1.502370605			
+Project2	128	ENCFF001VPW	MYC ChIP-seq on human MCF10A-Er-Src treated with 4-hydroxy-tamoxifen at 1uM for 4 hours		TF binding sites	0.03816592239	1.498674384			
+Project2	129	GSM1208621_batch1_chrom1_LoVo_GATA6_PassedQC_peaks_hg19	GATA6 ChIP-seq in LoVo		TF binding sites	0.03770048431	1.469882769			
+Project2	130	ENCFF001UPG	GABPA ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.03761242845	1.464435707			
+Project2	131	GSM1208647_batch1_chrom1_LoVo_MED1_PassedQC_peaks_hg19	MED1 ChIP-seq in LoVo		TF binding sites	0.03715328008	1.436033168			
+Project2	132	ENCFF001UBP	MAX ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.03711239701	1.433504175			
+Project2	133	ENCFF001VIS	MAX ChIP-seq on human HeLa-S3 produced by the Snyder lab		TF binding sites	0.03690798163	1.420859209			
+Project2	134	ENCFF001UKQ	PML ChIP-seq protocol v042211.1 on human K562		TF binding sites	0.03681363608	1.41502307			
+Project2	135	ENCFF001UAE	TAF1 ChIP-seq protocol PCR1x on human GM12891		TF binding sites	0.03649286119	1.395180201			
+Project2	136	ENCFF001VIH	E2F6 ChIP-seq on human HeLa-S3		TF binding sites	0.0364393987	1.391873056			
+Project2	137	ENCFF001VLM	CHD1 ChIP-seq on human IMR90 produced by the Snyder lab		TF binding sites	0.03627901126	1.381951621			
+Project2	138	GSM1208756_batch2_chrom1_LoVo_HOXA13_PassedQC_peaks_hg19	HOXA13 ChIP-seq in LoVo		TF binding sites	0.03612491352	1.372419262			
+Project2	139	ENCFF001VEE	E2F4 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0.03610289955	1.371057496			
+Project2	140	GSM1208666_batch1_chrom1_LoVo_NR3C1_PassedQC_peaks_hg19	NR3C1 ChIP-seq in LoVo		TF binding sites	0.03602427826	1.366194048			
+Project2	141	ENCFF001VMQ	MYC ChIP-seq on human K562 treated with IFNa for 30 minutes		TF binding sites	0.03584187685	1.354910847			
+Project2	142	ENCFF001TXF	GABPA ChIP-seq protocol PCR2x on human GM12878		TF binding sites	0.03575696585	1.349658323			
+Project2	143	ENCFF001VFY	POLR2A ChIP-seq on human GM12891		TF binding sites	0.03572551733	1.347712944			
+Project2	144	ENCFF001VDM	BHLHE40 ChIP-seq on human A549 produced by the Snyder lab		TF binding sites	0.03566576514	1.344016723			
+Project2	145	GSM1208745_batch2_chrom1_LoVo_FOXD2_PassedQC_peaks_hg19	FOXD2 ChIP-seq in LoVo		TF binding sites	0.03562488207	1.34148773			
+Project2	146	ENCFF001TTX	USF1 ChIP-seq (protocol PCR1x) on A549 treated with dexamethasone at 100nM		TF binding sites	0.03557141959	1.338180585			
+Project2	147	ENCFF001TXD	FOXM1 ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.03551481225	1.334678902			
+Project2	148	ENCFF001UGA	GABPA ChIP-seq protocol PCR2x on human HepG2		TF binding sites	0.03545820492	1.331177219			
+Project2	149	ENCFF001UHR	SRF ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.03542361155	1.329037302			
+Project2	150	ENCFF001VIK	KAT2A ChIP-seq on human HeLa-S3		TF binding sites	0.03526007925	1.318921329			
+Project2	151	ENCFF001UOT	TAF1 ChIP-seq protocol v041610.1 on human PFSK-1		TF binding sites	0.0349235801	1.298105769			
+Project2	152	ENCFF001VJT	ZZZ3 ChIP-seq on human HeLa-S3		TF binding sites	0.03488898673	1.295965852			
+Project2	153	GSM1208749_batch2_chrom1_LoVo_GATA1_PassedQC_peaks_hg19	GATA1 ChIP-seq in LoVo		TF binding sites	0.0345902258	1.277484748			
+Project2	154	ENCFF001UBC	E2F6 ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.03456821184	1.276122982			
+Project2	155	GSM1208672_batch1_chrom1_LoVo_RFX5_PassedQC_peaks_hg19	RFX5 ChIP-seq in LoVo		TF binding sites	0.03450845965	1.272426761			
+Project2	156	GSM1208630_batch1_chrom1_LoVo_HES4_PassedQC_peaks_hg19	HES4 ChIP-seq in LoVo		TF binding sites	0.0341656708	1.251222126			
+Project2	157	ENCFF001UBD	E2F6 ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.03404302157	1.243635147			
+Project2	158	ENCFF001VDZ	FOS ChIP-seq on human GM12878		TF binding sites	0.03403044217	1.242856995			
+Project2	159	ENCFF001TXC	FOXM1 ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.03397068998	1.239160774			
+Project2	160	ENCFF001UBI	GABPA ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.03391408265	1.235659091			
+Project2	161	GSM1208690_batch1_chrom1_LoVo_TFAP2A_PassedQC_peaks_hg19	TFAP2A ChIP-seq in LoVo		TF binding sites	0.03347380338	1.20842378			
+Project2	162	ENCFF001TTE	PBX3 ChIP-seq protocol v042211.1 on human A549		TF binding sites	0.03342977546	1.205700249			
+Project2	163	ENCFF001XUC	CTCF ChIP-seq on human WI-38		TF binding sites	0.03340776149	1.204338483			
+Project2	164	ENCFF001VHV	BRCA1 ChIP-seq on human HeLa-S3		TF binding sites	0.03337002327	1.202004028			
+Project2	165	ENCFF001UAO	TAF1 ChIP-seq protocol v041610.2 on human GM12892		TF binding sites	0.03332599535	1.199280497			
+Project2	166	ENCFF001VIY	NRF1 ChIP-seq on human HeLa-S3		TF binding sites	0.03332285049	1.199085959			
+Project2	167	GSM1208633_batch1_chrom1_LoVo_HOXA10_PassedQC_peaks_hg19	HOXA10 ChIP-seq in LoVo		TF binding sites	0.03317504246	1.189942676			
+Project2	168	ENCFF001VNA	E2F6 ChIP-seq on human K562		TF binding sites	0.03316875275	1.1895536			
+Project2	169	GSM1208746_batch2_chrom1_LoVo_FOXG1_PassedQC_peaks_hg19	FOXG1 ChIP-seq in LoVo		TF binding sites	0.03314988364	1.188386372			
+Project2	170	GSM1208730_batch2_chrom1_LoVo_E2F7_PassedQC_peaks_hg19	E2F7 ChIP-seq in LoVo		TF binding sites	0.03312786968	1.187024607			
+Project2	171	ENCFF001UMV	GABPA ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.0330806969	1.184106537			
+Project2	172	ENCFF001TWI	BCL11A ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.03304295868	1.181772082			
+Project2	173	ENCFF787JTR	SMAD5 ChIP-seq on human K562		TF binding sites	0.03299264105	1.178659475			
+Project2	174	ENCFF380ZBB	CREM ChIP-seq on human K562		TF binding sites	0.03298635134	1.178270399			
+Project2	175	ENCFF001VKC	RCOR1 ChIP-seq on human HepG2 produced by the Snyder lab		TF binding sites	0.03295175797	1.176130482			
+Project2	176	GSM1208743_batch2_chrom1_LoVo_ZFHX3_PassedQC_peaks_hg19	ZFHX3 ChIP-seq in LoVo		TF binding sites	0.03267501101	1.159011143			
+Project2	177	ENCFF001TSJ	GAbisphenol A ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.03256179634	1.152007778			
+Project2	178	ENCFF001UTA	POLR2A ChIP-seq on human HepG2		TF binding sites	0.03252091326	1.149478784			
+Project2	179	ENCFF001USU	MYC ChIP-seq on human HeLa-S3		TF binding sites	0.03247688534	1.146755253			
+Project2	180	ENCFF001TSK	GAbisphenol A ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.03243600226	1.14422626			
+Project2	181	ENCFF001TWN	CEBPB ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.03240140889	1.142086343			
+Project2	182	ENCFF001UBO	MAX ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.03237939493	1.140724577			
+Project2	183	ENCFF001UAF	TAF1 ChIP-seq protocol PCR1x on human GM12891		TF binding sites	0.03232593245	1.137417432			
+Project2	184	ENCFF001UGP	MBD4 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.0323227876	1.137222894			
+Project2	185	ENCFF001TZH	TAF1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.03228190452	1.134693901			
+Project2	186	ENCFF001TUO	EGR1 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.03224102145	1.132164908			
+Project2	187	ENCFF001TZU	PAX5 ChIP-seq protocol v041610.1 on human GM12891		TF binding sites	0.03219699352	1.129441377			
+Project2	188	ENCFF001VFU	ZNF143 ChIP-seq on human GM12878		TF binding sites	0.03209635826	1.123216163			
+Project2	189	ENCFF001VIP	IRF3 ChIP-seq on human HeLa-S3		TF binding sites	0.03204918548	1.120298094			
+Project2	190	ENCFF625XSZ	CREM ChIP-seq on human GM12878		TF binding sites	0.03201459211	1.118158176			
+Project2	191	ENCFF001TZG	TAF1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.03199257815	1.116796411			
+Project2	192	ENCFF001UCZ	TEAD4 ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.03192653626	1.112711114			
+Project2	193	GSM1208723_batch2_chrom1_LoVo_DLX1_PassedQC_peaks_hg19	DLX1 ChIP-seq in LoVo		TF binding sites	0.03186678407	1.109014893			
+Project2	194	ENCFF001UMM	EGR1 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.03181646644	1.105902286			
+Project2	195	ENCFF001TRK	ATF3 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.03176614881	1.102789679			
+Project2	196	ENCFF001UBJ	GABPA ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.03170010692	1.098704382			
+Project2	197	ENCFF001VKQ	EP300 ChIP-seq on human HepG2		TF binding sites	0.03168123781	1.097537155			
+Project2	198	ENCFF001VQA	STAT3 ChIP-seq on human MCF10A-Er-Src treated with 0.01% ethanol		TF binding sites	0.03154915403	1.089366561			
+Project2	199	GSM1208671_batch1_chrom1_LoVo_RFX2_PassedQC_peaks_hg19	RFX2 ChIP-seq in LoVo		TF binding sites	0.03151456066	1.087226644			
+Project2	200	GSM1208758_batch2_chrom1_LoVo_HOXC6_PassedQC_peaks_hg19	HOXC6 ChIP-seq in LoVo		TF binding sites	0.03135102837	1.077110671			
+Project2	201	ENCFF001UIH	ZBTB7A ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.03112145418	1.062909402			
+Project2	202	ENCFF001UIK	GABPA ChIP-seq protocol v042211.1 on human HL-60		TF binding sites	0.03100509466	1.055711498			
+Project2	203	ENCFF001UAP	TAF1 ChIP-seq protocol v041610.2 on human GM12892		TF binding sites	0.03094219762	1.051820739			
+Project2	204	ENCFF001UGR	MYBL2 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.03092961821	1.051042588			
+Project2	205	ENCFF001UCG	SIN3A ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.0309107491	1.04987536			
+Project2	206	ENCFF001TZT	ZEB1 ChIP-seq protocol v041610.2 on human GM12878		TF binding sites	0.03083527266	1.045206449			
+Project2	207	ENCFF001UJQ	E2F6 ChIP-seq protocol v041610.2 on human K562		TF binding sites	0.03070947858	1.037424932			
+Project2	208	ENCFF001UEB	MAX ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0.03058682936	1.029837952			
+Project2	209	GSM1208702_batch1_chrom1_LoVo_ZBTB7B_PassedQC_peaks_hg19	ZBTB7B ChIP-seq in LoVo		TF binding sites	0.03056796025	1.028670725			
+Project2	210	ENCFF001TTR	TAF1 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.03053336688	1.026530807			
+Project2	211	GSM1208634_batch1_chrom1_LoVo_HOXA1_PassedQC_peaks_hg19	HOXA1 ChIP-seq in LoVo		TF binding sites	0.03053022203	1.026336269			
+Project2	212	ENCFF001TUK	CREB1 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.03039813825	1.018165676			
+Project2	213	ENCFF001VIJ	ELK1 ChIP-seq on human HeLa-S3 produced by the Snyder lab		TF binding sites	0.03037297943	1.016609372			
+Project2	214	ENCFF001VPS	FOS ChIP-seq on human MCF10A-Er-Src treated with 4-hydroxy-tamoxifen at 1uM for 12 hours		TF binding sites	0.0301465501	1.002602641			
+Project2	215	ENCFF001VHJ	POLR2A ChIP-seq on human HCT-116		TF binding sites	0.03011510158	1.000657261			
+Project2	216	ENCFF001ULE	SIX5 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.02995156928	0.9905412887			
+Project2	217	ENCFF001VEW	NRF1 ChIP-seq on human GM12878		TF binding sites	0.02982892006	0.9829543091			
+Project2	218	ENCFF001SVH	ChIP-seq on human H1-hESC HDAC6		TF binding sites	0.02979118184	0.9806198538			
+Project2	219	ENCFF001TUN	EGR1 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.02964022895	0.9712820328			
+Project2	220	GSM1208776_batch2_chrom1_LoVo_NFKB2_PassedQC_peaks_hg19	NFKB2 ChIP-seq in LoVo		TF binding sites	0.02959934587	0.9687530396			
+Project2	221	ENCFF001TXM	MTA3 ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.02949556576	0.9623332876			
+Project2	222	ENCFF974HNU	CREM ChIP-seq on human K562		TF binding sites	0.02944524813	0.9592206806			
+Project2	223	ENCFF001TWP	CREB1 ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.02942952387	0.9582479909			
+Project2	224	GSM1208649_batch1_chrom1_LoVo_MEF2C_PassedQC_peaks_hg19	MEF2C ChIP-seq in LoVo		TF binding sites	0.02942323417	0.957858915			
+Project2	225	ENCFF001UCT	TAF1 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.02932574376	0.9518282389			
+Project2	226	ENCFF001UFM	CREB1 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.0293100195	0.9508555492			
+Project2	227	ENCFF001TTD	PBX3 ChIP-seq protocol v042211.1 on human A549		TF binding sites	0.02925655702	0.9475484043			
+Project2	228	ENCFF001UGQ	MYBL2 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.02919994968	0.9440467214			
+Project2	229	ENCFF001TAC	ChIP-seq on human K562 RNF2		TF binding sites	0.02919680483	0.9438521834			
+Project2	230	ENCFF001SUC	ChIP-seq on human GM12878 EZH2		TF binding sites	0.02919365998	0.9436576455			
+Project2	231	ENCFF001UFD	TAF1 ChIP-seq protocol PCR1x on human HeLa-S3		TF binding sites	0.02915906661	0.9415177282			
+Project2	232	GSM1208622_batch1_chrom1_LoVo_GLI2_PassedQC_peaks_hg19	GLI2 ChIP-seq in LoVo		TF binding sites	0.02894521668	0.9282891484			
+Project2	233	ENCFF001UOU	TAF1 ChIP-seq protocol v041610.1 on human PFSK-1		TF binding sites	0.0288917542	0.9249820034			
+Project2	234	ENCFF001UIG	ZBTB7A ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.02887917479	0.9242038516			
+Project2	235	ENCFF001TTI	POLR2A ChIP-seq (protocol PCR2x) on A549 treated with ethanol at 0.02%		TF binding sites	0.02882885716	0.9210912446			
+Project2	236	ENCFF001UHK	SIN3A ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0.02878168438	0.9181731756			
+Project2	237	ENCFF001VID	MYC ChIP-seq on human HeLa-S3		TF binding sites	0.0285521102	0.903971906			
+Project2	238	ENCFF001UOS	SIN3A ChIP-seq protocol v041610.1 on human PFSK-1		TF binding sites	0.02851122712	0.9014429128			
+Project2	239	ENCFF001UIL	GABPA ChIP-seq protocol v042211.1 on human HL-60		TF binding sites	0.02843575068	0.8967740023			
+Project2	240	ENCFF001TAG	ChIP-seq on human K562 SUZ12		TF binding sites	0.0283099566	0.8889924848			
+Project2	241	ENCFF001TZV	PAX5 ChIP-seq protocol v041610.1 on human GM12891		TF binding sites	0.02829423234	0.8880197951			
+Project2	242	GSM1208590_batch1_chrom1_LoVo_ARNT_PassedQC_peaks_hg19	ARNT ChIP-seq in LoVo		TF binding sites	0.02819674193	0.881989119			
+Project2	243	ENCFF001VMV	MYC ChIP-seq on human K562		TF binding sites	0.02816529341	0.8800437396			
+Project2	244	ENCFF001UCO	SP4 ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.02815900371	0.8796546637			
+Project2	245	ENCFF001VPT	FOS ChIP-seq on human MCF10A-Er-Src treated with 4-hydroxy-tamoxifen at 1uM for 4 hours		TF binding sites	0.02812755519	0.8777092844			
+Project2	246	ENCFF001VES	NFE2 ChIP-seq on human GM12878		TF binding sites	0.02809925153	0.8759584429			
+Project2	247	ENCFF001UEA	MAX ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0.02804578904	0.872651298			
+Project2	248	ENCFF001VGO	BRCA1 ChIP-seq on human H1-hESC produced by the Snyder lab		TF binding sites	0.02797345745	0.8681769254			
+Project2	249	ENCFF001VIV	MXI1 ChIP-seq on human HeLa-S3		TF binding sites	0.02793571923	0.8658424701			
+Project2	250	ENCFF001VDV	POLR2A ChIP-seq on human GM10847		TF binding sites	0.02790741556	0.8640916287			
+Project2	251	ENCFF001UCI	SIX5 ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.0278854016	0.8627298631			
+Project2	252	ENCFF001UQX	USF1 ChIP-seq (protocol v041610.2) on SK-N-SH treated with 6uM retinoic acid for 48 hours		TF binding sites	0.02777218693	0.8557264973			
+Project2	253	ENCFF001UJV	ETS1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.02767155167	0.8495012833			
+Project2	254	ENCFF001UIW	ATF3 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.027643248	0.8477504418			
+Project2	255	ENCFF001VHC	RFX5 ChIP-seq on human H1-hESC		TF binding sites	0.02744826719	0.8356890896			
+Project2	256	ENCFF001UDU	ELF1 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0.02738537015	0.8317983309			
+Project2	257	ENCFF001UQM	USF1 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.027218693	0.8214878201			
+Project2	258	ENCFF001VED	CTCF ChIP-seq on human GM12878		TF binding sites	0.02720611359	0.8207096684			
+Project2	259	ENCFF001UKA	GABPA ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.02700484307	0.8082592403			
+Project2	260	GSM1208595_batch1_chrom1_LoVo_CASP8AP2_PassedQC_peaks_hg19	CASP8AP2 ChIP-seq in LoVo		TF binding sites	0.02693565633	0.8039794057			
+Project2	261	ENCFF001USI	POLR2A ChIP-seq on human GM12878		TF binding sites	0.02686332474	0.7995050331			
+Project2	262	ENCFF001VLF	USF2 ChIP-seq on human HepG2		TF binding sites	0.02682558651	0.7971705778			
+Project2	263	GSM1208606_batch1_chrom1_LoVo_E2F2_PassedQC_peaks_hg19	E2F2 ChIP-seq in LoVo		TF binding sites	0.0268004277	0.7956142743			
+Project2	264	ENCFF001ULC	SIX5 ChIP-seq protocol PCR1x on human K562		TF binding sites	0.02671237185	0.790167212			
+Project2	265	ENCFF001TZZ	POLR2A ChIP-seq protocol PCR1x on human GM12891		TF binding sites	0.02666834392	0.7874436809			
+Project2	266	ENCFF001ULG	SP1 ChIP-seq protocol PCR1x on human K562		TF binding sites	0.02666834392	0.7874436809			
+Project2	267	GSM1208739_batch2_chrom1_LoVo_ETV7_PassedQC_peaks_hg19	ETV7 ChIP-seq in LoVo		TF binding sites	0.02660544688	0.7835529221			
+Project2	268	ENCFF001UQD	SIN3A ChIP-seq protocol v041610.1 on human SK-N-SH		TF binding sites	0.02658972262	0.7825802324			
+Project2	269	ENCFF001UQG	TAF1 ChIP-seq protocol v041610.1 on human SK-N-SH		TF binding sites	0.0265519844	0.7802457772			
+Project2	270	ENCFF001TSZ	REST ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.02650481162	0.7773277081			
+Project2	271	ENCFF001TWE	ATF3 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.02642304547	0.7722697217			
+Project2	272	ENCFF001VPV	MYC ChIP-seq on human MCF10A-Er-Src treated with 0.01% ethanol		TF binding sites	0.02636958299	0.7689625767			
+Project2	273	ENCFF614MQX	SMAD5 ChIP-seq on human K562		TF binding sites	0.02630983081	0.7652663559			
+Project2	274	ENCFF001XSA	CTCF ChIP-seq on human HPF		TF binding sites	0.02614315366	0.7549558452			
+Project2	275	ENCFF001UCL	SP1 ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.0261274294	0.7539831555			
+Project2	276	ENCFF001UNT	HAIB ChIP TAF1 in MCF-7		TF binding sites	0.02608654632	0.7514541623			
+Project2	277	ENCFF001VFB	POLR2A ChIP-seq on human GM12878		TF binding sites	0.02607711177	0.7508705485			
+Project2	278	ENCFF001UMW	GABPA ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.02602364929	0.7475634035			
+Project2	279	ENCFF001UKP	PML ChIP-seq protocol v042211.1 on human K562		TF binding sites	0.02601421473	0.7469797897			
+Project2	280	ENCFF001UQB	RXRA ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.02597647651	0.7446453344			
+Project2	281	GSM1208646_batch1_chrom1_LoVo_MED12_PassedQC_peaks_hg19	MED12 ChIP-seq in LoVo		TF binding sites	0.02596075225	0.7436726447			
+Project2	282	ENCFF001VGH	RELA ChIP-seq on human GM18951 treated with TNFa		TF binding sites	0.02583810303	0.7360856651			
+Project2	283	GSM1208670_batch1_chrom1_LoVo_RFX1_PassedQC_peaks_hg19	RFX1 ChIP-seq in LoVo		TF binding sites	0.02575633688	0.7310276787			
+Project2	284	ENCFF001TXR	NFIC ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.02572174351	0.7288877614			
+Project2	285	ENCFF001TXP	NFATC1 ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.02567771558	0.7261642303			
+Project2	286	ENCFF001TVQ	TAF1 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.02566199132	0.7251915406			
+Project2	287	ENCFF001VIW	NFYA ChIP-seq on human HeLa-S3		TF binding sites	0.02562739795	0.7230516233			
+Project2	288	GSM1208626_batch1_chrom1_LoVo_GMEB2_PassedQC_peaks_hg19	GMEB2 ChIP-seq in LoVo		TF binding sites	0.02557079062	0.7195499404			
+Project2	289	ENCFF001UCM	SP2 ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.0255393421	0.717604561			
+Project2	290	ENCFF001VKT	POLR2A ChIP-seq on human HepG2		TF binding sites	0.02539467891	0.7086558158			
+Project2	291	ENCFF001VIX	NFYB ChIP-seq on human HeLa-S3		TF binding sites	0.02515881502	0.6940654704			
+Project2	292	ENCFF001TUJ	CREB1 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.02498899302	0.6835604218			
+Project2	293	ENCFF001ULH	SP2 ChIP-seq protocol v041610.2 on human K562		TF binding sites	0.02489464746	0.6777242836			
+Project2	294	ENCFF001VEG	ELK1 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0.02471224605	0.6664410832			
+Project2	295	ENCFF001VGA	POLR2A ChIP-seq on human GM12892		TF binding sites	0.0247028115	0.6658574694			
+Project2	296	ENCFF001TXN	MTA3 ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.02464620416	0.6623557865			
+Project2	297	ENCFF001TYX	SIX5 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.02464305931	0.6621612485			
+Project2	298	ENCFF001UQF	TAF1 ChIP-seq protocol v041610.1 on human SK-N-SH		TF binding sites	0.02438203661	0.6460145996			
+Project2	299	ENCFF001VRF	TRIM28 ChIP-seq on human U2OS		TF binding sites	0.02429712561	0.6407620753			
+Project2	300	ENCFF001TWB	ATF2 ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.02422479401	0.6362877027			
+Project2	301	GSM1208642_batch1_chrom1_LoVo_KLF5_PassedQC_peaks_hg19	KLF5 ChIP-seq in LoVo		TF binding sites	0.02417447638	0.6331750957			
+Project2	302	GSM1208788_batch2_chrom1_LoVo_RARG_PassedQC_peaks_hg19	RARG ChIP-seq in LoVo		TF binding sites	0.02405182716	0.6255881161			
+Project2	303	ENCFF001TYB	PAX5 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.02402666834	0.6240318126			
+Project2	304	ENCFF001UFC	TAF1 ChIP-seq protocol PCR1x on human HeLa-S3		TF binding sites	0.02397949557	0.6211137435			
+Project2	305	ENCFF001VGC	POLR2A ChIP-seq on human GM15510		TF binding sites	0.02389143971	0.6156666812			
+Project2	306	ENCFF001TWC	ATF2 ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.02388515001	0.6152776054			
+Project2	307	ENCFF001VNZ	NFYB ChIP-seq on human K562		TF binding sites	0.02387571545	0.6146939915			
+Project2	308	ENCFF001UJI	CREB1 ChIP-seq protocol v042211.1 on human K562		TF binding sites	0.02386313605	0.6139158398			
+Project2	309	GSM1208673_batch1_chrom1_LoVo_RXRA_PassedQC_peaks_hg19	RXRA ChIP-seq in LoVo		TF binding sites	0.02385999119	0.6137213019			
+Project2	310	ENCFF001UKZ	SIN3A ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.02384741179	0.6129431501			
+Project2	311	ENCFF001TSW	JUND ChIP-seq (protocol v041610.2) on A549 treated with ethanol at 0.02%		TF binding sites	0.02380967356	0.6106086948			
+Project2	312	ENCFF001TYD	PBX3 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.02374363167	0.6065233981			
+Project2	313	ENCFF001VPX	E2F4 ChIP-seq on human MCF10A-Er-Src treated with 4-hydroxy-tamoxifen at 1uM for 36 hours		TF binding sites	0.02366186553	0.6014654117			
+Project2	314	GSM1208635_batch1_chrom1_LoVo_HOXA7_PassedQC_peaks_hg19	HOXA7 ChIP-seq in LoVo		TF binding sites	0.02362098245	0.5989364185			
+Project2	315	ENCFF001TVW	USF1 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.02360840304	0.5981582668			
+Project2	316	ENCFF001TST	NR3C1 ChIP-seq (protocol PCR2x) on A549 treated with dexamethasone at 100nM		TF binding sites	0.02358953393	0.5969910391			
+Project2	317	ENCFF001VMH	FOS ChIP-seq on human K562		TF binding sites	0.02334738034	0.5820116179			
+Project2	318	ENCFF001TZL	TCF3 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.02319642745	0.5726737968			
+Project2	319	ENCFF001TWX	ELF1 ChIP-seq protocol v041610.1 on human GM12878		TF binding sites	0.0230297503	0.5623632861			
+Project2	320	ENCFF001UAS	ATF2 ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.02299515693	0.5602233688			
+Project2	321	ENCFF001SZP	ChIP-seq on human K562 HDAC1		TF binding sites	0.02288508711	0.5534145409			
+Project2	322	ENCFF001UQY	USF1 ChIP-seq (protocol v041610.2) on SK-N-SH treated with 6uM retinoic acid for 48 hours		TF binding sites	0.02285678345	0.5516636995			
+Project2	323	ENCFF001UQC	RXRA ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.02284734889	0.5510800857			
+Project2	324	ENCFF001VNM	IRF1 ChIP-seq on human K562 treated with IFNg30 produced by the Snyder lab		TF binding sites	0.02259890559	0.5357115885			
+Project2	325	ENCFF001TXQ	NFIC ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.02256116737	0.5333771333			
+Project2	326	ENCFF001TTA	REST ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.0225328637	0.5316262918			
+Project2	327	ENCFF001VKS	POLR2A ChIP-seq on human HepG2 treated with forskolin		TF binding sites	0.02251399459	0.5304590642			
+Project2	328	ENCFF001TWU	EGR1 ChIP-seq protocol v041610.1 on human GM12878		TF binding sites	0.02247940122	0.5283191469			
+Project2	329	ENCFF001UDJ	TAF1 ChIP-seq protocol v042211.1 on human H1-neurons		TF binding sites	0.02243851815	0.5257901537			
+Project2	330	ENCFF001TWV	EGR1 ChIP-seq protocol v041610.1 on human GM12878		TF binding sites	0.02241650418	0.5244283881			
+Project2	331	ENCFF001TTP	SP1 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.02230643437	0.5176195603			
+Project2	332	ENCFF001VFL	STAT1 ChIP-seq on human GM12878		TF binding sites	0.02213975722	0.5073090495			
+Project2	333	ENCFF001XQM	CTCF ChIP-seq on human HCT-116		TF binding sites	0.02166173973	0.4777392829			
+Project2	334	ENCFF001TWK	BCL3 ChIP-seq protocol v041610.1 on human GM12878		TF binding sites	0.02162085666	0.4752102897			
+Project2	335	ENCFF001XPQ	CTCF ChIP-seq on human HAc		TF binding sites	0.02160198755	0.474043062			
+Project2	336	ENCFF001XLM	CTCF ChIP-seq on human A549		TF binding sites	0.02146046921	0.4652888548			
+Project2	337	ENCFF001SUR	ChIP-seq on human H1-hESC CHD1		TF binding sites	0.02140386188	0.4617871719			
+Project2	338	ENCFF001VGN	BACH1 ChIP-seq on human H1-hESC produced by the Snyder lab		TF binding sites	0.02137870306	0.4602308684			
+Project2	339	ENCFF001VPZ	POLR2A ChIP-seq on human MCF10A-Er-Src treated with 4-hydroxy-tamoxifen at 1uM for 36 hours		TF binding sites	0.02129379206	0.4549783441			
+Project2	340	ENCFF001VGK	POLR2A ChIP-seq on human GM19099		TF binding sites	0.02123089502	0.4510875853			
+Project2	341	ENCFF001TZK	TCF3 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.02119944651	0.4491422059			
+Project2	342	ENCFF001XSQ	CTCF ChIP-seq on human HVMF		TF binding sites	0.02116485314	0.4470022886			
+Project2	343	ENCFF001TXO	NFATC1 ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.02097616202	0.4353300123			
+Project2	344	ENCFF001TWA	ZBTB7A ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.02092269954	0.4320228673			
+Project2	345	ENCFF001ULI	SP2 ChIP-seq protocol v041610.2 on human K562		TF binding sites	0.02085036795	0.4275484947			
+Project2	346	ENCFF001XUA	CTCF ChIP-seq on human WERI-Rb-1		TF binding sites	0.02076545695	0.4222959704			
+Project2	347	ENCFF001VFW	ZNF384 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0.02073400843	0.420350591			
+Project2	348	ENCFF001VLS	MXI1 ChIP-seq on human IMR90 produced by the Snyder lab		TF binding sites	0.02063966287	0.4145144529			
+Project2	349	ENCFF001VHN	POLR2A ChIP-seq on human HEK293		TF binding sites	0.02063651802	0.4143199149			
+Project2	350	ENCFF001XOJ	CTCF ChIP-seq on human GM12870		TF binding sites	0.02062393861	0.4135417632			
+Project2	351	GSM1208729_batch2_chrom1_LoVo_E2F3_PassedQC_peaks_hg19	E2F3 ChIP-seq in LoVo		TF binding sites	0.02055160702	0.4090673906			
+Project2	352	ENCFF001XNU	CTCF ChIP-seq on human GM12866		TF binding sites	0.02054217246	0.4084837768			
+Project2	353	GSM1208644_batch1_chrom1_LoVo_LHX2_PassedQC_peaks_hg19	LHX2 ChIP-seq in LoVo		TF binding sites	0.0205264482	0.4075110871			
+Project2	354	ENCFF001UGO	MBD4 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.02048870998	0.4051766318			
+Project2	355	ENCFF001UST	POLR2A ChIP-seq on human H1-hESC		TF binding sites	0.02039750928	0.3995350316			
+Project2	356	ENCFF001VOS	STAT1 ChIP-seq on human K562 treated with IFNa for 30 minutes		TF binding sites	0.02037235046	0.3979787281			
+Project2	357	ENCFF001XPH	CTCF ChIP-seq on human GM12875		TF binding sites	0.02033146739	0.3954497349			
+Project2	358	ENCFF001XPT	CTCF ChIP-seq on human HA-sp		TF binding sites	0.02013648657	0.3833883827			
+Project2	359	ENCFF001XPY	CTCF ChIP-seq on human HBMEC		TF binding sites	0.01999182339	0.3744396375			
+Project2	360	ENCFF001VFZ	RELA ChIP-seq on human GM12892 treated with TNFa		TF binding sites	0.01974023523	0.3588766025			
+Project2	361	ENCFF001ULO	TAF1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.01962073086	0.3514841608			
+Project2	362	ENCFF001VPH	USF2 ChIP-seq on human K562		TF binding sites	0.01957984779	0.3489551676			
+Project2	363	ENCFF001UMH	ZBTB7A ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.01954210957	0.3466207123			
+Project2	364	ENCFF001XNX	CTCF ChIP-seq on human GM12867		TF binding sites	0.01950122649	0.3440917191			
+Project2	365	ENCFF001ULB	SIX5 ChIP-seq protocol PCR1x on human K562		TF binding sites	0.01927794201	0.3302795255			
+Project2	366	GSM1208768_batch2_chrom1_LoVo_MAZ_PassedQC_peaks_hg19	MAZ ChIP-seq in LoVo		TF binding sites	0.01914271338	0.3219143942			
+Project2	367	ENCFF001UMB	YY1 ChIP-seq protocol v041610.2 on human K562		TF binding sites	0.01912384427	0.3207471665			
+Project2	368	ENCFF001VNY	NFYA ChIP-seq on human K562		TF binding sites	0.0190955406	0.3189963251			
+Project2	369	GSM1208610_batch1_chrom1_LoVo_ELF1_PassedQC_peaks_hg19	ELF1 ChIP-seq in LoVo		TF binding sites	0.01909239575	0.3188017871			
+Project2	370	ENCFF001UKM	NR2F2 ChIP-seq protocol v042211.1 on human K562		TF binding sites	0.01907038179	0.3174400216			
+Project2	371	ENCFF001TTS	TAF1 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.01902006415	0.3143274146			
+Project2	372	ENCFF001VHO	TCF7L2 ChIP-seq on human HEK293		TF binding sites	0.01894773256	0.309853042			
+Project2	373	GSM1208706_batch1_chrom1_LoVo_ZNF706_PassedQC_peaks_hg19	ZNF706 ChIP-seq in LoVo		TF binding sites	0.01893829801	0.3092694282			
+Project2	374	ENCFF001VKG	HSF1 ChIP-seq on human HepG2 treated with forskolin		TF binding sites	0.01891313919	0.3077131247			
+Project2	375	ENCFF001TYV	RXRA ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.01888798038	0.3061568211			
+Project2	376	ENCFF001XOC	CTCF ChIP-seq on human GM12868		TF binding sites	0.01887225612	0.3051841315			
+Project2	377	ENCFF001SZX	ChIP-seq on human K562 PHF8		TF binding sites	0.01885967671	0.3044059797			
+Project2	378	ENCFF001UOJ	FOXP2 ChIP-seq protocol PCR2x on human PFSK-1		TF binding sites	0.01880935908	0.3012933727			
+Project2	379	ENCFF001VNB	ELK1 ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0.01880621423	0.3010988347			
+Project2	380	GSM1208665_batch1_chrom1_LoVo_NR2F2_PassedQC_peaks_hg19	NR2F2 ChIP-seq in LoVo		TF binding sites	0.01879992452	0.3007097589			
+Project2	381	ENCFF001TWJ	BCL3 ChIP-seq protocol v041610.1 on human GM12878		TF binding sites	0.01874017234	0.297013538			
+Project2	382	GSM1208721_batch2_chrom1_LoVo_CREB3L4_PassedQC_peaks_hg19	CREB3L4 ChIP-seq in LoVo		TF binding sites	0.01870872382	0.2950681587			
+Project2	383	ENCFF001TVV	USF1 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01868042015	0.2933173172			
+Project2	384	ENCFF001UGS	NFIC ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.01866469589	0.2923446275			
+Project2	385	GSM1208703_batch1_chrom1_LoVo_ZNF236_PassedQC_peaks_hg19	ZNF236 ChIP-seq in LoVo		TF binding sites	0.01865840619	0.2919555516			
+Project2	386	ENCFF001UDI	TAF1 ChIP-seq protocol v042211.1 on human H1-neurons		TF binding sites	0.01863953708	0.290788324			
+Project2	387	GSM1208714_batch2_chrom1_LoVo_BARHL1_PassedQC_peaks_hg19	BARHL1 ChIP-seq in LoVo		TF binding sites	0.01863010252	0.2902047102			
+Project2	388	ENCFF001UQE	SIN3A ChIP-seq protocol v041610.1 on human SK-N-SH		TF binding sites	0.01862066797	0.2896210964			
+Project2	389	ENCFF001UHL	SIN3A ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0.01860808856	0.2888429446			
+Project2	390	ENCFF001TWQ	CREB1 ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.01857035034	0.2865084894			
+Project2	391	ENCFF001VQD	STAT3 ChIP-seq on human MCF10A-Er-Src treated with 4-hydroxy-tamoxifen at 1uM for 12 hours		TF binding sites	0.01856720548	0.2863139514			
+Project2	392	ENCFF001XQL	CTCF ChIP-seq on human HCT-116		TF binding sites	0.01846657022	0.2800887374			
+Project2	393	ENCFF001VJO	NR2C2 ChIP-seq on human HeLa-S3		TF binding sites	0.01845399082	0.2793105856			
+Project2	394	ENCFF001VIT	MAX ChIP-seq on human HeLa-S3		TF binding sites	0.01844770111	0.2789215098			
+Project2	395	ENCFF001VIR	MAFK ChIP-seq on human HeLa-S3 produced by the Snyder lab		TF binding sites	0.01841310774	0.2767815924			
+Project2	396	ENCFF001XNI	CTCF ChIP-seq on human GM12864		TF binding sites	0.01840367319	0.2761979786			
+Project2	397	ENCFF001ULS	THAP1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.0183376313	0.2721126819			
+Project2	398	ENCFF001SZU	ChIP-seq on human K562 WHSC1		TF binding sites	0.01833448645	0.271918144			
+Project2	399	ENCFF001UCF	RXRA ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.01833448645	0.271918144			
+Project2	400	GSM1208674_batch1_chrom1_LoVo_SMAD2_PassedQC_peaks_hg19	SMAD2 ChIP-seq in LoVo		TF binding sites	0.01831876219	0.2709454543			
+Project2	401	ENCFF001UJD	CBX3 ChIP-seq protocol v042211.1 on human K562		TF binding sites	0.01822756148	0.2653038541			
+Project2	402	ENCFF001VPE	NR2C2 ChIP-seq on human K562		TF binding sites	0.01822756148	0.2653038541			
+Project2	403	ENCFF001VIG	E2F4 ChIP-seq on human HeLa-S3		TF binding sites	0.01822127178	0.2649147782			
+Project2	404	ENCFF001TAE	ChIP-seq on human K562 SIRT6		TF binding sites	0.01821498207	0.2645257023			
+Project2	405	ENCFF001UOI	SIN3A ChIP-seq protocol v041610.1 on human PANC-1		TF binding sites	0.01821183722	0.2643311644			
+Project2	406	GSM1208655_batch1_chrom1_LoVo_MZF1_PassedQC_peaks_hg19	MZF1 ChIP-seq in LoVo		TF binding sites	0.01820240267	0.2637475506			
+Project2	407	ENCFF001UCD	RXRA ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.01809233285	0.2569387227			
+Project2	408	ENCFF001TXX	EP300 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.01802629096	0.252853426			
+Project2	409	ENCFF001TZI	TCF12 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.01800113215	0.2512971225			
+Project2	410	ENCFF001VKM	MAX ChIP-seq on human HepG2 produced by the Snyder lab		TF binding sites	0.01796024907	0.2487681293			
+Project2	411	ENCFF001TXW	EP300 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.01795395937	0.2483790534			
+Project2	412	ENCFF001XOZ	CTCF ChIP-seq on human GM12873		TF binding sites	0.01788477263	0.2440992188			
+Project2	413	ENCFF001TZJ	TCF12 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.01787533807	0.243515605			
+Project2	414	ENCFF001TZD	SRF ChIP-seq protocol v041610.1 on human GM12878		TF binding sites	0.01787219322	0.243321067			
+Project2	415	ENCFF001VFG	SIN3A ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0.0178470344	0.2417647635			
+Project2	416	ENCFF001VLZ	BACH1 ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0.01779671677	0.2386521565			
+Project2	417	ENCFF001UJC	CBX3 ChIP-seq protocol v042211.1 on human K562		TF binding sites	0.01777470281	0.2372903909			
+Project2	418	ENCFF001VHK	TCF7L2 ChIP-seq on human HCT-116		TF binding sites	0.01770866092	0.2332050942			
+Project2	419	ENCFF001UHZ	USF1 ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0.01770551607	0.2330105563			
+Project2	420	ENCFF001TVE	NFIC ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01769608151	0.2324269425			
+Project2	421	ENCFF001XSM	CTCF ChIP-seq on human HUVEC		TF binding sites	0.0176772124	0.2312597148			
+Project2	422	ENCFF001XQT	CTCF ChIP-seq on human HEK293		TF binding sites	0.01766777785	0.230676101			
+Project2	423	ENCFF001UQL	USF1 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.01760173596	0.2265908043			
+Project2	424	ENCFF001VFV	ZZZ3 ChIP-seq on human GM12878		TF binding sites	0.01760173596	0.2265908043			
+Project2	425	ENCFF001TTG	PLOR2A ChIP-seq (protocol PCR2x) on A549 treated with dexamethasone at 100pM		TF binding sites	0.01751053525	0.2209492041			
+Project2	426	ENCFF001TVR	TCF12 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01746650733	0.218225673			
+Project2	427	ENCFF001UAT	ATF2 ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.01746650733	0.218225673			
+Project2	428	ENCFF001VMT	MYC ChIP-seq on human K562 treated with IFNg for 6 hours		TF binding sites	0.0174161897	0.2151130659			
+Project2	429	ENCFF001VDN	CEBPB ChIP-seq on human A549 produced by the Snyder lab		TF binding sites	0.01741304485	0.214918528			
+Project2	430	ENCFF001TUD	YY1 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.01736587207	0.2120004589			
+Project2	431	ENCFF001VPF	UBTF ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0.01732813384	0.2096660037			
+Project2	432	ENCFF001TWD	ATF3 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.01729039562	0.2073315484			
+Project2	433	ENCFF001UQP	ZBTB33 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.01722435373	0.2032462517			
+Project2	434	ENCFF001VJZ	CEBPB ChIP-seq on human HepG2		TF binding sites	0.01722120888	0.2030517138			
+Project2	435	ENCFF001XPI	CTCF ChIP-seq on human GM12875		TF binding sites	0.01721806403	0.2028571758			
+Project2	436	ENCFF001VMY	E2F4 ChIP-seq on human K562		TF binding sites	0.01709855966	0.1954647342			
+Project2	437	ENCFF001UHO	SP2 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.01702622806	0.1909903616			
+Project2	438	ENCFF001TWO	CEBPB ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.01696647588	0.1872941407			
+Project2	439	ENCFF001UMY	HDAC2 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.0169255928	0.1847651475			
+Project2	440	ENCFF001UDA	USF1 ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.01687527517	0.1816525405			
+Project2	441	ENCFF001TSR	NR3C1 ChIP-seq (protocol PCR1x) on A549 treated with dexamethasone at 5nM		TF binding sites	0.01686584062	0.1810689267			
+Project2	442	GSM1208609_batch1_chrom1_LoVo_EHF_PassedQC_peaks_hg19	EHF ChIP-seq in LoVo		TF binding sites	0.01684697151	0.1799016991			
+Project2	443	ENCFF001VOV	STAT1 ChIP-seq on human K562 treated with IFNg30		TF binding sites	0.01680923329	0.1775672438			
+Project2	444	ENCFF001VLT	POLR2A ChIP-seq on human IMR90 produced by the Snyder lab		TF binding sites	0.01680294358	0.1771781679			
+Project2	445	ENCFF001VPC	TBP ChIP-seq on human K562		TF binding sites	0.01678721932	0.1762054782			
+Project2	446	ENCFF001UBF	EGR1 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.01675262595	0.1740655609			
+Project2	447	GSM1208737_batch2_chrom1_LoVo_ESR1_PassedQC_peaks_hg19	ESR1 ChIP-seq in LoVo		TF binding sites	0.0167431914	0.1734819471			
+Project2	448	GSM1208807_batch2_chrom1_LoVo_VEZF1_PassedQC_peaks_hg19	VEZF1 ChIP-seq in LoVo		TF binding sites	0.01672432228	0.1723147195			
+Project2	449	ENCFF001VOW	STAT1 ChIP-seq on human K562 treated with IFNg6h		TF binding sites	0.01671174288	0.1715365677			
+Project2	450	ENCFF001VKU	POLR2A ChIP-seq on human HepG2 treated with pravastatin		TF binding sites	0.01670859803	0.1713420298			
+Project2	451	ENCFF001XOB	CTCF ChIP-seq on human GM12868		TF binding sites	0.0166708598	0.1690075745			
+Project2	452	ENCFF001UTV	POLR2A ChIP-seq on human MCF-7 treated with serum starved media		TF binding sites	0.0166645701	0.1686184986			
+Project2	453	ENCFF001UDF	REST ChIP-seq protocol v042211.1 on human H1-neurons		TF binding sites	0.01666142525	0.1684239607			
+Project2	454	GSM1208629_batch1_chrom1_LoVo_HES2_PassedQC_peaks_hg19	HES2 ChIP-seq in LoVo		TF binding sites	0.01665513554	0.1680348848			
+Project2	455	ENCFF001XPL	CTCF ChIP-seq on human GM12878		TF binding sites	0.01662997673	0.1664785813			
+Project2	456	ENCFF001UHT	TAF1 ChIP-seq protocol PCR2x on human HepG2		TF binding sites	0.01660481791	0.1649222778			
+Project2	457	GSM1208615_batch1_chrom1_LoVo_ESRRA_PassedQC_peaks_hg19	ESRRA ChIP-seq in LoVo		TF binding sites	0.01660167306	0.1647277399			
+Project2	458	ENCFF001UFF	ATF3 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.01654192088	0.161031519			
+Project2	459	ENCFF001UCN	SP2 ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.01653877602	0.1608369811			
+Project2	460	ENCFF001VOQ	SETDB1 ChIP-seq on human K562		TF binding sites	0.01651676206	0.1594752155			
+Project2	461	ENCFF001VPU	FOS ChIP-seq on human MCF10A-Er-Src treated with 4-hydroxy-tamoxifen at 1uM for 36 hours		TF binding sites	0.01650418265	0.1586970638			
+Project2	462	ENCFF001VHG	USF2 ChIP-seq on human H1-hESC		TF binding sites	0.01645700987	0.1557789947			
+Project2	463	GSM1208684_batch1_chrom1_LoVo_SP3_PassedQC_peaks_hg19	SP3 ChIP-seq in LoVo		TF binding sites	0.01643499591	0.1544172291			
+Project2	464	ENCFF001VLE	NR2C2 ChIP-seq on human HepG2		TF binding sites	0.01643185106	0.1542226912			
+Project2	465	ENCFF001SZY	ChIP-seq on human K562 KDM5B		TF binding sites	0.01637838858	0.1509155462			
+Project2	466	ENCFF001TVZ	ZBTB7A ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.0163249261	0.1476084013			
+Project2	467	ENCFF001UDE	REST ChIP-seq protocol v042211.1 on human H1-neurons		TF binding sites	0.01630605698	0.1464411737			
+Project2	468	ENCFF001XOG	CTCF ChIP-seq on human GM12869		TF binding sites	0.01627460847	0.1444957943			
+Project2	469	ENCFF001UOV	FOXP2 ChIP-seq protocol PCR2x on human SK-N-MC		TF binding sites	0.01627146361	0.1443012563			
+Project2	470	ENCFF001UHY	USF1 ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0.01626831876	0.1441067184			
+Project2	471	ENCFF001UAY	CREB1 ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.01623687024	0.142161339			
+Project2	472	ENCFF001TWF	BATF ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.01619913202	0.1398268838			
+Project2	473	ENCFF001UTU	POLR2A ChIP-seq on human MCF-7 treated with serum stimulated media		TF binding sites	0.01612051072	0.1349634353			
+Project2	474	ENCFF001VPP	ZNF384 ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0.01610478646	0.1339907456			
+Project2	475	ENCFF001UHQ	SRF ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.01604503428	0.1302945248			
+Project2	476	ENCFF001VJJ	STAT3 ChIP-seq on human HeLa-S3		TF binding sites	0.01603874458	0.1299054489			
+Project2	477	ENCFF001UFE	ATF3 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.01601987546	0.1287382213			
+Project2	478	ENCFF001UDB	USF1 ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.01598213724	0.126403766			
+Project2	479	ENCFF001SZT	ChIP-seq on human K562 NCOR1		TF binding sites	0.01595068872	0.1244583866			
+Project2	480	ENCFF001XON	CTCF ChIP-seq on human GM12871		TF binding sites	0.01591609535	0.1223184693			
+Project2	481	ENCFF001UEV	ZBTB33 ChIP-seq protocol v041610.1 on human HCT-116		TF binding sites	0.01590980565	0.1219293934			
+Project2	482	GSM1208641_batch1_chrom1_LoVo_KLF3_PassedQC_peaks_hg19	KLF3 ChIP-seq in LoVo		TF binding sites	0.01588150198	0.120178552			
+Project2	483	ENCFF001XSE	CTCF ChIP-seq on human HRE		TF binding sites	0.01586892257	0.1194004002			
+Project2	484	ENCFF001ULP	TAF7 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.01584690861	0.1180386346			
+Project2	485	ENCFF001VJF	POLR3A ChIP-seq on human HeLa-S3		TF binding sites	0.01579659098	0.1149260276			
+Project2	486	ENCFF001TTQ	SP1 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.01579344613	0.1147314897			
+Project2	487	ENCFF001TZS	ZEB1 ChIP-seq protocol v041610.2 on human GM12878		TF binding sites	0.0157431285	0.1116188827			
+Project2	488	ENCFF001SYY	ChIP-seq on human K562 CHD4		TF binding sites	0.01569595572	0.1087008136			
+Project2	489	ENCFF001VJI	STAT1 ChIP-seq on human HeLa-S3 treated with IFNg for 30 minutes		TF binding sites	0.01568966602	0.1083117377			
+Project2	490	GSM1208599_batch1_chrom1_LoVo_CEBPG_PassedQC_peaks_hg19	CEBPG ChIP-seq in LoVo		TF binding sites	0.01568966602	0.1083117377			
+Project2	491	GSM1208705_batch1_chrom1_LoVo_ZNF407_PassedQC_peaks_hg19	ZNF407 ChIP-seq in LoVo		TF binding sites	0.01562991383	0.1046155169			
+Project2	492	GSM1208607_batch1_chrom1_LoVo_E2F4_PassedQC_peaks_hg19	E2F4 ChIP-seq in LoVo		TF binding sites	0.01559217561	0.1022810616			
+Project2	493	ENCFF001XTS	CTCF ChIP-seq on human SAEC		TF binding sites	0.01558903076	0.1020865237			
+Project2	494	ENCFF001XTZ	CTCF ChIP-seq on human WERI-Rb-1		TF binding sites	0.01558903076	0.1020865237			
+Project2	495	ENCFF001TZC	SRF ChIP-seq protocol v041610.1 on human GM12878		TF binding sites	0.0155795962	0.1015029099			
+Project2	496	ENCFF001TRS	CTCF ChIP-seq (protocol PCR2x) on A549 treated with dexamethasone at 100nM		TF binding sites	0.01555443739	0.09994660637			
+Project2	497	ENCFF001VHF	TBP ChIP-seq on human H1-hESC		TF binding sites	0.01553871313	0.09897391668			
+Project2	498	ENCFF001TUU	ESR1 ChIP-seq protocol v041610.2 on human ECC-1 treated with 100 nM Genistein. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01553242342	0.0985848408			
+Project2	499	ENCFF001XTO	CTCF ChIP-seq on human RPTEC		TF binding sites	0.0155009749	0.09663946142			
+Project2	500	ENCFF001TUR	ESR1 ChIP-seq (protocol v041610.2) on ECC-1 treated with estradiol at 10nM. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01549783005	0.09644492348			
+Project2	501	ENCFF001VFK	SREBF2 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0.01549783005	0.09644492348			
+Project2	502	GSM1208611_batch1_chrom1_LoVo_USF2_PassedQC_peaks_hg19	USF2 ChIP-seq in LoVo		TF binding sites	0.01547267124	0.09488861997			
+Project2	503	ENCFF001XQI	CTCF ChIP-seq on human HCPEpiC		TF binding sites	0.01543807787	0.09274870265			
+Project2	504	MITF_501Mel_Davidson	MITF ChIP-seq in 501Mel		TF binding sites	0.01539090509	0.08983063357			
+Project2	505	GSM1208709_batch2_chrom1_LoVo_AEBP2_PassedQC_peaks_hg19	AEBP2 ChIP-seq in LoVo		TF binding sites	0.0153248632	0.08574533686			
+Project2	506	ENCFF001XSL	CTCF ChIP-seq on human HUVEC		TF binding sites	0.01526825587	0.08224365397			
+Project2	507	ENCFF001UHX	TEAD4 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.01524938675	0.08107642634			
+Project2	508	ENCFF001VQU	POLR2A ChIP-seq on human Raji		TF binding sites	0.01521479338	0.07893650902			
+Project2	509	ENCFF001VNV	MXI1 ChIP-seq on human K562		TF binding sites	0.01520850368	0.07854743314			
+Project2	510	ENCFF001UBU	EP300 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.01519277942	0.07757474345			
+Project2	511	ENCFF001UNQ	SIN3A ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.0151613309	0.07562936406			
+Project2	512	ENCFF001TSU	NR3C1 ChIP-seq (protocol PCR2x) on A549 treated with dexamethasone at 100nM		TF binding sites	0.01512673753	0.07348944674			
+Project2	513	ENCFF001UHS	TAF1 ChIP-seq protocol PCR2x on human HepG2		TF binding sites	0.01510786842	0.07232221911			
+Project2	514	ENCFF001TWG	BATF ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.01509843386	0.07173860529			
+Project2	515	GSM1208704_batch1_chrom1_LoVo_ZNF250_PassedQC_peaks_hg19	ZNF250 ChIP-seq in LoVo		TF binding sites	0.0150764199	0.07037683973			
+Project2	516	ENCFF001TUQ	ESR1 ChIP-seq (protocol v041610.2) on Ishikawa cells treated with bisphenol A 100nM.  Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01507327505	0.07018230179			
+Project2	517	ENCFF001UFN	CREB1 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.01506069564	0.06940415003			
+Project2	518	ENCFF001XNY	CTCF ChIP-seq on human GM12867		TF binding sites	0.01499465375	0.06531885332			
+Project2	519	ENCFF001TYJ	POLR2A ChIP-seq protocol PCR2x on human GM12878		TF binding sites	0.01496320523	0.06337347394			
+Project2	520	ENCFF001UHE	POLR2A ChIP-seq protocol PCR2x on human HepG2		TF binding sites	0.01495062583	0.06259532219			
+Project2	521	ENCFF001TSS	NR3C1 ChIP-seq (protocol PCR1x) on A549 treated with dexamethasone at 5nM		TF binding sites	0.01490345305	0.05967725311			
+Project2	522	ENCFF001VHD	SIN3A ChIP-seq on human H1-hESC produced by the Snyder lab		TF binding sites	0.01484684571	0.05617557022			
+Project2	523	ENCFF001VLL	POLR2A ChIP-seq on human HUVEC		TF binding sites	0.01483112145	0.05520288052			
+Project2	524	ENCFF001UKW	SPI1 ChIP-seq protocol PCR1x on human K562		TF binding sites	0.0148279766	0.05500834259			
+Project2	525	ENCFF001VGL	RELA ChIP-seq on human GM19193 treated with TNFa		TF binding sites	0.01480910749	0.05384111496			
+Project2	526	ENCFF001UJS	EGR1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.01480596264	0.05364657702			
+Project2	527	ENCFF001TUT	ESR1 ChIP-seq protocol v041610.2 on human ECC-1 treated with 100 nM Genistein. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01478080382	0.05209027351			
+Project2	528	ENCFF001UCQ	SRF ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.01470218253	0.04722682505			
+Project2	529	ENCFF001UOH	SIN3A ChIP-seq protocol v041610.1 on human PANC-1		TF binding sites	0.0146581546	0.04450329391			
+Project2	530	ENCFF001ULT	TEAD4 ChIP-seq protocol v042211.1 on human K562		TF binding sites	0.0146518649	0.04411421803			
+Project2	531	ENCFF001UNL	PML ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.01464872005	0.04391968009			
+Project2	532	ENCFF001XTQ	CTCF ChIP-seq on human SAEC		TF binding sites	0.01457009875	0.03905623163			
+Project2	533	ENCFF001VIN	HCFC1 ChIP-seq on human HeLa-S3 produced by the Snyder lab		TF binding sites	0.01450405686	0.03497093492			
+Project2	534	ENCFF001TYC	PBX3 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.01435939367	0.02602218976			
+Project2	535	ENCFF001UAZ	CREB1 ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0.01432794515	0.02407681037			
+Project2	536	ENCFF001UIU	POLR2A ChIP-seq protocol PCR1x on human HUVEC		TF binding sites	0.01432794515	0.02407681037			
+Project2	537	ENCFF001TUS	ESR1 ChIP-seq (protocol v041610.2) on ECC-1 treated with estradiol at 10nM. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01427762752	0.02096420336			
+Project2	538	ENCFF001UCS	TAF1 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.01418957167	0.01551714108			
+Project2	539	ENCFF001VEU	NFYA ChIP-seq on human GM12878		TF binding sites	0.01418328197	0.0151280652			
+Project2	540	ENCFF001UTT	POLR2A ChIP-seq on human MCF-7		TF binding sites	0.01416441286	0.01396083757			
+Project2	541	ENCFF001TSP	NR3C1 ChIP-seq (protocol PCR1x) on A549 treated with dexamethasone at 50nM		TF binding sites	0.01413296434	0.01201545819			
+Project2	542	ENCFF001UFA	POLR2A ChIP-seq protocol PCR1x on human HeLa-S3		TF binding sites	0.01409208126	0.009486464986			
+Project2	543	GSM1208653_batch1_chrom1_LoVo_MYBL2_PassedQC_peaks_hg19	MYBL2 ChIP-seq in LoVo		TF binding sites	0.01409208126	0.009486464986			
+Project2	544	ENCFF001VFP	NR2C2 ChIP-seq on human GM12878		TF binding sites	0.01408579156	0.009097389109			
+Project2	545	ENCFF001XPE	CTCF ChIP-seq on human GM12874		TF binding sites	0.01407321215	0.008319237355			
+Project2	546	ENCFF001UOW	FOXP2 ChIP-seq protocol PCR2x on human SK-N-MC		TF binding sites	0.01403861878	0.006179320032			
+Project2	547	GSM1208731_batch2_chrom1_LoVo_E2F8_PassedQC_peaks_hg19	E2F8 ChIP-seq in LoVo		TF binding sites	0.01391911441	-0.00121312163			
+Project2	548	ENCFF001VPA	TBL1XR1 ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0.01390339015	-0.002185811322			
+Project2	549	ENCFF001VFS	WRNIP1 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0.0139002453	-0.002380349261			
+Project2	550	ENCFF001VMU	MYC ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0.01389395559	-0.002769425138			
+Project2	551	ENCFF001XTW	CTCF ChIP-seq on human SK-N-SH treated with 6uM retinoic acid for 48 hours		TF binding sites	0.01383420341	-0.006465645968			
+Project2	552	ENCFF001VMS	MYC ChIP-seq on human K562 treated with IFNg30		TF binding sites	0.01383105856	-0.006660183907			
+Project2	553	ENCFF001ULY	USF1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.01377445122	-0.0101618668			
+Project2	554	ENCFF001VKO	MXI1 ChIP-seq on human HepG2		TF binding sites	0.01373985785	-0.01230178412			
+Project2	555	ENCFF001XQP	CTCF ChIP-seq on human HEEpiC		TF binding sites	0.01370840933	-0.01424716351			
+Project2	556	ENCFF001XOY	CTCF ChIP-seq on human GM12873		TF binding sites	0.01369268507	-0.0152198532			
+Project2	557	ENCFF001VEA	CHD1 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0.01368010567	-0.01599800495			
+Project2	558	ENCFF001UFK	CEBPD ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.01364236744	-0.01833246021			
+Project2	559	ENCFF001TVD	NFIC ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01357947041	-0.02222321898			
+Project2	560	ENCFF001TUI	CEBPB ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01355745644	-0.02358498455			
+Project2	561	ENCFF001UTP	CTCF ChIP-seq on human MCF-7		TF binding sites	0.01353229763	-0.02514128806			
+Project2	562	ENCFF001TRU	CTCF ChIP-seq (protocol PCR1x) on A549 treated with ethanol at 0.02%		TF binding sites	0.01352286307	-0.02572490188			
+Project2	563	ENCFF001XOR	CTCF ChIP-seq on human GM12872		TF binding sites	0.01351028367	-0.02650305363			
+Project2	564	ENCFF001VLN	CEBPB ChIP-seq on human IMR90 produced by the Snyder lab		TF binding sites	0.01344424178	-0.03058835034			
+Project2	565	ENCFF001UJM	CTCF ChIP-seq protocol PCR1x on human K562		TF binding sites	0.01343480722	-0.03117196415			
+Project2	566	ENCFF001TZB	SRF ChIP-seq protocol PCR2x on human GM12878		TF binding sites	0.01339392415	-0.03370095735			
+Project2	567	ENCFF001UJR	EGR1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.01332788226	-0.03778625406			
+Project2	568	ENCFF001ULF	SP1 ChIP-seq protocol PCR1x on human K562		TF binding sites	0.01328385433	-0.0405097852			
+Project2	569	ENCFF001SVN	ChIP-seq on human H1-hESC SAP30		TF binding sites	0.01326184037	-0.04187155077			
+Project2	570	ENCFF001ULV	TRIM28 ChIP-seq protocol v042211.1 on human K562		TF binding sites	0.01325869552	-0.04206608871			
+Project2	571	ENCFF001VJR	ZNF143 ChIP-seq on human HeLa-S3		TF binding sites	0.01325240581	-0.04245516458			
+Project2	572	ENCFF001VER	MXI1 ChIP-seq on human GM12878		TF binding sites	0.01323039185	-0.04381693015			
+Project2	573	ENCFF001XRH	CTCF ChIP-seq on human HFF-Myc		TF binding sites	0.01323039185	-0.04381693015			
+Project2	574	ENCFF001TUH	CEBPB ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01319894333	-0.04576230954			
+Project2	575	ENCFF001UGT	NFIC ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.0131486257	-0.04887491655			
+Project2	576	ENCFF001TVS	TCF12 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01312661174	-0.05023668212			
+Project2	577	ENCFF001TVI	EP300 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01311717718	-0.05082029594			
+Project2	578	ENCFF001UHW	TEAD4 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.01307943896	-0.0531547512			
+Project2	579	ENCFF001VMI	CEBPB ChIP-seq on human K562		TF binding sites	0.01300081766	-0.05801819966			
+Project2	580	ENCFF001UAI	PAX5 ChIP-seq protocol v041610.1 on human GM12892		TF binding sites	0.0129850934	-0.05899088935			
+Project2	581	ENCFF001ULN	TAF1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.01295364488	-0.06093626874			
+Project2	582	ENCFF001XNT	CTCF ChIP-seq on human GM12866		TF binding sites	0.01290961696	-0.06365979988			
+Project2	583	ENCFF001ULQ	TAF7 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.0128938927	-0.06463248957			
+Project2	584	ENCFF001TXH	IRF4 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.01284357507	-0.06774509658			
+Project2	585	ENCFF001TZA	SRF ChIP-seq protocol PCR2x on human GM12878		TF binding sites	0.01277124347	-0.07221946917			
+Project2	586	ENCFF001XRK	CTCF ChIP-seq on human HL-60		TF binding sites	0.01276809862	-0.07241400711			
+Project2	587	ENCFF001TWS	EGR1 ChIP-seq protocol PCR2x on human GM12878		TF binding sites	0.01276495377	-0.07260854505			
+Project2	588	ENCFF001VHH	ZNF143 ChIP-seq on human H1-hESC produced by the Snyder lab		TF binding sites	0.01262658029	-0.08116821434			
+Project2	589	ENCFF001UHF	POLR2A ChIP-seq protocol PCR2x on human HepG2		TF binding sites	0.01260456632	-0.08252997991			
+Project2	590	ENCFF001XQD	CTCF ChIP-seq on human HCM		TF binding sites	0.01256997295	-0.08466989723			
+Project2	591	ENCFF001VGU	CTBP2 ChIP-seq on human H1-hESC		TF binding sites	0.01248506195	-0.08992242157			
+Project2	592	ENCFF001UNU	HAIB ChIP TAF1 in MCF-7		TF binding sites	0.01241902006	-0.09400771828			
+Project2	593	ENCFF001VQM	POLR2A ChIP-seq on human NB4		TF binding sites	0.01239386125	-0.09556402178			
+Project2	594	ENCFF001SZR	ChIP-seq on human K562 HDAC6		TF binding sites	0.01237813699	-0.09653671148			
+Project2	595	ENCFF001SVK	ChIP-seq on human H1-hESC EP300		TF binding sites	0.01236870243	-0.09712032529			
+Project2	596	ENCFF001XMU	CTCF ChIP-seq on human BJ		TF binding sites	0.01233725392	-0.09906570468			
+Project2	597	ENCFF001XNJ	CTCF ChIP-seq on human GM12864		TF binding sites	0.01231523995	-0.1004274702			
+Project2	598	ENCFF001UCJ	SIX5 ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.01224605321	-0.1047073049			
+Project2	599	ENCFF001TVJ	POLR2A ChIP-seq protocol v041610.2 on human ECC-1 treated with 0.02% DMSO. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.01218944588	-0.1082089878			
+Project2	600	ENCFF001TWH	BCL11A ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.01218630103	-0.1084035257			
+Project2	601	ENCFF001TSQ	NR3C1 ChIP-seq (protocol PCR1x) on A549 treated with dexamethasone at 50nM		TF binding sites	0.01209824517	-0.113850588			
+Project2	602	ENCFF001TBH	ChIP-seq on human NHDF-Ad EZH2		TF binding sites	0.01208566577	-0.1146287398			
+Project2	603	ENCFF001XLR	CTCF ChIP-seq on human AG04449		TF binding sites	0.01203849299	-0.1175468088			
+Project2	604	ENCFF001XLO	CTCF ChIP-seq on human A549		TF binding sites	0.01200704447	-0.1194921882			
+Project2	605	ENCFF001XMM	CTCF ChIP-seq on human AoAF		TF binding sites	0.01200704447	-0.1194921882			
+Project2	606	ENCFF001UCE	RAD21 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.01198817536	-0.1206594158			
+Project2	607	ENCFF001VGP	CEBPB ChIP-seq on human H1-hESC produced by the Snyder lab		TF binding sites	0.01181206365	-0.1315535404			
+Project2	608	ENCFF001VNT	MAX ChIP-seq on human K562		TF binding sites	0.01178061513	-0.1334989198			
+Project2	609	ENCFF001XRN	CTCF ChIP-seq on human HMEC		TF binding sites	0.01177747028	-0.1336934577			
+Project2	610	ENCFF001VEL	JUND ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0.01170199384	-0.1383623682			
+Project2	611	ENCFF001TAD	ChIP-seq on human K562 SETDB1		TF binding sites	0.01161393798	-0.1438094305			
+Project2	612	ENCFF001UFH	BHLHE40 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.01159506887	-0.1449766582			
+Project2	613	ENCFF001VLC	TBP ChIP-seq on human HepG2		TF binding sites	0.01156991006	-0.1465329617			
+Project2	614	ENCFF001UDO	CEBPB ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0.01156362035	-0.1469220375			
+Project2	615	ENCFF001VGQ	CHD1 ChIP-seq on human H1-hESC produced by the Snyder lab		TF binding sites	0.0115604755	-0.1471165755			
+Project2	616	ENCFF001UEI	SIN3A ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0.01148499906	-0.151785486			
+Project2	617	ENCFF001SVL	ChIP-seq on human H1-hESC PHF8		TF binding sites	0.01138750865	-0.1578161621			
+Project2	618	ENCFF001UCR	SRF ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.01129001824	-0.1638468382			
+Project2	619	ENCFF001VEV	NFYB ChIP-seq on human GM12878		TF binding sites	0.01127429398	-0.1648195279			
+Project2	620	ENCFF001ULJ	SRF ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.0112208315	-0.1681266728			
+Project2	621	ENCFF001VIA	CEBPB ChIP-seq on human HeLa-S3		TF binding sites	0.01120196239	-0.1692939005			
+Project2	622	ENCFF001UGC	HDAC2 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.01117680357	-0.170850204			
+Project2	623	ENCFF001UHG	RAD21 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.01117051387	-0.1712392798			
+Project2	624	ENCFF001VJA	POLR2A ChIP-seq on human HeLa-S3		TF binding sites	0.0111422102	-0.1729901213			
+Project2	625	ENCFF001XNP	CTCF ChIP-seq on human GM12865		TF binding sites	0.01110132713	-0.1755191145			
+Project2	626	ENCFF001UNR	SRF ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.0110572992	-0.1782426456			
+Project2	627	ENCFF001XTJ	CTCF ChIP-seq on human NHLF		TF binding sites	0.01099754702	-0.1819388665			
+Project2	628	ENCFF001ULX	USF1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.01099125731	-0.1823279423			
+Project2	629	ENCFF001UFG	BHLHE40 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.01091263601	-0.1871913908			
+Project2	630	ENCFF001XLV	CTCF ChIP-seq on human AG04450		TF binding sites	0.01087804264	-0.1893313081			
+Project2	631	ENCFF001XOF	CTCF ChIP-seq on human GM12869		TF binding sites	0.0108088559	-0.1936111428			
+Project2	632	ENCFF001XTI	CTCF ChIP-seq on human NHEK		TF binding sites	0.01080571105	-0.1938056807			
+Project2	633	ENCFF001VKW	RAD21 ChIP-seq on human HepG2		TF binding sites	0.01078684194	-0.1949729083			
+Project2	634	ENCFF001SVQ	ChIP-seq on human H1-hESC SUZ12		TF binding sites	0.01076797283	-0.196140136			
+Project2	635	ENCFF001XRZ	CTCF ChIP-seq on human HPF		TF binding sites	0.01067048242	-0.2021708121			
+Project2	636	GSM1208712_batch2_chrom1_LoVo_ATF1_PassedQC_peaks_hg19	ATF1 ChIP-seq in LoVo		TF binding sites	0.01061701994	-0.205477957			
+Project2	637	ENCFF001SZV	ChIP-seq on human K562 EP300		TF binding sites	0.0105604126	-0.2089796399			
+Project2	638	ENCFF001UFZ	FOXA2 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.01051638468	-0.211703171			
+Project2	639	ENCFF001UKV	SPI1 ChIP-seq protocol PCR1x on human K562		TF binding sites	0.01051638468	-0.211703171			
+Project2	640	ENCFF001UKD	HDAC2 ChIP-seq protocol v041610.2 on human K562		TF binding sites	0.01050066042	-0.2126758607			
+Project2	641	ENCFF001UBR	NANOG ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.01049751557	-0.2128703987			
+Project2	642	ENCFF001VNN	IRF1 ChIP-seq on human K562 treated with IFNg6h		TF binding sites	0.01049437072	-0.2130649366			
+Project2	643	ENCFF001UBN	JUND ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.01040002516	-0.2189010748			
+Project2	644	ENCFF001SZA	ChIP-seq on human K562 CHD1		TF binding sites	0.01031196931	-0.224348137			
+Project2	645	ENCFF001XMC	CTCF ChIP-seq on human AG09319		TF binding sites	0.01024278256	-0.2286279717			
+Project2	646	ENCFF001UFX	FOXA1 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.01023963771	-0.2288225096			
+Project2	647	ENCFF001XOO	CTCF ChIP-seq on human GM12871		TF binding sites	0.01019875464	-0.2313515028			
+Project2	648	ENCFF001UII	ZEB1 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0.01017674068	-0.2327132684			
+Project2	649	ENCFF001UMI	ZBTB7A ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.01015158186	-0.2342695719			
+Project2	650	ENCFF001TVM	RAD21 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.0101358576	-0.2352422616			
+Project2	651	ENCFF001UBZ	POLR2A ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.01012642305	-0.2358258754			
+Project2	652	GSM1208780_batch2_chrom1_LoVo_NKX2.2_PassedQC_peaks_hg19	NKX2.2 ChIP-seq in LoVo		TF binding sites	0.01011069879	-0.2367985651			
+Project2	653	GSM1208742_batch2_chrom1_LoVo_FEV_PassedQC_peaks_hg19	FEV ChIP-seq in LoVo		TF binding sites	0.01010755393	-0.236993103			
+Project2	654	ENCFF001UFV	FOXA1 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.01001949808	-0.2424401653			
+Project2	655	ENCFF001UFW	FOXA1 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.009944021637	-0.2471090758			
+Project2	656	ENCFF001VGM	POLR2A ChIP-seq on human GM19193		TF binding sites	0.009862255488	-0.2521670622			
+Project2	657	ENCFF001UJW	ETS1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.009843386377	-0.2533342899			
+Project2	658	GSM1208632_batch1_chrom1_LoVo_HNF4A_PassedQC_peaks_hg19	HNF4A ChIP-seq in LoVo		TF binding sites	0.009805648154	-0.2556687451			
+Project2	659	ENCFF001UMT	FOXM1 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.00976476508	-0.2581977383			
+Project2	660	ENCFF001XSH	CTCF ChIP-seq on human HRPEpiC		TF binding sites	0.009742751116	-0.2595595039			
+Project2	661	ENCFF001VQE	STAT3 ChIP-seq on human MCF10A-Er-Src treated with 4-hydroxy-tamoxifen at 1uM for 36 hours		TF binding sites	0.009720737153	-0.2609212695			
+Project2	662	ENCFF001XPD	CTCF ChIP-seq on human GM12874		TF binding sites	0.009689288635	-0.2628666489			
+Project2	663	ENCFF001VGI	POLR2A ChIP-seq on human GM18951		TF binding sites	0.009670419523	-0.2640338765			
+Project2	664	ENCFF001XNK	CTCF ChIP-seq on human GM12864		TF binding sites	0.009645260708	-0.26559018			
+Project2	665	ENCFF001VPL	ZNF143 ChIP-seq on human K562		TF binding sites	0.0095477703	-0.2716208561			
+Project2	666	ENCFF001TTU	TCF12 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.00949745267	-0.2747334631			
+Project2	667	ENCFF001UGD	HDAC2 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.009491162966	-0.275122539			
+Project2	668	ENCFF001TUE	YY1 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.009484873262	-0.2755116149			
+Project2	669	ENCFF001TCZ	ChIP-seq on human Osteobl EP300		TF binding sites	0.009475438707	-0.2760952287			
+Project2	670	ENCFF001TVH	EP300 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.009466004151	-0.2766788425			
+Project2	671	ENCFF001TXG	IRF4 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.009453424744	-0.2774569942			
+Project2	672	ENCFF001VHM	TRIM28 ChIP-seq on human HEK293		TF binding sites	0.009434555632	-0.2786242219			
+Project2	673	ENCFF001UOK	FOXP2 ChIP-seq protocol PCR2x on human PFSK-1		TF binding sites	0.009377948299	-0.2821259048			
+Project2	674	ENCFF001TRW	CTCF ChIP-seq (protocol PCR1x) on A549 treated with ethanol at 0.02%		TF binding sites	0.009340210076	-0.28446036			
+Project2	675	ENCFF001UTD	POLR2A ChIP-seq on human HUVEC		TF binding sites	0.009337065224	-0.284654898			
+Project2	676	ENCFF001XMP	CTCF ChIP-seq on human BE2-C		TF binding sites	0.009337065224	-0.284654898			
+Project2	677	ENCFF001UCX	TCF12 ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0.009333920372	-0.2848494359			
+Project2	678	ENCFF001XTD	CTCF ChIP-seq on human NHDF-neo		TF binding sites	0.009267878483	-0.2889347326			
+Project2	679	ENCFF001UER	USF1 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0.009204981445	-0.2928254914			
+Project2	680	ENCFF001UFP	CTCF ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.009182967482	-0.294187257			
+Project2	681	ENCFF001XPU	CTCF ChIP-seq on human HA-sp		TF binding sites	0.009129505	-0.2974944019			
+Project2	682	ENCFF001XRC	CTCF ChIP-seq on human HepG2		TF binding sites	0.009057173407	-0.3019687745			
+Project2	683	ENCFF001TUX	FOXM1 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.009050883703	-0.3023578504			
+Project2	684	ENCFF001TTF	PLOR2A ChIP-seq (protocol PCR2x) on A549 treated with dexamethasone at 100pM		TF binding sites	0.009038304296	-0.3031360021			
+Project2	685	ENCFF001TRT	CTCF ChIP-seq (protocol PCR2x) on A549 treated with dexamethasone at 100nM		TF binding sites	0.008984841814	-0.3064431471			
+Project2	686	ENCFF001UNS	SRF ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.008947103591	-0.3087776023			
+Project2	687	ENCFF001XQH	CTCF ChIP-seq on human HCPEpiC		TF binding sites	0.008899930813	-0.3116956714			
+Project2	688	ENCFF001UJJ	CREB1 ChIP-seq protocol v042211.1 on human K562		TF binding sites	0.008887351406	-0.3124738232			
+Project2	689	ENCFF001VPI	XRCC4 ChIP-seq on human K562		TF binding sites	0.008868482294	-0.3136410508			
+Project2	690	ENCFF001TXJ	MEF2A ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.008815019813	-0.3169481958			
+Project2	691	ENCFF001VNP	JUND ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0.008670356626	-0.3258969409			
+Project2	692	ENCFF001XLS	CTCF ChIP-seq on human AG04449		TF binding sites	0.008651487515	-0.3270641686			
+Project2	693	ENCFF001ULL	STAT5A ChIP-seq protocol v042211.1 on human K562		TF binding sites	0.008522548588	-0.335040224			
+Project2	694	ENCFF001VJE	RFX5 ChIP-seq on human HeLa-S3		TF binding sites	0.008403044217	-0.3424326657			
+Project2	695	ENCFF001XRR	CTCF ChIP-seq on human HMF		TF binding sites	0.008352726587	-0.3455452727			
+Project2	696	ENCFF001TAH	CTCF ChIP-seq on human Monocytes-CD14+ (RO01746)		TF binding sites	0.008349581735	-0.3457398106			
+Project2	697	ENCFF001VPQ	ZMIZ1 ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0.008327567772	-0.3471015762			
+Project2	698	ENCFF001XRB	CTCF ChIP-seq on human HepG2		TF binding sites	0.008305553808	-0.3484633418			
+Project2	699	ENCFF001TVL	RAD21 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.008280394993	-0.3500196453			
+Project2	700	ENCFF001VGT	MYC ChIP-seq on human H1-hESC produced by the Snyder lab		TF binding sites	0.008233222215	-0.3529377144			
+Project2	701	GSM1208719_batch2_chrom1_LoVo_CLOCK_PassedQC_peaks_hg19	CLOCK ChIP-seq in LoVo		TF binding sites	0.008204918548	-0.3546885558			
+Project2	702	ENCFF001TXT	REST ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.008110572992	-0.360524694			
+Project2	703	GSM1208805_batch2_chrom1_LoVo_TP73_PassedQC_peaks_hg19	TP73 ChIP-seq in LoVo		TF binding sites	0.008072834769	-0.3628591492			
+Project2	704	ENCFF001UFU	FOXA1 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.008025661991	-0.3657772183			
+Project2	705	ENCFF001TVP	TAF1 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.008009937732	-0.366749908			
+Project2	706	ENCFF001VOE	POLR2A ChIP-seq on human K562 treated with IFNa for 6 hours		TF binding sites	0.007997358324	-0.3675280598			
+Project2	707	ENCFF001VQQ	TCF7L2 ChIP-seq on human PANC-1		TF binding sites	0.007937606139	-0.3712242806			
+Project2	708	ENCFF001TRM	BCL3 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0.007887288509	-0.3743368876			
+Project2	709	GSM1208763_batch2_chrom1_LoVo_JUND_PassedQC_peaks_hg19	JUND ChIP-seq in LoVo		TF binding sites	0.007884143657	-0.3745314255			
+Project2	710	ENCFF001TWR	EBF1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.007808667212	-0.3792003361			
+Project2	711	ENCFF001VOF	POLR2A ChIP-seq on human K562 treated with IFNg30		TF binding sites	0.007796087804	-0.3799784878			
+Project2	712	ENCFF001UGL	JUND ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0.007708031952	-0.3854255501			
+Project2	713	ENCFF001TYI	POLR2A ChIP-seq protocol PCR2x on human GM12878		TF binding sites	0.007695452544	-0.3862037019			
+Project2	714	ENCFF001XSP	CTCF ChIP-seq on human HVMF		TF binding sites	0.007610541543	-0.3914562262			
+Project2	715	ENCFF001TRP	CEBPB ChIP-seq protocol v042211.1 on human A549		TF binding sites	0.007591672432	-0.3926234538			
+Project2	716	ENCFF001UAJ	PAX5 ChIP-seq protocol v041610.1 on human GM12892		TF binding sites	0.007557079062	-0.3947633711			
+Project2	717	ENCFF001XOT	CTCF ChIP-seq on human GM12872		TF binding sites	0.007292911504	-0.411104558			
+Project2	718	ENCFF001VMM	JUN ChIP-seq on human K562 treated with IFNg for 30 minutes		TF binding sites	0.007283476948	-0.4116881718			
+Project2	719	ENCFF001XRS	CTCF ChIP-seq on human HMF		TF binding sites	0.007258318133	-0.4132444753			
+Project2	720	ENCFF001TTH	POLR2A ChIP-seq (protocol PCR2x) on A549 treated with ethanol at 0.02%		TF binding sites	0.007145103466	-0.4202478411			
+Project2	721	ENCFF001VJS	ZNF274 ChIP-seq on human HeLa-S3		TF binding sites	0.007126234354	-0.4214150687			
+Project2	722	ENCFF001XQA	CTCF ChIP-seq on human HCFaa		TF binding sites	0.007113654947	-0.4221932205			
+Project2	723	ENCFF001XMQ	CTCF ChIP-seq on human BE2-C		TF binding sites	0.007075916724	-0.4245276757			
+Project2	724	GSM1208639_batch1_chrom1_LoVo_JUN_PassedQC_peaks_hg19	JUN ChIP-seq in LoVo		TF binding sites	0.007006729983	-0.4288075104			
+Project2	725	ENCFF001VJC	PRDM1 ChIP-seq on human HeLa-S3		TF binding sites	0.007003585131	-0.4290020483			
+Project2	726	ENCFF001UDS	EGR1 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0.006849487389	-0.4385344073			
+Project2	727	ENCFF001XME	CTCF ChIP-seq on human AG09319		TF binding sites	0.006789735203	-0.4422306281			
+Project2	728	ENCFF001UCC	RAD21 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.0067834455	-0.442619704			
+Project2	729	ENCFF001VIF	RCOR1 ChIP-seq on human HeLa-S3 produced by the Snyder lab		TF binding sites	0.00676772124	-0.4435923937			
+Project2	730	ENCFF001UHU	TCF12 ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0.006742562425	-0.4451486972			
+Project2	731	ENCFF001VPJ	YY1 ChIP-seq on human K562		TF binding sites	0.006723693314	-0.4463159248			
+Project2	732	GSM1208751_batch2_chrom1_LoVo_GLI3_PassedQC_peaks_hg19	GLI3 ChIP-seq in LoVo		TF binding sites	0.006704824203	-0.4474831525			
+Project2	733	ENCFF001URB	CTCF ChIP-seq (protocol v041610.2) on T-47D treated with dimethylsulfoxide at 0.02%		TF binding sites	0.006645072017	-0.4511793733			
+Project2	734	ENCFF001XLW	CTCF ChIP-seq on human AG04450		TF binding sites	0.00663249261	-0.4519575251			
+Project2	735	ENCFF001VLD	TCF7L2 ChIP-seq on human HepG2		TF binding sites	0.006588464683	-0.4546810562			
+Project2	736	ENCFF001UGZ	REST ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.006563305868	-0.4562373597			
+Project2	737	ENCFF001VMF	CCNT2 ChIP-seq on human K562		TF binding sites	0.00653185735	-0.4581827391			
+Project2	738	ENCFF001XMT	CTCF ChIP-seq on human BJ		TF binding sites	0.006503553683	-0.4599335805			
+Project2	739	ENCFF001XPM	CTCF ChIP-seq on human GM12878		TF binding sites	0.006459525756	-0.4626571117			
+Project2	740	ENCFF001XSU	CTCF ChIP-seq on human K562		TF binding sites	0.006453236053	-0.4630461875			
+Project2	741	ENCFF001UEQ	USF1 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0.006380904459	-0.4675205601			
+Project2	742	ENCFF001TXL	MEF2C ChIP-seq protocol v041610.1 on human GM12878		TF binding sites	0.006371469904	-0.4681041739			
+Project2	743	ENCFF001UPU	REST ChIP-seq protocol v041610.1 on human SK-N-SH		TF binding sites	0.006255110384	-0.4753020777			
+Project2	744	ENCFF001SZQ	ChIP-seq on human K562 HDAC2		TF binding sites	0.006242530977	-0.4760802294			
+Project2	745	ENCFF001UIM	REST ChIP-seq protocol v042211.1 on human HL-60		TF binding sites	0.006229951569	-0.4768583812			
+Project2	746	ENCFF001SYU	ChIP-seq on human K562 CREBBP		TF binding sites	0.006182778791	-0.4797764503			
+Project2	747	ENCFF001UFJ	CEBPB ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.006082143531	-0.4860016643			
+Project2	748	ENCFF001VJK	TBP ChIP-seq on human HeLa-S3		TF binding sites	0.006060129568	-0.4873634299			
+Project2	749	ENCFF001VNH	HCFC1 ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0.006016101642	-0.490086961			
+Project2	750	GSM1208661_batch1_chrom1_LoVo_NIPBL_PassedQC_peaks_hg19	NIPBL ChIP-seq in LoVo		TF binding sites	0.006009811938	-0.4904760369			
+Project2	751	ENCFF001XQX	CTCF ChIP-seq on human HeLa-S3		TF binding sites	0.006000377382	-0.4910596507			
+Project2	752	ENCFF001TVK	POLR2A ChIP-seq protocol v041610.2 on human ECC-1 treated with 0.02% DMSO. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.00596263916	-0.4933941059			
+Project2	753	GSM1208616_batch1_chrom1_LoVo_ETV4_PassedQC_peaks_hg19	ETV4 ChIP-seq in LoVo		TF binding sites	0.005953204604	-0.4939777198			
+Project2	754	ENCFF001UTQ	CTCF ChIP-seq on human MCF-7 treated with serum stimulated media		TF binding sites	0.005729920121	-0.5077899134			
+Project2	755	ENCFF001XQU	CTCF ChIP-seq on human HEK293		TF binding sites	0.005670167935	-0.5114861342			
+Project2	756	ENCFF001XST	CTCF ChIP-seq on human K562		TF binding sites	0.005619850305	-0.5145987412			
+Project2	757	ENCFF001VNS	MAX ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0.005497201082	-0.5221857208			
+Project2	758	GSM1208700_batch1_chrom1_LoVo_ZBED4_PassedQC_peaks_hg19	ZBED4 ChIP-seq in LoVo		TF binding sites	0.005472042267	-0.5237420243			
+Project2	759	ENCFF001TUY	FOXM1 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.005440593748	-0.5256874037			
+Project2	760	ENCFF001TZO	YY1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.005365117303	-0.5303563143			
+Project2	761	ENCFF001TUW	FOXA1 ChIP-seq protocol v041610.2 on human ECC-1 treated with 0.02% DMSO. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.005324234229	-0.5328853075			
+Project2	762	ENCFF001UBL	HDAC2 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.005299075414	-0.534441611			
+Project2	763	ENCFF001UIV	POLR2A ChIP-seq protocol PCR1x on human HUVEC		TF binding sites	0.005299075414	-0.534441611			
+Project2	764	ENCFF001SWS	CTCF ChIP-seq on human mammary epithelial cell		TF binding sites	0.005273916599	-0.5359979145			
+Project2	765	ENCFF001TXI	MEF2A ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.005207874709	-0.5400832112			
+Project2	766	ENCFF001TAB	ChIP-seq on human K562 RBBP5		TF binding sites	0.005185860746	-0.5414449767			
+Project2	767	ENCFF001VGZ	MXI1 ChIP-seq on human H1-hESC produced by the Snyder lab		TF binding sites	0.005173281338	-0.5422231285			
+Project2	768	ENCFF001VIZ	EP300 ChIP-seq on human HeLa-S3		TF binding sites	0.00509151519	-0.5472811149			
+Project2	769	ENCFF001VFO	TBP ChIP-seq on human GM12878		TF binding sites	0.004902824077	-0.5589533912			
+Project2	770	ENCFF001SUS	ChIP-seq on human H1-hESC CHD7		TF binding sites	0.004783319706	-0.5663458329			
+Project2	771	ENCFF001UTJ	CTCF ChIP-seq on human lung		TF binding sites	0.00477388515	-0.5669294467			
+Project2	772	ENCFF001XMA	CTCF ChIP-seq on human AG09309		TF binding sites	0.004751871187	-0.5682912123			
+Project2	773	ENCFF001UOC	REST ChIP-seq protocol v041610.1 on human PANC-1		TF binding sites	0.00472356752	-0.5700420537			
+Project2	774	ENCFF001TYU	RUNX3 ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0.004610352852	-0.5770454195			
+Project2	775	ENCFF001UHH	RAD21 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.004604063149	-0.5774344954			
+Project2	776	ENCFF001XQQ	CTCF ChIP-seq on human HEEpiC		TF binding sites	0.004604063149	-0.5774344954			
+Project2	777	ENCFF001UKL	NR2F2 ChIP-seq protocol v042211.1 on human K562		TF binding sites	0.00455689037	-0.5803525644			
+Project2	778	ENCFF001ULA	SIN3A ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.004522297	-0.5824924818			
+Project2	779	GSM1208740_batch2_chrom1_LoVo_EVI1_PassedQC_peaks_hg19	EVI1 ChIP-seq in LoVo		TF binding sites	0.004431096295	-0.588134082			
+Project2	780	ENCFF001XTE	CTCF ChIP-seq on human NHDF-neo		TF binding sites	0.004409082332	-0.5894958475			
+Project2	781	GSM1208699_batch1_chrom1_LoVo_YY1_PassedQC_peaks_hg19	YY1 ChIP-seq in LoVo		TF binding sites	0.004399647777	-0.5900794614			
+Project2	782	ENCFF001USA	POLR2A ChIP-seq on human A549		TF binding sites	0.004390213221	-0.5906630752			
+Project2	783	ENCFF001SSN	ChIP-seq on human A549 CTCF treated with dexamethasone at 100nM		TF binding sites	0.004336750739	-0.5939702201			
+Project2	784	ENCFF001UJL	CTCF ChIP-seq protocol PCR1x on human K562		TF binding sites	0.004311591924	-0.5955265236			
+Project2	785	ENCFF001VEJ	IKZF1 ChIP-seq on human GM12878		TF binding sites	0.004292722813	-0.5966937513			
+Project2	786	ENCFF001TXS	REST ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.004264419146	-0.5984445927			
+Project2	787	ENCFF001TAF	ChIP-seq on human K562 SAP30		TF binding sites	0.004192087553	-0.6029189653			
+Project2	788	ENCFF001TVX	YY1 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0.004163783886	-0.6046698067			
+Project2	789	ENCFF001XRV	CTCF ChIP-seq on human HPAF		TF binding sites	0.004063148626	-0.6108950208			
+Project2	790	ENCFF001UNF	NR2F2 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.003987672181	-0.6155639313			
+Project2	791	GSM1208687_batch1_chrom1_LoVo_TBX3_PassedQC_peaks_hg19	TBX3 ChIP-seq in LoVo		TF binding sites	0.003946789106	-0.6180929245			
+Project2	792	ENCFF001VOC	EP300 ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0.003921630291	-0.619649228			
+Project2	793	ENCFF001XLZ	CTCF ChIP-seq on human AG09309		TF binding sites	0.003905906032	-0.6206219177			
+Project2	794	ENCFF001VDQ	MAX ChIP-seq on human A549 produced by the Snyder lab		TF binding sites	0.003896471476	-0.6212055315			
+Project2	795	ENCFF001USS	CTCF ChIP-seq on human H1-hESC		TF binding sites	0.003830429587	-0.6252908282			
+Project2	796	ENCFF001XTV	CTCF ChIP-seq on human SK-N-SH treated with 6uM retinoic acid for 48 hours		TF binding sites	0.003764387697	-0.6293761249			
+Project2	797	ENCFF001ULM	STAT5A ChIP-seq protocol v042211.1 on human K562		TF binding sites	0.003758097994	-0.6297652008			
+Project2	798	ENCFF001UHM	SP1 ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0.003682621549	-0.6344341113			
+Project2	799	ENCFF001XNQ	CTCF ChIP-seq on human GM12865		TF binding sites	0.003673186993	-0.6350177251			
+Project2	800	ENCFF001VGG	POLR2A ChIP-seq on human GM18526		TF binding sites	0.003629159067	-0.6377412563			
+Project2	801	GSM1208631_batch1_chrom1_LoVo_HINFP_PassedQC_peaks_hg19	HINFP ChIP-seq in LoVo		TF binding sites	0.003626014215	-0.6379357942			
+Project2	802	ENCFF001XNO	CTCF ChIP-seq on human GM12865		TF binding sites	0.003578841437	-0.6408538633			
+Project2	803	ENCFF001VJW	BRCA1 ChIP-seq on human HepG2		TF binding sites	0.003563117177	-0.641826553			
+Project2	804	ENCFF001VJP	USF2 ChIP-seq on human HeLa-S3		TF binding sites	0.00348449588	-0.6466900015			
+Project2	805	GSM1208608_batch1_chrom1_LoVo_EGR1_PassedQC_peaks_hg19	EGR1 ChIP-seq in LoVo		TF binding sites	0.003443612806	-0.6492189947			
+Project2	806	ENCFF001VFI	SUPT20H ChIP-seq on human GM12878		TF binding sites	0.003437323102	-0.6496080705			
+Project2	807	ENCFF001UUB	CTCF ChIP-seq on human spleen		TF binding sites	0.003396440028	-0.6521370637			
+Project2	808	ENCFF001VEO	MAX ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0.00334926725	-0.6550551328			
+Project2	809	ENCFF001UJX	FOSL1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0.003295804768	-0.6583622778			
+Project2	810	ENCFF001UHA	EP300 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.003214038619	-0.6634202642			
+Project2	811	ENCFF001UFO	CTCF ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.003135417322	-0.6682837126			
+Project2	812	ENCFF001UHB	EP300 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.003088244544	-0.6712017817			
+Project2	813	ENCFF001UTR	CTCF ChIP-seq on human MCF-7 treated with serum starved media		TF binding sites	0.003041071766	-0.6741198508			
+Project2	814	ENCFF001VJN	GTF3C2 ChIP-seq on human HeLa-S3		TF binding sites	0.003019057802	-0.6754816163			
+Project2	815	ENCFF001URQ	EP300 ChIP-seq protocol v041610.2 on human T-47D treated with 0.02% DMSO		TF binding sites	0.002934146802	-0.6807341407			
+Project2	816	ENCFF001UAQ	YY1 ChIP-seq protocol v041610.1 on human GM12892		TF binding sites	0.00291527769	-0.6819013683			
+Project2	817	ENCFF001VNI	HMGN3 ChIP-seq on human K562		TF binding sites	0.002824076986	-0.6875429685			
+Project2	818	ENCFF001VQZ	MXI1 ChIP-seq on human SK-N-SH produced by the Snyder lab		TF binding sites	0.002704572615	-0.6949354102			
+Project2	819	ENCFF001UKI	MAX ChIP-seq protocol v041610.2 on human K562		TF binding sites	0.00266368954	-0.6974644034			
+Project2	820	GSM1208752_batch2_chrom1_LoVo_GLIS1_PassedQC_peaks_hg19	GLIS1 ChIP-seq in LoVo		TF binding sites	0.00257877854	-0.7027169277			
+Project2	821	ENCFF001XRO	CTCF ChIP-seq on human HMEC		TF binding sites	0.002497012391	-0.7077749141			
+Project2	822	ENCFF001UPW	EP300 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.002434115353	-0.7116656729			
+Project2	823	ENCFF001VEX	EP300 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0.002424680798	-0.7122492867			
+Project2	824	GSM1208594_batch1_chrom1_LoVo_CAMTA2_PassedQC_peaks_hg19	CAMTA2 ChIP-seq in LoVo		TF binding sites	0.002380652871	-0.7149728179			
+Project2	825	ENCFF001UGI	HNF4G ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0.002371218316	-0.7155564317			
+Project2	826	ENCFF001UON	REST ChIP-seq protocol v041610.1 on human PFSK-1		TF binding sites	0.002333480093	-0.7178908869			
+Project2	827	ENCFF001UBB	CTCF ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.002264293352	-0.7221707216			
+Project2	828	ENCFF001UNP	SIN3A ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.002176237499	-0.7276177839			
+Project2	829	ENCFF001VJX	CEBPB ChIP-seq on human HepG2 treated with forskolin		TF binding sites	0.002157368388	-0.7287850115			
+Project2	830	ENCFF001USM	CTCF ChIP-seq on human GM13977		TF binding sites	0.002125919869	-0.7307303909			
+Project2	831	ENCFF001VMB	BHLHE40 ChIP-seq on human K562		TF binding sites	0.001871186867	-0.7464879639			
+Project2	832	ENCFF001XQY	CTCF ChIP-seq on human HeLa-S3		TF binding sites	0.001824014089	-0.749406033			
+Project2	833	ENCFF001URS	REST ChIP-seq protocol PCR2x on human U87		TF binding sites	0.00179256557	-0.7513514123			
+Project2	834	ENCFF001UNI	REST ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.001789420718	-0.7515459503			
+Project2	835	ENCFF001TZP	YY1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0.001635322976	-0.7610783093			
+Project2	836	ENCFF001UTI	CTCF ChIP-seq on human LNCaP		TF binding sites	0.001518963457	-0.768276213			
+Project2	837	ENCFF001VJQ	ZKSCAN1 ChIP-seq on human HeLa-S3 produced by the Snyder lab		TF binding sites	0.001402603937	-0.7754741167			
+Project2	838	ENCFF001TBU	ChIP-seq on human NHEK EZH2		TF binding sites	0.001361720863	-0.7780031099			
+Project2	839	ENCFF001UET	YY1 ChIP-seq protocol v041610.1 on human HCT-116		TF binding sites	0.001301968677	-0.7816993307			
+Project2	840	ENCFF001XSI	CTCF ChIP-seq on human HRPEpiC		TF binding sites	0.001169884898	-0.7898699242			
+Project2	841	ENCFF001UAM	POLR2A ChIP-seq protocol v041610.2 on human GM12892		TF binding sites	0.001106987861	-0.7937606829			
+Project2	842	ENCFF001UOO	REST ChIP-seq protocol v041610.1 on human PFSK-1		TF binding sites	0.001103843009	-0.7939552209			
+Project2	843	ENCFF001UBV	EP300 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0.001012642305	-0.7995968211			
+Project2	844	ENCFF001UFB	POLR2A ChIP-seq protocol PCR1x on human HeLa-S3		TF binding sites	0.0009025724888	-0.8064056489			
+Project2	845	ENCFF001UNG	NR2F2 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0.0008491100069	-0.8097127939			
+Project2	846	ENCFF001XMX	CTCF ChIP-seq on human Caco-2		TF binding sites	0.0007862129694	-0.8136035527			
+Project2	847	ENCFF001UAG	YY1 ChIP-seq protocol v041610.1 on human GM12891		TF binding sites	0.0007579093025	-0.8153543941			
+Project2	848	ENCFF001XPX	CTCF ChIP-seq on human HBMEC		TF binding sites	0.0007201710799	-0.8176888494			
+Project2	849	ENCFF001TRO	CEBPB ChIP-seq protocol v042211.1 on human A549		TF binding sites	0.0006855777093	-0.8198287667			
+Project2	850	ENCFF001VOD	POLR2A ChIP-seq on human K562 treated with IFNa for 30 minutes		TF binding sites	0.0006698534499	-0.8208014564			
+Project2	851	GSM1208652_batch1_chrom1_LoVo_MYB_PassedQC_peaks_hg19	MYB ChIP-seq in LoVo		TF binding sites	0.0006069564124	-0.8246922151			
+Project2	852	GSM1208676_batch1_chrom1_LoVo_SMAD3_PassedQC_peaks_hg19	SMAD3 ChIP-seq in LoVo		TF binding sites	0.000591232153	-0.8256649048			
+Project2	853	ENCFF001VDW	BHLHE40 ChIP-seq on human GM12878		TF binding sites	0.0004748726335	-0.8328628086			
+Project2	854	ENCFF001XTH	CTCF ChIP-seq on human NHEK		TF binding sites	0.0003805270772	-0.8386989467			
+Project2	855	ENCFF001UML	HAIB ChIP CTCF  in MCF-7		TF binding sites	0.0003364991509	-0.8414224779			
+Project2	856	ENCFF001TAU	ChIP-seq on human NH-A EZH2		TF binding sites	0.0002641675577	-0.8458968504			
+Project2	857	ENCFF001UEZ	REST ChIP-seq protocol PCR1x on human HeLa-S3		TF binding sites	0.0002484432983	-0.8468695401			
+Project2	858	ENCFF001UPY	PBX3 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0.0002075602239	-0.8493985333			
+Project2	859	ENCFF001UTY	CTCF ChIP-seq on human Pancreas		TF binding sites	8.805585257e-05	-0.856790975			
+Project2	860	ENCFF001UES	YY1 ChIP-seq protocol v041610.1 on human HCT-116		TF binding sites	6.91867413e-05	-0.8579582026			
+Project2	861	ENCFF001SSO	CTCF ChIP-seq on human A549 treated with 0.02% ethanol		TF binding sites	0	-0.8622380373			
+Project2	862	ENCFF001STI	ChIP-seq on human CD20+ CTCF		TF binding sites	0	-0.8622380373			
+Project2	863	ENCFF001STL	EZH2 ChIP-seq on human B cell CD20+ (RO01794)		TF binding sites	0	-0.8622380373			
+Project2	864	ENCFF001STO	ChIP-seq on human Dnd41 CTCF		TF binding sites	0	-0.8622380373			
+Project2	865	ENCFF001STP	ChIP-seq on human Dnd41 EZH2		TF binding sites	0	-0.8622380373			
+Project2	866	ENCFF001SUB	CTCF ChIP-seq on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	867	ENCFF001SUT	CTCF ChIP-seq on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	868	ENCFF001SUU	ChIP-seq on human H1-hESC EZH2		TF binding sites	0	-0.8622380373			
+Project2	869	ENCFF001SVG	ChIP-seq on human H1-hESC HDAC2		TF binding sites	0	-0.8622380373			
+Project2	870	ENCFF001SVI	ChIP-seq on human H1-hESC KDM5A		TF binding sites	0	-0.8622380373			
+Project2	871	ENCFF001SVJ	ChIP-seq on human H1-hESC KDM4A		TF binding sites	0	-0.8622380373			
+Project2	872	ENCFF001SVM	ChIP-seq on human H1-hESC KDM5B		TF binding sites	0	-0.8622380373			
+Project2	873	ENCFF001SVO	ChIP-seq on human H1-hESC RBBP5		TF binding sites	0	-0.8622380373			
+Project2	874	ENCFF001SVP	ChIP-seq on human H1-hESC SIRT6		TF binding sites	0	-0.8622380373			
+Project2	875	ENCFF001SVR	CTCF ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	876	ENCFF001SVS	ChIP-seq on human HeLa-S3 EZH2		TF binding sites	0	-0.8622380373			
+Project2	877	ENCFF001SWF	CTCF ChIP-seq on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	878	ENCFF001SWG	ChIP-seq on human HepG2 EZH2		TF binding sites	0	-0.8622380373			
+Project2	879	ENCFF001SWT	ChIP-seq on human HMEC EZH2		TF binding sites	0	-0.8622380373			
+Project2	880	ENCFF001SXF	CTCF ChIP-seq on human skeletal muscle myoblast		TF binding sites	0	-0.8622380373			
+Project2	881	ENCFF001SXG	ChIP-seq on human HSMM EZH2		TF binding sites	0	-0.8622380373			
+Project2	882	ENCFF001SXS	CTCF ChIP-seq on human HSMMtube		TF binding sites	0	-0.8622380373			
+Project2	883	ENCFF001SXV	ChIP-seq on human HSMMtube EZH2		TF binding sites	0	-0.8622380373			
+Project2	884	ENCFF001SYE	CTCF ChIP-seq on human endothelial cell of umbilical vein		TF binding sites	0	-0.8622380373			
+Project2	885	ENCFF001SYG	ChIP-seq on human HUVEC EZH2		TF binding sites	0	-0.8622380373			
+Project2	886	ENCFF001SYV	ChIP-seq on human K562 CBX2		TF binding sites	0	-0.8622380373			
+Project2	887	ENCFF001SYW	ChIP-seq on human K562 CBX3		TF binding sites	0	-0.8622380373			
+Project2	888	ENCFF001SYX	ChIP-seq on human K562 CBX8		TF binding sites	0	-0.8622380373			
+Project2	889	ENCFF001SYZ	ChIP-seq on human K562 CHD7		TF binding sites	0	-0.8622380373			
+Project2	890	ENCFF001SZB	CTCF ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	891	ENCFF001SZC	ChIP-seq on human K562 EZH2		TF binding sites	0	-0.8622380373			
+Project2	892	ENCFF001SZS	ChIP-seq on human K562 KDM1A		TF binding sites	0	-0.8622380373			
+Project2	893	ENCFF001SZW	ChIP-seq on human K562 KAT2B		TF binding sites	0	-0.8622380373			
+Project2	894	ENCFF001TAA	ChIP-seq on human K562 REST		TF binding sites	0	-0.8622380373			
+Project2	895	ENCFF001TAT	CTCF ChIP-seq on human NH-A		TF binding sites	0	-0.8622380373			
+Project2	896	ENCFF001TBG	CTCF ChIP-seq on human NHDF-Ad		TF binding sites	0	-0.8622380373			
+Project2	897	ENCFF001TBT	CTCF ChIP-seq on human NHEK		TF binding sites	0	-0.8622380373			
+Project2	898	ENCFF001TCI	CTCF ChIP-seq on human NHLF		TF binding sites	0	-0.8622380373			
+Project2	899	ENCFF001TCJ	ChIP-seq on human NHLF EZH2		TF binding sites	0	-0.8622380373			
+Project2	900	ENCFF001TDA	CTCF ChIP-seq on human osteoblast		TF binding sites	0	-0.8622380373			
+Project2	901	ENCFF001TSD	FOSL2 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0	-0.8622380373			
+Project2	902	ENCFF001TSE	FOSL2 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0	-0.8622380373			
+Project2	903	ENCFF001TSF	FOXA1 ChIP-seq (protocol v041610.2) on A549 treated with dexamethasone at 100nM		TF binding sites	0	-0.8622380373			
+Project2	904	ENCFF001TSG	FOXA1 ChIP-seq (protocol v041610.2) on A549 treated with dexamethasone at 100nM		TF binding sites	0	-0.8622380373			
+Project2	905	ENCFF001TSH	FOXA2 ChIP-seq (protocol v041610.2) on A549 treated with ethanol at 0.02%		TF binding sites	0	-0.8622380373			
+Project2	906	ENCFF001TSI	FOXA2 ChIP-seq (protocol v041610.2) on A549 treated with ethanol at 0.02%		TF binding sites	0	-0.8622380373			
+Project2	907	ENCFF001TSL	GATA3 ChIP-seq protocol v042211.1 on human A549		TF binding sites	0	-0.8622380373			
+Project2	908	ENCFF001TSM	GATA3 ChIP-seq protocol v042211.1 on human A549		TF binding sites	0	-0.8622380373			
+Project2	909	ENCFF001TSN	NR3C1 ChIP-seq (protocol PCR1x) on A549 treated with dexamethasone at 500pM		TF binding sites	0	-0.8622380373			
+Project2	910	ENCFF001TSO	NR3C1 ChIP-seq (protocol PCR1x) on A549 treated with dexamethasone at 500pM		TF binding sites	0	-0.8622380373			
+Project2	911	ENCFF001TSV	JUND ChIP-seq (protocol v041610.2) on A549 treated with ethanol at 0.02%		TF binding sites	0	-0.8622380373			
+Project2	912	ENCFF001TTB	EP300 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0	-0.8622380373			
+Project2	913	ENCFF001TTC	EP300 ChIP-seq (protocol v042211.1) on A549 treated with ethanol at 0.02%		TF binding sites	0	-0.8622380373			
+Project2	914	ENCFF001TTJ	RAD21 ChIP-seq protocol v042211.1 on human A549		TF binding sites	0	-0.8622380373			
+Project2	915	ENCFF001TTK	RAD21 ChIP-seq protocol v042211.1 on human A549		TF binding sites	0	-0.8622380373			
+Project2	916	ENCFF001TTV	TEAD4 ChIP-seq protocol v042211.1 on human A549		TF binding sites	0	-0.8622380373			
+Project2	917	ENCFF001TTW	TEAD4 ChIP-seq protocol v042211.1 on human A549		TF binding sites	0	-0.8622380373			
+Project2	918	ENCFF001TUL	CTCF ChIP-seq (protocol v041610.2) on ECC-1 treated with dimethylsulfoxide at 0.02%. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	919	ENCFF001TUM	CTCF ChIP-seq (protocol v041610.2) on ECC-1 treated with dimethylsulfoxide at 0.02%. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	920	ENCFF001TUP	ESR1 ChIP-seq (protocol v041610.2) on Ishikawa cells treated with bisphenol A 100nM.  Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	921	ENCFF001TUV	FOXA1 ChIP-seq protocol v041610.2 on human ECC-1 treated with 0.02% DMSO. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	922	ENCFF001TUZ	NR3C1 ChIP-seq (protocol v041610.2) on ECC-1 treated with dexamethasone at 100 nM. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	923	ENCFF001TVA	NR3C1 ChIP-seq (protocol v041610.2) on ECC-1 treated with dexamethasone at 100 nM. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	924	ENCFF001TVF	REST ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	925	ENCFF001TVG	REST ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	926	ENCFF001TVN	SRF ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	927	ENCFF001TVO	SRF ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	928	ENCFF001TVT	TEAD4 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	929	ENCFF001TVU	TEAD4 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	930	ENCFF001TVY	YY1 ChIP-seq protocol v042211.1 on human ECC-1. Note- This experiment previously referred to its biosample as ECC-1, however it has been found that all currently available ECC-1 are actually Ishikawa cells.		TF binding sites	0	-0.8622380373			
+Project2	931	ENCFF001TWT	EBF1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	932	ENCFF001TWZ	ETS1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	933	ENCFF001TXK	MEF2C ChIP-seq protocol v041610.1 on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	934	ENCFF001TXU	REST ChIP-seq protocol PCR2x on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	935	ENCFF001TXV	REST ChIP-seq protocol PCR2x on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	936	ENCFF001TXY	PAX5 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	937	ENCFF001TXZ	PAX5 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	938	ENCFF001TYA	PAX5 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	939	ENCFF001TYN	SPI1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	940	ENCFF001TYO	SPI1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	941	ENCFF001TYP	SPI1 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	942	ENCFF001TYQ	RAD21 ChIP-seq protocol v041610.1 on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	943	ENCFF001TYR	RAD21 ChIP-seq protocol v041610.1 on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	944	ENCFF001TYS	RUNX3 ChIP-seq protocol v042211.1 on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	945	ENCFF001TZQ	ZBTB33 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	946	ENCFF001TZR	ZBTB33 ChIP-seq protocol PCR1x on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	947	ENCFF001UAC	SPI1 ChIP-seq protocol PCR1x on human GM12891		TF binding sites	0	-0.8622380373			
+Project2	948	ENCFF001UAD	SPI1 ChIP-seq protocol PCR1x on human GM12891		TF binding sites	0	-0.8622380373			
+Project2	949	ENCFF001UAH	YY1 ChIP-seq protocol v041610.1 on human GM12891		TF binding sites	0	-0.8622380373			
+Project2	950	ENCFF001UAR	YY1 ChIP-seq protocol v041610.1 on human GM12892		TF binding sites	0	-0.8622380373			
+Project2	951	ENCFF001UAU	ATF3 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	952	ENCFF001UAV	ATF3 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	953	ENCFF001UAW	BCL11A ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	954	ENCFF001UAX	BCL11A ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	955	ENCFF001UBA	CTCF ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	956	ENCFF001UBE	EGR1 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	957	ENCFF001UBG	FOSL1 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	958	ENCFF001UBH	FOSL1 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	959	ENCFF001UBK	HDAC2 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	960	ENCFF001UBM	JUND ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	961	ENCFF001UBQ	NANOG ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	962	ENCFF001UBS	REST ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	963	ENCFF001UBT	REST ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	964	ENCFF001UBY	POLR2A ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	965	ENCFF001UCW	TCF12 ChIP-seq protocol PCR1x on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	966	ENCFF001UCY	TEAD4 ChIP-seq protocol v042211.1 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	967	ENCFF001UDC	YY1 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	968	ENCFF001UDD	YY1 ChIP-seq protocol v041610.2 on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	969	ENCFF001UDK	ATF3 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	970	ENCFF001UDL	ATF3 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	971	ENCFF001UDM	CBX3 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	972	ENCFF001UDN	CBX3 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	973	ENCFF001UDP	CEBPB ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	974	ENCFF001UDQ	CTCF ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	975	ENCFF001UDR	CTCF ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	976	ENCFF001UDT	EGR1 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	977	ENCFF001UDW	FOSL1 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	978	ENCFF001UDX	FOSL1 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	979	ENCFF001UDY	JUND ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	980	ENCFF001UDZ	JUND ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	981	ENCFF001UEC	REST ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	982	ENCFF001UED	REST ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	983	ENCFF001UEG	RAD21 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	984	ENCFF001UEH	RAD21 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	985	ENCFF001UEJ	SIN3A ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	986	ENCFF001UEK	SP1 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	987	ENCFF001UEL	SP1 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	988	ENCFF001UEM	SRF ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	989	ENCFF001UEN	SRF ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	990	ENCFF001UEO	TEAD4 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	991	ENCFF001UEP	TEAD4 ChIP-seq protocol v042211.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	992	ENCFF001UEU	ZBTB33 ChIP-seq protocol v041610.1 on human HCT-116		TF binding sites	0	-0.8622380373			
+Project2	993	ENCFF001UEY	REST ChIP-seq protocol PCR1x on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	994	ENCFF001UFI	CEBPB ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	995	ENCFF001UFL	CEBPD ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	996	ENCFF001UFS	FOSL2 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	997	ENCFF001UFT	FOSL2 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	998	ENCFF001UFY	FOXA2 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	999	ENCFF001UGG	HNF4A ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1000	ENCFF001UGH	HNF4A ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1001	ENCFF001UGJ	HNF4G ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1002	ENCFF001UGK	JUND ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1003	ENCFF001UGU	NR2F2 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1004	ENCFF001UGV	NR2F2 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1005	ENCFF001UGW	REST ChIP-seq protocol PCR2x on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1006	ENCFF001UGX	REST ChIP-seq protocol PCR2x on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1007	ENCFF001UGY	REST ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1008	ENCFF001UHI	RXRA ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1009	ENCFF001UHJ	RXRA ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1010	ENCFF001UHN	SP1 ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1011	ENCFF001UHV	TCF12 ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1012	ENCFF001UIA	YY1 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1013	ENCFF001UIB	YY1 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1014	ENCFF001UIC	ZBTB33 ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1015	ENCFF001UID	ZBTB33 ChIP-seq protocol PCR1x on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1016	ENCFF001UIE	ZBTB33 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1017	ENCFF001UIF	ZBTB33 ChIP-seq protocol v041610.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1018	ENCFF001UIJ	ZEB1 ChIP-seq protocol v042211.1 on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1019	ENCFF001UIN	REST ChIP-seq protocol v042211.1 on human HL-60		TF binding sites	0	-0.8622380373			
+Project2	1020	ENCFF001UIQ	SPI1 ChIP-seq protocol v042211.1 on human HL-60		TF binding sites	0	-0.8622380373			
+Project2	1021	ENCFF001UIR	SPI1 ChIP-seq protocol v042211.1 on human HL-60		TF binding sites	0	-0.8622380373			
+Project2	1022	ENCFF001UIY	ATF3 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1023	ENCFF001UJE	CEBPB ChIP-seq protocol v042211.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1024	ENCFF001UJF	CEBPB ChIP-seq protocol v042211.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1025	ENCFF001UJG	CEBPD ChIP-seq protocol v042211.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1026	ENCFF001UJH	CEBPD ChIP-seq protocol v042211.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1027	ENCFF001UJN	CTCFL ChIP-seq protocol v041610.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1028	ENCFF001UJO	CTCFL ChIP-seq protocol v041610.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1029	ENCFF001UJY	FOSL1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1030	ENCFF001UKB	GATA2 ChIP-seq protocol PCR1x on human K562		TF binding sites	0	-0.8622380373			
+Project2	1031	ENCFF001UKC	GATA2 ChIP-seq protocol PCR1x on human K562		TF binding sites	0	-0.8622380373			
+Project2	1032	ENCFF001UKE	HDAC2 ChIP-seq protocol v041610.2 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1033	ENCFF001UKJ	MEF2A ChIP-seq protocol v041610.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1034	ENCFF001UKK	MEF2A ChIP-seq protocol v041610.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1035	ENCFF001UKN	REST ChIP-seq protocol v041610.2 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1036	ENCFF001UKO	REST ChIP-seq protocol v041610.2 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1037	ENCFF001UKT	POLR2A ChIP-seq protocol v041610.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1038	ENCFF001UKU	POLR2A ChIP-seq protocol v041610.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1039	ENCFF001UKX	RAD21 ChIP-seq protocol v041610.2 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1040	ENCFF001UKY	RAD21 ChIP-seq protocol v041610.2 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1041	ENCFF001ULD	SIX5 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1042	ENCFF001ULK	SRF ChIP-seq protocol v041610.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1043	ENCFF001ULR	TEAD4 ChIP-seq protocol v042211.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1044	ENCFF001ULW	TRIM28 ChIP-seq protocol v042211.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1045	ENCFF001UMC	YY1 ChIP-seq protocol v041610.2 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1046	ENCFF001UMD	YY1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1047	ENCFF001UME	YY1 ChIP-seq protocol v041610.1 on human K562		TF binding sites	0	-0.8622380373			
+Project2	1048	ENCFF001UMF	ZBTB33 ChIP-seq protocol PCR1x on human K562		TF binding sites	0	-0.8622380373			
+Project2	1049	ENCFF001UMG	ZBTB33 ChIP-seq protocol PCR1x on human K562		TF binding sites	0	-0.8622380373			
+Project2	1050	ENCFF001UMJ	CEBPB ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1051	ENCFF001UMK	CEBPB ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1052	ENCFF001UMN	HAIB ChIP CTCF  in MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1053	ENCFF001UMO	EGR1 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1054	ENCFF001UMR	FOSL2 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1055	ENCFF001UMS	FOSL2 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1056	ENCFF001UMU	FOXM1 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1057	ENCFF001UMX	GATA3 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1058	ENCFF001UMZ	GATA3 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1059	ENCFF001UNA	HDAC2 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1060	ENCFF001UNB	JUND ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1061	ENCFF001UNC	JUND ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1062	ENCFF001UNH	REST ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1063	ENCFF001UNJ	EP300 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1064	ENCFF001UNK	EP300 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1065	ENCFF001UNM	PML ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1066	ENCFF001UNN	RAD21 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1067	ENCFF001UNO	RAD21 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1068	ENCFF001UNV	TCF12 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1069	ENCFF001UNW	TCF12 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1070	ENCFF001UNX	TEAD4 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1071	ENCFF001UNY	TEAD4 ChIP-seq protocol v042211.1 on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1072	ENCFF001UNZ	REST ChIP-seq protocol PCR2x on human PANC-1		TF binding sites	0	-0.8622380373			
+Project2	1073	ENCFF001UOA	REST ChIP-seq protocol PCR2x on human PANC-1		TF binding sites	0	-0.8622380373			
+Project2	1074	ENCFF001UOB	REST ChIP-seq protocol v041610.1 on human PANC-1		TF binding sites	0	-0.8622380373			
+Project2	1075	ENCFF001UOD	REST ChIP-seq protocol v042211.1 on human PANC-1		TF binding sites	0	-0.8622380373			
+Project2	1076	ENCFF001UOE	REST ChIP-seq protocol v042211.1 on human PANC-1		TF binding sites	0	-0.8622380373			
+Project2	1077	ENCFF001UOL	REST ChIP-seq protocol PCR2x on human PFSK-1		TF binding sites	0	-0.8622380373			
+Project2	1078	ENCFF001UOM	REST ChIP-seq protocol PCR2x on human PFSK-1		TF binding sites	0	-0.8622380373			
+Project2	1079	ENCFF001UPB	FOSL2 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1080	ENCFF001UPC	FOSL2 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1081	ENCFF001UPD	FOXM1 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1082	ENCFF001UPE	FOXM1 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1083	ENCFF001UPH	GATA3 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1084	ENCFF001UPI	GATA3 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1085	ENCFF001UPJ	JUND ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1086	ENCFF001UPK	JUND ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1087	ENCFF001UPN	MEF2A ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1088	ENCFF001UPO	MEF2A ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1089	ENCFF001UPP	NFIC ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1090	ENCFF001UPQ	NFIC ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1091	ENCFF001UPR	REST ChIP-seq protocol PCR2x on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1092	ENCFF001UPS	REST ChIP-seq protocol PCR2x on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1093	ENCFF001UPT	REST ChIP-seq protocol v041610.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1094	ENCFF001UPV	EP300 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1095	ENCFF001UPX	PBX3 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1096	ENCFF001UQH	TCF12 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1097	ENCFF001UQI	TCF12 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1098	ENCFF001UQJ	TEAD4 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1099	ENCFF001UQK	TEAD4 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1100	ENCFF001UQN	YY1 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1101	ENCFF001UQO	YY1 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1102	ENCFF001UQQ	ZBTB33 ChIP-seq protocol v042211.1 on human SK-N-SH		TF binding sites	0	-0.8622380373			
+Project2	1103	ENCFF001UQR	Control ChIP-seq (protocol v041610.2) on SK-N-SH treated with 6uM retinoic acid for 48 hours		TF binding sites	0	-0.8622380373			
+Project2	1104	ENCFF001UQS	Control ChIP-seq (protocol v041610.2) on SK-N-SH treated with 6uM retinoic acid for 48 hours		TF binding sites	0	-0.8622380373			
+Project2	1105	ENCFF001UQT	EP300 ChIP-seq (protocol v041610.2) on SK-N-SH treated with 6uM retinoic acid for 48 hours		TF binding sites	0	-0.8622380373			
+Project2	1106	ENCFF001UQU	EP300 ChIP-seq (protocol v041610.2) on SK-N-SH treated with 6uM retinoic acid for 48 hours		TF binding sites	0	-0.8622380373			
+Project2	1107	ENCFF001UQV	RAD21 ChIP-seq (protocol v041610.2) on SK-N-SH treated with 6uM retinoic acid for 48 hours		TF binding sites	0	-0.8622380373			
+Project2	1108	ENCFF001UQW	RAD21 ChIP-seq (protocol v041610.2) on SK-N-SH treated with 6uM retinoic acid for 48 hours		TF binding sites	0	-0.8622380373			
+Project2	1109	ENCFF001UQZ	YY1 ChIP-seq (protocol v041610.2) on SK-N-SH treated with 6uM retinoic acid for 48 hours		TF binding sites	0	-0.8622380373			
+Project2	1110	ENCFF001URA	YY1 ChIP-seq (protocol v041610.2) on SK-N-SH treated with 6uM retinoic acid for 48 hours		TF binding sites	0	-0.8622380373			
+Project2	1111	ENCFF001URC	CTCF ChIP-seq (protocol v041610.2) on T-47D treated with dimethylsulfoxide at 0.02%		TF binding sites	0	-0.8622380373			
+Project2	1112	ENCFF001URD	ESR1 ChIP-seq (protocol v041610.2) on T-47D treated with bisphenol A at 100nM		TF binding sites	0	-0.8622380373			
+Project2	1113	ENCFF001URE	ESR1 ChIP-seq (protocol v041610.2) on T-47D treated with bisphenol A at 100nM		TF binding sites	0	-0.8622380373			
+Project2	1114	ENCFF001URF	ESR1 ChIP-seq (protocol v041610.2) on T-47D treated with genistein at 100nM		TF binding sites	0	-0.8622380373			
+Project2	1115	ENCFF001URG	ESR1 ChIP-seq (protocol v041610.2) on T-47D treated with genistein at 100nM		TF binding sites	0	-0.8622380373			
+Project2	1116	ENCFF001URH	ESR1 ChIP-seq protocol v041610.2 on human T-47D treated with 10 nM estradiol		TF binding sites	0	-0.8622380373			
+Project2	1117	ENCFF001URI	ESR1 ChIP-seq protocol v041610.2 on human T-47D treated with 10 nM estradiol		TF binding sites	0	-0.8622380373			
+Project2	1118	ENCFF001URJ	FOXA1 ChIP-seq protocol v041610.2 on human T-47D treated with 0.02% DMSO		TF binding sites	0	-0.8622380373			
+Project2	1119	ENCFF001URK	FOXA1 ChIP-seq protocol v041610.2 on human T-47D treated with 0.02% DMSO		TF binding sites	0	-0.8622380373			
+Project2	1120	ENCFF001URL	FOXA2 ChIP-seq (protocol v041610.2) on T-47D treated with dimethylsulfoxide at 0.02%		TF binding sites	0	-0.8622380373			
+Project2	1121	ENCFF001URM	FOXA2 ChIP-seq (protocol v041610.2) on T-47D treated with dimethylsulfoxide at 0.02%		TF binding sites	0	-0.8622380373			
+Project2	1122	ENCFF001URN	JUND ChIP-seq protocol v042211.1 on human T-47D		TF binding sites	0	-0.8622380373			
+Project2	1123	ENCFF001URO	JUND ChIP-seq protocol v042211.1 on human T-47D		TF binding sites	0	-0.8622380373			
+Project2	1124	ENCFF001URP	EP300 ChIP-seq protocol v041610.2 on human T-47D treated with 0.02% DMSO		TF binding sites	0	-0.8622380373			
+Project2	1125	ENCFF001URU	REST ChIP-seq protocol PCR2x on human U87		TF binding sites	0	-0.8622380373			
+Project2	1126	ENCFF001URZ	CTCF ChIP-seq on human A549		TF binding sites	0	-0.8622380373			
+Project2	1127	ENCFF001USB	CTCF ChIP-seq on human Fibrobl		TF binding sites	0	-0.8622380373			
+Project2	1128	ENCFF001USC	CTCF ChIP-seq on human Gliobla		TF binding sites	0	-0.8622380373			
+Project2	1129	ENCFF001USD	POLR2A ChIP-seq on human Gliobla		TF binding sites	0	-0.8622380373			
+Project2	1130	ENCFF001USE	CTCF ChIP-seq on human GM10248		TF binding sites	0	-0.8622380373			
+Project2	1131	ENCFF001USF	CTCF ChIP-seq on human GM10266		TF binding sites	0	-0.8622380373			
+Project2	1132	ENCFF001USH	CTCF ChIP-seq on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	1133	ENCFF001USJ	CTCF ChIP-seq on human GM12891		TF binding sites	0	-0.8622380373			
+Project2	1134	ENCFF001USK	CTCF ChIP-seq on human GM12892		TF binding sites	0	-0.8622380373			
+Project2	1135	ENCFF001USL	CTCF ChIP-seq on human GM13976		TF binding sites	0	-0.8622380373			
+Project2	1136	ENCFF001USN	CTCF ChIP-seq on human GM19238		TF binding sites	0	-0.8622380373			
+Project2	1137	ENCFF001USO	CTCF ChIP-seq on human GM19239		TF binding sites	0	-0.8622380373			
+Project2	1138	ENCFF001USP	CTCF ChIP-seq on human GM19240		TF binding sites	0	-0.8622380373			
+Project2	1139	ENCFF001USQ	CTCF ChIP-seq on human GM20000		TF binding sites	0	-0.8622380373			
+Project2	1140	ENCFF001USR	MYC ChIP-seq on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	1141	ENCFF001USV	CTCF ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1142	ENCFF001USY	CTCF ChIP-seq on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1143	ENCFF001UTB	CTCF ChIP-seq on human HUVEC		TF binding sites	0	-0.8622380373			
+Project2	1144	ENCFF001UTE	CTCF ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1145	ENCFF001UTG	CTCF ChIP-seq on human kidney		TF binding sites	0	-0.8622380373			
+Project2	1146	ENCFF001UTH	CTCF ChIP-seq on human LNCaP treated with androgen		TF binding sites	0	-0.8622380373			
+Project2	1147	ENCFF001UTO	CTCF ChIP-seq on human MCF-7 treated with estrogen		TF binding sites	0	-0.8622380373			
+Project2	1148	ENCFF001UTS	CTCF ChIP-seq on human MCF-7 treated with vehicle		TF binding sites	0	-0.8622380373			
+Project2	1149	ENCFF001UTW	CTCF ChIP-seq on human Medullo		TF binding sites	0	-0.8622380373			
+Project2	1150	ENCFF001UTX	CTCF ChIP-seq on human NHEK		TF binding sites	0	-0.8622380373			
+Project2	1151	ENCFF001UTZ	CTCF ChIP-seq on human ProgFib		TF binding sites	0	-0.8622380373			
+Project2	1152	ENCFF001UUA	POLR2A ChIP-seq on human ProgFib		TF binding sites	0	-0.8622380373			
+Project2	1153	ENCFF001VDP	CTCF ChIP-seq on human A549 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1154	ENCFF001VDS	RAD21 ChIP-seq on human A549 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1155	ENCFF001VDT	ZNF274 ChIP-seq on human GM08714		TF binding sites	0	-0.8622380373			
+Project2	1156	ENCFF001VDX	BRCA1 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1157	ENCFF001VDY	CUX1 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1158	ENCFF001VEC	RCOR1 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1159	ENCFF001VEF	EBF1 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1160	ENCFF001VEH	ESRRA ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1161	ENCFF001VEK	IRF3 ChIP-seq on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	1162	ENCFF001VEM	JUND ChIP-seq on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	1163	ENCFF001VEN	MAFK ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1164	ENCFF001VET	RELA ChIP-seq on human GM12878 treated with TNFa		TF binding sites	0	-0.8622380373			
+Project2	1165	ENCFF001VEY	EP300 ChIP-seq on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	1166	ENCFF001VFC	POLR3G ChIP-seq on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	1167	ENCFF001VFE	RAD21 ChIP-seq on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	1168	ENCFF001VFF	RFX5 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1169	ENCFF001VFH	SMC3 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1170	ENCFF001VFJ	SREBF1 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1171	ENCFF001VFM	STAT3 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1172	ENCFF001VFN	TBL1XR1 ChIP-seq on human GM12878 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1173	ENCFF001VFR	YY1 ChIP-seq on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	1174	ENCFF001VFT	ZNF274 ChIP-seq on human GM12878		TF binding sites	0	-0.8622380373			
+Project2	1175	ENCFF001VGS	JUN ChIP-seq on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	1176	ENCFF001VGW	JUND ChIP-seq on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	1177	ENCFF001VGX	MAFK ChIP-seq on human H1-hESC produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1178	ENCFF001VGY	MAX ChIP-seq on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	1179	ENCFF001VHB	RAD21 ChIP-seq on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	1180	ENCFF001VHE	SUZ12 ChIP-seq on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	1181	ENCFF001VHI	ZNF274 ChIP-seq on human H1-hESC		TF binding sites	0	-0.8622380373			
+Project2	1182	ENCFF001VHP	ZNF263 ChIP-seq on human HEK293-T-REx		TF binding sites	0	-0.8622380373			
+Project2	1183	ENCFF001VHS	SMARCC1 ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1184	ENCFF001VHT	SMARCC2 ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1185	ENCFF001VHU	BDP1 ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1186	ENCFF001VHW	BRF1 ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1187	ENCFF001VHX	BRF2 ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1188	ENCFF001VHY	SMARCA4 ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1189	ENCFF001VHZ	FOS ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1190	ENCFF001VIC	JUN ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1191	ENCFF001VIO	SMARCB1 ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1192	ENCFF001VIQ	JUND ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1193	ENCFF001VJD	RAD21 ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1194	ENCFF001VJG	SUPT20H ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1195	ENCFF001VJH	SMC3 ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1196	ENCFF001VJL	TCF7L2 ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1197	ENCFF001VJM	TCF7L2 ChIP-seq on human HeLa-S3		TF binding sites	0	-0.8622380373			
+Project2	1198	ENCFF001VJU	ARID3A ChIP-seq on human HepG2 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1199	ENCFF001VJV	BHLHE40 ChIP-seq on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1200	ENCFF001VKB	JUN ChIP-seq on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1201	ENCFF001VKD	ESRRA ChIP-seq on human HepG2 treated with forskolin		TF binding sites	0	-0.8622380373			
+Project2	1202	ENCFF001VKE	NR3C1 ChIP-seq on human HepG2 treated with forskolin		TF binding sites	0	-0.8622380373			
+Project2	1203	ENCFF001VKF	HNF4A ChIP-seq on human HepG2 treated with forskolin		TF binding sites	0	-0.8622380373			
+Project2	1204	ENCFF001VKH	IRF3 ChIP-seq on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1205	ENCFF001VKI	JUND ChIP-seq on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1206	ENCFF001VKJ	MAFF ChIP-seq on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1207	ENCFF001VKK	MAFK ChIP-seq on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1208	ENCFF001VKL	MAFK ChIP-seq on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1209	ENCFF001VKX	RFX5 ChIP-seq on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1210	ENCFF001VKY	SMC3 ChIP-seq on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1211	ENCFF001VKZ	SREBF1 ChIP-seq on human HepG2 treated with insulin		TF binding sites	0	-0.8622380373			
+Project2	1212	ENCFF001VLA	SREBF1 ChIP-seq on human HepG2 treated with pravastatin		TF binding sites	0	-0.8622380373			
+Project2	1213	ENCFF001VLB	SREBF2 ChIP-seq on human HepG2 treated with pravastatin		TF binding sites	0	-0.8622380373			
+Project2	1214	ENCFF001VLG	ZNF274 ChIP-seq on human HepG2		TF binding sites	0	-0.8622380373			
+Project2	1215	ENCFF001VLH	FOS ChIP-seq on human HUVEC		TF binding sites	0	-0.8622380373			
+Project2	1216	ENCFF001VLI	JUN ChIP-seq on human HUVEC		TF binding sites	0	-0.8622380373			
+Project2	1217	ENCFF001VLJ	GATA2 ChIP-seq on human HUVEC		TF binding sites	0	-0.8622380373			
+Project2	1218	ENCFF001VLO	RCOR1 ChIP-seq on human IMR90 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1219	ENCFF001VLP	CTCF ChIP-seq on human IMR90 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1220	ENCFF001VLQ	MAFK ChIP-seq on human IMR90 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1221	ENCFF001VLU	RAD21 ChIP-seq on human IMR90 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1222	ENCFF001VLV	RFX5 ChIP-seq on human IMR90 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1223	ENCFF001VLW	ARID3A ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1224	ENCFF001VLX	ATF1 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1225	ENCFF001VLY	ATF3 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1226	ENCFF001VMA	BDP1 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1227	ENCFF001VMC	BRF1 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1228	ENCFF001VMD	BRF2 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1229	ENCFF001VME	SMARCA4 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1230	ENCFF001VMG	CUX1 ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1231	ENCFF001VMK	JUN ChIP-seq on human K562 treated with IFNa30 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1232	ENCFF001VML	JUN ChIP-seq on human K562 treated with IFNa for 6 hours		TF binding sites	0	-0.8622380373			
+Project2	1233	ENCFF001VMN	JUN ChIP-seq on human K562 treated with IFNg for 6 hours		TF binding sites	0	-0.8622380373			
+Project2	1234	ENCFF001VMO	JUN ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1235	ENCFF001VMP	JUN ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1236	ENCFF001VMW	RCOR1 ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1237	ENCFF001VMX	RCOR1 ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1238	ENCFF001VMZ	CTCF ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1239	ENCFF001VNC	GATA1 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1240	ENCFF001VND	GATA1 ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1241	ENCFF001VNE	GATA2 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1242	ENCFF001VNJ	SMARCB1 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1243	ENCFF001VNK	IRF1 ChIP-seq on human K562 treated with IFNa30		TF binding sites	0	-0.8622380373			
+Project2	1244	ENCFF001VNL	IRF1 ChIP-seq on human K562 treated with IFNa6h produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1245	ENCFF001VNO	TRIM28 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1246	ENCFF001VNQ	MAFF ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1247	ENCFF001VNR	MAFK ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1248	ENCFF001VNX	NFE2 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1249	ENCFF001VOB	EP300 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1250	ENCFF001VOG	POLR2A ChIP-seq on human K562 treated with IFNg for 6 hours		TF binding sites	0	-0.8622380373			
+Project2	1251	ENCFF001VOH	POLR2A ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1252	ENCFF001VOI	POLR2A ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1253	ENCFF001VOL	POLR3G ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1254	ENCFF001VOM	RAD21 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1255	ENCFF001VON	RFX5 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1256	ENCFF001VOO	POLR3A ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1257	ENCFF001VOP	SETDB1 ChIP-seq on human K562 treated with MNaseD		TF binding sites	0	-0.8622380373			
+Project2	1258	ENCFF001VOR	SIRT6 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1259	ENCFF001VOT	SMC3 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1260	ENCFF001VOU	STAT1 ChIP-seq on human K562 treated with IFNa for 6 hours		TF binding sites	0	-0.8622380373			
+Project2	1261	ENCFF001VOX	STAT2 ChIP-seq on human K562 treated with IFNa for 30 minutes		TF binding sites	0	-0.8622380373			
+Project2	1262	ENCFF001VOY	STAT2 ChIP-seq on human K562 treated with IFNa for 6 hours		TF binding sites	0	-0.8622380373			
+Project2	1263	ENCFF001VOZ	TAL1 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1264	ENCFF001VPB	TBL1XR1 ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1265	ENCFF001VPD	GTF3C2 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1266	ENCFF001VPG	UBTF ChIP-seq on human K562 produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1267	ENCFF001VPM	ZNF263 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1268	ENCFF001VPN	ZNF274 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1269	ENCFF001VPO	ZNF274 ChIP-seq on human K562		TF binding sites	0	-0.8622380373			
+Project2	1270	ENCFF001VPR	FOS ChIP-seq on human MCF10A-Er-Src treated with 0.01% ethanol		TF binding sites	0	-0.8622380373			
+Project2	1271	ENCFF001VQF	GATA3 ChIP-seq on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1272	ENCFF001VQG	GATA3 ChIP-seq on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1273	ENCFF001VQI	TCF7L2 ChIP-seq on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1274	ENCFF001VQJ	ZNF217 ChIP-seq on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1275	ENCFF001VQK	MYC ChIP-seq on human NB4		TF binding sites	0	-0.8622380373			
+Project2	1276	ENCFF001VQL	MAX ChIP-seq on human NB4		TF binding sites	0	-0.8622380373			
+Project2	1277	ENCFF001VQN	SUZ12 ChIP-seq on human NT2-D1		TF binding sites	0	-0.8622380373			
+Project2	1278	ENCFF001VQO	YY1 ChIP-seq on human NT2-D1		TF binding sites	0	-0.8622380373			
+Project2	1279	ENCFF001VQP	ZNF274 ChIP-seq on human NT2-D1		TF binding sites	0	-0.8622380373			
+Project2	1280	ENCFF001VQR	GATA1 ChIP-seq on human peripheral derived blood-erythroblast		TF binding sites	0	-0.8622380373			
+Project2	1281	ENCFF001VQS	POLR2A ChIP-seq on human PBDE		TF binding sites	0	-0.8622380373			
+Project2	1282	ENCFF001VQT	GATA1 ChIP-seq on human PBDEFetal		TF binding sites	0	-0.8622380373			
+Project2	1283	ENCFF001VQV	GATA2 ChIP-seq on human SH-SY5Y		TF binding sites	0	-0.8622380373			
+Project2	1284	ENCFF001VQW	GATA3 ChIP-seq on human SH-SY5Y		TF binding sites	0	-0.8622380373			
+Project2	1285	ENCFF001VQX	CTCF ChIP-seq on human SK-N-SH produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1286	ENCFF001VQY	JUND ChIP-seq on human SK-N-SH produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1287	ENCFF001VRB	EP300 ChIP-seq on human SK-N-SH produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1288	ENCFF001VRC	RAD21 ChIP-seq on human SK-N-SH produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1289	ENCFF001VRD	RFX5 ChIP-seq on human SK-N-SH produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1290	ENCFF001VRE	SMC3 ChIP-seq on human SK-N-SH produced by the Snyder lab		TF binding sites	0	-0.8622380373			
+Project2	1291	ENCFF001VRG	SETDB1 ChIP-seq on human U2OS		TF binding sites	0	-0.8622380373			
+Project2	1292	ENCFF001XMG	CTCF ChIP-seq on human AG10803		TF binding sites	0	-0.8622380373			
+Project2	1293	ENCFF001XMI	CTCF ChIP-seq on human AG10803		TF binding sites	0	-0.8622380373			
+Project2	1294	ENCFF001XMK	CTCF ChIP-seq on human AoAF		TF binding sites	0	-0.8622380373			
+Project2	1295	ENCFF001XMY	CTCF ChIP-seq on human Caco-2		TF binding sites	0	-0.8622380373			
+Project2	1296	ENCFF001XNB	CTCF ChIP-seq on human GM06990		TF binding sites	0	-0.8622380373			
+Project2	1297	ENCFF001XNC	CTCF ChIP-seq on human GM06990		TF binding sites	0	-0.8622380373			
+Project2	1298	ENCFF001XNE	CTCF ChIP-seq on human GM12801		TF binding sites	0	-0.8622380373			
+Project2	1299	ENCFF001XOK	CTCF ChIP-seq on human GM12870		TF binding sites	0	-0.8622380373			
+Project2	1300	ENCFF001XOU	CTCF ChIP-seq on human GM12872		TF binding sites	0	-0.8622380373			
+Project2	1301	ENCFF001XPA	CTCF ChIP-seq on human GM12873		TF binding sites	0	-0.8622380373			
+Project2	1302	ENCFF001XPO	CTCF ChIP-seq on human HAc		TF binding sites	0	-0.8622380373			
+Project2	1303	ENCFF001XQE	CTCF ChIP-seq on human HCM		TF binding sites	0	-0.8622380373			
+Project2	1304	ENCFF001XRE	CTCF ChIP-seq on human HFF		TF binding sites	0	-0.8622380373			
+Project2	1305	ENCFF001XRI	CTCF ChIP-seq on human HFF-Myc		TF binding sites	0	-0.8622380373			
+Project2	1306	ENCFF001XRW	CTCF ChIP-seq on human HPAF		TF binding sites	0	-0.8622380373			
+Project2	1307	ENCFF001XSD	CTCF ChIP-seq on human HRE		TF binding sites	0	-0.8622380373			
+Project2	1308	ENCFF001XSW	CTCF ChIP-seq on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1309	ENCFF001XSY	CTCF ChIP-seq on human MCF-7		TF binding sites	0	-0.8622380373			
+Project2	1310	ENCFF001XSZ	CTCF ChIP-seq on human NB4		TF binding sites	0	-0.8622380373			
+Project2	1311	ENCFF001XTN	CTCF ChIP-seq on human RPTEC		TF binding sites	0	-0.8622380373			
+Project2	1312	ENCFF001XUE	CTCF ChIP-seq on human WI-38		TF binding sites	0	-0.8622380373			
+Project2	1313	lcbTfbs_mcf7_p53	TP53 ChIP-seq in MCF7 (no treatment)		TF binding sites	0	-0.8622380373			
+Project2	1314	lcbTfbs_mcf7_p53_nutlin	TP53 ChIP-seq in MCF7 (nutlin)		TF binding sites	0	-0.8622380373			
+Project2	1315	GSM1208591_batch1_chrom1_LoVo_ASCL2_PassedQC_peaks_hg19	ASCL2 ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1316	GSM1208598_batch1_chrom1_LoVo_CEBPB_PassedQC_peaks_hg19	CEBPB ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1317	GSM1208603_batch1_chrom1_LoVo_CTCF_PassedQC_peaks_hg19	CTCF ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1318	GSM1208638_batch1_chrom1_LoVo_IRX3_PassedQC_peaks_hg19	IRX3 ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1319	GSM1208656_batch1_chrom1_LoVo_NEUROG3_PassedQC_peaks_hg19	NEUROG3 ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1320	GSM1208660_batch1_chrom1_LoVo_NFIL3_PassedQC_peaks_hg19	NFIL3 ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1321	GSM1208664_batch1_chrom1_LoVo_NR2F1_PassedQC_peaks_hg19	NR2F1 ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1322	GSM1208668_batch1_chrom1_LoVo_RAD21_PassedQC_peaks_hg19	RAD21 ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1323	GSM1208678_batch1_chrom1_LoVo_SMC1A_PassedQC_peaks_hg19	SMC1A ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1324	GSM1208679_batch1_chrom1_LoVo_SMC3_PassedQC_peaks_hg19	SMC3 ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1325	GSM1208688_batch1_chrom1_LoVo_TCF12_PassedQC_peaks_hg19	TCF12 ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1326	GSM1208689_batch1_chrom1_LoVo_TCF7L2_PassedQC_peaks_hg19	TCF7L2 ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1327	GSM1208697_batch1_chrom1_LoVo_UBTF_PassedQC_peaks_hg19	UBTF ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1328	GSM1208713_batch2_chrom1_LoVo_ATF5_PassedQC_peaks_hg19	ATF5 ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1329	GSM1208736_batch2_chrom1_LoVo_ERM_PassedQC_peaks_hg19	ERM ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1330	GSM1208757_batch2_chrom1_LoVo_HOXA2_PassedQC_peaks_hg19	HOXA2 ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
+Project2	1331	GSM1208790_batch2_chrom1_LoVo_REST_PassedQC_peaks_hg19	REST ChIP-seq in LoVo		TF binding sites	0	-0.8622380373			
