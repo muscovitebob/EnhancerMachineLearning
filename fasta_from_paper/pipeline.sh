@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
 
 
-# How to get the FASTA files starting from the data in the paper.
+# How to get the FASTA files starting from the data in the paper. 
+# you have to have the fasta file of hg19 in your folder (GCF_000001405.25_GRCh37.p13_genomic.fna)
 
 # STEP1: get original data
 # -----
 # Get GSE75661_7.5k_collapsed_counts.txt.gz from
 
-curl -O ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE75nnn/GSE75661/suppl/GSE75661%5F79k%5Fcollapsed%5Fcounts%2Etxt%2Egz
+curl -o - ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE75nnn/GSE75661/suppl/GSE75661_7.5k_collapsed_counts.txt.gz |gunzip > GSE75661_7.5k_collapsed_counts.txt
 
 # STEP2: parsing via IBP_data_wranglin.py
 # -----
 # Use python script IBP_data_wranglin.py to create
 
-python IBP_data_wrangling.py
+python IBP_data_wranglin.py
 
 # o	bed_v1.csv : csvfile in bed like format => oligoID / chrom / start / end
 #		the positive examples already have the right range (the SNV sits in the middle (starting at -74bp ending at +75bp, giving a range of 150bp
@@ -26,15 +27,12 @@ python IBP_data_wrangling.py
 mysql --user=genome --host=genome-euro-mysql.soe.ucsc.edu -A -N -D hg19 -e 'SELECT chrom, chromStart, chromEnd, name FROM snp147Common' > snp147Common.bed
 
 # o	get ranges of the SNPs :
-# TODO: make this AWK command actually work
 awk 'NR==FNR {h[$1] = 1; next} {if(h[$4]==1) print$4 ,"\t",$1 ,"\t",$2 ,"\t",$3}' rs_list.txt snp147Common.bed > rs_out.bed
 
-# STEP4: create bed_withrsadded.csv via excel
-# TODO: replicate this using AWK/other CLI cruncher
-# -----
-# -via simple copy paste in excel :  add the ranges of the SNPs to the bed_v1.csv.
+# STEP4: create bed_withrsadded.csv 
 # -mark the positive and negative examples via an extra column (for future reference)
 # expand the range of the snps to 150bp (with SNP centered)
+python IBP_data_wranglin_2.py
 
 # STEP5: make bed-file from csv
 # -----
@@ -54,6 +52,6 @@ sed -i -E 's/>NC_0*([^.]*).(.*)/>chr\1/' GCF_000001405.25_GRCh37.p13_genomic.fna
 # o	create fasta file via bed-tools
 bedtools getfasta -fi GCF_000001405.25_GRCh37.p13_genomic.fna -bed complete.bed  -fo  fasta_complete.fna
 
-# o	split into positve and negatives (first 272 records are positives, equaling 136 enhancer sequences)
-# fasta_complete_pos_ex.fna
-# fasta_complete_neg_ex.fna
+# o	split into positve and negatives (first 630 records are positives, equaling 315 enhancer sequences)
+head -630 fasta_complete.fna > fasta_complete_pos_ex.fna
+sed 1,630d fasta_complete.fna > fasta_complete_neg_ex.fna
