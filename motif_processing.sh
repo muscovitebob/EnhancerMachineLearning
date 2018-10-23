@@ -21,7 +21,7 @@ Nneg=$(grep -c "^>" fasta_complete_neg_ex.fa)
 
 # feed HOMER into ClusterBuster
 
-./cbust-src/cbust -l HOMERoutput.txt fasta_complete_pos_ex.fa > CBUSToutput.txt
+./cbust-src/cbust -l -f 1 -c 0 -m 0 HOMERoutput.txt fasta_complete_pos_ex.fa > CBUSToutput.txt
 
 
 ### RANDOM GENOME BACKGROUND SECTION - MAY BE USEFUL LATER ###
