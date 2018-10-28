@@ -8,18 +8,17 @@
 # -----
 # Get GSE75661_7.5k_collapsed_counts.txt.gz from
 
-curl -o - ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE75nnn/GSE75661/suppl/GSE75661_7.5k_collapsed_counts.txt.gz |gunzip > GSE75661_7.5k_collapsed_counts.txt
+curl -o - ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE75nnn/GSE75661/suppl/GSE75661_7.5k_collapsed_counts.txt.gz | gunzip > GSE75661_7.5k_collapsed_counts.txt
 
 # STEP2: parsing via IBP_data_wranglin.py
 # -----
 # Use python script IBP_data_wranglin.py to create
-
-python IBP_data_wranglin.py
-
 # o	bed_v1.csv : csvfile in bed like format => oligoID / chrom / start / end
 #		the positive examples already have the right range (the SNV sits in the middle (starting at -74bp ending at +75bp, giving a range of 150bp
 #		the negative examples (rs number).  The range for these are still blank.  (need to be obtained in the following step)
 # o	rs_list.txt : text file of all the negatives. = list of SNP-id (eg. rs427230)
+
+python IBP_data_wranglin.py
 
 # STEP3: obtaining the location of the SNPs
 # -----
