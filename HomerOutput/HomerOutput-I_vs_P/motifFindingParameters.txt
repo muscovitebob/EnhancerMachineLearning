@@ -1,0 +1,1 @@
+cmd = I_reg.fna fasta HomerOutput-I_vs_P -fasta P_reg.fna
