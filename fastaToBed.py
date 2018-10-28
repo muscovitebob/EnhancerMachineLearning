@@ -4,11 +4,11 @@ import sys
 
 with open("pos_ex.bed", "a") as bed:
     with open(sys.argv[1], 'r') as handle:
-    	for line in handle:
+        for line in handle:
             if line.startswith('>'):
-		splt1 = line[1:].split(":")
-		splt2 = splt1[1].split("-")
-            	chr = splt1[0]
-		loc1 = splt2[0]
-		loc2 = splt2[1]
-		bed.write(chr + "\t" + loc1 + "\t" + loc2)
+                splt1 = line[1:].split(":")
+                splt2 = splt1[1].split("-")
+                chr = splt1[0]
+                loc1 = splt2[0]
+                loc2 = splt2[1]
+                bed.write(chr + "\t" + loc1 + "\t" + loc2)

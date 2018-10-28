@@ -17,11 +17,11 @@ Nneg=$(grep -c "^>" fasta_complete_neg_ex.fa)
 
 # HOMER running!
 
-./homer.v4.9/bin/homer2 denovo -i fasta_complete_pos_ex.fa -b fasta_complete_neg_ex.fa > HOMERoutput.txt
+../homer.v4.9/bin/homer2 denovo -i fasta_complete_pos_ex.fa -b fasta_complete_neg_ex.fa > HOMERoutput.txt
 
 # feed HOMER into ClusterBuster
 
-./cbust-src/cbust -l -f 1 -c 0 -m 0 HOMERoutput.txt fasta_complete_pos_ex.fa > CBUSToutput.txt
+../cbust -l -f 1 -c 0 -m 0 HOMERoutput.txt fasta_complete_pos_ex.fa > CBUSToutput.txt
 
 
 ### RANDOM GENOME BACKGROUND SECTION - MAY BE USEFUL LATER ###
