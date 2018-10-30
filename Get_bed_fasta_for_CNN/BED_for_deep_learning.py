@@ -4,7 +4,7 @@ Created on 29 Oct 2018
 @author: wimth
 '''
 WINDOW_SIZE = 815 #this is the average sequence length in the bed files, check via awk 'OFS="\t" {SUM += $3-$2} END {print SUM, SUM/NR}' I_reg.bed P_reg.bed
-STRIDE = 2
+STRIDE = 100
 
 l_files = ['P_reg.bed','I_reg.bed']
 
