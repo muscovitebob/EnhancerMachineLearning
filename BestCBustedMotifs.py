@@ -17,6 +17,11 @@ class BestCBustedMotifs:
         self.jaspar_matrix_dict = self._read_jaspar_to_dict_of_names_and_pandas(jaspar_matrix_filepath)
 
     def _read_jaspar_to_dict_of_names_and_pandas(self, jaspar_matrix_filepath):
+        '''
+
+        :param jaspar_matrix_filepath: path to the input motif matrix list given to cbust
+        :return: dictionary of name : motif matrix pairs
+        '''
         jaspar_matrix_dict = dict()
         with open(jaspar_matrix_filepath) as jaspar_monolith:
             content = jaspar_monolith.read()
@@ -32,12 +37,21 @@ class BestCBustedMotifs:
         jaspar_monolith.close()
         return jaspar_matrix_dict
 
+    def retrieve_reliable_motifs(self, motif_threshold, cluster_threshold):
+        '''
+        Returns a set of unique reliable motif identifiers.
+        :param motif_threshold: motif
+        :param cluster_threshold: number of clusters to consider
+        :return:
+        '''
+        cluster_reduced = self.primary_cbust_matrix.loc[self.primary_cbust_matrix['# Score'] >= cluster_threshold]
+        identifier_set = set()
+        for i in range(0, len(cluster_reduced.index)):
+            slice = cluster_reduced.iloc[i, ]
+            sliceonlyscores = slice[4:]
+            slicethresholded = sliceonlyscores[sliceonlyscores >= motif_threshold]
+            identifier_set.update(list(slicethresholded.index))
+        return identifier_set
 
 
 
-
-
-
-
-
-#homerMotifs = homer_io.read_motifs("HomerOutput/HomerOutput-I_vs_P/homerMotifs.all.motifs", residues ="ACGT")

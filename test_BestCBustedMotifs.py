@@ -9,9 +9,14 @@ testfilepathjaspar = "cbust_example/jaspar2.txt"
 class TestBestCBustedMotifs(unittest.TestCase):
 
     def test_jaspar_instantiation(self):
-        newObj = BestCBustedMotifs(testfilepathf3, testfilepathjaspar)
+        self.newObj = BestCBustedMotifs(testfilepathf3, testfilepathjaspar)
+        self.assertIsInstance(self.newObj.jaspar_matrix_dict, dict)
 
-        self.assertIsInstance(newObj.jaspar_matrix_dict, dict)
+    def test_identifier_set(self):
+        self.newObj = BestCBustedMotifs(testfilepathf3, testfilepathjaspar)
+        self.assertNotEquals(len(self.newObj.retrieve_reliable_motifs(0.4,0.05)), 0)
+
+
 
 if __name__ == '__main__':
     unittest.main()
