@@ -10,11 +10,8 @@ class TestBestCBustedMotifs(unittest.TestCase):
 
     def test_jaspar_instantiation(self):
         newObj = BestCBustedMotifs(testfilepathf3, testfilepathjaspar)
-        self.assertIsInstance(newObj.jaspar_matrix, motifs.Motif)
 
-    def test_pandas_instantiation(self):
-        newObj = BestCBustedMotifs(testfilepathf3, testfilepathjaspar)
-        self.assertIsInstance(newObj.primary_cbust_matrix, pd.DataFrame)
+        self.assertIsInstance(newObj.jaspar_matrix_dict, dict)
 
 if __name__ == '__main__':
     unittest.main()
