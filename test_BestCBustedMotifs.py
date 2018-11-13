@@ -16,6 +16,13 @@ class TestBestCBustedMotifs(unittest.TestCase):
         self.newObj = BestCBustedMotifs(testfilepathf3, testfilepathjaspar)
         self.assertNotEquals(len(self.newObj._retrieve_reliable_motifs(0.4,0.05)), 0)
 
+    def test_getter_for_reliable_motif_isdict(self):
+        self.newObj = BestCBustedMotifs(testfilepathf3, testfilepathjaspar)
+        self.assertIsInstance(self.newObj.get_reliable_motif_dict(0.4, 0.05), dict)
+
+    def test_getter_for_reliable_motif_notempty(self):
+        self.newObj = BestCBustedMotifs(testfilepathf3, testfilepathjaspar)
+        self.assertNotEquals(len(self.newObj.get_reliable_motif_dict(0.4, 0.05)), 0)
 
 
 if __name__ == '__main__':

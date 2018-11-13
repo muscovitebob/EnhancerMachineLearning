@@ -15,6 +15,17 @@ class BestCBustedMotifs:
         # caveats: the identifier in the cbust matrix and the dict are not necessarily the same
         # cbust mangles motif identifiers according to its own internal rules
 
+    def get_reliable_motif_dict(self, motif_threshold, cluster_threshold):
+        '''
+        Getter for the reliable motif dictionary.
+        :param motif_threshold: motif score to take equal or over
+        :param cluster_threshold: cluster score to take equal or over
+        :return: reliable motif dictionary
+        '''
+        return self._create_reliable_motif_dict(
+            self._retrieve_reliable_motifs(motif_threshold, cluster_threshold)
+        )
+
     def _read_jaspar_to_dict_of_names_and_pandas(self, jaspar_matrix_filepath):
         '''
         Creates a dictionary with name : motif matrix of all motif matrices used in a cbust run
