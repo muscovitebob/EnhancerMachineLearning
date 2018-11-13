@@ -1,7 +1,7 @@
 import pandas as pd
 import io
 
-class BestCBustedMotifs:
+class cbust_result:
     '''
     This class represents cbust output and provides methods to filter it
     '''
