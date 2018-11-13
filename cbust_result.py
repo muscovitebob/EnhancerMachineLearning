@@ -3,15 +3,22 @@ import io
 
 class cbust_result:
     '''
-    This class represents cbust output and provides methods to filter it
+    This class represents cbust output and provides methods to filter it. Only "-f 3" type output is supported.
     '''
     def __init__(self, f3_output_filepath, jaspar_matrix_filepath):
-        self.primary_cbust_matrix = pd.read_csv(f3_output_filepath, error_bad_lines=False, sep='\t', skiprows=3, skipfooter=9)
+        '''
+
+        :param f3_output_filepath: output matrix that is in the "-f 3" matrix format
+        :param jaspar_matrix_filepath: path to the original motif matrix used for cluster discovery as input to cbust
+        '''
+        self.primary_cbust_matrix = pd.read_csv(f3_output_filepath, error_bad_lines=False, sep='\t', skiprows=3,
+                                                skipfooter=9, engine='python')
         self.cbust_run_info = pd.read_csv("cbust_example/f3results.txt", error_bad_lines=False)[-8:]
         self.motif_names = list(self.primary_cbust_matrix.columns)[4:]
         self.jaspar_matrix_dict = self._read_jaspar_to_dict_of_names_and_pandas(jaspar_matrix_filepath)
-        # caveats: the identifier in the cbust matrix and the dict are not necessarily the same
-        # cbust mangles motif identifiers according to its own internal rules
+        # caveat: bust mangles motif identifiers according to its own internal rules
+        # this seems to consist of only using until the first space as the motif name.
+        # we use the same logic in dict keys
 
     def get_reliable_motif_dict(self, motif_threshold, cluster_threshold):
         '''
@@ -23,6 +30,21 @@ class cbust_result:
         return self._create_reliable_motif_dict(
             self._retrieve_reliable_motifs(motif_threshold, cluster_threshold)
         )
+
+    def write_reliable_motif_matrix(self, reliable_motif_dict, motif_matrix_filename):
+        '''
+        Writes the reliable motif dictionary to a jaspar motif matrix file
+        :param reliable_motif_dict:
+        :return: nothing; writes to disk
+        '''
+        # caveat: the new matrix file is written using cbust internal identifiers (which are shortened motif names)
+        # not the identifier used in the original jaspar matrix. Should be sufficiently unique anyway.
+        motif_matrix = open(motif_matrix_filename, "w+")
+        for motif in reliable_motif_dict.keys:
+            motif_matrix.write(">" + motif)
+            motif_matrix.write(reliable_motif_dict.get(motif))
+        motif_matrix.close()
+
 
     def get_jaspar_input_dict(self):
         '''
@@ -88,19 +110,6 @@ class cbust_result:
             except Exception:
                 pass
         return reliable_motif_dict
-
-    def _write_reliable_motif_matrix(self, reliable_motif_dict):
-        '''
-        Writes the reliable motif dictionary to a jaspar motif matrix file
-        :param reliable_motif_dict:
-        :return: nothing; writes to disk
-        '''
-        # TO BE IMPLEMENTED
-
-
-
-
-
 
 
 
