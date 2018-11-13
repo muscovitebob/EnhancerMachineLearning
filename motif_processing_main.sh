@@ -7,11 +7,11 @@
 
 # feed HOMER into ClusterBuster
 
-./cbust -l -f 1 -c 0 -m 0 HomerOutput/HomerOutput-I_vs_P/homerMotifs.all.motifs \
-Get_BED_FASTA/I_reg.fna > CBUSToutput/CBUSToutput_I_vs_P.txt
+./cbust -l -f 3 -c 0.01 HomerOutput/HomerOutput-I_vs_P/homerMotifs.all.motifs \
+Get_BED_FASTA/I_reg.fna > CBUSToutput/CBUSToutput_I_vs_P_f3.txt
 
-./cbust -l -f 1 -c 0 -m 0 HomerOutput/HomerOutput-P_vs_I/homerMotifs.all.motifs \
-Get_BED_FASTA/P_reg.fna > CBUSToutput/CBUSToutput_P_vs_I.txt
+./cbust -l -f 3 -c 0.01 HomerOutput/HomerOutput-P_vs_I/homerMotifs.all.motifs \
+Get_BED_FASTA/P_reg.fna > CBUSToutput/CBUSToutput_P_vs_I_f3.txt
 
 ./cbust -l -f 0 -c 0 -m 0 HomerOutput/HomerOutput-I_vs_P/homerMotifs.all.motifs \
 Get_BED_FASTA/I_reg.fna > CBUSToutput/CBUSToutput_I_vs_P_f0.txt

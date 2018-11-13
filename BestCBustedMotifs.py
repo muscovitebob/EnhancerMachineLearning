@@ -26,6 +26,19 @@ class BestCBustedMotifs:
             self._retrieve_reliable_motifs(motif_threshold, cluster_threshold)
         )
 
+    def get_jaspar_input_dict(self):
+        '''
+        Getter for the input motif matrix that was originally fed to clusterbuster, in a dict format
+        :return:
+        '''
+        return self.jaspar_matrix_dict
+
+    def get_cbust_f3_matrix(self):
+        '''
+        Getter for the clusterbuster
+        :return:
+        '''
+
     def _read_jaspar_to_dict_of_names_and_pandas(self, jaspar_matrix_filepath):
         '''
         Creates a dictionary with name : motif matrix of all motif matrices used in a cbust run
