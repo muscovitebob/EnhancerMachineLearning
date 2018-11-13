@@ -59,9 +59,18 @@ class BestCBustedMotifs:
         '''
         Creates a dictionary of reliable motif matrices using a set of motif identifiers.
         :type identifier_set set
-        :return:
+        :return: dictionary of reliable motifs, cbust abbreviated name : data frame of the motif
         '''
-        #for i in (len(identifier_set):
+        reliable_motif_dict = {}
+        for key in identifier_set:
+            try:
+                reliable_motif_dict[key] = self.jaspar_matrix_dict.get(key)
+            except Exception:
+                pass
+        return reliable_motif_dict
+
+
+
 
 
 
