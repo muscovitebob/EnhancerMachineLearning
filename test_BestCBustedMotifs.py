@@ -14,7 +14,7 @@ class TestBestCBustedMotifs(unittest.TestCase):
 
     def test_identifier_set(self):
         self.newObj = BestCBustedMotifs(testfilepathf3, testfilepathjaspar)
-        self.assertNotEquals(len(self.newObj.retrieve_reliable_motifs(0.4,0.05)), 0)
+        self.assertNotEquals(len(self.newObj._retrieve_reliable_motifs(0.4,0.05)), 0)
 
 
 

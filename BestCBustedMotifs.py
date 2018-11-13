@@ -14,6 +14,8 @@ class BestCBustedMotifs:
         self.cbust_run_info = pd.read_csv("cbust_example/f3results.txt", error_bad_lines=False)[-8:]
         self.motif_names = list(self.primary_cbust_matrix.columns)[4:]
         self.jaspar_matrix_dict = self._read_jaspar_to_dict_of_names_and_pandas(jaspar_matrix_filepath)
+        # caveats: the identifier in the cbust matrix and the dict are not necessarily the same
+        # cbust mangles motif identifiers according to its own internal rules
 
     def _read_jaspar_to_dict_of_names_and_pandas(self, jaspar_matrix_filepath):
         '''
@@ -28,7 +30,8 @@ class BestCBustedMotifs:
             for i in range(1, len(one_matrix_per_string)):
                 first = one_matrix_per_string[i]
                 first1 = first.split("\n")
-                jaspar_name = first1[0]
+                jaspar_name_full = first1[0]
+                jaspar_name = jaspar_name_full.split()[0]
                 first2 = '\n'.join(first1[1:])
                 jaspar_matrix = pd.read_table(io.StringIO(first2), sep="\t",
                                               index_col=False, header=None, names=['A', 'C', 'G', 'T'])
@@ -36,12 +39,12 @@ class BestCBustedMotifs:
         jaspar_monolith.close()
         return jaspar_matrix_dict
 
-    def retrieve_reliable_motifs(self, motif_threshold, cluster_threshold):
+    def _retrieve_reliable_motifs(self, motif_threshold, cluster_threshold):
         '''
-        Returns a set of unique reliable motif identifiers.
-        :param motif_threshold: motif
-        :param cluster_threshold: number of clusters to consider
-        :return:
+        Returns a set of unique reliable motif identifiers, judged by score thresholds.
+        :param motif_threshold: motif score to take equal or over
+        :param cluster_threshold: cluster score to take equal or over
+        :return: set of motif identifiers
         '''
         cluster_reduced = self.primary_cbust_matrix.loc[self.primary_cbust_matrix['# Score'] >= cluster_threshold]
         identifier_set = set()
@@ -51,6 +54,16 @@ class BestCBustedMotifs:
             slicethresholded = sliceonlyscores[sliceonlyscores >= motif_threshold]
             identifier_set.update(list(slicethresholded.index))
         return identifier_set
+
+    def _create_reliable_motif_dict(self, identifier_set):
+        '''
+        Creates a dictionary of reliable motif matrices using a set of motif identifiers.
+        :type identifier_set set
+        :return:
+        '''
+        #for i in (len(identifier_set):
+
+
 
 
 
