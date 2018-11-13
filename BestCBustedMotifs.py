@@ -3,8 +3,6 @@ import pandas as pd
 import io
 import homer_io
 
-testfilepath = "cbust_example/f3results.txt"
-
 class BestCBustedMotifs:
     '''
     This class represents cbust output and provides methods to filter it
@@ -68,6 +66,13 @@ class BestCBustedMotifs:
             except Exception:
                 pass
         return reliable_motif_dict
+
+    def _write_reliable_motif_matrix(self, reliable_motif_dict):
+        '''
+        Writes the reliable motif dictionary to a jaspar motif matrix file
+        :param reliable_motif_dict:
+        :return: nothing; writes to disk
+        '''
 
 
 
