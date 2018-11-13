@@ -1,7 +1,5 @@
-from Bio import motifs
 import pandas as pd
 import io
-import homer_io
 
 class BestCBustedMotifs:
     '''
