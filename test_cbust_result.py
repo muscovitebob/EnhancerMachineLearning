@@ -35,7 +35,7 @@ class TestBestCBustedMotifs(unittest.TestCase):
     def test_motif_matrix_writer(self):
         self.newObj = cbust_result(testfilepathf3, testfilepathjaspar)
         reliable_dict = self.newObj.get_reliable_motif_dict(0.4, 0.05)
-        self.newObj.write_reliable_motif_matrix(reliable_dict, "test_matrix.txt")
+        self.newObj.write_reliable_motif_matrix(reliable_dict, "cbust_example/test_writer_matrix.txt")
 
 
 if __name__ == '__main__':

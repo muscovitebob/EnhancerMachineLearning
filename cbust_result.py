@@ -39,10 +39,16 @@ class cbust_result:
         '''
         # caveat: the new matrix file is written using cbust internal identifiers (which are shortened motif names)
         # not the identifier used in the original jaspar matrix. Should be sufficiently unique anyway.
-        motif_matrix = open(motif_matrix_filename, "w+")
-        for motif in reliable_motif_dict.keys:
-            motif_matrix.write(">" + motif)
-            motif_matrix.write(reliable_motif_dict.get(motif))
+        with open(motif_matrix_filename, "w") as motif_matrix:
+            for motif_name, motif in reliable_motif_dict.items():
+                motif_matrix.write(">" + str(motif_name) + "\n")
+                for row_number in range(0, len(motif)):
+                    current_row = motif.iloc[row_number]
+                    for nucleotide_column in range(0, 4):
+                        if nucleotide_column <= 2:
+                            motif_matrix.write(str(current_row[nucleotide_column]) + "\t")
+                        else:
+                            motif_matrix.write(str(current_row[nucleotide_column]) + "\t\n")
         motif_matrix.close()
 
 
