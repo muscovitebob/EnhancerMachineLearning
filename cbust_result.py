@@ -20,7 +20,7 @@ class cbust_result:
         # this seems to consist of only using until the first space as the motif name.
         # we use the same logic in dict keys
 
-    def get_reliable_motif_dict(self, motif_threshold, cluster_threshold):
+    def calculate_reliable_motif_dict(self, motif_threshold, cluster_threshold):
         '''
         Getter for the reliable motif dictionary.
         :param motif_threshold: motif score to take equal or over
@@ -31,7 +31,8 @@ class cbust_result:
             self._retrieve_reliable_motifs(motif_threshold, cluster_threshold)
         )
 
-    def write_reliable_motif_matrix(self, reliable_motif_dict, motif_matrix_filename):
+    @staticmethod
+    def write_reliable_motif_matrix(reliable_motif_dict, motif_matrix_filename):
         '''
         Writes the reliable motif dictionary to a jaspar motif matrix file
         :param reliable_motif_dict:
@@ -51,7 +52,7 @@ class cbust_result:
                             motif_matrix.write(str(current_row[nucleotide_column]) + "\t\n")
         motif_matrix.close()
 
-
+    @property
     def get_jaspar_input_dict(self):
         '''
         Getter for the input motif matrix that was originally fed to clusterbuster, in a dict format
@@ -59,11 +60,13 @@ class cbust_result:
         '''
         return self.jaspar_matrix_dict
 
+    @property
     def get_cbust_f3_matrix(self):
         '''
-        Getter for the clusterbuster
+        Getter for the full clusterbuster -f 3 matrix
         :return:
         '''
+        return self.primary_cbust_matrix
 
     def _read_jaspar_to_dict_of_names_and_pandas(self, jaspar_matrix_filepath):
         '''
