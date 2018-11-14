@@ -1,13 +1,11 @@
 import unittest
-from cbust_result import cbust_result
-from Bio import motifs
-import pandas as pd
 import random
+import cbust_result
 
 testfilepathf3 = "cbust_example/f3results.txt"
 testfilepathjaspar = "cbust_example/jaspar2.txt"
 
-class TestBestCBustedMotifs(unittest.TestCase):
+class test_cbust_result(unittest.TestCase):
 
     def test_jaspar_instantiation(self):
         self.newObj = cbust_result(testfilepathf3, testfilepathjaspar)
