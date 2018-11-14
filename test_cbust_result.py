@@ -15,7 +15,7 @@ class TestBestCBustedMotifs(unittest.TestCase):
 
     def test_identifier_set(self):
         self.newObj = cbust_result(testfilepathf3, testfilepathjaspar)
-        self.assertNotEquals(len(self.newObj._retrieve_reliable_motifs(0.4,0.05)), 0)
+        self.assertNotEqual(len(self.newObj._retrieve_reliable_motifs(0.4,0.05)), 0)
 
     def test_getter_for_reliable_motif_isdict(self):
         self.newObj = cbust_result(testfilepathf3, testfilepathjaspar)
