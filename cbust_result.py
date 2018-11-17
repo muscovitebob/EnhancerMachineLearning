@@ -19,11 +19,10 @@ class cbust_result:
             self._from_f1(self.cbust_output_filepath)
         elif self.input_matrix_type == "f3":
             self._from_f3(self.cbust_output_filepath)
+            self.motif_names = list(self.f3_cbust_matrix.columns)[4:]
+            self.jaspar_matrix_dict = self._read_jaspar_to_dict_of_names_and_pandas(self.jaspar_matrix_filepath)
         else:
             raise NotImplementedError
-
-        self.motif_names = list(self.f3_cbust_matrix.columns)[4:]
-        self.jaspar_matrix_dict = self._read_jaspar_to_dict_of_names_and_pandas(self.jaspar_matrix_filepath)
 
     def _from_f3(self, f3_output_filepath):
         self.f3_cbust_matrix = pd.read_csv(f3_output_filepath, error_bad_lines=False, sep='\t', skiprows=3,
@@ -41,38 +40,53 @@ class cbust_result:
         :param f1_output_filepath:
         :return:
         '''
+        name_start_stop = self._accumulate_name_start_stop(f1_output_filepath)
+        num_lines = sum(1 for line in open(f1_output_filepath))
+        for i in range(0, len(name_start_stop[0])):
+            single_matrix = self._pull_matrix_from_positions(name_start_stop[1][i],
+                                                             name_start_stop[2][i],
+                                                             f1_output_filepath, num_lines)
+            self.f1_matrix_dict[name_start_stop[0][i]] = single_matrix
+
+    def _accumulate_name_start_stop(self, f1_output_filepath):
+        start_list = []
+        stop_list = []
+        name_list = []
         self.f1_matrix_dict = {}
         with open(f1_output_filepath, "r") as f1_file:
             in_matrix = False
+            file_position = 0
             for line in f1_file:
-                if line == "\n":
+                file_position += 1
+                if line == "\n" and in_matrix == True:
+                    stop_list.append(file_position)
+                    in_matrix = False
                     continue
                 elif line.startswith(">"):
                     in_matrix = True
-                    startpos = f1_file.tell() + 1
-                    matrix_name = line
+                    name_list.append(line)
+                    continue
+                elif line.startswith("#") and in_matrix == True:
+                    start_list.append(file_position)
                     continue
                 elif line.isdigit() and in_matrix == True:
                     continue
-                elif line == "\n" and in_matrix == True:
-                    endpos = f1_file.tell()
-                    in_matrix = False
-                    single_matrix = self._pull_matrix_from_positions(startpos, endpos, f1_output_filepath)
-                    self.f1_matrix_dict[matrix_name] = single_matrix
                 else:
                     continue
         f1_file.close()
+        return name_list, start_list, stop_list
 
 
-    def _pull_matrix_from_positions(self, startpos, endpos, f1_output_filepath):
+
+    def _pull_matrix_from_positions(self, startpos, endpos, f1_output_filepath, num_lines):
         '''
         :param startpos:
         :param endpos:
         :return:
         '''
         current_matrix = pd.read_csv(f1_output_filepath, error_bad_lines=False, sep='\t',
-                                     skiprows=startpos,
-                                     skipfooter=endpos, engine='python')
+                                     skiprows=startpos-1,
+                                     skipfooter=num_lines-endpos, engine='python', index_col=False, header=0)
         return current_matrix
 
 
