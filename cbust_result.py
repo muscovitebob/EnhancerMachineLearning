@@ -53,14 +53,14 @@ class cbust_result:
                 elif line.isdigit() and in_matrix == True:
                     continue
                 elif line == "\n" and in_matrix == True:
-                    stoppos = f1_file.tell()
+                    endpos = f1_file.tell()
                     in_matrix = False
-                    self._pull_matrix_from_positions(startpos, stoppos)
+                    self._pull_matrix_from_positions(startpos, endpos, f1_output_filepath)
                 else:
                     continue
 
 
-    def _pull_matrix_from_positions(self, startpos, endpos):
+    def _pull_matrix_from_positions(self, startpos, endpos, f1_output_filepath):
         '''
         TODO: implement
         :param startpos:
@@ -68,6 +68,11 @@ class cbust_result:
         :return:
         '''
         self.f1_matrix_dict = {}
+        current_matrix = pd.read_csv(f1_output_filepath, error_bad_lines=False, sep='\t',
+                                     skiprows=startpos-1,
+                                     skipfooter=endpos, engine='python')
+
+
 
 
     def calculate_reliable_motif_dict(self, motif_threshold, cluster_threshold):
