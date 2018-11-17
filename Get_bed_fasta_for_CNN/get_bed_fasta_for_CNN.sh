@@ -17,3 +17,7 @@ awk '$1 ~ /^chrX/'  deep_learning.bed > deep_learning_test.bed
 awk '$1 ~ /^chr[^X]/'  deep_learning.bed > deep_learning_train.bed		
 bedtools getfasta -name -fi GCF_000001405.25_GRCh37.p13_genomic.fna -bed deep_learning_test.bed  -fo deep_learning_test.fna
 bedtools getfasta -name -fi GCF_000001405.25_GRCh37.p13_genomic.fna -bed deep_learning_train.bed  -fo deep_learning_train.fna
+
+#shuffle the train data set  (put seq-shuf in path)
+
+cat deep_learning_train.fna | seq-shuf > deep_learning_train_shuffled.fna
