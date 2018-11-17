@@ -3,89 +3,72 @@ import io
 
 class cbust_result:
     '''
-    This class represents cbust output and provides methods to filter it. Only "-f 3" type output is supported.
+    This class represents cbust output and provides methods to filter it. Only f1 and f3 type output is supported.
     '''
-    def __init__(self, f3_output_filepath, jaspar_matrix_filepath):
+    def __init__(self, **kwargs):
         '''
-
-        :param f3_output_filepath: output matrix that is in the "-f 3" matrix format
+        Input must be a dictionary
+        :param cbust_output_filepath: output matrix that is in the f1 or f3 matrix formats
         :param jaspar_matrix_filepath: path to the original motif matrix used for cluster discovery as input to cbust
         '''
-        self.primary_cbust_matrix = pd.read_csv(f3_output_filepath, error_bad_lines=False, sep='\t', skiprows=3,
-                                                skipfooter=9, engine='python')
-        self.cbust_run_info = pd.read_csv("cbust_example/f3results.txt", error_bad_lines=False)[-8:]
-        self.motif_names = list(self.primary_cbust_matrix.columns)[4:]
-        self.jaspar_matrix_dict = self._read_jaspar_to_dict_of_names_and_pandas(jaspar_matrix_filepath)
-        # caveat: bust mangles motif identifiers according to its own internal rules
-        # this seems to consist of only using until the first space as the motif name.
-        # we use the same logic in dict keys
+        self.input_matrix_type = kwargs.get("input_matrix_type")
+        self.cbust_output_filepath = kwargs.get("cbust_output_filepath")
+        self.jaspar_matrix_filepath = kwargs.get("jaspar_matrix_filepath")
 
-    def from_f3(cls, f3_output_filepath):
+        if self.input_matrix_type == "f1":
+            self._from_f1(self.cbust_output_filepath)
+        elif self.input_matrix_type == "f3":
+            self._from_f3(self.cbust_output_filepath)
+        else:
+            raise NotImplementedError
 
-    def from_f1(cls, f1_output_filepath):
-        # ASSUMPTIONS: ONE SECTION IN CBUST OUTPUT PER MOTIF, EVERY REGION IS SCORED FOR EVERY MOTIF
-        # GIVE P OR I AS SECOND ARGUMENT AFTER INPUT FILE (P FIRST)
-        import sys
-        motifs = ['id', 'class']
-        current_motif = ''
-        matrix = []
-        count = 0
+        self.motif_names = list(self.f3_cbust_matrix.columns)[4:]
+        self.jaspar_matrix_dict = self._read_jaspar_to_dict_of_names_and_pandas(self.jaspar_matrix_filepath)
 
-        classi = sys.argv[2]
+    def _from_f3(self, f3_output_filepath):
+        self.f3_cbust_matrix = pd.read_csv(f3_output_filepath, error_bad_lines=False, sep='\t', skiprows=3,
+                                          skipfooter=9, engine='python')
+        self.cbust_run_info = pd.read_csv(f3_output_filepath, error_bad_lines=False)[-8:]
+        self.motif_names = list(self.f3_cbust_matrix.columns)[4:]
 
-        with open(sys.argv[1], 'r') as handle:
-            for line in handle:
-                if line.startswith('>'):
-                    splt1 = line[1:].split(":")
-                    splt2 = splt1[1].split("-")
+    def _from_f1(self, f1_output_filepath):
+        '''
+        LOGIC: We read a huge f1 file in line by line. We detect where matrices start and end.
+        We pass the positions to an assistant function, which reads everything between these positions
+        into a pandas data frame using pd.read_csv. The assistant function takes the matrix name out and adds it
+        and the contents to a dict of all the matrices read so far.
+        TODO: implement the description
+        :param f1_output_filepath:
+        :return:
+        '''
+        with open(f1_output_filepath, "r") as f1_file:
+            in_matrix = False
+            for line in f1_file:
+                if line == "\n":
+                    continue
+                elif line.startswith(">"):
+                    in_matrix = True
+                    startpos = f1_file.tell()
+                    continue
+                elif line.isdigit() and in_matrix == True:
+                    continue
+                elif line == "\n" and in_matrix == True:
+                    stoppos = f1_file.tell()
+                    in_matrix = False
+                    self._pull_matrix_from_positions(startpos, stoppos)
+                else:
+                    continue
 
-                    chr = splt1[0]
-                    start = splt2[0]
 
-                if line.startswith('#'):
-                    motif = line[1:].split()[3]
+    def _pull_matrix_from_positions(self, startpos, endpos):
+        '''
+        TODO: implement
+        :param startpos:
+        :param endpos:
+        :return:
+        '''
+        self.f1_matrix_dict = {}
 
-                    # NEW MOTIF STARTED
-                    if motif != current_motif:
-                        motifs.append(motif)
-                        current_motif = motif
-                        count = 0
-
-                # NEW ENTRY STARTED
-                if line[0].isdigit():
-                    split = line.split('\t')
-                    score = split[0]
-
-                    # relative start and end
-                    rel_start = split[1]
-                    rel_end = split[2]
-
-                    chr_start = int(start) + int(rel_start)
-                    chr_end = int(start) + int(rel_end)
-
-                    id = chr + ":" + str(chr_start) + "-" + str(chr_end)
-
-                    try:
-                        if matrix[count][0] != id:
-                            sys.stdout.write(current_motif)
-                            sys.stdout.write("ERROR")
-                        else:
-                            matrix[count].append(score)
-                    except:
-                        matrix.append([id, classi, score])
-
-                    count += 1
-
-        with open("FM.bed", "a") as FM:
-            if classi == 'P':
-                for motf in motifs:
-                    FM.write(motf + "\t")
-                FM.write("\n")
-            for entry in matrix:
-                FM.write(entry[0])
-                for score in entry[1:]:
-                    FM.write("\t" + score)
-                FM.write("\n")
 
     def calculate_reliable_motif_dict(self, motif_threshold, cluster_threshold):
         '''
@@ -133,7 +116,7 @@ class cbust_result:
         Getter for the full clusterbuster -f 3 matrix
         :return:
         '''
-        return self.primary_cbust_matrix
+        return self.f3_cbust_matrix
 
     def _read_jaspar_to_dict_of_names_and_pandas(self, jaspar_matrix_filepath):
         '''
@@ -164,7 +147,7 @@ class cbust_result:
         :param cluster_threshold: cluster score to take equal or over
         :return: set of motif identifiers
         '''
-        cluster_reduced = self.primary_cbust_matrix.loc[self.primary_cbust_matrix['# Score'] >= cluster_threshold]
+        cluster_reduced = self.f3_cbust_matrix.loc[self.f3_cbust_matrix['# Score'] >= cluster_threshold]
         identifier_set = set()
         for i in range(0, len(cluster_reduced.index)):
             slice = cluster_reduced.iloc[i, ]
