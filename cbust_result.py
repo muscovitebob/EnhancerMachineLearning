@@ -5,15 +5,15 @@ class cbust_result:
     '''
     This class represents cbust output and provides methods to filter it. Only f1 and f3 type output is supported.
     '''
-    def __init__(self, **kwargs):
+    def __init__(self, *args):
         '''
         Input must be a dictionary
         :param cbust_output_filepath: output matrix that is in the f1 or f3 matrix formats
         :param jaspar_matrix_filepath: path to the original motif matrix used for cluster discovery as input to cbust
         '''
-        self.input_matrix_type = kwargs.get("input_matrix_type")
-        self.cbust_output_filepath = kwargs.get("cbust_output_filepath")
-        self.jaspar_matrix_filepath = kwargs.get("jaspar_matrix_filepath")
+        self.cbust_output_filepath = args[0]
+        self.input_matrix_type = args[1]
+        self.jaspar_matrix_filepath = args[2]
 
         if self.input_matrix_type == "f1":
             self._from_f1(self.cbust_output_filepath)
