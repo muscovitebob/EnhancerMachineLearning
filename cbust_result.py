@@ -40,13 +40,12 @@ class cbust_result:
         :param f1_output_filepath:
         :return:
         '''
-        name_start_stop = self._accumulate_name_start_stop(f1_output_filepath)
-        num_lines = sum(1 for line in open(f1_output_filepath))
-        for i in range(0, len(name_start_stop[0])):
-            single_matrix = self._pull_matrix_from_positions(name_start_stop[1][i],
-                                                             name_start_stop[2][i],
-                                                             f1_output_filepath, num_lines)
-            self.f1_matrix_dict[name_start_stop[0][i]] = single_matrix
+        name_start_stop_numlines = self._accumulate_name_start_stop(f1_output_filepath)
+        for i in range(0, len(name_start_stop_numlines[0])):
+            single_matrix = self._pull_matrix_from_positions(name_start_stop_numlines[1][i],
+                                                             name_start_stop_numlines[2][i],
+                                                             f1_output_filepath, name_start_stop_numlines[3])
+            self.f1_matrix_dict[name_start_stop_numlines[0][i]] = single_matrix
 
     def _accumulate_name_start_stop(self, f1_output_filepath):
         start_list = []
@@ -74,9 +73,7 @@ class cbust_result:
                 else:
                     continue
         f1_file.close()
-        return name_list, start_list, stop_list
-
-
+        return name_list, start_list, stop_list, file_position
 
     def _pull_matrix_from_positions(self, startpos, endpos, f1_output_filepath, num_lines):
         '''
