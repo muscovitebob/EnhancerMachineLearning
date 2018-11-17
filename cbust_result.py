@@ -7,7 +7,6 @@ class cbust_result:
     '''
     def __init__(self, *args):
         '''
-        Input must be a dictionary
         :param cbust_output_filepath: output matrix that is in the f1 or f3 matrix formats
         :param jaspar_matrix_filepath: path to the original motif matrix used for cluster discovery as input to cbust
         '''
