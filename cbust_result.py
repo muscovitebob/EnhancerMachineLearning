@@ -32,11 +32,10 @@ class cbust_result:
 
     def _from_f1(self, f1_output_filepath):
         '''
-        LOGIC: We read a huge f1 file in line by line. We detect where matrices start and end.
+        We read a huge f1 file in line by line. We detect where matrices start and end.
         We pass the positions to an assistant function, which reads everything between these positions
         into a pandas data frame using pd.read_csv. The assistant function takes the matrix name out and adds it
         and the contents to a dict of all the matrices read so far.
-        TODO: implement the description
         :param f1_output_filepath:
         :return:
         '''
@@ -48,6 +47,11 @@ class cbust_result:
             self.f1_matrix_dict[name_start_stop_numlines[0][i]] = single_matrix
 
     def _accumulate_name_start_stop(self, f1_output_filepath):
+        '''
+        We create a tuple with names and positional information on matrices in the cbust f1 file.
+        :param f1_output_filepath:
+        :return:
+        '''
         start_list = []
         stop_list = []
         name_list = []
@@ -77,6 +81,7 @@ class cbust_result:
 
     def _pull_matrix_from_positions(self, startpos, endpos, f1_output_filepath, num_lines):
         '''
+        Retrieve a single matrix from a given position in file
         :param startpos:
         :param endpos:
         :return:
@@ -85,7 +90,6 @@ class cbust_result:
                                      skiprows=startpos-1,
                                      skipfooter=num_lines-endpos, engine='python', index_col=False, header=0)
         return current_matrix
-
 
     def calculate_reliable_motif_dict(self, motif_threshold, cluster_threshold):
         '''
