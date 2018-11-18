@@ -20,15 +20,17 @@ from sklearn.metrics import roc_curve,auc
 from keras.models import load_model
 import matplotlib.pyplot as plt
 from itertools import cycle
+import random
 
 WORK_DIR = r'E:\Downloads\IBP_project\Deep_learing_model'
 FILE_INPUT_TRAIN = 'deep_learning_train_shuffled.fna'
 NB_SEQUENCES_IN_TRAINFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_TRAIN)))/2)
+RANDOM_PERC_TRAIN_DATA = 10 #if '' then train on full train set
 
 FILE_INPUT_TEST = 'deep_learning_test.fna'
 NB_SEQUENCES_IN_TESTFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_TEST)))/2)
 
-LOAD_MODEL_FROM_DISK = True
+LOAD_MODEL_FROM_DISK = False
 FILE_NAME_MODEL_FROM_DISK = 'best_model.01-0.67.h5'
 MODEL_TO_USE = '2'
 
@@ -58,6 +60,33 @@ def encode_1hot_single_sequence(input_string,label_encoder,onehot_encoder):
         onehot_encoded = np.delete(onehot_encoded,3,axis=1)
     return onehot_encoded
 
+
+def create_random_subset_train_data():
+    
+    global FILE_INPUT_TRAIN, NB_SEQUENCES_IN_TRAINFILE 
+    f_in = open(os.path.join(WORK_DIR,FILE_INPUT_TRAIN))
+    
+    f_out_name = FILE_INPUT_TRAIN[:-4]+ '_' + str(RANDOM_PERC_TRAIN_DATA) + 'PERC.fna'
+    f_out_nb_rec = round(NB_SEQUENCES_IN_TRAINFILE*(RANDOM_PERC_TRAIN_DATA/100))
+    f_out = open(os.path.join(WORK_DIR,f_out_name),'w')
+    print('making a subset selection of the training data {0}'.format(f_out_name))
+    
+    l_ix_rand = random.sample(range(NB_SEQUENCES_IN_TRAINFILE), f_out_nb_rec)
+    ix_fasta =0
+    for line in f_in:
+        if ix_fasta in l_ix_rand:
+            f_out.write(line)
+            
+        if not line.startswith('>'):
+            ix_fasta +=1
+    
+    f_in.close()
+    f_out.close()
+    
+    FILE_INPUT_TRAIN = f_out_name
+    NB_SEQUENCES_IN_TRAINFILE = f_out_nb_rec
+
+    return
 
 def generate_data_in_batch_size(TrainOrTest='train'):
         
@@ -125,8 +154,11 @@ def get_weights_labels(testOrTrain='train'):
             line=line.rstrip()
             if line.startswith('>'):
                 l_labels.append(line[-1:])
+    
+    l_weights = class_weight.compute_class_weight('balanced', np.unique(l_labels), l_labels)
+    d_keras_weights = {ix:weight for ix,weight in enumerate(l_weights)}
 
-    return class_weight.compute_class_weight('balanced', np.unique(l_labels), l_labels)
+    return [l_weights,d_keras_weights]
 
 def build_model_1():
     model = Sequential()
@@ -245,19 +277,16 @@ if LOAD_MODEL_FROM_DISK:
     print('model {0} is loaded'.format(FILE_NAME_MODEL_FROM_DISK))
 else:
     print('#building the model')
-    if MODEL_TO_USE=='2':
-        model = build_model_2()
-    elif MODEL_TO_USE=='1':
-        model = build_model_1()
-    elif MODEL_TO_USE=='3':
-        model = build_model_3()
+    if RANDOM_PERC_TRAIN_DATA:create_random_subset_train_data()
+    
+    if MODEL_TO_USE=='2': model = build_model_2()
+    elif MODEL_TO_USE=='1':model = build_model_1()
+    elif MODEL_TO_USE=='3':model = build_model_3()
     
     #training the model
     print('training the model')
-    label_weights = get_weights_labels('train')
-    
     callbacks_list = [
-        ModelCheckpoint(filepath=os.path.join(WORK_DIR,'best_model{MODEL_TO_USE}.{epoch:02d}-{acc:.2f}.h5'),
+        ModelCheckpoint(filepath=os.path.join(WORK_DIR,'best_model.{epoch:02d}-{acc:.2f}_MODEL' + MODEL_TO_USE + '.h5'),
                                         monitor='loss',
                                         mode='min', 
                                         save_best_only=True),
@@ -267,7 +296,7 @@ else:
     
     model.fit_generator(generate_data_in_batch_size('train'),
                         shuffle=True,
-                        class_weight=label_weights,
+                        class_weight=get_weights_labels('train')[1],
                         callbacks=callbacks_list,
                         steps_per_epoch=round(NB_SEQUENCES_IN_TRAINFILE/BATCH_SIZE_TRAIN), 
                         epochs=EPOCHS)
@@ -282,7 +311,7 @@ y_pred_keras = model.predict_generator(generate_data_in_batch_size('test'),
                                        )
 
 y_test = get_onehot_labels('test')[0:nb_test_cases,:]
-print('->label distribution of test set = {0}, corresponding to weights {1}'.format(np.sum(y_test,axis=0),get_weights_labels('test')))
+print('->label distribution of test set = {0}, corresponding to weights {1}'.format(np.sum(y_test,axis=0),get_weights_labels('test')[0]))
 print('->label distribution of predicted set = {0}'.format(np.sum(y_pred_keras,axis=0)))
 
 do_ROC_evaluation(y_pred_keras,y_test,show_plot=False,save_plot=True)
@@ -290,4 +319,3 @@ test_loss = model.evaluate_generator(generate_data_in_batch_size('test'), steps=
 print('test set evaluation metrics =>  {2} = {0} ; {3} = {1}'.format(test_loss[0],test_loss[1],model.metrics_names[0],model.metrics_names[1]))
 
 
-print('end')
