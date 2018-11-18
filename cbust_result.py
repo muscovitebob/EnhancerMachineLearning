@@ -5,18 +5,20 @@ class cbust_result:
     '''
     This class represents cbust output and provides methods to filter it. Only f1 and f3 type output is supported.
     '''
-    def __init__(self, *args):
+    def __init__(self, cbust_output_filepath, input_matrix_type, jaspar_matrix_filepath):
         '''
         :param cbust_output_filepath: output matrix that is in the f1 or f3 matrix formats
         :param jaspar_matrix_filepath: path to the original motif matrix used for cluster discovery as input to cbust
         '''
-        self.cbust_output_filepath = args[0]
-        self.input_matrix_type = args[1]
-        self.jaspar_matrix_filepath = args[2]
+        self.cbust_output_filepath = cbust_output_filepath
+        self.input_matrix_type = input_matrix_type
+        self.jaspar_matrix_filepath = jaspar_matrix_filepath
 
         if self.input_matrix_type == "f1":
+            self.matrix_type = "f1"
             self._from_f1(self.cbust_output_filepath)
         elif self.input_matrix_type == "f3":
+            self.matrix_type = "f3"
             self._from_f3(self.cbust_output_filepath)
             self.motif_names = list(self.f3_cbust_matrix.columns)[4:]
             self.jaspar_matrix_dict = self._read_jaspar_to_dict_of_names_and_pandas(self.jaspar_matrix_filepath)
@@ -85,9 +87,9 @@ class cbust_result:
         :param endpos:
         :return:
         '''
+        cookie_cutter = lambda x: x not in range(startpos-1, endpos)
         current_matrix = pd.read_csv(f1_output_filepath, error_bad_lines=False, sep='\t',
-                                     skiprows=startpos-1,
-                                     skipfooter=num_lines-endpos, engine='python', index_col=False, header=0)
+                                     skiprows = cookie_cutter, engine='python', index_col=False, header=0)
         return current_matrix
 
     def calculate_reliable_motif_dict(self, motif_threshold, cluster_threshold):
