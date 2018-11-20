@@ -92,6 +92,51 @@ class cbust_result:
                                      skiprows = cookie_cutter, engine='c', index_col=False, header=0)
         return current_matrix
 
+    @staticmethod
+    def feature_matrix_special(negative_filepath, positive_filepath, feature_matrix_name):
+        '''
+        A special method to assemble a feature matrix from two different cbust input files.
+        :param self:
+        :param negative_filepath:
+        :param positive_filepath:
+        :param feature_matrix_name:
+        :return:
+        '''
+
+        l_files = [negative_filepath, positive_filepath]
+        d_sequence_d_motif_crmscore = {}
+        s_sequence = ''
+        s_motif = ''
+        ic_catch_crm = False
+        ic_catch_motif = False
+        for ix_file, file in enumerate(l_files):
+            with open(file) as f:
+                for line in f:
+                    if ic_catch_crm:
+                        crm_score = float(line.split()[0])
+                        ic_catch_crm = False
+                        if d_sequence_d_motif_crmscore.get(s_sequence):
+                            d_sequence_d_motif_crmscore[s_sequence][s_motif] = crm_score
+                        else:
+                            if ix_file == 0:
+                                label = 0
+                            else:
+                                label = 1
+                            d_sequence_d_motif_crmscore[s_sequence] = {'_label': label,
+                                                                       s_motif: crm_score}
+                    elif ic_catch_motif:
+                        s_motif = line.split()[4]
+                        ic_catch_motif = False
+                        ic_catch_crm = True
+                    elif line.startswith('>'):
+                        s_sequence = line.split()[0][1:]
+                        ic_catch_motif = True
+
+        # create pandas data frame from dict
+        df = pd.DataFrame.from_dict(d_sequence_d_motif_crmscore, orient='index')
+        # write feature matrix
+        df.to_csv(feature_matrix_name)
+
     def calculate_reliable_motif_dict(self, motif_threshold, cluster_threshold):
         '''
         Getter for the reliable motif dictionary.
