@@ -14,7 +14,7 @@ l_files = ['Homer_Ireg_TOTAL_cbustOut','Homer_Preg_TOTAL_cbustOut']
 d_sequence_d_motif_crmscore = {}
 s_sequence='';s_motif='';crm_score=0
 ic_catch_crm=False;ic_catch_motif=False
-for file in l_files:
+for ix_file,file in enumerate(l_files):
     with open(os.path.join(DIR,file)) as f: 
         for line in f:
             if ic_catch_crm:
@@ -23,7 +23,12 @@ for file in l_files:
                 if d_sequence_d_motif_crmscore.get(s_sequence):
                     d_sequence_d_motif_crmscore[s_sequence][s_motif] = crm_score
                 else:
-                    d_sequence_d_motif_crmscore[s_sequence] = {s_motif:crm_score}
+                    if ix_file==0:
+                        label = 'I'
+                    else:
+                        label = 'P'
+                    d_sequence_d_motif_crmscore[s_sequence] = {'_label':label,
+                                                               s_motif:crm_score}
             elif ic_catch_motif:
                 s_motif = line.split()[4]
                 ic_catch_motif=False
