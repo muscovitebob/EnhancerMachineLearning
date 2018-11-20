@@ -41,7 +41,6 @@ class test_cbust_result(unittest.TestCase):
         self.newObj = cbust_result.cbust_result(testfilepathf1, "f1", testfilepathjaspar)
         self.assertIsInstance(self.newObj.f1_matrix_dict, dict)
 
-    @unittest.skip
     def test_instantiation_f1_big(self):
         self.newObj = cbust_result.cbust_result("immovable_data/Homer_Preg_TOTAL_cbustOut", "f1", None)
         self.assertIsInstance(self.newObj.f1_matrix_dict, dict)

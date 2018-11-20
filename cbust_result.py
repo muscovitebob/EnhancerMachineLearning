@@ -89,7 +89,7 @@ class cbust_result:
         '''
         cookie_cutter = lambda x: x not in range(startpos-1, endpos)
         current_matrix = pd.read_csv(f1_output_filepath, error_bad_lines=False, sep='\t',
-                                     skiprows = cookie_cutter, engine='python', index_col=False, header=0)
+                                     skiprows = cookie_cutter, engine='c', index_col=False, header=0)
         return current_matrix
 
     def calculate_reliable_motif_dict(self, motif_threshold, cluster_threshold):
