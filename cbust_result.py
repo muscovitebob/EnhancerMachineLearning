@@ -3,22 +3,139 @@ import io
 
 class cbust_result:
     '''
-    This class represents cbust output and provides methods to filter it. Only "-f 3" type output is supported.
+    This class represents cbust output and provides methods to filter it. Only f1 and f3 type output is supported.
     '''
-    def __init__(self, f3_output_filepath, jaspar_matrix_filepath):
+    def __init__(self, cbust_output_filepath, input_matrix_type, jaspar_matrix_filepath):
         '''
-
-        :param f3_output_filepath: output matrix that is in the "-f 3" matrix format
+        :param cbust_output_filepath: output matrix that is in the f1 or f3 matrix formats
         :param jaspar_matrix_filepath: path to the original motif matrix used for cluster discovery as input to cbust
         '''
-        self.primary_cbust_matrix = pd.read_csv(f3_output_filepath, error_bad_lines=False, sep='\t', skiprows=3,
-                                                skipfooter=9, engine='python')
-        self.cbust_run_info = pd.read_csv("cbust_example/f3results.txt", error_bad_lines=False)[-8:]
-        self.motif_names = list(self.primary_cbust_matrix.columns)[4:]
-        self.jaspar_matrix_dict = self._read_jaspar_to_dict_of_names_and_pandas(jaspar_matrix_filepath)
-        # caveat: bust mangles motif identifiers according to its own internal rules
-        # this seems to consist of only using until the first space as the motif name.
-        # we use the same logic in dict keys
+        self.cbust_output_filepath = cbust_output_filepath
+        self.input_matrix_type = input_matrix_type
+        self.jaspar_matrix_filepath = jaspar_matrix_filepath
+
+        if self.input_matrix_type == "f1":
+            self.matrix_type = "f1"
+            self._from_f1(self.cbust_output_filepath)
+        elif self.input_matrix_type == "f3":
+            self.matrix_type = "f3"
+            self._from_f3(self.cbust_output_filepath)
+            self.motif_names = list(self.f3_cbust_matrix.columns)[4:]
+            self.jaspar_matrix_dict = self._read_jaspar_to_dict_of_names_and_pandas(self.jaspar_matrix_filepath)
+        else:
+            raise NotImplementedError
+
+    def _from_f3(self, f3_output_filepath):
+        self.f3_cbust_matrix = pd.read_csv(f3_output_filepath, error_bad_lines=False, sep='\t', skiprows=3,
+                                          skipfooter=9, engine='python')
+        self.cbust_run_info = pd.read_csv(f3_output_filepath, error_bad_lines=False)[-8:]
+        self.motif_names = list(self.f3_cbust_matrix.columns)[4:]
+
+    def _from_f1(self, f1_output_filepath):
+        '''
+        We read a huge f1 file in line by line. We detect where matrices start and end.
+        We pass the positions to an assistant function, which reads everything between these positions
+        into a pandas data frame using pd.read_csv. The assistant function takes the matrix name out and adds it
+        and the contents to a dict of all the matrices read so far.
+        :param f1_output_filepath:
+        :return:
+        '''
+        name_start_stop_numlines = self._accumulate_name_start_stop(f1_output_filepath)
+        for i in range(0, len(name_start_stop_numlines[0])):
+            single_matrix = self._pull_matrix_from_positions(name_start_stop_numlines[1][i],
+                                                             name_start_stop_numlines[2][i],
+                                                             f1_output_filepath, name_start_stop_numlines[3])
+            self.f1_matrix_dict[name_start_stop_numlines[0][i]] = single_matrix
+
+    def _accumulate_name_start_stop(self, f1_output_filepath):
+        '''
+        We create a tuple with names and positional information on matrices in the cbust f1 file.
+        :param f1_output_filepath:
+        :return:
+        '''
+        start_list = []
+        stop_list = []
+        name_list = []
+        self.f1_matrix_dict = {}
+        with open(f1_output_filepath, "r") as f1_file:
+            in_matrix = False
+            file_position = 0
+            for line in f1_file:
+                file_position += 1
+                if line == "\n" and in_matrix == True:
+                    stop_list.append(file_position)
+                    in_matrix = False
+                    continue
+                elif line.startswith(">"):
+                    in_matrix = True
+                    name_list.append(line)
+                    continue
+                elif line.startswith("#") and in_matrix == True:
+                    start_list.append(file_position)
+                    continue
+                elif line.isdigit() and in_matrix == True:
+                    continue
+                else:
+                    continue
+        f1_file.close()
+        return name_list, start_list, stop_list, file_position
+
+    def _pull_matrix_from_positions(self, startpos, endpos, f1_output_filepath, num_lines):
+        '''
+        Retrieve a single matrix from a given position in file
+        :param startpos:
+        :param endpos:
+        :return:
+        '''
+        cookie_cutter = lambda x: x not in range(startpos-1, endpos)
+        current_matrix = pd.read_csv(f1_output_filepath, error_bad_lines=False, sep='\t',
+                                     skiprows = cookie_cutter, engine='c', index_col=False, header=0)
+        return current_matrix
+
+    @staticmethod
+    def feature_matrix_special(negative_filepath, positive_filepath, feature_matrix_name):
+        '''
+        A special method to assemble a feature matrix from two different cbust input files.
+        :param self:
+        :param negative_filepath:
+        :param positive_filepath:
+        :param feature_matrix_name:
+        :return:
+        '''
+
+        l_files = [negative_filepath, positive_filepath]
+        d_sequence_d_motif_crmscore = {}
+        s_sequence = ''
+        s_motif = ''
+        ic_catch_crm = False
+        ic_catch_motif = False
+        for ix_file, file in enumerate(l_files):
+            with open(file) as f:
+                for line in f:
+                    if ic_catch_crm:
+                        crm_score = float(line.split()[0])
+                        ic_catch_crm = False
+                        if d_sequence_d_motif_crmscore.get(s_sequence):
+                            d_sequence_d_motif_crmscore[s_sequence][s_motif] = crm_score
+                        else:
+                            if ix_file == 0:
+                                label = 0
+                            else:
+                                label = 1
+                            d_sequence_d_motif_crmscore[s_sequence] = {'_label': label,
+                                                                       s_motif: crm_score}
+                    elif ic_catch_motif:
+                        s_motif = line.split()[4]
+                        ic_catch_motif = False
+                        ic_catch_crm = True
+                    elif line.startswith('>'):
+                        s_sequence = line.split()[0][1:]
+                        ic_catch_motif = True
+
+        # create pandas data frame from dict
+        df = pd.DataFrame.from_dict(d_sequence_d_motif_crmscore, orient='index')
+        # write feature matrix
+        df.to_csv(feature_matrix_name)
 
     def calculate_reliable_motif_dict(self, motif_threshold, cluster_threshold):
         '''
@@ -66,7 +183,7 @@ class cbust_result:
         Getter for the full clusterbuster -f 3 matrix
         :return:
         '''
-        return self.primary_cbust_matrix
+        return self.f3_cbust_matrix
 
     def _read_jaspar_to_dict_of_names_and_pandas(self, jaspar_matrix_filepath):
         '''
@@ -97,7 +214,7 @@ class cbust_result:
         :param cluster_threshold: cluster score to take equal or over
         :return: set of motif identifiers
         '''
-        cluster_reduced = self.primary_cbust_matrix.loc[self.primary_cbust_matrix['# Score'] >= cluster_threshold]
+        cluster_reduced = self.f3_cbust_matrix.loc[self.f3_cbust_matrix['# Score'] >= cluster_threshold]
         identifier_set = set()
         for i in range(0, len(cluster_reduced.index)):
             slice = cluster_reduced.iloc[i, ]
