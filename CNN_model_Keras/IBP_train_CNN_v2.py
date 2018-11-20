@@ -23,23 +23,23 @@ from itertools import cycle
 import random
 
 WORK_DIR = r'E:\Downloads\IBP_project\Deep_learing_model'
-FILE_INPUT_TRAIN = 'deep_learning_train_shuffled.fna'
+FILE_INPUT_TRAIN = 'deep_learning_cent_train_shuffled.fna'
 NB_SEQUENCES_IN_TRAINFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_TRAIN)))/2)
-RANDOM_PERC_TRAIN_DATA = 10 #if '' then train on full train set
+RANDOM_PERC_TRAIN_DATA = '' #if '' then train on full train set
 
-FILE_INPUT_TEST = 'deep_learning_test.fna'
+FILE_INPUT_TEST = 'deep_learning_cent_test.fna'
 NB_SEQUENCES_IN_TESTFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_TEST)))/2)
 
 LOAD_MODEL_FROM_DISK = False
 FILE_NAME_MODEL_FROM_DISK = 'best_model.01-0.67.h5'
 MODEL_TO_USE = '2'
 
-BATCH_SIZE_TRAIN = 2000
-BATCH_SIZE_TEST = 200
-EPOCHS = 10
+BATCH_SIZE_TRAIN = 200
+BATCH_SIZE_TEST = 2
+EPOCHS = 1
 SEQ_LENGTH=815
-ONEHOT_LABEL_P = np.asarray([1,0])
-ONEHOT_LABEL_I = np.asarray([0,1])
+ONEHOT_LABEL_P = np.asarray([0,1])
+ONEHOT_LABEL_I = np.asarray([1,0])
 
 
 def encode_1hot_single_label(input_string):
@@ -156,6 +156,15 @@ def get_weights_labels(testOrTrain='train'):
                 l_labels.append(line[-1:])
     
     l_weights = class_weight.compute_class_weight('balanced', np.unique(l_labels), l_labels)
+    
+    #temp switch weights
+    print('l_weights from sklearn module=',l_weights,' with unique labels=',np.unique(l_labels))
+#     l_weigths_switch=[0,0]
+#     l_weigths_switch[1],  l_weigths_switch[0] = l_weights
+#     l_weights = l_weigths_switch
+#     print('l_weights after switch =',l_weights)
+    ##
+    
     d_keras_weights = {ix:weight for ix,weight in enumerate(l_weights)}
 
     return [l_weights,d_keras_weights]
