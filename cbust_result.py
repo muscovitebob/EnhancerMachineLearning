@@ -93,7 +93,7 @@ class cbust_result:
         return current_matrix
 
     @staticmethod
-    def feature_matrix_special(negative_filepath, positive_filepath, feature_matrix_name):
+    def feature_matrix_special(negative_filepath, positive_filepath):
         '''
         A special method to assemble a feature matrix from two different cbust input files.
         :param self:
@@ -133,9 +133,7 @@ class cbust_result:
                         ic_catch_motif = True
 
         # create pandas data frame from dict
-        df = pd.DataFrame.from_dict(d_sequence_d_motif_crmscore, orient='index')
-        # write feature matrix
-        df.to_csv(feature_matrix_name)
+        return pd.DataFrame.from_dict(d_sequence_d_motif_crmscore, orient='index')
 
     def calculate_reliable_motif_dict(self, motif_threshold, cluster_threshold):
         '''
