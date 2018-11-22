@@ -1,9 +1,12 @@
 import cbust_result as cb
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+import numpy as np
+import pandas as pd
 
-# 0 for Invasive (I), 1 for Proliferative (P) in the output file
-# the immovable_data folder is where the cbust outputs too big for github are located
-feature_matrix = cb.cbust_result.feature_matrix_special("immovable_data/Homer_Ireg_TOTAL_cbustOut",
-                                                         "immovable_data/Homer_Preg_TOTAL_cbustOut")
+np.random.seed(100)
+feature_matrix = pd.read_table("feature_matrix.csv", sep=",", index_col=0)
+feature_matrix.head()
 
-feature_matrix.to_csv("feature_matrix.csv")
-
+train, validate, test = np.split(feature_matrix.sample(frac=1),
+                                 [int(.6*len(feature_matrix)), int(.8*len(feature_matrix))])
