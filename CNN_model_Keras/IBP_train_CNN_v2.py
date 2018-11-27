@@ -20,26 +20,38 @@ from sklearn.metrics import roc_curve,auc
 from keras.models import load_model
 import matplotlib.pyplot as plt
 from itertools import cycle
+import pandas as pd
 import random
 
-WORK_DIR = r'E:\Downloads\IBP_project\Deep_learing_model'
-FILE_INPUT_TRAIN = 'deep_learning_cent_train_shuffled.fna'
+WORK_DIR = r'E:\Downloads\IBP_project\Deep_learing_model\new_stride(train,val,test)'
+FILE_INPUT_TRAIN = 'train_stride50.fna'
 NB_SEQUENCES_IN_TRAINFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_TRAIN)))/2)
 RANDOM_PERC_TRAIN_DATA = '' #if '' then train on full train set
 
-FILE_INPUT_TEST = 'deep_learning_cent_test.fna'
+FILE_INPUT_TEST = 'deep_learning_stride50.test.fna'
 NB_SEQUENCES_IN_TESTFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_TEST)))/2)
 
-LOAD_MODEL_FROM_DISK = False
-FILE_NAME_MODEL_FROM_DISK = 'best_model.01-0.67.h5'
-MODEL_TO_USE = '2'
+FILE_INPUT_VALIDATION = 'validation_stride50.fna'
+NB_SEQUENCES_IN_VALIDATIONFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_VALIDATION)))/2)
+
+print('NB TRAIN RECORDS = {0}, NB VALIDATION RECORDS = {1}, NB_TEST_RECORDS = {2}'.format(NB_SEQUENCES_IN_TRAINFILE,NB_SEQUENCES_IN_VALIDATIONFILE,NB_SEQUENCES_IN_TESTFILE))
+
+FILE_OUTPUT_MOTIFS = 'predicted_motifs'
+
+LOAD_MODEL_FROM_DISK = True
+FILE_NAME_MODEL_FROM_DISK = 'best_model.14-0.74_MODEL3.h5'
+MODEL_TO_USE = '3'
 
 BATCH_SIZE_TRAIN = 200
 BATCH_SIZE_TEST = 2
-EPOCHS = 1
+BATCH_SIZE_VALIDATION = int((BATCH_SIZE_TRAIN/5))
+
+EPOCHS = 20
 SEQ_LENGTH=815
 ONEHOT_LABEL_P = np.asarray([0,1])
 ONEHOT_LABEL_I = np.asarray([1,0])
+
+L_NUCLEOTIDES = ['A','C','G','T']
 
 
 def encode_1hot_single_label(input_string):
@@ -87,6 +99,35 @@ def create_random_subset_train_data():
     NB_SEQUENCES_IN_TRAINFILE = f_out_nb_rec
 
     return
+
+def generate_validation_data_in_batch_size():
+        
+    while 1:
+
+        BATCH_SIZE = BATCH_SIZE_VALIDATION
+        f = open(os.path.join(WORK_DIR,FILE_INPUT_VALIDATION))
+        
+        a_onehot_seq = np.zeros((BATCH_SIZE,SEQ_LENGTH,4))
+        a_onehot_label = np.zeros((BATCH_SIZE,2))
+        label_encoder = LabelEncoder()
+        onehot_encoder = OneHotEncoder(sparse=False)
+        ix_label = 0;ix_seq =0
+
+        for line in f:
+            line=line.rstrip()
+            if line.startswith('>'):
+                a_onehot_label[ix_label,...] = encode_1hot_single_label(line)
+                ix_label +=1
+            else:
+                a_onehot_seq[ix_seq,...]=encode_1hot_single_sequence(line.upper(),label_encoder,onehot_encoder)
+                ix_seq += 1
+
+            if ix_seq==BATCH_SIZE:
+                yield (a_onehot_seq, a_onehot_label)
+                a_onehot_label = np.zeros((BATCH_SIZE,2))
+                a_onehot_seq = np.zeros((BATCH_SIZE,SEQ_LENGTH,4))
+                ix_label = 0;ix_seq =0
+        f.close()
 
 def generate_data_in_batch_size(TrainOrTest='train'):
         
@@ -257,16 +298,16 @@ def plot_ROC_curve(fpr,tpr,roc_auc,show_plot=False,save_plot=True):
     lw = 2
     plt.figure(1)
     plt.plot(fpr["micro"], tpr["micro"],
-         label='micro-average ROC curve (area = {0:0.2f})'
+         label='ROC curve (area = {0:0.2f})'
                ''.format(roc_auc["micro"]),
          color='deeppink', linestyle=':', linewidth=4)
 
     
-    colors = cycle(['aqua', 'darkorange', 'cornflowerblue'])
-    for i, color in zip(range(2), colors):
-        plt.plot(fpr[i], tpr[i], color=color, lw=lw,
-                 label='ROC curve of class {0} (area = {1:0.2f})'
-                 ''.format(i, roc_auc[i]))
+#     colors = cycle(['aqua', 'darkorange', 'cornflowerblue'])
+#     for i, color in zip(range(2), colors):
+#         plt.plot(fpr[i], tpr[i], color=color, lw=lw,
+#                  label='ROC curve of class {0} (area = {1:0.2f})'
+#                  ''.format(i, roc_auc[i]))
         
     plt.plot([0, 1], [0, 1], 'k--')
     #plt.plot(fpr_keras, tpr_keras, label='Keras (area = {:.3f})'.format(auc_keras))
@@ -277,7 +318,22 @@ def plot_ROC_curve(fpr,tpr,roc_auc,show_plot=False,save_plot=True):
     
     if save_plot:plt.savefig(os.path.join(WORK_DIR,'ROC_curve_model{0}.png'.format(MODEL_TO_USE)))
     if show_plot:plt.show()
-  
+
+
+def write_motifs():
+    a_motif_weights = model.layers[0].get_weights()[0] 
+    nb_motifs = a_motif_weights.shape[2]
+    motif_length = a_motif_weights.shape[0]
+    
+    full_path = os.path.join(WORK_DIR,FILE_OUTPUT_MOTIFS + '_model' + str(MODEL_TO_USE) + '.txt')
+    with open(full_path, 'w') as f:
+        for ix_motif in range(0,nb_motifs):
+            s_motif = ''
+            for ix_nt in range(0,motif_length):
+                s_motif += L_NUCLEOTIDES[np.argmax(a_motif_weights[ix_nt,:,ix_motif])]
+            f.write(s_motif + "\n")
+            
+    return
 #MAIN---------------------------------------------------------------
 
 if LOAD_MODEL_FROM_DISK:
@@ -296,10 +352,12 @@ else:
     print('training the model')
     callbacks_list = [
         ModelCheckpoint(filepath=os.path.join(WORK_DIR,'best_model.{epoch:02d}-{acc:.2f}_MODEL' + MODEL_TO_USE + '.h5'),
-                                        monitor='loss',
+                                        monitor='val_loss',
                                         mode='min', 
                                         save_best_only=True),
-        EarlyStopping(monitor='acc', patience=3,verbose=1),
+        EarlyStopping(monitor='val_loss', patience=5
+                      ,verbose=1),
+  
         TensorBoard(log_dir=os.path.join(WORK_DIR,'./logs'))
     ]
     
@@ -308,8 +366,12 @@ else:
                         class_weight=get_weights_labels('train')[1],
                         callbacks=callbacks_list,
                         steps_per_epoch=round(NB_SEQUENCES_IN_TRAINFILE/BATCH_SIZE_TRAIN), 
+                        validation_data=generate_validation_data_in_batch_size(),
+                        validation_steps=round(NB_SEQUENCES_IN_VALIDATIONFILE/BATCH_SIZE_VALIDATION),
                         epochs=EPOCHS)
 
+print('writing motifs')
+write_motifs()
 
 print('predicting with the test data')
 nb_steps = round (NB_SEQUENCES_IN_TESTFILE/BATCH_SIZE_TEST)
