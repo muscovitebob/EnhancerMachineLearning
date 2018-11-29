@@ -1,3 +1,6 @@
+# Credit: I think Zixuan has taken this code from kaggle user Tilii7
+# https://www.kaggle.com/tilii7/boruta-feature-elimination/notebook?fbclid=IwAR1i5GrJqnds6aNrIGCGCpPZ_SG78Y2bOag8lbPsaDL3gotP7Wsp_vTn-Jo
+
 from __future__ import print_function
 import pandas as pd
 import numpy as np
