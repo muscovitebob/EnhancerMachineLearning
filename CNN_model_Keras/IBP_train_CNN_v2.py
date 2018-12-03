@@ -17,34 +17,50 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping,TensorBoard
 from keras.utils import plot_model
 from sklearn.utils import class_weight
 from sklearn.metrics import roc_curve,auc
+from sklearn.metrics import average_precision_score,precision_recall_curve
+from sklearn.utils.fixes import signature
 from keras.models import load_model
 import matplotlib.pyplot as plt
-from itertools import cycle
-import pandas as pd
-import random
+import random   
+from viz_sequence import plot_weights
 
-WORK_DIR = r'E:\Downloads\IBP_project\Deep_learing_model\new_stride(train,val,test)'
-FILE_INPUT_TRAIN = 'train_stride50.fna'
-NB_SEQUENCES_IN_TRAINFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_TRAIN)))/2)
-RANDOM_PERC_TRAIN_DATA = '' #if '' then train on full train set
-
-FILE_INPUT_TEST = 'deep_learning_stride50.test.fna'
-NB_SEQUENCES_IN_TESTFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_TEST)))/2)
-
-FILE_INPUT_VALIDATION = 'validation_stride50.fna'
-NB_SEQUENCES_IN_VALIDATIONFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_VALIDATION)))/2)
-
-print('NB TRAIN RECORDS = {0}, NB VALIDATION RECORDS = {1}, NB_TEST_RECORDS = {2}'.format(NB_SEQUENCES_IN_TRAINFILE,NB_SEQUENCES_IN_VALIDATIONFILE,NB_SEQUENCES_IN_TESTFILE))
-
-FILE_OUTPUT_MOTIFS = 'predicted_motifs'
+STRIDE = 20
+WORK_DIR = r'E:\Downloads\IBP_project\Deep_learing_model\ComparePerformance'
+FILE_INPUT = 'deep_learning' + '_stride' + str(STRIDE)
 
 LOAD_MODEL_FROM_DISK = True
-FILE_NAME_MODEL_FROM_DISK = 'best_model.14-0.74_MODEL3.h5'
+
+if not LOAD_MODEL_FROM_DISK:
+    FILE_INPUT_TRAIN = FILE_INPUT + '_train_shuffled.fna'
+    NB_SEQUENCES_IN_TRAINFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_TRAIN)))/2)
+    RANDOM_PERC_TRAIN_DATA = '' #if '' then train on full train set
+    
+    FILE_INPUT_VALIDATION = FILE_INPUT + '_val_shuffled.fna'
+    NB_SEQUENCES_IN_VALIDATIONFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_VALIDATION)))/2)
+
+FILE_INPUT_TEST = FILE_INPUT + '_test.fna'
+NB_SEQUENCES_IN_TESTFILE = round(sum(1 for line in open(os.path.join(WORK_DIR,FILE_INPUT_TEST)))/2)
+
+if not LOAD_MODEL_FROM_DISK:
+    print('NB TRAIN RECORDS = {0}, NB VALIDATION RECORDS = {1}, NB_TEST_RECORDS = {2}'.format(NB_SEQUENCES_IN_TRAINFILE,NB_SEQUENCES_IN_VALIDATIONFILE,NB_SEQUENCES_IN_TESTFILE))
+else:
+    print('NB_TEST_RECORDS = {0}'.format(NB_SEQUENCES_IN_TESTFILE))
+    
+FILE_OUTPUT_MOTIFS = 'predicted_motifs'
+
+
+PLOT_MOTIFS = True
+
+#FILE_NAME_MODEL_FROM_DISK = 'best_model.09-0.79_MODEL3.h5'
+FILE_NAME_MODEL_FROM_DISK = 'best_model.20-0.81_MODEL2.h5'
+#FILE_NAME_MODEL_FROM_DISK = 'best_model.09-0.79_MODEL3.h5'
 MODEL_TO_USE = '3'
+MODEL2_COMPARE_PERFORMANCE = 'best_model.09-0.79_MODEL3.h5'
+#MODEL2_COMPARE_PERFORMANCE = 'best_model.20-0.81_MODEL2.h5'
 
 BATCH_SIZE_TRAIN = 200
-BATCH_SIZE_TEST = 2
-BATCH_SIZE_VALIDATION = int((BATCH_SIZE_TRAIN/5))
+BATCH_SIZE_TEST = 4561
+BATCH_SIZE_VALIDATION = int((BATCH_SIZE_TRAIN/8))
 
 EPOCHS = 20
 SEQ_LENGTH=815
@@ -198,14 +214,8 @@ def get_weights_labels(testOrTrain='train'):
     
     l_weights = class_weight.compute_class_weight('balanced', np.unique(l_labels), l_labels)
     
-    #temp switch weights
     print('l_weights from sklearn module=',l_weights,' with unique labels=',np.unique(l_labels))
-#     l_weigths_switch=[0,0]
-#     l_weigths_switch[1],  l_weigths_switch[0] = l_weights
-#     l_weights = l_weigths_switch
-#     print('l_weights after switch =',l_weights)
-    ##
-    
+
     d_keras_weights = {ix:weight for ix,weight in enumerate(l_weights)}
 
     return [l_weights,d_keras_weights]
@@ -239,13 +249,13 @@ def build_model_1():
 
 def build_model_2():
     model = Sequential()
-    model.add(Conv1D(300, kernel_size=19, padding="valid", activation='relu', input_shape=(SEQ_LENGTH, 4)))
+    model.add(Conv1D(30, kernel_size=19, padding="valid", activation='relu', input_shape=(SEQ_LENGTH, 4)))
     model.add(MaxPooling1D(pool_size=4, strides=4, padding='valid'))
     model.add(Dropout(0.20))
-    model.add(Conv1D(200, kernel_size=11, padding="valid", activation='relu'))
+    model.add(Conv1D(20, kernel_size=11, padding="valid", activation='relu'))
     model.add(MaxPooling1D(pool_size=4, strides=4, padding='valid'))
     model.add(Dropout(0.20))
-    model.add(Conv1D(200, kernel_size=7, padding="valid", activation='relu'))
+    model.add(Conv1D(20, kernel_size=7, padding="valid", activation='relu'))
     model.add(MaxPooling1D(pool_size=4, strides=4, padding='valid'))
     model.add(Dropout(0.20))
     model.add(Flatten())
@@ -273,42 +283,39 @@ def build_model_3():
     model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
     return model
 
-def do_ROC_evaluation(y_pred_keras,y_test,show_plot,save_plot):
-    # Compute ROC curve and ROC area for each class
+def do_ROC_evaluation(y_pred_keras,y_test,show_plot=False,save_plot=True,model2=True):
+
     print('starting ROC evaluation')
     fpr = dict()
     tpr = dict()
     roc_auc = dict()
 
+    # Compute ROC curve and ROC area (=average
+    fpr["model1"], tpr["model1"], _ = roc_curve(y_test.ravel(), y_pred_keras.ravel())
+    roc_auc["model1"] = auc(fpr["model1"], tpr["model1"])
     
-    for i in range(2):
-        fpr[i], tpr[i], _ = roc_curve(y_test[:, i], y_pred_keras[:, i])
-        roc_auc[i] = auc(fpr[i], tpr[i])
-
-    # Compute micro-average ROC curve and ROC area
-    fpr["micro"], tpr["micro"], _ = roc_curve(y_test.ravel(), y_pred_keras.ravel())
-    roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
-
+    if model2:
+        fpr["model2"], tpr["model2"], _ = roc_curve(y_test.ravel(), y_pred2_keras.ravel())
+        roc_auc["model2"] = auc(fpr["model2"], tpr["model2"])
+        
+    # plot the curve
     plot_ROC_curve(fpr,tpr,roc_auc,show_plot,save_plot)
     
     return [fpr,tpr,roc_auc]
 
 
-def plot_ROC_curve(fpr,tpr,roc_auc,show_plot=False,save_plot=True):
-    lw = 2
-    plt.figure(1)
-    plt.plot(fpr["micro"], tpr["micro"],
-         label='ROC curve (area = {0:0.2f})'
-               ''.format(roc_auc["micro"]),
-         color='deeppink', linestyle=':', linewidth=4)
+def plot_ROC_curve(fpr,tpr,roc_auc,show_plot=False,save_plot=True,model2=True):
 
+    plt.figure(1)
+    plt.plot(fpr["model1"], tpr["model1"],
+             label='Model 1(area = {0:0.2f})'.format(roc_auc["model1"]),
+             color='deeppink', linestyle=':', linewidth=4)
     
-#     colors = cycle(['aqua', 'darkorange', 'cornflowerblue'])
-#     for i, color in zip(range(2), colors):
-#         plt.plot(fpr[i], tpr[i], color=color, lw=lw,
-#                  label='ROC curve of class {0} (area = {1:0.2f})'
-#                  ''.format(i, roc_auc[i]))
-        
+    if model2:
+        plt.plot(fpr["model2"], tpr["model2"],
+                 label='Model 2(area = {0:0.2f})'.format(roc_auc["model2"]),
+                 color='green', linestyle=':', linewidth=4)
+
     plt.plot([0, 1], [0, 1], 'k--')
     #plt.plot(fpr_keras, tpr_keras, label='Keras (area = {:.3f})'.format(auc_keras))
     plt.xlabel('False positive rate')
@@ -316,7 +323,7 @@ def plot_ROC_curve(fpr,tpr,roc_auc,show_plot=False,save_plot=True):
     plt.title('ROC curve')
     plt.legend(loc='best')
     
-    if save_plot:plt.savefig(os.path.join(WORK_DIR,'ROC_curve_model{0}.png'.format(MODEL_TO_USE)))
+    if save_plot:plt.savefig(os.path.join(WORK_DIR,'ROC_curve_compare_models_{0}.png'.format(FILE_NAME_MODEL_FROM_DISK)))
     if show_plot:plt.show()
 
 
@@ -334,12 +341,72 @@ def write_motifs():
             f.write(s_motif + "\n")
             
     return
+
+def plot_motifs_from_weights(show=False):
+    motif_raw_weights = model.layers[0].get_weights()[0]
+    nb_motifs = motif_raw_weights.shape[2]
+    motif_length = motif_raw_weights.shape[0]
+    with open(os.path.join(WORK_DIR,'motifPSWM_' + FILE_NAME_MODEL_FROM_DISK[0:-3] + '.motif'),'w',newline='') as f_motif:
+        for ix_motif in range(0,nb_motifs):
+            motif_raw = motif_raw_weights[...,ix_motif]
+            motif_clipped = motif_raw.clip(min=0)
+            motif_scaled = motif_clipped/np.max(motif_clipped)
+            
+            f_motif.write('>motif{0}{1}'.format(ix_motif,"\n"))
+            for ix_pos in range(motif_length):
+                for ix_nucleotide in range(0,4):
+                    f_motif.write(str(motif_scaled[ix_pos,ix_nucleotide]))
+                    if ix_nucleotide==3:
+                        f_motif.write('\n') 
+                    else:
+                        f_motif.write('\t') 
+                   
+            if show:plot_weights(motif_scaled)
+    
+    return
+
+
+def plot_PR_curve(y_pred_keras,y_test,show_plot=False,save_plot=True,model2=True):
+    plt.figure(2)
+    a_y_test = np.asarray(y_test)[:,0]
+    
+    step_kwargs = ({'step': 'post'} if 'step' in signature(plt.fill_between).parameters else {}) # In matplotlib < 1.5, plt.fill_between does not have a 'step' argument
+        
+    a_y_pred_keras = np.asarray(y_pred_keras)[:,0]
+    precision, recall, _ = precision_recall_curve(a_y_test, a_y_pred_keras)
+    plt.step(recall, precision, color='deeppink', alpha=0.2,where='post')
+    plt.fill_between(recall, precision, alpha=0.2, color='deeppink', label ='Model 1 (AP={0:0.2f})'.format(average_precision), **step_kwargs)
+    
+    if model2:
+        a_y_pred2_keras = np.asarray(y_pred2_keras)[:,0]
+        precision, recall, _ = precision_recall_curve(a_y_test, a_y_pred2_keras)
+        plt.step(recall, precision, color='green', alpha=1, where='post')
+        plt.fill_between(recall, precision, alpha=1, color='green', label ='Model 2 (AP={0:0.2f})'.format(average_precision_2), **step_kwargs)
+        
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    plt.ylim([0.0, 1.05])
+    plt.xlim([0.0, 1.0])
+    plt.title('Precision-Recall curve')
+    plt.legend(loc='best')
+    
+    if save_plot:plt.savefig(os.path.join(WORK_DIR,'PR_curve_compare_models_{0}.png'.format(FILE_NAME_MODEL_FROM_DISK)))
+    if show_plot:plt.show()
+
+    return
+
+def load_model_from_disk(file_name_model):
+    
+    print('#loading the model')
+    model = load_model(os.path.join(WORK_DIR,file_name_model))
+    print('model {0} is loaded'.format(file_name_model))
+    
+    return model
+
 #MAIN---------------------------------------------------------------
 
 if LOAD_MODEL_FROM_DISK:
-    print('#loading the model')
-    model = load_model(os.path.join(WORK_DIR,FILE_NAME_MODEL_FROM_DISK))
-    print('model {0} is loaded'.format(FILE_NAME_MODEL_FROM_DISK))
+    model = load_model_from_disk(FILE_NAME_MODEL_FROM_DISK)
 else:
     print('#building the model')
     if RANDOM_PERC_TRAIN_DATA:create_random_subset_train_data()
@@ -372,6 +439,7 @@ else:
 
 print('writing motifs')
 write_motifs()
+if PLOT_MOTIFS:plot_motifs_from_weights(show=False)
 
 print('predicting with the test data')
 nb_steps = round (NB_SEQUENCES_IN_TESTFILE/BATCH_SIZE_TEST)
@@ -384,9 +452,35 @@ y_pred_keras = model.predict_generator(generate_data_in_batch_size('test'),
 y_test = get_onehot_labels('test')[0:nb_test_cases,:]
 print('->label distribution of test set = {0}, corresponding to weights {1}'.format(np.sum(y_test,axis=0),get_weights_labels('test')[0]))
 print('->label distribution of predicted set = {0}'.format(np.sum(y_pred_keras,axis=0)))
+print('correct P = {0}'.format(sum(y_pred_keras[0:22805,1] >0.5)))
+print('wrong P   = {0}'.format(sum(y_pred_keras[0:22805,1] <0.5)))
+print('correct I   = {0}'.format(sum(y_pred_keras[22805:,0] >0.5)))
+print('wrong I   = {0}'.format(sum(y_pred_keras[22805:,0] <0.5)))
 
-do_ROC_evaluation(y_pred_keras,y_test,show_plot=False,save_plot=True)
+
+
+
+if MODEL2_COMPARE_PERFORMANCE:
+    model2 = load_model_from_disk(MODEL2_COMPARE_PERFORMANCE)
+    y_pred2_keras = model2.predict_generator(generate_data_in_batch_size('test'),
+                                       steps=nb_steps,
+                                       verbose=1
+                                    )
+
+    
+do_ROC_evaluation(y_pred_keras,y_test)
 test_loss = model.evaluate_generator(generate_data_in_batch_size('test'), steps=nb_steps)
-print('test set evaluation metrics =>  {2} = {0} ; {3} = {1}'.format(test_loss[0],test_loss[1],model.metrics_names[0],model.metrics_names[1]))
+print('test set evaluation metrics model 1 ({4}) =>  {2} = {0} ; {3} = {1}'.format(test_loss[0],test_loss[1],model.metrics_names[0],model.metrics_names[1],FILE_NAME_MODEL_FROM_DISK))
+if MODEL2_COMPARE_PERFORMANCE:
+    test_loss = model2.evaluate_generator(generate_data_in_batch_size('test'), steps=nb_steps)
+    print('test set evaluation metrics model 2 ({4})=>  {2} = {0} ; {3} = {1}'.format(test_loss[0],test_loss[1],model.metrics_names[0],model.metrics_names[1],MODEL2_COMPARE_PERFORMANCE))
+
+average_precision = average_precision_score(y_test, y_pred_keras)
+print('Average precision-recall score model 1 ({1}): {0:0.2f}'.format(average_precision,FILE_NAME_MODEL_FROM_DISK))
+if MODEL2_COMPARE_PERFORMANCE:
+    average_precision_2 = average_precision_score(y_test, y_pred2_keras)
+    print('Average precision-recall score model 2 ({1}): {0:0.2f}'.format(average_precision_2,MODEL2_COMPARE_PERFORMANCE))
+    
+plot_PR_curve(y_pred_keras,y_test)
 
 
