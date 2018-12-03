@@ -1,20 +1,25 @@
 #!/usr/bin/env bash
-# Boris on 28 Oct 18
+# Boris on 3 Dec 18
+# This script contains a function to run cbust against every motif presented one by one and save the output
+# for later passing to cbust_result.feature_matrix_special to generate the feature matrix
 
-# HOMER running!
+NEW_DIR=cbustout
+# SEQUENCE_FILE = I_reg.fna or P_reg.fna
 
-#./homer.v4.9/bin/homer2 denovo -i fasta_complete_pos_ex.fa -b fasta_complete_neg_ex.fa > HOMERoutput.txt
-
-# feed HOMER into ClusterBuster
-
-./cbust -l -f 3 -c 0.01 HomerOutput/HomerOutput-I_vs_P/homerMotifs.all.motifs \
-Get_BED_FASTA/I_reg.fna > CBUSToutput/CBUSToutput_I_vs_P_f3.txt
-
-./cbust -l -f 3 -c 0.01 HomerOutput/HomerOutput-P_vs_I/homerMotifs.all.motifs \
-Get_BED_FASTA/P_reg.fna > CBUSToutput/CBUSToutput_P_vs_I_f3.txt
-
-./cbust -l -f 0 -c 0 -m 0 HomerOutput/HomerOutput-I_vs_P/homerMotifs.all.motifs \
-Get_BED_FASTA/I_reg.fna > CBUSToutput/CBUSToutput_I_vs_P_f0.txt
-
-./cbust -l -f 2 -c 0 -m 0 HomerOutput/HomerOutput-I_vs_P/homerMotifs.all.motifs \
-Get_BED_FASTA/I_reg.fna > CBUSToutput/CBUSToutput_I_vs_P_f2.txt
+# $1 is the directory name, $2 is the .fna filename, $3 is the motif filename
+one_by_one_cbuster () {
+    NEW_DIR = $1
+    fna = $2
+    SEQUENCE_FILE = $3
+    mkdir $NEW_DIR
+    for filename in $(find IvsP PvsI -name "*.motif")
+    do
+        # echo "${filename}"
+        #retrieve the single motif, put into a temp file
+        awk '$1 ~ /^>/ { print ">" $2};$1 ~ /^[0-9]/{print}' "${filename}" > matrix_temp
+        #run temp file through cbust, append to new f1 type matri
+        cbust -g 20 -l -c 0 -m 0 -f 1 matrix_temp "$SEQUENCE_FILE" > "$NEW_DIR"/Homer__"${filename///}"_cbustOut
+    done
+    cat $NEW_DIR/* > Homer_Ireg_TOTAL_cbustOut
+    #find /cbustout/ -name *cbustOut -exec cat {} + > Homer_IvsP_Known_TOTAL_cbustOut
+}

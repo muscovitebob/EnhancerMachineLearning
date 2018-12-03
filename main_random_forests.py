@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 np.random.seed(100)
-feature_matrix = pd.read_table("feature_matrix.csv", sep=",", index_col=0)
+feature_matrix = pd.read_table("feature_matrix_1.csv", sep=",", index_col=0)
 feature_matrix.head()
 
 feature_matrix_zeroed = feature_matrix.fillna(value=0)
