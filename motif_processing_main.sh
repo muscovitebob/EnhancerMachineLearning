@@ -6,20 +6,20 @@
 NEW_DIR=cbustout
 # SEQUENCE_FILE = I_reg.fna or P_reg.fna
 
-# $1 is the directory name, $2 is the .fna filename, $3 is the motif filename
+# $1 is the .fna filename, $2 is the motif filename
 one_by_one_cbuster () {
-    NEW_DIR = $1
-    fna = $2
-    SEQUENCE_FILE = $3
+    SEQUENCE_FILE=$1
+    motif_file=$2
+    NEW_DIR="cbust_one_by_one_output_$(date '+%H_%M')"
     mkdir $NEW_DIR
-    for filename in $(find IvsP PvsI -name "*.motif")
-    do
-        # echo "${filename}"
-        #retrieve the single motif, put into a temp file
-        awk '$1 ~ /^>/ { print ">" $2};$1 ~ /^[0-9]/{print}' "${filename}" > matrix_temp
-        #run temp file through cbust, append to new f1 type matri
-        cbust -g 20 -l -c 0 -m 0 -f 1 matrix_temp "$SEQUENCE_FILE" > "$NEW_DIR"/Homer__"${filename///}"_cbustOut
-    done
-    cat $NEW_DIR/* > Homer_Ireg_TOTAL_cbustOut
-    #find /cbustout/ -name *cbustOut -exec cat {} + > Homer_IvsP_Known_TOTAL_cbustOut
+    #awk '{print ">" $0 > "matrix_temp_" NR}' RS='>' $motif_file
+    gcsplit -z -s $motif_file '/>/' '{*}'
+    mv xx* $NEW_DIR
+    for filename in $NEW_DIR/xx*;
+        do
+          echo $filename
+          ./cbust -g 20 -l -c 0 -m 0 -f 1 $filename $SEQUENCE_FILE > "$NEW_DIR"/cbusted_one_by_one_results.txt
+        done
 }
+
+one_by_one_cbuster Get_BED_FASTA/I_reg.fna RSATed_homer_motifs/I_vs_P_RSATed_converted.cb
