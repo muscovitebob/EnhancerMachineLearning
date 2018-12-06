@@ -9,7 +9,7 @@ import cbust_result as cb
 
 
 # Improved one by one cbuster leads to improved feature matrix (hopefully)
-feature_matrix2 = cb.cbust_result.feature_matrix_special("immovable_data/I_vs_P_one_by_one_cbusted.txt",
-                                                         "immovable_data/P_vs_I_one_by_one_cbusted.txt")
+feature_matrix2 = cb.cbust_result.feature_matrix_special("immovable_data/I_one_by_one_cbusted.txt",
+                                                         "immovable_data/P_one_by_one_cbusted.txt")
 
 feature_matrix2.to_csv("feature_matrix_2.csv")

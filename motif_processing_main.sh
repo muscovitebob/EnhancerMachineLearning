@@ -33,17 +33,29 @@ one_by_one_cbuster_known () {
           ./cbust -g 20 -l -c 0 -m 0 -f 1 $filename $SEQUENCE_FILE >> "$NEW_DIR"/cbusted_one_by_one_results.txt
         done
 }
-# Run de novo found motifs
+# Run de novo found motifs I background
 
-one_by_one_cbuster_denovo Get_BED_FASTA/I_plus_P_reg.fna HomerOutput/HomerOutput-P_vs_I/homerMotifs.all.motifs
+one_by_one_cbuster_denovo Get_BED_FASTA/I_reg.fna HomerOutput/HomerOutput-P_vs_I/homerMotifs.all.motifs
 
-one_by_one_cbuster_denovo Get_BED_FASTA/I_plus_P_reg.fna HomerOutput/HomerOutput-I_vs_P/homerMotifs.all.motifs
+one_by_one_cbuster_denovo Get_BED_FASTA/I_reg.fna HomerOutput/HomerOutput-I_vs_P/homerMotifs.all.motifs
 
-# Run known found motifs
+# Run known found motifs I background
 
-one_by_one_cbuster_known Get_BED_FASTA/I_plus_P_reg.fna HomerOutput/HomerOutput-P_vs_I/knownResults
+one_by_one_cbuster_known Get_BED_FASTA/I_reg.fna HomerOutput/HomerOutput-P_vs_I/knownResults
 
-one_by_one_cbuster_known Get_BED_FASTA/I_plus_P_reg.fna HomerOutput/HomerOutput-I_vs_P/knownResults
+one_by_one_cbuster_known Get_BED_FASTA/I_reg.fna HomerOutput/HomerOutput-I_vs_P/knownResults
+
+# Run de novo found motifs P background
+
+one_by_one_cbuster_denovo Get_BED_FASTA/P_reg.fna HomerOutput/HomerOutput-P_vs_I/homerMotifs.all.motifs
+
+one_by_one_cbuster_denovo Get_BED_FASTA/P_reg.fna HomerOutput/HomerOutput-I_vs_P/homerMotifs.all.motifs
+
+# Run known found motifs P background
+
+one_by_one_cbuster_known Get_BED_FASTA/P_reg.fna HomerOutput/HomerOutput-P_vs_I/knownResults
+
+one_by_one_cbuster_known Get_BED_FASTA/P_reg.fna HomerOutput/HomerOutput-I_vs_P/knownResults
 
 # the two P_vs_I and I_vs_P files are then concatenated and we run the feature_matrix_special cbust_result.py method
 # on them to create a feature matrix

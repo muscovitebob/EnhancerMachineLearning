@@ -1,6 +1,6 @@
 import cbust_result as cb
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import precision_recall_curve
+from sklearn.metrics import precision_recall_curve, roc_curve, auc
 from sklearn.model_selection import train_test_split
 from fancyimpute import IterativeImputer
 import matplotlib.pyplot as plt
@@ -8,14 +8,11 @@ import numpy as np
 import pandas as pd
 
 np.random.seed(100)
-feature_matrix = pd.read_table("feature_matrix_1.csv", sep=",", index_col=0)
-feature_matrix_2 = pd.read_table("feature_matrix_2.csv", sep=",", index_col=0)
+feature_matrix = pd.read_table("feature_matrix_2.csv", sep=",", index_col=0)
 feature_matrix.head()
 
 feature_matrix_zeroed = feature_matrix.fillna(value=0)
-feature_matrix_2_zeroed = feature_matrix_2.fillna(value=0)
-len(list(set(feature_matrix.columns.values).intersection(feature_matrix_2.columns.values)))
-# the intersection is empty and our feature matrices have no motifs in common
+
 
 # 60, 20, 20
 train, validate, test = np.split(feature_matrix_zeroed.sample(frac=1),
@@ -35,7 +32,7 @@ precision_recall_curve(test['_label'], predictions)
 # print a matrix of tuples of feature names and feature importances
 list(zip(train[features], classifier1.feature_importances_))
 plt.plot( classifier1.feature_importances_)
-#plt.show()
+plt.show()
 # get the most important motifs for the random forest
 print(features[np.nonzero(classifier1.feature_importances_ > 0.006)])
 # 1-DVTGASTCAB seems to correspond to HIF1b(HLH)
