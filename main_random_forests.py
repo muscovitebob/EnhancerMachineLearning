@@ -9,9 +9,13 @@ import pandas as pd
 
 np.random.seed(100)
 feature_matrix = pd.read_table("feature_matrix_1.csv", sep=",", index_col=0)
+feature_matrix_2 = pd.read_table("feature_matrix_2.csv", sep=",", index_col=0)
 feature_matrix.head()
 
 feature_matrix_zeroed = feature_matrix.fillna(value=0)
+feature_matrix_2_zeroed = feature_matrix_2.fillna(value=0)
+len(list(set(feature_matrix.columns.values).intersection(feature_matrix_2.columns.values)))
+# the intersection is empty and our feature matrices have no motifs in common
 
 # 60, 20, 20
 train, validate, test = np.split(feature_matrix_zeroed.sample(frac=1),
