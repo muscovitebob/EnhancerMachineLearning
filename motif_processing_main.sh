@@ -45,6 +45,12 @@ one_by_one_cbuster_known Get_BED_FASTA/I_reg.fna HomerOutput/HomerOutput-P_vs_I/
 
 one_by_one_cbuster_known Get_BED_FASTA/I_reg.fna HomerOutput/HomerOutput-I_vs_P/knownResults cbust_one_by_one_known_Ireg_I_vs_P
 
+# Concat final file for I_reg
+
+cat cbust_one_by_one_denovo_Ireg_P_vs_I/cbusted_one_by_one_results.txt cbust_one_by_one_denovo_Ireg_I_vs_P/cbusted_one_by_one_results.txt \
+    cbust_one_by_one_known_Ireg_P_vs_I/cbusted_one_by_one_results.txt  cbust_one_by_one_known_Ireg_I_vs_P/cbusted_one_by_one_results.txt \
+    > immovable_data/I_one_by_one_cbusted.txt
+
 # Run de novo found motifs P background
 
 one_by_one_cbuster_denovo Get_BED_FASTA/P_reg.fna HomerOutput/HomerOutput-P_vs_I/homerMotifs.all.motifs cbust_one_by_one_denovo_Preg_P_vs_I
@@ -57,5 +63,8 @@ one_by_one_cbuster_known Get_BED_FASTA/P_reg.fna HomerOutput/HomerOutput-P_vs_I/
 
 one_by_one_cbuster_known Get_BED_FASTA/P_reg.fna HomerOutput/HomerOutput-I_vs_P/knownResults cbust_one_by_one_known_Preg_I_vs_p
 
-# the two P_vs_I and I_vs_P files are then concatenated and we run the feature_matrix_special cbust_result.py method
-# on them to create a feature matrix
+# Concat final file for P_reg
+
+cat cbust_one_by_one_denovo_Preg_P_vs_I/cbusted_one_by_one_results.txt cbust_one_by_one_denovo_Preg_I_vs_P/cbusted_one_by_one_results.txt \
+    cbust_one_by_one_known_Preg_P_vs_I/cbusted_one_by_one_results.txt  cbust_one_by_one_known_Preg_I_vs_P/cbusted_one_by_one_results.txt \
+    > immovable_data/P_one_by_one_cbusted.txt
