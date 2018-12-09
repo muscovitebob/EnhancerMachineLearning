@@ -125,7 +125,26 @@ predictions4 = classifier4.predict(test[features])
 crosstab4 = pd.crosstab(test['target'], predictions4, rownames=['Actual'], colnames=['Predicted'])
 print(crosstab4)
 # print a matrix of tuples of feature names and feature importances
-featureImportances4 = (zip(train[features], classifier2.feature_importances_))
+featureImportances4 = (zip(train[features], classifier4.feature_importances_))
 print(featureImportances4)
 plt.plot(classifier4.feature_importances_)
 plt.show()
+
+# so is it better?
+
+crosstab2
+
+'''Predicted     0    1
+Actual              
+0          2471  209
+1          1065  274'''
+
+crosstab4
+
+'''Predicted     0    1
+Actual              
+0          2468  212
+1          1068  271'''
+
+# not particularly, no. but need better way to classify performance
+
