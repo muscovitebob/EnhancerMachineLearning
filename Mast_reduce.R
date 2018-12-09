@@ -20,12 +20,17 @@ lrtOut <- LRT(FM_sca_format, comparison = "Class")  # Each label vs "rest"
 lrtOut <- data.frame(lrtOut, pAdj=p.adjust(lrtOut$p.value, method="fdr"))
 lrtOut <- lrtOut[order(lrtOut$pAdj, decreasing=TRUE),]
 
+head(lrtOut,30)
+
+summary(lrtOut)
+
 # Select 50%
 median <- median(lrtOut$pAdj)
 motifs <- subset(lrtOut, pAdj < median, select = c(primerid))
 
 new_FM <- FM[,c(motifs$primerid)]
+new_df <- new_FM %>% select(X, X_label, everything())
 
-write.csv(new_FM, "feature_matrix_2_mast_reduced")
+write.csv(new_df, "feature_matrix_2_mast_reduced.csv")
 
 
