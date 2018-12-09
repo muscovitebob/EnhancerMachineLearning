@@ -3,6 +3,7 @@
 #https://github.com/scikit-learn-contrib/boruta_py
 #https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc_crossval.html#sphx-glr-auto-examples-model-selection-plot-roc-crossval-py
 
+#Boruta feature selection:
 from __future__ import print_function
 import pandas as pd
 import numpy as np
@@ -41,6 +42,7 @@ ftrm['target'] = y
 ftrm = ftrm.set_index('id')
 ftrm.to_csv('boruta_filtered-matrix.csv', index_label='id')
 
+#Receiver Operating Characteristic (ROC) with cross validation:
 data = pd.read_csv('boruta_filtered-matrix.csv').fillna(value=0)
 X = data.drop(['id','target'], axis=1).values
 y = data['target'].values
