@@ -162,6 +162,14 @@ Actual
 
 # lets try to do ROC
 # compute probabilities for the ROC function
+probabilities2 = classifier2.predict_proba(test.loc[:, test.columns!='target'])
+fpr, tpr, thresholds = roc_curve(test['target'], probabilities2[:,1], pos_label=1)
+ROC_curve(fpr, tpr, 'ROC2.png')
+
+
 probabilities4 = classifier4.predict_proba(test.loc[:, test.columns!='target'])
 fpr, tpr, thresholds = roc_curve(test['target'], probabilities4[:,1], pos_label=1)
 ROC_curve(fpr, tpr, 'ROC4.png')
+
+# there really is no difference between 10k and 1k trees.
+# carry 1k or less forward from now on
