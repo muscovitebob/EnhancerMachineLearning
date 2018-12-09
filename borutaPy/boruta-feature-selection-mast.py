@@ -1,3 +1,8 @@
+#references:
+#https://www.kaggle.com/tilii7/boruta-feature-elimination/notebook
+#https://github.com/scikit-learn-contrib/boruta_py
+#https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc_crossval.html#sphx-glr-auto-examples-model-selection-plot-roc-crossval-py
+
 from __future__ import print_function
 import pandas as pd
 import numpy as np
