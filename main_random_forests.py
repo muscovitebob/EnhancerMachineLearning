@@ -11,7 +11,7 @@ import joblib as jb
 from boruta import BorutaPy
 np.random.seed(100)
 
-def ROC_curve(fpr, tpr):
+def ROC_curve(fpr, tpr, savename):
     # by https://qiita.com/bmj0114/items/460424c110a8ce22d945
     roc_auc = auc(fpr, tpr)
     plt.figure()
@@ -23,6 +23,7 @@ def ROC_curve(fpr, tpr):
     plt.ylabel('True Positive Rate')
     plt.title('ROC')
     plt.legend(loc="lower right")
+    plt.savefig(savename)
     plt.show()
 
 # reduced matrix loading
@@ -163,4 +164,4 @@ Actual
 # compute probabilities for the ROC function
 probabilities4 = classifier4.predict_proba(test.loc[:, test.columns!='target'])
 fpr, tpr, thresholds = roc_curve(test['target'], probabilities4[:,1], pos_label=1)
-ROC_curve(fpr, tpr)
+ROC_curve(fpr, tpr, 'ROC4.png')
