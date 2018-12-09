@@ -11,8 +11,19 @@ import joblib as jb
 from boruta import BorutaPy
 np.random.seed(100)
 
-def ROC_curve(prediction_set, doh):
-    print("doh")
+def ROC_curve(fpr, tpr):
+    # by https://qiita.com/bmj0114/items/460424c110a8ce22d945
+    roc_auc = auc(fpr, tpr)
+    plt.figure()
+    plt.plot(fpr, tpr, color='orange', label='ROC curve ' % roc_auc)
+    plt.plot([0, 1], [0, 1], color='blue', linestyle='--')
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('ROC')
+    plt.legend(loc="lower right")
+    plt.show()
 
 # reduced matrix loading
 
@@ -148,3 +159,8 @@ Actual
 
 # not particularly, no. but need better way to classify performance
 
+# lets try to do ROC
+# compute probabilities for the ROC function
+probabilities4 = classifier4.predict_proba(test.loc[:, test.columns!='target'])
+fpr, tpr, thresholds = roc_curve(test['target'], probabilities4[:,1], pos_label=1)
+ROC_curve(fpr, tpr)
