@@ -1,11 +1,13 @@
 import cbust_result as cb
 from math import sqrt
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import roc_curve, auc
-from sklearn.model_selection import train_test_split
+from sklearn.metrics import roc_curve, auc, accuracy_score
+from sklearn.model_selection import train_test_split, GridSearchCV
+from pprint import pprint
 import numpy as np
 import pandas as pd
 import joblib as jb
+from main_random_forests import ROC_curve
 np.random.seed(100)
 
 # reduced matrix loading
@@ -21,7 +23,6 @@ X_train_1, X_test_1, y_train_1, y_test_1 = train_test_split(unsplitX_1, unsplitY
 
 # nonreduced matrix loading
 
-
 feature_matrix_2 = pd.read_table("feature_matrix_2.csv", sep=",", index_col=0)
 
 feature_matrix_2_zeroed = feature_matrix_2.fillna(value=0)
@@ -30,3 +31,47 @@ unsplitY_2 = feature_matrix_2_zeroed.loc[:,'_label']
 unsplitX_2 = feature_matrix_2_zeroed.loc[:, feature_matrix_2_zeroed.columns.values != '_label']
 
 X_train_2, X_test_2, y_train_2, y_test_2 = train_test_split(unsplitX_2, unsplitY_2, test_size=0.33)
+
+# what are the parameters used for classifier2?
+
+classifier2 = jb.load('classifier2.joblib')
+pprint(classifier2.get_params())
+'''
+{'bootstrap': True,
+ 'class_weight': None,
+ 'criterion': 'gini',
+ 'max_depth': None,
+ 'max_features': 5,
+ 'max_leaf_nodes': None,
+ 'min_impurity_decrease': 0.0,
+ 'min_impurity_split': None,
+ 'min_samples_leaf': 1,
+ 'min_samples_split': 2,
+ 'min_weight_fraction_leaf': 0.0,
+ 'n_estimators': 10000,
+ 'n_jobs': 2,
+ 'oob_score': False,
+ 'random_state': None,
+ 'verbose': 0,
+ 'warm_start': False}
+ '''
+
+# big model - delete to free up memory
+
+del classifier2
+
+# grid search hyperparameter space
+
+
+# first I put in some obvious choices to search over, then some others
+parameter_space_grid = {'max_features': range(5, int(sqrt(len(feature_matrix_1_zeroed.columns.values))), 5), 'n_estimators': [100, 500, 1000, 2000],
+                        'oob_score': [False, True], 'criterion': ['gini', 'entropy']}
+
+gridSearch1 = GridSearchCV(RandomForestClassifier(), param_grid=parameter_space_grid, n_jobs=-1,
+                           scoring='roc_auc')
+gridSearch1.fit(X_train_1, y_train_1)
+gridSearch1.best_params_
+bestEstimator1 = gridSearch1.best_estimator_
+jb.dump(bestEstimator1, 'GridSearchBestEstimator1.joblib', compress=1)
+#predictions1 = bestEstimator1.predict()
+

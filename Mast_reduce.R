@@ -1,16 +1,21 @@
-setwd('/Users/lucascoppens/documents/Last\ sem/IBP/Github')
+#!/usr/bin/env Rscript
 library(MAST)
 library(reshape2)
+library(dplyr)
 
-FM = read.csv('feature_matrix_2.csv')
+# Example run command from bash:
+# Rscript Mast_reduce.R feature_matrix_2.csv outputMatrixTest.csv
+args = commandArgs(trailingOnly=TRUE)
+#args = c("feature_matrix_2.csv", "testMatrix.csv")
+inputMatrixName = args[1]
+outputMatrixName = args[2]
 
-head(FM)
+FM = read.csv(inputMatrixName, check.names=FALSE)
 
 FM[is.na(FM)] <- 0
 
 # Create SCA object
-flattenedSet <- melt(FM, id=c("X","X_label"))
-head(flattenedSet)
+flattenedSet <- melt(FM, id=c("id","_label"))
 colnames(flattenedSet) <- c("ID", "Class", "Motif", "Score")
 
 FM_sca_format = FromFlatDF(flattenedSet, idvars="ID", primerid="Motif", measurement="Score", cellvars="Class")
@@ -29,8 +34,6 @@ median <- median(lrtOut$pAdj)
 motifs <- subset(lrtOut, pAdj < median, select = c(primerid))
 
 new_FM <- FM[,c(motifs$primerid)]
-new_df <- new_FM %>% select(X, X_label, everything())
+new_df <- new_FM %>% select("id", "_label", everything())
 
-write.csv(new_df, "feature_matrix_2_mast_reduced.csv")
-
-
+write.csv(new_df, outputMatrixName, row.names = F)

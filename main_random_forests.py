@@ -15,7 +15,7 @@ def ROC_curve(fpr, tpr, savename):
     # by https://qiita.com/bmj0114/items/460424c110a8ce22d945
     roc_auc = auc(fpr, tpr)
     plt.figure()
-    plt.plot(fpr, tpr, color='orange', label='ROC curve ' % roc_auc)
+    plt.plot(fpr, tpr, color='orange', label='ROC curve %s' % roc_auc)
     plt.plot([0, 1], [0, 1], color='blue', linestyle='--')
     plt.xlim([0.0, 1.0])
     plt.ylim([0.0, 1.05])
@@ -79,7 +79,7 @@ classifier2 = RandomForestClassifier(n_jobs=2, n_estimators=10000, max_features=
 
 classifier2.fit(train[features], y)
 
-jb.dump(classifier2, "classifier2.joblib")
+jb.dump(classifier2, "classifier2.joblib", compress=1)
 '''
 
 classifier2 = jb.load('classifier2.joblib')
@@ -92,7 +92,7 @@ print(crosstab2)
 # print a matrix of tuples of feature names and feature importances
 featureImportances2 = (zip(train[features], classifier2.feature_importances_))
 print(featureImportances2)
-plt.plot( classifier2.feature_importances_)
+plt.plot(classifier2.feature_importances_)
 plt.show()
 
 # model 3 using nonreduced feature dataset
@@ -103,7 +103,7 @@ classifier3 = RandomForestClassifier(n_jobs=2, n_estimators=10000, max_features=
 
 classifier3.fit(train_2[features_2], y_2)
 
-jb.dump(classifier3, "classifier3.joblib")
+jb.dump(classifier3, "classifier3.joblib", compress=1)
 '''
 
 classifier3 = jb.load("classifier3.joblib")
@@ -127,7 +127,7 @@ classifier4 = RandomForestClassifier(n_jobs=2, n_estimators=1000, max_features=i
 
 classifier4.fit(train[features], y)
 
-jb.dump(classifier4, "classifier4.joblib")
+jb.dump(classifier4, "classifier4.joblib", compress=1)
 
 #classifier4 = jb.load('classifier2.joblib')
 
