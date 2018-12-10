@@ -64,11 +64,11 @@ del classifier2
 
 
 # first I put in some obvious choices to search over, then some others
-parameter_space_grid = {'max_features': [5, 10, 15, 20], 'n_estimators': [100, 500, 1000],
-                        'oob_score': False, 'criterion': 'gini'}
+parameter_space_grid_1 = {'max_features': [5, 10, 15, 20], 'n_estimators': [100, 500, 1000]}
+parameter_space_grid_2 = {'max_features': [5, 10, 15], 'n_estimators': [100, 500, 1000]}
 
-gridSearch1 = GridSearchCV(RandomForestClassifier(), param_grid=parameter_space_grid, n_jobs=-1,
-                           scoring='roc_auc')
+gridSearch1 = GridSearchCV(RandomForestClassifier(), param_grid=parameter_space_grid_2, n_jobs=-1,
+                           scoring='roc_auc', verbose=2)
 gridSearch1.fit(X_train_1, y_train_1)
 gridSearch1.best_params_
 bestEstimator1 = gridSearch1.best_estimator_
