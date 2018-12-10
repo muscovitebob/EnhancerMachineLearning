@@ -1,0 +1,6 @@
+Boris on 3 Dec
+
+I ran the IvsP and PvsI homer.all.motifs files through http://rsat.sb-roscoff.fr/matrix-clustering_form.cgi
+to denoise and simplify the motifs. This produced the .tf transfac files.
+I then ran these through http://rsat.sb-roscoff.fr/convert-matrix.cgi
+to create cb output files which appear to be the right output.

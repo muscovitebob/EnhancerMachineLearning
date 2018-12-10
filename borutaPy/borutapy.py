@@ -1,3 +1,6 @@
+# Credit: I think Zixuan has taken this code from kaggle user Tilii7
+# https://www.kaggle.com/tilii7/boruta-feature-elimination/notebook?fbclid=IwAR1i5GrJqnds6aNrIGCGCpPZ_SG78Y2bOag8lbPsaDL3gotP7Wsp_vTn-Jo
+
 from __future__ import print_function
 import pandas as pd
 import numpy as np
@@ -19,12 +22,12 @@ def timer(start_time=None):
         print('\n Time taken: %i hours %i minutes and %s seconds.' % (thour, tmin, round(tsec, 2)))
 
 # set train and test 
-train = pd.read_csv('feature_matrix.csv')
+train = pd.read_csv('feature_matrix_1.csv')
 X = train.drop(['id','target'], axis=1).values
 y = train['target'].values
 tr_ids = train['id'].values
 n_train = len(X)
-test = pd.read_csv('feature_matrix.csv')
+test = pd.read_csv('feature_matrix_1.csv')
 X_test = test.drop(['id'], axis=1).values
 te_ids = test['id'].values
 
