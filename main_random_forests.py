@@ -173,3 +173,10 @@ ROC_curve(fpr, tpr, 'ROC4.png')
 
 # there really is no difference between 10k and 1k trees.
 # carry 1k or less forward from now on
+
+# model 5 using bigger tree ensemble with non-reduced data
+
+classifier5 = RandomForestClassifier(n_jobs=2, n_estimators=1000, max_features=int(sqrt(len(features))), max_depth=None,
+                                     min_samples_split=2)
+
+classifier5.fit(train_2[features_2], y_2)
