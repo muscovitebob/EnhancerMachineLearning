@@ -9,6 +9,8 @@ import pandas as pd
 import joblib as jb
 from boruta import BorutaPy
 np.random.seed(100)
+from sklearn.ensemble import AdaBoostRegressor
+
 
 def ROC_curve(fpr, tpr, savename):
     # by https://qiita.com/bmj0114/items/460424c110a8ce22d945
@@ -24,6 +26,7 @@ def ROC_curve(fpr, tpr, savename):
     plt.legend(loc="lower right")
     plt.savefig(savename)
     plt.show()
+    print("AUC: ", roc_auc)
 
 # reduced matrix loading
 
@@ -56,7 +59,7 @@ y_2 = train_2.loc[:,'_label']
 
 # first probe model
 
-classifier1 = RandomForestClassifier(n_jobs=2, random_state=0)
+classifier1 = AdaBoostRegressor(RandomForestClassifier(n_jobs=-1, random_state=0), n_estimators=500)
 classifier1.fit(train[features], y)
 
 predictions1 = classifier1.predict(test[features])
@@ -65,12 +68,28 @@ crosstab1 = pd.crosstab(test['target'], predictions1, rownames=['Actual'], colna
 print(crosstab1)
 # print a matrix of tuples of feature names and feature importances
 list(zip(train[features], classifier1.feature_importances_))
-plt.plot( classifier1.feature_importances_)
-plt.show()
+#plt.plot( classifier1.feature_importances_)
+#plt.show()
 # get the most important motifs for the random forest
 #print(features[np.nonzero(classifier1.feature_importances_ > 0.003)])
 
 # model 2 using much bigger tree ensemble
+
+probabilities = classifier1.predict(test.loc[:, test.columns!='target'])
+fpr, tpr, thresholds = roc_curve(test['target'], probabilities, pos_label=1)
+ROC_curve(fpr, tpr, 'ROC.png')
+
+exit()
+
+
+
+
+
+
+
+
+
+
 
 '''
 classifier2 = RandomForestClassifier(n_jobs=2, n_estimators=10000, max_features=int(sqrt(len(features))), max_depth=None,
