@@ -28,6 +28,7 @@ def ROC_curve(fpr, tpr, savename):
     plt.show()
     print("AUC: ", roc_auc)
 
+
 # reduced matrix loading
 
 feature_matrix = pd.read_table("FMs/FM_mast_boruta_reduced.csv", sep=",", index_col=0)
@@ -40,7 +41,7 @@ train, validate, test = np.split(feature_matrix_zeroed.sample(frac=1),
                                  [int(.6*len(feature_matrix_zeroed)), int(.8*len(feature_matrix_zeroed))])
 
 features = train.columns[:-1]
-y = train.loc[:,'target']
+y = train.loc[:,'_label']
 
 # nonreduced matrix loading
 
@@ -64,7 +65,7 @@ classifier1.fit(train[features], y)
 
 predictions1 = classifier1.predict(test[features])
 # see how many incorrect classifications we do
-crosstab1 = pd.crosstab(test['target'], predictions1, rownames=['Actual'], colnames=['Predicted'])
+crosstab1 = pd.crosstab(test['_label'], predictions1, rownames=['Actual'], colnames=['Predicted'])
 print(crosstab1)
 # print a matrix of tuples of feature names and feature importances
 list(zip(train[features], classifier1.feature_importances_))
@@ -73,8 +74,8 @@ list(zip(train[features], classifier1.feature_importances_))
 # get the most important motifs for the random forest
 #print(features[np.nonzero(classifier1.feature_importances_ > 0.003)])
 
-probabilities1 = classifier1.predict_proba(test.loc[:, test.columns!='target'])
-fpr, tpr, thresholds = roc_curve(test['target'], probabilities1[:,1], pos_label=1)
+probabilities1 = classifier1.predict_proba(test.loc[:, test.columns!='_label'])
+fpr, tpr, thresholds = roc_curve(test['_label'], probabilities1[:,1], pos_label=1)
 ROC_curve(fpr, tpr, 'ROCgradboost1.png')
 
 # model 2 using much bigger tree ensemble
@@ -93,7 +94,7 @@ classifier2 = jb.load('classifier2.joblib')
 predictions2 = classifier2.predict(test[features])
 
 # see how many incorrect classifications we do
-crosstab2 = pd.crosstab(test['target'], predictions2, rownames=['Actual'], colnames=['Predicted'])
+crosstab2 = pd.crosstab(test['_label'], predictions2, rownames=['Actual'], colnames=['Predicted'])
 print(crosstab2)
 # print a matrix of tuples of feature names and feature importances
 featureImportances2 = (zip(train[features], classifier2.feature_importances_))
@@ -140,7 +141,7 @@ jb.dump(classifier4, "classifier4.joblib", compress=1)
 predictions4 = classifier4.predict(test[features])
 
 # see how many incorrect classifications we do
-crosstab4 = pd.crosstab(test['target'], predictions4, rownames=['Actual'], colnames=['Predicted'])
+crosstab4 = pd.crosstab(test['_label'], predictions4, rownames=['Actual'], colnames=['Predicted'])
 print(crosstab4)
 # print a matrix of tuples of feature names and feature importances
 featureImportances4 = (zip(train[features], classifier4.feature_importances_))
@@ -168,13 +169,13 @@ Actual
 
 # lets try to do ROC
 # compute probabilities for the ROC function
-probabilities2 = classifier2.predict_proba(test.loc[:, test.columns!='target'])
-fpr, tpr, thresholds = roc_curve(test['target'], probabilities2[:,1], pos_label=1)
+probabilities2 = classifier2.predict_proba(test.loc[:, test.columns!='_label'])
+fpr, tpr, thresholds = roc_curve(test['_label'], probabilities2[:,1], pos_label=1)
 ROC_curve(fpr, tpr, 'ROC2.png')
 
 
-probabilities4 = classifier4.predict_proba(test.loc[:, test.columns!='target'])
-fpr, tpr, thresholds = roc_curve(test['target'], probabilities4[:,1], pos_label=1)
+probabilities4 = classifier4.predict_proba(test.loc[:, test.columns!='_label'])
+fpr, tpr, thresholds = roc_curve(test['_label'], probabilities4[:,1], pos_label=1)
 ROC_curve(fpr, tpr, 'ROC4.png')
 
 # there really is no difference between 10k and 1k trees.

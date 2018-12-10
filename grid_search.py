@@ -7,17 +7,17 @@ from pprint import pprint
 import numpy as np
 import pandas as pd
 import joblib as jb
-from main_random_forests import ROC_curve
+#from random_forests_main import ROC_curve
 np.random.seed(100)
 
 # reduced matrix loading
 
-feature_matrix_1 = pd.read_table("FMs/FM_mast_boruta_reduced.csv", sep=",", index_col=0)
+feature_matrix_1 = pd.read_table("feature_matrix_2_mast_boruta_reduced.csv", sep=",", index_col=0)
 
 feature_matrix_1_zeroed = feature_matrix_1.fillna(value=0)
 
-unsplitY_1 = feature_matrix_1_zeroed.loc[:,'target']
-unsplitX_1 = feature_matrix_1_zeroed.loc[:, feature_matrix_1_zeroed.columns.values != 'target']
+unsplitY_1 = feature_matrix_1_zeroed.loc[:,'_label']
+unsplitX_1 = feature_matrix_1_zeroed.loc[:, feature_matrix_1_zeroed.columns.values != '_label']
 
 X_train_1, X_test_1, y_train_1, y_test_1 = train_test_split(unsplitX_1, unsplitY_1, test_size=0.33)
 
@@ -64,8 +64,8 @@ del classifier2
 
 
 # first I put in some obvious choices to search over, then some others
-parameter_space_grid = {'max_features': range(5, len(feature_matrix_1_zeroed.columns.values), 5), 'n_estimators': [100, 500, 1000, 2000],
-                        'oob_score': [False, True], 'criterion': ['gini', 'entropy']}
+parameter_space_grid = {'max_features': [5, 10, 15, 20], 'n_estimators': [100, 500, 1000],
+                        'oob_score': False, 'criterion': 'gini'}
 
 gridSearch1 = GridSearchCV(RandomForestClassifier(), param_grid=parameter_space_grid, n_jobs=-1,
                            scoring='roc_auc')
