@@ -73,23 +73,11 @@ list(zip(train[features], classifier1.feature_importances_))
 # get the most important motifs for the random forest
 #print(features[np.nonzero(classifier1.feature_importances_ > 0.003)])
 
+probabilities1 = classifier1.predict_proba(test.loc[:, test.columns!='target'])
+fpr, tpr, thresholds = roc_curve(test['target'], probabilities1[:,1], pos_label=1)
+ROC_curve(fpr, tpr, 'ROCgradboost1.png')
+
 # model 2 using much bigger tree ensemble
-
-probabilities = classifier1.predict_proba(test.loc[:, test.columns!='target'])
-fpr, tpr, thresholds = roc_curve(test['target'], probabilities[:,1], pos_label=1)
-ROC_curve(fpr, tpr, 'ROC.png')
-
-exit()
-
-
-
-
-
-
-
-
-
-
 
 '''
 classifier2 = RandomForestClassifier(n_jobs=2, n_estimators=10000, max_features=int(sqrt(len(features))), max_depth=None,
