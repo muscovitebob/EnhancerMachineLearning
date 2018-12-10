@@ -15,7 +15,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder 
 
 
-WORK_DIR = r'E:\Downloads\IBP_project\Deep_learing_model\CompareStride20NEW'
+WORK_DIR = ''
 FILE_NAME_MODEL_FROM_DISK = 'best_model.08-0.79_MODEL3.h5'
 FILE_INPUT_TRAIN = 'deep_learning_cent_shuffled.fna'
 SEQ_LENGTH = 815

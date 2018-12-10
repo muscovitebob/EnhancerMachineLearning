@@ -26,7 +26,7 @@ from viz_sequence import plot_weights
 
 
 STRIDE = 20
-WORK_DIR = r'E:\Downloads\IBP_project\Deep_learing_model\CompareStride20NEW'
+WORK_DIR = ''
 FILE_INPUT = 'deep_learning' + '_stride' + str(STRIDE)
 
 LOAD_MODEL_FROM_DISK = True
@@ -57,7 +57,6 @@ FILE_NAME_MODEL_FROM_DISK = 'best_model.02-0.61_MODEL2.h5'
 #FILE_NAME_MODEL_FROM_DISK = 'best_model.08-0.79_MODEL3.h5'
 MODEL_TO_USE = '2'
 MODEL2_COMPARE_PERFORMANCE = 'best_model.08-0.79_MODEL3.h5'
-
 #MODEL2_COMPARE_PERFORMANCE = ''
 
 BATCH_SIZE_TRAIN = 200
