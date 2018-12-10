@@ -9,7 +9,7 @@ import pandas as pd
 import joblib as jb
 from boruta import BorutaPy
 np.random.seed(100)
-from sklearn.ensemble import AdaBoostRegressor
+from sklearn.ensemble import GradientBoostingClassifier
 
 
 def ROC_curve(fpr, tpr, savename):
@@ -59,7 +59,7 @@ y_2 = train_2.loc[:,'_label']
 
 # first probe model
 
-classifier1 = AdaBoostRegressor(RandomForestClassifier(n_jobs=-1, random_state=0), n_estimators=500)
+classifier1 = GradientBoostingClassifier(loss='deviance', n_estimators=60)
 classifier1.fit(train[features], y)
 
 predictions1 = classifier1.predict(test[features])
@@ -75,8 +75,8 @@ list(zip(train[features], classifier1.feature_importances_))
 
 # model 2 using much bigger tree ensemble
 
-probabilities = classifier1.predict(test.loc[:, test.columns!='target'])
-fpr, tpr, thresholds = roc_curve(test['target'], probabilities, pos_label=1)
+probabilities = classifier1.predict_proba(test.loc[:, test.columns!='target'])
+fpr, tpr, thresholds = roc_curve(test['target'], probabilities[:,1], pos_label=1)
 ROC_curve(fpr, tpr, 'ROC.png')
 
 exit()
