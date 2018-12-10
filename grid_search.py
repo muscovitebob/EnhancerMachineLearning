@@ -64,7 +64,7 @@ del classifier2
 
 
 # first I put in some obvious choices to search over, then some others
-parameter_space_grid = {'max_features': range(5, int(sqrt(len(feature_matrix_1_zeroed.columns.values))), 5), 'n_estimators': [100, 500, 1000, 2000],
+parameter_space_grid = {'max_features': range(5, len(feature_matrix_1_zeroed.columns.values), 5), 'n_estimators': [100, 500, 1000, 2000],
                         'oob_score': [False, True], 'criterion': ['gini', 'entropy']}
 
 gridSearch1 = GridSearchCV(RandomForestClassifier(), param_grid=parameter_space_grid, n_jobs=-1,
