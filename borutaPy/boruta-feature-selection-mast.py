@@ -1,7 +1,7 @@
 #references:
 #https://www.kaggle.com/tilii7/boruta-feature-elimination/notebook
 #https://github.com/scikit-learn-contrib/boruta_py
-#https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc_crossval.html#sphx-glr-auto-examples-model-selection-plot-roc-crossval-py
+#https://www.kaggle.com/kanncaa1/roc-curve-with-k-fold-cv
 
 #Boruta feature selection:
 from __future__ import print_function
@@ -43,33 +43,31 @@ ftrm = ftrm.set_index('id')
 ftrm.to_csv('boruta_filtered-matrix.csv', index_label='id')
 
 #Receiver Operating Characteristic (ROC) with cross validation:
+
 data = pd.read_csv('boruta_filtered-matrix.csv').fillna(value=0)
 X = data.drop(['id','X_label'], axis=1).values
 y = data['X_label'].values
-cv = StratifiedKFold(n_splits=6)
 forest=RandomForestClassifier(n_jobs=-1, class_weight='balanced', max_depth=5)
+cv = StratifiedKFold(n_splits=10,shuffle=False)
 tprs = []
 aucs = []
-mean_fpr = np.linspace(0, 1, 100)
+mean_fpr = np.linspace(0,1,100)
+i = 1
 
-i = 0
-for train, test in cv.split(X, y):
-    predicts = forest.fit(X[train], y[train]).predict(X[test])
-    fpr, tpr, thresholds = roc_curve(y[test], predicts)
+for train,test in cv.split(X,y):
+    prediction = forest.fit(X[train],y[train]).predict_proba(X[test])
+    fpr, tpr, t = roc_curve(y[test], prediction[:, 1])
     tprs.append(interp(mean_fpr, fpr, tpr))
-    tprs[-1][0] = 0.0
     roc_auc = auc(fpr, tpr)
     aucs.append(roc_auc)
-    plt.plot(fpr, tpr, lw=1, alpha=0.3, label='ROC fold %d (AUC = %0.2f)'% (i, roc_auc))
-    i+=1
+    plt.plot(fpr, tpr, lw=2, alpha=0.3, label='ROC fold %d (AUC = %0.2f)' % (i, roc_auc))
+    i= i+1
 
-plt.plot([0, 1], [0, 1],'r--',label='Chance', alpha=.8)
-plt.legend(loc="lower right")
+plt.plot([0,1],[0,1],linestyle = '--',lw = 2,color = 'black')
 mean_tpr = np.mean(tprs, axis=0)
-mean_tpr[-1] = 1.0
 mean_auc = auc(mean_fpr, mean_tpr)
+plt.plot(mean_fpr, mean_tpr, color='blue', label=r'Mean ROC (AUC = %0.2f )' % (mean_auc),lw=2, alpha=1)
 std_auc = np.std(aucs)
-plt.plot(mean_fpr, mean_tpr, color='b', label=r'Mean ROC (AUC = %0.2f $\pm$ %0.2f)' % (mean_auc, std_auc), lw=2, alpha=.5)
 std_tpr = np.std(tprs, axis=0)
 tprs_upper = np.minimum(mean_tpr + std_tpr, 1)
 tprs_lower = np.maximum(mean_tpr - std_tpr, 0)
