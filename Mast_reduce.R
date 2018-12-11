@@ -5,12 +5,14 @@ library(dplyr)
 
 # Example run command from bash:
 # Rscript Mast_reduce.R feature_matrix_2.csv outputMatrixTest.csv
-#args = commandArgs(trailingOnly=TRUE)
-args = c("FMs/FM_orig_train.csv", "FMs/FM_mast_reduced_train.csv")
+args = commandArgs(trailingOnly=TRUE)
+#args = c("FMs/FM_orig_train.csv", "FMs/FM_mast_reduced_train.csv")
 inputMatrixName = args[1]
 outputMatrixName = args[2]
 
 FM = read.csv(inputMatrixName, check.names=FALSE)
+
+colnames(FM)
 
 FM[is.na(FM)] <- 0
 
@@ -46,6 +48,15 @@ for(motif in motifs$primerid){
   }
 }
 
-new_FM <- FM[,c("id", "_label", mtfs)]
+mtfs1 <- c()
+for(motif in mtfs){
+  if (endsWith(motif, ".1")){
+    mtfs1 <- c(mtfs1, substr(motif, 1, nchar(motif)-2))
+  }else{
+    mtfs1 <- c(mtfs1, motif)
+  }
+}
+
+new_FM <- FM[,c("id", "_label", mtfs1)]
 
 write.csv(new_FM, outputMatrixName, row.names = F)
