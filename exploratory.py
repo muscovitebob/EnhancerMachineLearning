@@ -16,7 +16,8 @@ feature_matrix_2 = feature_matrix_2.fillna(value=0)
 # Let's visualise the distribution of the scores across all motifs and genomic sites
 
 for i in range(1, len(feature_matrix_2.columns)):
-    sns.kdeplot(feature_matrix_2.iloc[:, i], legend=False)
+    plot1 = sns.kdeplot(feature_matrix_2.iloc[:, i], legend=False)
+    plot1.set(xlabel="log[P(cluster sequence | real cluster)/P(cluster sequence | random DNA)]")
 
 plt.show()
 
