@@ -34,7 +34,7 @@ feature_df['rank']=boruta_selector.ranking_
 feature_df = feature_df.sort_values('rank', ascending=True).reset_index(drop=True)
 print ('\n Top %d features:' % boruta_selector.n_features_)
 print (feature_df.head(boruta_selector.n_features_))
-feature_df.to_csv('boruta-feature-ranking-mast.csv', index=False)
+feature_df.to_csv('boruta-feature_ranking-mast.csv', index=False)
 
 # Get the reduced train set
 ftrm= pd.read_csv('FM_mast_reduced_train.csv').fillna(value=0)
