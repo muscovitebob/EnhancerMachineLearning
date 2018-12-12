@@ -57,19 +57,19 @@ y = dataset_train['_label']
 # With more than 20 trees, we do not do a very good job of
 # feature selection. Iterate 5-15 trees.
 
-selection1, selection2, selection3, selection4 = multi_boruta([5, 8, 10, 15])
+selection1, selection2, selection3, selection4, selection5 = multi_boruta([5, 10, 15, 20, 25])
 
-# We want around 20 features, so selection2 is probably the best
+# We want around 20 features, so selection5 is probably the best
 
-selection2_chosen_feature_names = get_selected_feature_names(selection2, X)
+selection_chosen_feature_names = get_selected_feature_names(selection5, X)
 
 # Get the reduced train set and save to file
 
-train_reduced = get_reduced_matrix(dataset_train, selection2_chosen_feature_names)
+train_reduced = get_reduced_matrix(dataset_train, selection_chosen_feature_names)
 train_reduced.to_csv('feature_matrix_2_mast_boruta_train_reduced.csv')
 
 # Get the test set, reduce using train info, save
 
 dataset_test = pd.read_csv('FMs/FM_orig_test.csv', index_col=0).fillna(value=0)
-test_reduced = get_reduced_matrix(dataset_test, selection2_chosen_feature_names)
+test_reduced = get_reduced_matrix(dataset_test, selection_chosen_feature_names)
 test_reduced.to_csv('feature_matrix_2_mast_boruta_test_reduced.csv')
