@@ -20,6 +20,4 @@ with open(outputfile,'wb') as outfile:
 	with open(sys.argv[1], 'r') as handle:
 		for line in handle:
 			splt = line.split("\t")
-
 			outfile.write(splt[0]+":"+splt[1]+"-"+splt[2])
-			outfile.write('\n')
