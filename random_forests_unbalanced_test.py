@@ -1,32 +1,14 @@
-import cbust_result as cb
 from math import sqrt
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import roc_curve, auc
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.metrics import roc_curve
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import joblib as jb
-from boruta import BorutaPy
+from assistant_functions import ROC_curve
+
 np.random.seed(100)
-from sklearn.ensemble import GradientBoostingClassifier
-
-
-def ROC_curve(fpr, tpr, savename):
-    # by https://qiita.com/bmj0114/items/460424c110a8ce22d945
-    roc_auc = auc(fpr, tpr)
-    plt.figure()
-    plt.plot(fpr, tpr, color='orange', label='ROC curve %s' % roc_auc)
-    plt.plot([0, 1], [0, 1], color='blue', linestyle='--')
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('ROC')
-    plt.legend(loc="lower right")
-    plt.savefig(savename)
-    plt.show()
-    print("AUC: ", roc_auc)
 
 # reduced matrix loading
 

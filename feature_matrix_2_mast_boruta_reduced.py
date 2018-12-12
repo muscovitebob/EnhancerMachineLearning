@@ -1,38 +1,64 @@
+from __future__ import print_function
+import pandas as pd
+import joblib as jb
+from sklearn.ensemble import RandomForestClassifier
+from boruta import BorutaPy
+import matplotlib.pyplot as plt
+from sklearn.metrics import roc_curve, auc
 
 #references:
 #https://www.kaggle.com/tilii7/boruta-feature-elimination/notebook
 #https://github.com/scikit-learn-contrib/boruta_py
 #https://www.kaggle.com/kanncaa1/roc-curve-with-k-fold-cv
 
-#Boruta feature selection:
-from __future__ import print_function
-import pandas as pd
-import numpy as np
-from datetime import datetime
-from sklearn.ensemble import RandomForestClassifier
-from boruta import BorutaPy
-from scipy import interp
-import matplotlib.pyplot as plt
-from sklearn.metrics import roc_curve, auc
-from sklearn.model_selection import StratifiedKFold
+# Perform feature selection using all-relevant feature selection
+# on features that are significant according to MAST
 
-# Import origin train set
-ftrm= pd.read_csv('FM_mast_reduced_train.csv').fillna(value=0)
-ftrm_id = ftrm['id'].values
-X = ftrm.drop(['id','_label'], axis=1).values
-y = ftrm['_label'].values
+# Import MAST-reduced training set
+ftrm = pd.read_csv('FMs/FM_mast_reduced_train.csv').fillna(value=0)
+ftrm_id = ftrm['id']
+X = ftrm.drop(['id','_label'], axis=1)
+y = ftrm['_label']
 
-rfc=RandomForestClassifier(n_jobs=-1,class_weight='balanced',n_estimators=1000)
-boruta_selector = BorutaPy(rfc, n_estimators=5, verbose=2)
-boruta_selector.fit(X, y)
-# number of selected features
-print ('\n Number of selected features:')
-print (boruta_selector.n_features_)
+def boruta_runner(n_estimators, X, y):
+    rfc1 = RandomForestClassifier(n_jobs=-1, class_weight='balanced')
+    boruta_selector = BorutaPy(rfc1, verbose=2, n_estimators=n_estimators)
+    boruta_selector.fit(X.as_matrix(), y.as_matrix())
+    print('\nSelected %d features out of original set of %d using ensemble of %d trees.'
+        % (boruta_selector.n_features_, X.shape[1], boruta_selector.n_estimators))
+    return boruta_selector
+
+# Boruta will die if you give it too many trees (n_estimators) or set it to auto
+# appears to be known and active issue
+# https://github.com/scikit-learn-contrib/boruta_py/issues/16
+# Additionally, with more than 20 trees, we do not do a very good job of
+# feature selection. Iterate 5-15 trees.
+
+def multi_boruta(n_estimators_list):
+    model_list = []
+    for item in n_estimators_list:
+        model_list.append(boruta_runner(item, X, y))
+    return model_list
+
+def get_selected_feature_names(boruta_selector, X):
+    feature_namelist = []
+    for i in range(0, X.shape[1]):
+        if boruta_selector.support_[i] == True:
+            feature_namelist.append(X.columns[i])
+    return feature_namelist
+
+
+
+selection1, selection2, selection3, selection4 = multi_boruta([5, 8, 10, 15])
+
+# We want around 20 features, so selection2 is probably the best
+
+selection2_chosen_feature_names = get_selected_feature_names(selection2)
 
 feature_df = pd.DataFrame(ftrm.drop(['id','_label'], axis=1).columns.tolist(), columns=['features'])
-feature_df['rank']=boruta_selector.ranking_
+feature_df['rank'] = boruta_selector.ranking_
 feature_df = feature_df.sort_values('rank', ascending=True).reset_index(drop=True)
-print ('\n Top %d features:' % boruta_selector.n_features_)
+print('\n Top %d features:' % boruta_selector.n_features_)
 print (feature_df.head(boruta_selector.n_features_))
 feature_df.to_csv('boruta-feature_ranking-mast.csv', index=False)
 
