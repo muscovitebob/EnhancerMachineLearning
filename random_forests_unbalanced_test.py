@@ -87,7 +87,7 @@ probabilities2 = classifier2.predict_proba(X_test_1)
 fpr, tpr, thresholds = roc_curve(y_test_1, probabilities2[:,1], pos_label=1)
 ROC_curve(fpr, tpr, 'ROC2.png')
 
-# model 3 using nonreduced feature dataset
+# model 3 using nonreduced feature dataset_train
 
 classifier3 = RandomForestClassifier(n_jobs=2, n_estimators=10000, max_features=int(sqrt(features_2)), max_depth=None,
                                      min_samples_split=2, class_weight='balanced')

@@ -1,44 +1,39 @@
 from __future__ import print_function
 import pandas as pd
 import joblib as jb
+import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from boruta import BorutaPy
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, auc
 
+np.random.seed(100)
+
 #references:
 #https://www.kaggle.com/tilii7/boruta-feature-elimination/notebook
 #https://github.com/scikit-learn-contrib/boruta_py
-#https://www.kaggle.com/kanncaa1/roc-curve-with-k-fold-cv
 
 # Perform feature selection using all-relevant feature selection
 # on features that are significant according to MAST
 
-# Import MAST-reduced training set
-ftrm = pd.read_csv('FMs/FM_mast_reduced_train.csv').fillna(value=0)
-ftrm_id = ftrm['id']
-X = ftrm.drop(['id','_label'], axis=1)
-y = ftrm['_label']
-
 def boruta_runner(n_estimators, X, y):
+    # Boruta will die if you give it too many trees (n_estimators) or set it to auto
+    # appears to be known and active issue
+    # https://github.com/scikit-learn-contrib/boruta_py/issues/16
     rfc1 = RandomForestClassifier(n_jobs=-1, class_weight='balanced')
-    boruta_selector = BorutaPy(rfc1, verbose=2, n_estimators=n_estimators)
+    boruta_selector = BorutaPy(rfc1, verbose=1, n_estimators=n_estimators)
     boruta_selector.fit(X.as_matrix(), y.as_matrix())
     print('\nSelected %d features out of original set of %d using ensemble of %d trees.'
         % (boruta_selector.n_features_, X.shape[1], boruta_selector.n_estimators))
     return boruta_selector
 
-# Boruta will die if you give it too many trees (n_estimators) or set it to auto
-# appears to be known and active issue
-# https://github.com/scikit-learn-contrib/boruta_py/issues/16
-# Additionally, with more than 20 trees, we do not do a very good job of
-# feature selection. Iterate 5-15 trees.
 
 def multi_boruta(n_estimators_list):
     model_list = []
     for item in n_estimators_list:
         model_list.append(boruta_runner(item, X, y))
     return model_list
+
 
 def get_selected_feature_names(boruta_selector, X):
     feature_namelist = []
@@ -48,39 +43,38 @@ def get_selected_feature_names(boruta_selector, X):
     return feature_namelist
 
 
+def get_reduced_matrix(dataset, feature_namelist, label_name='_label'):
+    namelist = [label_name] + feature_namelist
+    reduced_matrix = dataset[namelist]
+    return reduced_matrix
+
+
+# Import MAST-reduced training set
+dataset_train = pd.read_csv('FMs/FM_mast_reduced_train.csv', index_col=0).fillna(value=0)
+X = dataset_train.drop('_label', axis=1)
+y = dataset_train['_label']
+
+# With more than 20 trees, we do not do a very good job of
+# feature selection. Iterate 5-15 trees.
 
 selection1, selection2, selection3, selection4 = multi_boruta([5, 8, 10, 15])
 
 # We want around 20 features, so selection2 is probably the best
 
-selection2_chosen_feature_names = get_selected_feature_names(selection2)
+selection2_chosen_feature_names = get_selected_feature_names(selection2, X)
 
-feature_df = pd.DataFrame(ftrm.drop(['id','_label'], axis=1).columns.tolist(), columns=['features'])
-feature_df['rank'] = boruta_selector.ranking_
-feature_df = feature_df.sort_values('rank', ascending=True).reset_index(drop=True)
-print('\n Top %d features:' % boruta_selector.n_features_)
-print (feature_df.head(boruta_selector.n_features_))
-feature_df.to_csv('boruta-feature_ranking-mast.csv', index=False)
+# Get the reduced train set and save to file
 
-# Get the reduced train set
-ftrm= pd.read_csv('FM_mast_reduced_train.csv').fillna(value=0)
-selected = ftrm.drop(['id','_label'], axis=1).columns[boruta_selector.support_]
-ftrm = ftrm[selected]
-ftrm['id'] = ftrm_id
-ftrm['_label'] = y
-ftrm = ftrm.set_index('id')
-train_reduced=ftrm
-train_reduced.to_csv('feature_matrix_2_mast_boruta_train_reduced.csv', index_label='id')
-train = pd.read_csv('feature_matrix_2_mast_boruta_train_reduced.csv').fillna(value=0)
-X_train = train.drop(['id','_label'], axis=1).values
-y_train = train['_label']
+train_reduced = get_reduced_matrix(dataset_train, selection2_chosen_feature_names)
+train_reduced.to_csv('feature_matrix_2_mast_boruta_train_reduced.csv')
 
+# Get the test set, reduce using train info, save
 
-# Get the reduced test set
-test = pd.read_csv('FM_orig.csv').fillna(value=0)
-X_test = test[selected]
-y_test = test['_label'].values
+dataset_test = pd.read_csv('FMs/FM_orig_test.csv', index_col=0).fillna(value=0)
+test_reduced = get_reduced_matrix(dataset_test, selection2_chosen_feature_names)
+test_reduced.to_csv('feature_matrix_2_mast_boruta_test_reduced.csv')
 
+'''
 # Train the random forest again on the reduced train set to get a model and then predict the test set
 forest=RandomForestClassifier(n_jobs=-1,class_weight='balanced',n_estimators=1000)
 pred_prob = forest.fit(X_train,y_train).predict_proba(X_test)
@@ -101,3 +95,4 @@ plt.legend(loc="lower right")
 plt.show()
 plt.savefig('roc_auc_M.png')
 plt.gcf().clear()
+'''
