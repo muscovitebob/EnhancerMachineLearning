@@ -34,8 +34,8 @@ jb.dump(classifier1, "classifier1_balanced.joblib", compress=1)
 predictions1 = classifier1.predict(X_test)
 
 # see how many incorrect classifications we do
-crosstab4 = pd.crosstab(y_test, predictions1, rownames=['Actual'], colnames=['Predicted'])
-print(crosstab4)
+crosstab1 = pd.crosstab(y_test, predictions1, rownames=['Actual'], colnames=['Predicted'])
+print(crosstab1)
 # print a matrix of tuples of feature names and feature importances
 classifier1_feature_importances = (zip(X_test.columns.values, classifier1.feature_importances_))
 plt.plot(classifier1.feature_importances_)
