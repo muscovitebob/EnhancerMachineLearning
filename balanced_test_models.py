@@ -1,3 +1,9 @@
+'''
+In this file we build models and test them using the class balanced dataset, which is also used for
+the neural network modelling. We also use class_weight='balanced' to do inverse weighting of the training set.
+'''
+
+
 from math import sqrt
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.metrics import roc_curve

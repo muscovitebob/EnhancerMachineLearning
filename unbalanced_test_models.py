@@ -1,3 +1,8 @@
+'''
+In this file we run models on the reduced motif matrix, but split train and test in python, which means they are not
+class balanced by default.
+'''
+
 from math import sqrt
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.metrics import roc_curve
@@ -87,30 +92,6 @@ probabilities2 = classifier2.predict_proba(X_test_1)
 fpr, tpr, thresholds = roc_curve(y_test_1, probabilities2[:,1], pos_label=1)
 ROC_curve(fpr, tpr, 'ROC2.png')
 
-# model 3 using nonreduced feature dataset_train
-
-classifier3 = RandomForestClassifier(n_jobs=2, n_estimators=10000, max_features=int(sqrt(features_2)), max_depth=None,
-                                     min_samples_split=2, class_weight='balanced')
-
-classifier3.fit(X_train_2, y_train_2)
-
-jb.dump(classifier3, "classifier3.joblib", compress=1)
-
-#classifier3 = jb.load("classifier3.joblib")
-
-predictions3 = classifier3.predict(X_test_2)
-
-# see how many incorrect classifications we do
-crosstab3 = pd.crosstab(y_test_2, predictions3, rownames=['Actual'], colnames=['Predicted'])
-print(crosstab3)
-# print a matrix of tuples of feature names and feature importances
-classifier3_feature_importances = list(zip(X_train_2.columns.values, classifier3.feature_importances_))
-plt.plot(classifier3.feature_importances_)
-
-probabilities3 = classifier3.predict_proba(X_test_2)
-fpr, tpr, thresholds = roc_curve(y_test_1, probabilities3[:,1], pos_label=1)
-ROC_curve(fpr, tpr, 'ROC3.png')
-
 # model 4 using bigger tree ensemble with reduced data
 # does using 10k trees improve over just 1k?
 
@@ -157,20 +138,3 @@ ROC_curve(fpr, tpr, 'ROC4.png')
 
 # there really is no difference between 10k and 1k trees.
 # carry 1k or less forward from now on
-
-# model 5 using bigger tree ensemble with non-reduced data
-
-classifier5 = RandomForestClassifier(n_jobs=2, n_estimators=1000, max_features=int(sqrt(features_2)), max_depth=None,
-                                     min_samples_split=2, class_weight='balanced')
-
-classifier5.fit(X_train_2, y_train_2)
-
-jb.dump(classifier5, "classifier5.joblib", compress=1)
-
-predictions5 = classifier5.predict(X_test_2)
-crosstab5 = pd.crosstab(y_test_2, predictions5, rownames=['Actual'], colnames=['Predicted'])
-classifier5_feature_importances = (zip(X_test_2.columns.values, classifier5.feature_importances_))
-plt.plot(classifier5.feature_importances_)
-probabilities5 = classifier5.predict_proba(X_test_2)
-fpr, tpr, thresholds = roc_curve(y_test_2, probabilities5[:,1], pos_label=1)
-ROC_curve(fpr, tpr, 'ROC5.png')
