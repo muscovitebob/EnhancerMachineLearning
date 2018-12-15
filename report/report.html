@@ -133,13 +133,8 @@ $(document).ready(function () {
 <p> Melanoma is an aggressive cancer with a high level of therapy-resistance due to its high degree of heterogeneity and plasticity. Despite the great efforts put into the field of melanoma treatment, resulting in great advances, many challenges remain. The major challange in fighting melanoma relapse continues to be the tumor heterogeneity, as melanoma comprises a wide variety of phenotypically distinct subpopulations of cancer cells. To be able to adress this issue therapeutically, the underlying mechanisms of heterogeneity need to be characterized. In this paper, a distinction between two major types of melanoma cells is made: invasive and proliferative. <span class="citation">(Verfaillie et al. <a href="#ref-Verfaillie">2015</a>; Shannan et al. <a href="#ref-Shannan">2015</a>)</span></p>
 <p>Transcriptional reprogramming of melanoma cells in proliferative state into melanoma cells with invasive characteristics is a critical event at the origin of metastatic spreading of melanoma. Invasive cells have acquired the ability to migrate to other tissues, enter the bloodstream and therefore lie at the basis of the metastatic spreading of cancer in the body. While the transitional mechanisms from proliferative to invasive cancer cell are yet to be characterized more extensively, it is sure that one event lies at the basis of this transition: the transcriptional reprogramming of the cell. Studying the involved genes and regulatory elements using various bioinformatics approaches is therefore a hot topic in the area of melanoma research. Decoding the regulatory landscape could result into the ability to push melanoma cells towards a different cell state, which would be an interesting target from a therapeutic point of view. <span class="citation">(Verfaillie et al. <a href="#ref-Verfaillie">2015</a>)</span></p>
 <p>Transcriptomic, open chromatin and histone modification maps of melanoma cultures were constructed, revealing thousands of active cis-regulatory regions, both for proliferative and invasive cells. <span class="citation">(Verfaillie et al. <a href="#ref-Verfaillie">2015</a>)</span> It should be possible to discern which cis-regulatory regions are useful for the classification of cell states in melanoma samples if such states are truly distinct in terms of regulatory landscape. The aim of the project was the construction of classifiers predicting whether a regulatory region would be active in proliferative or invasive cell states. Another useful insight that would be gained from these classifiers, is which regulatory regions are the most significant for distinguishing between cell states, thus giving information about the underlying mechanisms and the critical genes and regulatory elements involved in cancer cell state transitions.</p>
-<p>Two distinct machine learning techniques were used for the creation of such classifiers, namely the random forests ensemble method and deep learning, with the use of convolutional neural networks. Both models were trained on the same training set, which comprises the dataset of active cis-regulatory regions, mentioned hereabove. In this paper, both methods are described and their results are evaluated and compared.</p>
+<p>Two distinct machine learning techniques were used for the creation of such classifiers, namely the random forests ensemble method and deep learning, with the use of convolutional neural networks. Random forest (RF) is a nonparametric tree-based method that builds an ensemble model from random subsets of features.<span class="citation">(Nguyen et al. <a href="#ref-Nguyen">2015</a>)</span> RF has shown excellent performance for classification problems,it works well when the number of features is much larger than the number of samples. However, with randomizing mechanism in feature selection, RF could give poor accuracy when applied to high dimensional data. This is mainly caused by the subspace of features randomly sampled from hundreds of features to split a node of the tree is often dominated by uninformative features (or noise) when growing a tree from the data,. In this manner the tree grown from such subspace of features will result in a low accuracy RF model.<span class="citation">(Nguyen et al. <a href="#ref-Nguyen">2015</a>)</span> Aiming at improving the performance of the RF model, we propose a feature selction algorithm before constructing the RF model, called Boruta. Boruta is an all-relevant feature selection method. It tries to capture all the important, interesting features that might be relatively important to the outcome variable.<span class="citation">(Kursa et al. <a href="#ref-Kursa">2010</a>)</span> In addition to the RF method, we also build convolutional neural networks parallelly. A neural network is able to extract features from raw DNA sequences. No prior manual feature selection is necessary. By converting the sequence into a 1-hot vector, it becomes an image-like input which can be scanned with a number of kernels from the first convolutional layer. This information is then passed on to the rest of the network. During training, the network will adjust its weights in order to optimize the classification task. In the process, the kernel weights of the first convolutional layer will start to resemble the various DNA motifs which are then extracted and compared to a motif database (JASPAR). <span class="citation">(Min et al. <a href="#ref-Min">2017</a>)</span> Both models were trained on the same training set, which comprises the dataset of active cis-regulatory regions, mentioned hereabove. In this paper, both methods are described and their results are evaluated and compared. # Methods # Results and discussion</p>
 </div>
-<div id="methods" class="section level1">
-<h1>Methods</h1>
-</div>
-<div id="results-and-discussion" class="section level1">
-<h1>Results and discussion</h1>
 <div id="deep-learning" class="section level2">
 <h2>Deep learning</h2>
 <div id="a-deep-learning-approach-to-motif-finding" class="section level3">
@@ -152,7 +147,6 @@ $(document).ready(function () {
 </div>
 <div id="comparing-2-deep-learning-architectures" class="section level3">
 <h3>Comparing 2 deep learning architectures</h3>
-</div>
 </div>
 </div>
 <div id="references" class="section level1">
@@ -173,6 +167,15 @@ $(document).ready(function () {
 </blockquote>
 </blockquote>
 <div id="refs" class="references">
+<div id="ref-Kursa">
+<p>Kursa et al. 2010. “Feature Selection with the Boruta Package.” <em>Journal of Statistical Software</em>.</p>
+</div>
+<div id="ref-Min">
+<p>Min et al. 2017. “Predicting Enhancers with Deep Convolutional Neural Networks.” <em>BMC Bioinformatics</em>.</p>
+</div>
+<div id="ref-Nguyen">
+<p>Nguyen et al. 2015. “Unbiased Feature Selection in Learning Random Forests for High-Dimensional Data.” <em>The Scientific World Journal</em>.</p>
+</div>
 <div id="ref-Shannan">
 <p>Shannan et al. 2015. “Heterogeneity in Melanoma.” <em>Cancer Treatment and Research</em>.</p>
 </div>

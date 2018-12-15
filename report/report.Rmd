@@ -2,9 +2,9 @@
 title: "Classification of regulatory sequences using machine learning techniques"
 link-citations: yes
 output:
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
   pdf_notebook: default
 bibliography: bib.bib
 ---
@@ -29,9 +29,7 @@ Two distinct machine learning techniques were used for the creation of such clas
 # Results and discussion
 
 ## Deep learning
-### A deep learning approach to motif finding
-As shown in Fig1 a deep neural network takes the raw DNA sequences as input. No manually crafted dataset of features is needed, which is one of the major advantages of using a deep learning approach.   After transformation to a 1-hot representation, the DNA sequences can be inputted into a first convolutional layer.   Here a number of kernels, acting as motif scanners, will go over the sequences.   Their width equals 4 (number of nucleotides) and their length corresponds to the length of the motifs we try to extract.   Likewise, the number of kernels will correspond to the maximum number of motifs we will be able to find.   This first convolutional layer is then followed by consecutive convolutional layers, each time transforming the input data into more higher level features.    At certain points drop out layers and batch normalization are used to reduce the number of parameters, and as a counterweight to overfitting.  At the end, these extracted featured are combined through some dense layers and eventually passed through a softmax layer which outputs a probability distribution over the different classes (in our case binary , P or I).   During training, the network will adjust its weights so that classification is improved.   This will lead to an adjustment of the weights in the kernels of the first layer to match the characteristic differences between the two types of DNA sequences (=the motifs).
-In addition, some form of recurrent layers can be incorporated as well.  A popular choice are Long Short Term Memory networks (LSTMs). These recurrent neural layers can pick up on sequential information and are therefore better suited to capture the context of the motifs (motif syntax).
+
 
 ![Figure 1: Overview of a deep learning set up for motif detection.  From Min, Xu et al (2017)][fig1]
 
