@@ -1,10 +1,12 @@
 ---
 title: "Classification of regulatory sequences using machine learning techniques"
+link-citations: yes
 output:
+  html_document:
+    df_print: paged
   pdf_document: default
   pdf_notebook: default
 bibliography: bib.bib
-link-citations: yes
 ---
 ### Boris Shilov, Wim Thiels, Lucas Coppens, Zixuan Xie
 
@@ -25,7 +27,6 @@ Transcriptomic, open chromatin and histone modification maps of melanoma culture
 Two distinct machine learning techniques were used for the creation of such classifiers, namely the random forests ensemble method and deep learning, with the use of convolutional neural networks. Both models were trained on the same training set, which comprises the dataset of active cis-regulatory regions, mentioned hereabove. In this paper, both methods are described and their results are evaluated and compared.
 
 # Methods
-
 # Results and discussion
 
 ## Deep learning
@@ -35,7 +36,7 @@ In addition, some form of recurrent layers can be incorporated as well.  A popul
 
 ![Figure 1: Overview of a deep learning set up for motif detection.  From Min, Xu et al (2017)][fig1]
 
-[fig1]: https://github.com/muscovitebob/EnhancerMachineLearning/tree/master/report/pics/Overview set up deep learning for motif detection.png "Overview set up deep learning for motif detection"
+[fig1]: https://github.com/muscovitebob/EnhancerMachineLearning/tree/master/report/pics/pic1.png "Overview set up deep learning for motif detection"
 
 ### Comparing 2 deep learning architectures
 
