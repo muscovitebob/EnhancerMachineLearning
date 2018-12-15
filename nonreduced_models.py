@@ -89,7 +89,7 @@ def reduce_n_times(rfc, n, X_train, y_train, X_test, y_test):
     return rfc, X_train, X_test
 
 
-five_reduced, X_train_five_reduced, X_test_five_reduced = reduce_n_times(classifier_reduction,
+five_reduced, X_train_five_reduced, X_test_five_reducd = reduce_n_times(classifier_reduction,
                                                                          5,
                                                                          X_train, y_train,
                                                                          X_test, y_test)
