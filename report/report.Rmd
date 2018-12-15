@@ -1,20 +1,16 @@
 ---
 title: "Classification of regulatory sequences using machine learning techniques"
+author: "Boris Shilov, Wim Thiels, Lucas Coppens, Zixuan Xie"
 link-citations: yes
 output:
   pdf_document: default
-  html_document:
-    df_print: paged
-  pdf_notebook: default
+classoption: twocolumn
 bibliography: bib.bib
 ---
-### Boris Shilov, Wim Thiels, Lucas Coppens, Zixuan Xie
+\fontsize{9}{20}
 
-\fontsize{12}{20}
 # Introduction
 
-\fontsize{12}{15}
-\selectfont
 Melanoma is an aggressive cancer with a high level of therapy-resistance due to its high degree of heterogeneity and plasticity. Despite the great efforts put into the field of melanoma treatment, resulting in great advances, many challenges remain. The major challange in fighting melanoma relapse continues to be the tumor heterogeneity, as melanoma comprises a wide variety of phenotypically distinct subpopulations of cancer cells. To be able to adress this issue therapeutically, the underlying mechanisms of heterogeneity need to be characterized. In this paper, a distinction between two major types of melanoma cells is made: invasive and proliferative. [@Verfaillie; @Shannan]
 
 
@@ -30,14 +26,9 @@ Two distinct machine learning techniques were used for the creation of such clas
 
 ## Deep learning
 
-
-![Figure 1: Overview of a deep learning set up for motif detection.  From Min, Xu et al (2017)][fig1]
-
-[fig1]: https://github.com/muscovitebob/EnhancerMachineLearning/tree/master/report/pics/pic1.png "Overview set up deep learning for motif detection"
+![Figure 1: Overview of a deep learning set up for motif detection.  From Min, Xu et al (2017)](pics/pic1.png)
 
 ### Comparing 2 deep learning architectures
 
 
 # References
-
->>>>>>> 5a54e5c5a0b9df7b9baf74f7184f269635e0ee86
