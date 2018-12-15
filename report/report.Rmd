@@ -23,7 +23,9 @@ Transcriptomic, open chromatin and histone modification maps of melanoma culture
 
 
 Two distinct machine learning techniques were used for the creation of such classifiers, namely the random forests ensemble method and deep learning, with the use of convolutional neural networks. Random forest (RF) is a nonparametric tree-based method that builds an ensemble model from random subsets of features.[@Nguyen] RF has shown excellent performance for classification problems,it works well when the number of features is much larger than the number of samples. However, with randomizing mechanism in feature selection, RF could give poor accuracy when applied to high dimensional data. This is mainly caused by the subspace of features randomly sampled from hundreds of features to split a node of the tree is often dominated by uninformative features (or noise) when growing a tree from the data,. In this manner the tree grown from such subspace of features will result in a low accuracy RF model.[@Nguyen] Aiming at improving the performance of the RF model, we propose a feature selction algorithm before constructing the RF model, called Boruta. Boruta is an all-relevant feature selection method. It tries to capture all the important, interesting features that might be relatively important to the outcome variable.[@Kursa] In addition to the RF method, we also build convolutional neural networks parallelly. A neural network is able to extract features from raw DNA sequences. No prior manual feature selection is necessary. By converting the sequence into a 1-hot vector, it becomes an image-like input which can be scanned with a number of kernels from the first convolutional layer. This information is then passed on to the rest of the network. During training, the network will adjust its weights in order to optimize the classification task. In the process, the kernel weights of the first convolutional layer will start to resemble the various DNA motifs which are then extracted and compared to a motif database (JASPAR). [@Min] Both models were trained on the same training set, which comprises the dataset of active cis-regulatory regions, mentioned hereabove. In this paper, both methods are described and their results are evaluated and compared.
+
 # Methods
+
 ## Random forests
 
 Unlike neural networks, random forests do not have feature learning integrated into the training process. Thus, they require the input data to have labelled features. Before the application of RFs to our data was possible, we needed a way to discover the features. This limitation also precluded us from training our model on the sequence data.
@@ -35,21 +37,25 @@ To this end, we first used the motif discovery utility Hypergeometric Optimizati
 Having identified the ensemble of differentially enriched motifs in these two cell states compared to each other, we used Cluster-Buster in order to score the Invasive and Proliferative sequence sets for each motif, independently [@Frith:2003aa]. This resulted in a log-likelihood score for every motif against every sequence in the sequence sets. The functions for this step of the analysis can be found in \texttt{motif\_processing\_main.sh}. We proceeded to assemble these into a feature matrix, with every row being the genomic region and every column a particular motif, hereafter referred to as features, with the log-likelihood scores as values in this matrix. We further inserted a \texttt{\_label} column which represented our binary outcome variable, with 0 for Invasive state and 1 for Proliferative state. This step of the analysis can be found in \texttt{feature\_matrices.py}, utilising the \texttt{feature\_matrix\_special} method of the \texttt{cbust\_result} class we created in order to handle the output of Cluster-Buster. We thus produced a complete data matrix for our subsequent random forest classifier training and exploration.
 
 ## Deep learning
+
 ### 2 architectures
+
 A schematic outline of how a neural network can be used in motif detection is given in figure ??.  
 ![Overview of a deep learning set up for motif detection.  From Min, Xu et al (2017)](pics/Fig1Deeplearning_setupmotiffinding.JPG)
 
 In our case,  2 model architectures were compared (see fig??).  Model 1 uses 3 CNN’s, Model 2 uses only 1 convolutional layer, and incorporates a recurrent layer (LSTM’s). A recurrent neural layer can pick up on sequential information and are therefore better suited to capture the context of the motifs (motif syntax).
 ![The 2 model architectures.(left) Model1 : using 3 convolutional layers. (right) Model2 : using 1 CNN and LSTM](pics/Fig2DeepLearning_2arch.JPG)
 
-Both models were build using the Keras package.
+Both models were build using the python Keras package on a Tensorflow backend.
 
 ### Data augmentation
+
 Even though a neural network can work with raw DNA sequences as input, there are still two issues that need to be overcome.  First, the input to the convolutional layer needs to be of fixed length, and second, a deep neural network needs a vast amount of training data.  To overcome these 2 issues, a moving window approach as in [@Min] (with stride = 20) is used (fig ??).   
 
 ![Diagram of data augmentation.  By using a sliding window approach, each enhancer sequence produces multiple sequences of equal length that can be used as input for the first convolutional layer.  Taken from Min, Xu et al (2017)](pics/Fig6_deeplearning_dataaugmentation.JPG)
 
 ### training/validation
+
 Starting from 20122 enhancer sequences, we end up with 228051 sequences using the data augmentation approach.  The sequences are randomly split in a 70/20/10 fashion (train/test/val).   The loss function was class weighted to counter the fact that the I-label is overrepresented in the input data.  Both the validation and test data were also balanced.
 
 ![Training metrics for both models](pics/Fig5_deeplearning_trainingKeras.JPG)
