@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: "Classification of regulatory sequences using machine learning techniques"
 output:
@@ -39,7 +38,8 @@ In addition, some form of recurrent layers can be incorporated as well.  A popul
 [fig1]: https://github.com/muscovitebob/EnhancerMachineLearning/tree/master/report/pics/Overview set up deep learning for motif detection.png "Overview set up deep learning for motif detection"
 
 ### Comparing 2 deep learning architectures
-=======
+
+
 # References
 
 >>>>>>> 5a54e5c5a0b9df7b9baf74f7184f269635e0ee86
