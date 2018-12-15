@@ -22,13 +22,20 @@ Transcriptomic, open chromatin and histone modification maps of melanoma culture
 
 Two distinct machine learning techniques were used for the creation of such classifiers, namely the random forests ensemble method and deep learning, with the use of convolutional neural networks. Random forest (RF) is a nonparametric tree-based method that builds an ensemble model from random subsets of features.[@Nguyen] RF has shown excellent performance for classification problems,it works well when the number of features is much larger than the number of samples. However, with randomizing mechanism in feature selection, RF could give poor accuracy when applied to high dimensional data. This is mainly caused by the subspace of features randomly sampled from hundreds of features to split a node of the tree is often dominated by uninformative features (or noise) when growing a tree from the data,. In this manner the tree grown from such subspace of features will result in a low accuracy RF model.[@Nguyen] Aiming at improving the performance of the RF model, we propose a feature selction algorithm before constructing the RF model, called Boruta. Boruta is an all-relevant feature selection method. It tries to capture all the important, interesting features that might be relatively important to the outcome variable.[@Kursa] In addition to the RF method, we also build convolutional neural networks parallelly. A neural network is able to extract features from raw DNA sequences. No prior manual feature selection is necessary. By converting the sequence into a 1-hot vector, it becomes an image-like input which can be scanned with a number of kernels from the first convolutional layer. This information is then passed on to the rest of the network. During training, the network will adjust its weights in order to optimize the classification task. In the process, the kernel weights of the first convolutional layer will start to resemble the various DNA motifs which are then extracted and compared to a motif database (JASPAR). [@Min] Both models were trained on the same training set, which comprises the dataset of active cis-regulatory regions, mentioned hereabove. In this paper, both methods are described and their results are evaluated and compared.
 # Methods
-# Results and discussion
 
 ## Deep learning
 
 ![Figure 1: Overview of a deep learning set up for motif detection.  From Min, Xu et al (2017)](pics/pic1.png)
 
-### Comparing 2 deep learning architectures
+## Random forests
+
+Unlike neural networks, random forests do not have feature learning integrated into the training process. Thus, they require the input data to have labelled features. Before the application of RFs to our data was possible, we needed a way to discover the features. This limitation also precluded us from training our model on the sequence data.
+
+We therefore had to engineer a pipeline to process the sequence data into a usable form, which took a considerable investment of time. Our reasoning on this front was as follows: the sequences themselves are not the principal target of our learning strategy, but rather whatever recurring motifs may be present. To this end, we first used the motif discovery utility Hypergeometric Optimization of Motif EnRichment (HOMER), which provides a Perl module \texttt{findMotifs.pl} that allows the discovery of enriched regulatory motifs in one set of sequences as compared to another set (the background) [@Heinz:2010aa].
+
+# Results and discussion
+
+## Comparing 2 deep learning architectures
 
 
 # References
