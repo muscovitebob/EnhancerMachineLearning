@@ -3,9 +3,8 @@ title: "Classification of regulatory sequences using machine learning techniques
 author: "Boris Shilov, Wim Thiels, Lucas Coppens, Zixuan Xie"
 classoption: twocolumn
 output:
-  pdf_document: default
-  html_document:
-    df_print: paged
+  pdf_document:
+    fig_caption: true
 link-citations: yes
 bibliography: bib.bib
 ---
@@ -51,10 +50,9 @@ The model-based Analysis of Single Cell Transcriptomics (MAST) R package provide
 
 Boruta is an all-relevant feature selection method, aiming at finding relevant features that are suitable for the prediction of the outcome [@Homola]. It seems to be similar to MAST, however, it has a different test mechanism to discover relevant features. First it duplicates the dataset and makes the values shuffling in each column which after that the duplicated dataset is called shadow features. Then training a RF classifier on the dataset, from which the  importances for each of the features are generated. Boruta algorithm involves several iterations (default = 100). It trains the original dataset along with the shadow features dataset and checks for each of the real features if they have higher importance than the best of the shadow features in each of its iteration. If they do, boruta records this in a vector called a hits and continue with another iteration. Finally after the predefined set of iterations it ends up with a table of these selected features. The python implementation in \texttt{boruta\_reduction.py}
 
-
 ### Construction of the model
 
-For the construction of the random forests ensemble model, the python package \texttt{scikit-learn} was used, more specifically, its class \texttt{sklearn.ensemble.RandomForestClassifier}, which offers a standard RF classifier. The classifier was constructed using following parameters: \texttt{n\_jobs=-1}, which means using all processors to work in parallel for both fit and predict; \texttt{n\_estimators=1000}, This is the number of trees in this forest, higher number of trees gives better performance but makes fitting slower;  \texttt{max\_depth=None}, the maximum depth of the tree, None means nodes are expanded until all leaves are pure or until all leaves contain less than 'min_samples_split samples'; \texttt{min\_samples\_split=2}, minimum number of samples required to split an internal node (default=2);  \texttt{class\_weight='balanced'}, weights associated with classes, “balanced” mode uses the values of y to automatically adjust weights inversely proportional to class frequencies in the input data as n_samples / (n_classes * np.bincount(y)) [@Srivastava].
+For the construction of the random forests ensemble model, the python package \texttt{scikit-learn} was used, more specifically, its class \texttt{sklearn.ensemble.RandomForestClassifier}, which offers a standard RF classifier. The classifier was constructed using following parameters: \texttt{n\_jobs=-1}, which means using all processors to work in parallel for both fit and predict; \texttt{n\_estimators=1000}, This is the number of trees in this forest, higher number of trees gives better performance but makes fitting slower;  \texttt{max\_depth=None}, the maximum depth of the tree, None means nodes are expanded until all leaves are pure or until all leaves contain less than 'min_samples_split samples'; \texttt{min\_samples\_split=2}, minimum number of samples required to split an internal node (default=2);  \texttt{class\_weight='balanced'}, weights associated with classes, “balanced” mode uses the values of y to automatically adjust weights inversely proportional to class frequencies in the input data as $n\_samples / (n\_classes \times np.bincount(y))$ [@Srivastava].
 
 BORIS MAYBE HERE YOU COULD TAKE A LOOK AND CHECK ANYTHING ELSE SHOULD BE ADDED?
 
@@ -64,26 +62,27 @@ BORIS MAYBE HERE YOU COULD TAKE A LOOK AND CHECK ANYTHING ELSE SHOULD BE ADDED?
 
 A schematic outline of how a neural network can be used in motif detection is given in figure ??.  By converting the sequence into a 1-hot vector, it becomes an image-like input which can be scanned with a number of kernels from the first convolutional layer. This information is then passed on to the rest of the network. During training, the network will adjust its weights in order to optimize the classification task. In the process, the kernel weights of the first convolutional layer will start to resemble the various DNA motifs which are then extracted and compared to a motif database (JASPAR). [@Min]
 
-![Overview of a deep learning set up for motif detection.  From Min, Xu et al (2017)](pics/Fig1Deeplearning_setupmotiffinding.JPG)
+![Overview of a deep learning set up for motif detection.  From Min, Xu et al (2017)](pics/Fig1Deeplearning_setupmotiffinding.JPG){#fig:deeplearningsetup}
 
 In our case,  2 model architectures were compared (see fig??).  Model 1 uses 3 CNN’s, Model 2 uses only 1 convolutional layer, and incorporates a recurrent layer (LSTM’s). A recurrent neural layer can pick up on sequential information and are therefore better suited to capture the context of the motifs (motif syntax).
 
-![The 2 model architectures.(left) Model1 : using 3 convolutional layers. (right) Model2 : using 1 CNN and LSTM](pics/Fig2DeepLearning_2arch.JPG)
+![The 2 model architectures.(left) Model1 : using 3 convolutional layers. (right) Model2 : using 1 CNN and LSTM](pics/Fig2DeepLearning_2arch.JPG){#fig:twomodelarchitectures}
 
 Both models were built using the python Keras package on a Tensorflow backend.
 
 ### Data augmentation
 
-Even though a neural network can work with raw DNA sequences as input, there are still two issues that need to be overcome.  First, the input to the first convolutional layer needs to be of fixed length, and second, a deep neural network needs a vast amount of training data.  To overcome these 2 issues, a moving window approach as in [@Min] (with stride = 20) is used (fig ??).   
+Even though a neural network can work with raw DNA sequences as input, there are still two issues that need to be overcome.  First, the input to the first convolutional layer needs to be of fixed length, and second, a deep neural network needs a vast amount of training data.  To overcome these 2 issues, a moving window approach as in [@Min] (with stride = 20) is used (Fig. [@fig:dataaugmentation]).   
 
-![Diagram of data augmentation.  By using a sliding window approach, each enhancer sequence produces multiple sequences of equal length that can be used as input for the first convolutional layer.  Taken from Min, Xu et al (2017)](pics/Fig6_deeplearning_dataaugmentation.JPG)
+![Diagram of data augmentation.  By using a sliding window approach, each enhancer sequence produces multiple sequences of equal length that can be used as input for the first convolutional layer.  Taken from Min, Xu et al (2017)](pics/Fig6_deeplearning_dataaugmentation.JPG){#fig:dataaugmentation}
 
 ### Training and validation
 
 ### Input matrix creation
+
 Starting from 20122 enhancer sequences,  228051 sequences are generated using the data augmentation approach.  The sequences are randomly split in a 70/20/10 fashion (train/test/val).   The loss function was class weighted to counter the fact that the I-label is overrepresented in the input data.  Both the validation and test data were also balanced.
 
-![Training metrics for both models](pics/Fig5_deeplearning_trainingKeras.JPG)
+![Training metrics for both models](pics/Fig5_deeplearning_trainingKeras.JPG){#fig:trainingmetrics}
 
 ### Feature filtering
 
@@ -97,19 +96,20 @@ After training, the kernels of the first convolutional layer, can be screened fo
 
 ### Selected features
 
-MAST reduced the 333 features in original training set to 164 significant features. Then Boruta takes the reduced feature matrix as input and selected 19 important features, which their names can be seen in fig ???. The 'Homer' postfix in some features name indicates they are de novo discovered motifs.
+MAST reduced the 333 features in original training set to 164 significant features. Then Boruta takes the reduced feature matrix as input and selected 19 important features, which their names can be seen in Fig. [@fig:19selectedBoruta]. The 'Homer' postfix in some features name indicates they are de novo discovered motifs.
 
-![19 features selected by Boruta algorithm](pics/RF19selected.JPG )
+![19 features selected by Boruta algorithm](pics/RF19selected.JPG){#fig:19selectedBoruta}
 
-###Performance of the model built using reduced features
+### Performance of the model built using reduced features
+
 Afterwards the 19 selected motifs are used as the features to train the RF model with the parameters mentioned above in methods. Then this trained classifier is tested and also used to make predictions on a balanced test set of 3 994 sequences (20% of the total). Performance of this model was evaluated by the accuracy , the ROC curve and the AUC.
-Accuracy is 0.531 can be seen from the accuracy crosstab, fig ???. It is calculated as the total amount of correctly predicted possitives and negatives divided by the total amount of predicted sequences. It is relatively low although it shows the RF model is doing better than random choice (0.5).
+Accuracy is 0.531 can be seen from the accuracy crosstab, Fig. [@fig:accuracycrosstab]. It is calculated as the total amount of correctly predicted possitives and negatives divided by the total amount of predicted sequences. It is relatively low although it shows the RF model is doing better than random choice (0.5).
 
-![Accuracy ](pics/ROC\_RF.jpg)
+![Accuracy ](pics/ROC_RF.jpg){#fig:accuracycrosstab}
 
-The ROC curve and AUC evalutation have better results than accuracy,the resulting AUC is 0.67 as can be seen in fig ???.
+The ROC curve and AUC evalutation have better results than accuracy,the resulting AUC is 0.67 as can be seen in Fig. [@fig:RFroc1].
 
-![Obtained ROC curve for the RF model](pics/ROC4\_balanced.png )
+![Obtained ROC curve for the RF model](pics/ROC4_balanced.png){#fig:RFroc1}
 
 ### Motif logos
 
@@ -119,15 +119,16 @@ The logos of the selected motifs are shown in fig ???.
 
 ### Comparing classification performance
 
-Both models are tested on a balanced test set of 45333 sequences (20% of the total). From Table1 and Figure??  it is clear that model 1 outperforms model 2. The model using multiple convolutional layers achieves an accuracy that is 9% higher then the model using the recurrent layer.
+Both models are tested on a balanced test set of 45333 sequences (20% of the total). From Table [@tab:comparingclassperf] and Figure [@fig:comparingclassperf]  it is clear that model one outperforms model two. The model using multiple convolutional layers achieves an accuracy that is 9% higher then the model using the recurrent layer.
 
-![Comparing classification performance of both models](pics/table1_deeplearning_performance.JPG)
+![Comparing classification performance of both models](pics/table1_deeplearning_performance.JPG){#tab:comparingclassperf}
 
-![ROC and Precision Recall curves comparing both models](pics/Fig3DeepLearing_ROCandPR.JPG)
+![ROC and Precision Recall curves comparing both models](pics/Fig3DeepLearing_ROCandPR.JPG){#fig:comparingclassperf}
 
 ### Motifs detected
 
-The motifs detected by both models are shown in fig ??
-![significant motif matches (E<0.01) using TOMTOM for both models.  The motif on top is the motif from the JASPAR database, the motif below it, the motif derived from the model](pics/Fig4DeepLearning_motifs.JPG)
+The motifs detected by both models are shown in Fig. [@fig:deeplearnmotifmatches].
+
+![Significant motif matches (E<0.01) using TOMTOM for both models.  The motif on top is the motif from the JASPAR database, the motif below it, the motif derived from the model](pics/Fig4DeepLearning_motifs.JPG){#fig:deeplearnmotifmatches}
 
 # References
