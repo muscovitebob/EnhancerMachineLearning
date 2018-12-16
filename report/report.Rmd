@@ -52,15 +52,14 @@ The model-based Analysis of Single Cell Transcriptomics (MAST) R package provide
 
 ### Boruta
 
-Boruta is an all relevant feature selection method, meaning it aims at finding relevant features that are suitable for the prediction of the outcome. [@Homola] It seems to be similar to MAST, however, it has a different test mechanism to discover relevant features. Its algorithm involves training the model in each of its iteration. 
+Boruta is an all-relevant feature selection method, aiming at finding relevant features that are suitable for the prediction of the outcome. [@Homola] It seems to be similar to MAST, however, it has a different test mechanism to discover relevant features. First it duplicates the dataset and makes the values shuffling in each column which after that the duplicated dataset is called shadow features. Then training a RF classifier on the dataset, from which the  importances for each of the features are generated. Boruta algorithm involves several iterations (default = 100). It trains the original dataset along with the shadow features dataset and checks for each of the real features if they have higher importance than the best of the shadow features in each of its iteration. If they do, boruta records this in a vector called a hits and continue with another iteration. Finally after the predefined set of iterations it ends up with a table of these selected features. The python implementation in \texttt{boruta_reduction.py}
 
-ZIXUAN CAN YOU ADD SOME USEFUL STUF HERE? SOMETHING ABOUT THE PARTICULAR METHOD YOU USED? 
 
 ### Construction of the model
 
-For the construction of the random forests ensemble model, the python package \texttt{scikit-learn} was used, more specifically, its class \texttt{sklearn.ensemble.RandomForestClassifier}, which offers a standard RF classifier. The classifier was constructed using following parameters: \texttt{n\_jobs=-1}, \texttt{n\_estimators=1000}, \texttt{max\_depth=None}, \texttt{min\_samples\_split=2}, \texttt{class\_weight='balanced'}
+For the construction of the random forests ensemble model, the python package \texttt{scikit-learn} was used, more specifically, its class \texttt{sklearn.ensemble.RandomForestClassifier}, which offers a standard RF classifier. The classifier was constructed using following parameters: \texttt{n\_jobs=-1}, which means using all processors to work in parallel for both fit and predict; \texttt{n\_estimators=1000}, This is the number of trees in this forest, higher number of trees gives better performance but makes fitting slower;  \texttt{max\_depth=None}, the maximum depth of the tree, None means nodes are expanded until all leaves are pure or until all leaves contain less than 'min_samples_split samples'; \texttt{min\_samples\_split=2}, minimum number of samples required to split an internal node (default=2);  \texttt{class\_weight='balanced'}, weights associated with classes, “balanced” mode uses the values of y to automatically adjust weights inversely proportional to class frequencies in the input data as n_samples / (n_classes * np.bincount(y)).[@Srivastava]
 
-BORIS MAYBE HERE YOU COULD ADD SOME EXPLANATION ABOUT THESE PARAMETERS?
+BORIS MAYBE HERE YOU COULD TAKE A LOOK AND CHECK ANYTHING ELSE SHOULD BE ADDED?
 
 ## Deep learning
 
