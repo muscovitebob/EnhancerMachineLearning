@@ -63,8 +63,7 @@ For the construction of the random forests ensemble model, the python package \t
 ## Deep learning
 
 ### 2 architectures
-
-A schematic outline of how a neural network can be used in motif detection is given in figure ??.  
+A schematic outline of how a neural network can be used in motif detection is given in figure ??.  By converting the sequence into a 1-hot vector, it becomes an image-like input which can be scanned with a number of kernels from the first convolutional layer. This information is then passed on to the rest of the network. During training, the network will adjust its weights in order to optimize the classification task. In the process, the kernel weights of the first convolutional layer will start to resemble the various DNA motifs which are then extracted and compared to a motif database (JASPAR). [@Min] 
 ![Overview of a deep learning set up for motif detection.  From Min, Xu et al (2017)](pics/Fig1Deeplearning_setupmotiffinding.JPG)
 
 In our case,  2 model architectures were compared (see fig??).  Model 1 uses 3 CNN’s, Model 2 uses only 1 convolutional layer, and incorporates a recurrent layer (LSTM’s). A recurrent neural layer can pick up on sequential information and are therefore better suited to capture the context of the motifs (motif syntax).
@@ -74,15 +73,16 @@ Both models were build using the python Keras package on a Tensorflow backend.
 
 ### Data augmentation
 
-Even though a neural network can work with raw DNA sequences as input, there are still two issues that need to be overcome.  First, the input to the convolutional layer needs to be of fixed length, and second, a deep neural network needs a vast amount of training data.  To overcome these 2 issues, a moving window approach as in [@Min] (with stride = 20) is used (fig ??).   
+Even though a neural network can work with raw DNA sequences as input, there are still two issues that need to be overcome.  First, the input to the first convolutional layer needs to be of fixed length, and second, a deep neural network needs a vast amount of training data.  To overcome these 2 issues, a moving window approach as in [@Min] (with stride = 20) is used (fig ??).   
 
 ![Diagram of data augmentation.  By using a sliding window approach, each enhancer sequence produces multiple sequences of equal length that can be used as input for the first convolutional layer.  Taken from Min, Xu et al (2017)](pics/Fig6_deeplearning_dataaugmentation.JPG)
 
 ### training/validation
 
-Starting from 20122 enhancer sequences, we end up with 228051 sequences using the data augmentation approach.  The sequences are randomly split in a 70/20/10 fashion (train/test/val).   The loss function was class weighted to counter the fact that the I-label is overrepresented in the input data.  Both the validation and test data were also balanced.
+Starting from 20122 enhancer sequences,  228051 sequences are generated using the data augmentation approach.  The sequences are randomly split in a 70/20/10 fashion (train/test/val).   The loss function was class weighted to counter the fact that the I-label is overrepresented in the input data.  Both the validation and test data were also balanced.
 
 ![Training metrics for both models](pics/Fig5_deeplearning_trainingKeras.JPG)
+
 
 ### motif extraction
 After training, the kernels of the first convolutional layer, can be screened for motifs.  To go from the kernel weights to a proper PSW matrix for a motif, each of the kernels are scored against each of the original DNA sequences.    This score represents the best match of a motif when slided across a particular sequence.   For each motif, the top 100 scoring sequences are stored, and these 100 sequences are then summarized into 1 PSWM.   These PSWM’s are then queried against the JASPAR motif database using TOMTOM [2]. Only motif matches with a threshold of E < 0.01 are considered significant.
