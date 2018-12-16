@@ -60,6 +60,8 @@ ZIXUAN CAN YOU ADD SOME USEFUL STUF HERE? SOMETHING ABOUT THE PARTICULAR METHOD 
 
 For the construction of the random forests ensemble model, the python package \texttt{scikit-learn} was used, more specifically, its class \texttt{sklearn.ensemble.RandomForestClassifier}, which offers a standard RF classifier. The classifier was constructed using following parameters: \texttt{n\_jobs=-1}, \texttt{n\_estimators=1000}, \texttt{max\_depth=None}, \texttt{min\_samples\_split=2}, \texttt{class\_weight='balanced'}
 
+BORIS MAYBE HERE YOU COULD ADD SOME EXPLANATION ABOUT THESE PARAMETERS?
+
 ## Deep learning
 
 ### 2 architectures
@@ -88,6 +90,12 @@ Starting from 20122 enhancer sequences,  228051 sequences are generated using th
 After training, the kernels of the first convolutional layer, can be screened for motifs.  To go from the kernel weights to a proper PSW matrix for a motif, each of the kernels are scored against each of the original DNA sequences.    This score represents the best match of a motif when slided across a particular sequence.   For each motif, the top 100 scoring sequences are stored, and these 100 sequences are then summarized into 1 PSWM.   These PSWM’s are then queried against the JASPAR motif database using TOMTOM [2]. Only motif matches with a threshold of E < 0.01 are considered significant.
 
 # Results and discussion
+
+## Random Forests
+
+The trained classifier was tested on a balanced test set of 3 994 sequences (20% of the total). The performance was evaluated using two different measures: the AUC of the resulting ROC curve and its accuracy, calculated as the total amount of correctly predicted positives and negatives divided by the total amount of predicted sequences. The resulting AUC was about 0.67, as can be seen in Figure??. 
+
+![Obtained ROC curve for the RF model](pics/ROC_RF.jpg)
 
 ## Deep learning
 ###Comparing classification performance
