@@ -121,7 +121,7 @@ Compared with results of [@Verfaillie], both AP-1 and Sox10 are figured out. In 
 
 ![Logos of features selected by RF model](pics/RFlogos.png){#fig:RFlogos}
 
-![Features importances](pics/RFfeatures_importance.png){#fig:featureImportancs}
+![Features importances](pics/RFfeatures\_importance.png){#fig:featureImportancs}
 
 ## Deep learning
 
