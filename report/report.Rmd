@@ -50,12 +50,15 @@ The resulting feature matrix contained 333 features. As mentioned above, RF clas
 
 The model-based Analysis of Single Cell Transcriptomics (MAST) R package provides methods and models for handling zero-inflated single cell assay data [@McDavid]. This packages wasn't originally created for the feature selection of feature matrices for learning purposes. However, it provides a method \texttt{LRT} that performs a likelyhood ratio test for single cell assay objects. When reformatting the feature matrix to a single cell assay object, this likelyhood ratio test can be used to detect the most significant features differentiating between invasive and proliferative cell states. The R script used for this reformatting and running the likelyhood ratio test can be found in \texttt{Mast\_reduce.R}. After running the likelyhood ratio test on the feature matrix for every motif, the most significantly differentiating features (P-value lower than 0.05) were selected. The resulting feature matrix contained 164 feature columns.
 
-
 ### Boruta
+
+Boruta is an all relevant feature selection method, meaning it aims at finding relevant features that are suitable for the prediction of the outcome. [@Homola] It seems to be similar to MAST, however, it has a different test mechanism to discover relevant features. Its algorithm involves training the model in each of its iteration. 
+
+ZIXUAN CAN YOU ADD SOME USEFUL STUF HERE? SOMETHING ABOUT THE PARTICULAR METHOD YOU USED? 
 
 ### Construction of the model
 
-TEXT ABOUT THE SCIKIT LEARN PYTHON PACKAGE
+For the construction of the random forests ensemble model, the python package \texttt{scikit-learn} was used, more specifically, its class \texttt{sklearn.ensemble.RandomForestClassifier}, which offers a standard RF classifier. The classifier was constructed using following parameters: \texttt{n\_jobs=-1}, \texttt{n\_estimators=1000}, \texttt{max\_depth=None}, \texttt{min\_samples\_split=2}, \texttt{class\_weight='balanced'}
 
 ## Deep learning
 
