@@ -61,14 +61,22 @@ Starting from 20122 enhancer sequences, we end up with 228051 sequences using th
 ![Training metrics for both models](pics/Fig5_deeplearning_trainingKeras.JPG)
 
 ### motif extraction
-
+After training, the kernels of the first convolutional layer, can be screened for motifs.  To go from the kernel weights to a proper PSW matrix for a motif, each of the kernels are scored against each of the original DNA sequences.    This score represents the best match of a motif when slided across a particular sequence.   For each motif, the top 100 scoring sequences are stored, and these 100 sequences are then summarized into 1 PSWM.   These PSWM’s are then queried against the JASPAR motif database using TOMTOM [2]. Only motif matches with a threshold of E < 0.01 are considered significant.
 
 # Results and discussion
 
 ## Deep learning
 ###Comparing classification performance
+Both models are tested on a balanced test set of 45333 sequences (20% of the total). From Table1 and Figure??  it is clear that model 1 outperforms model 2.   The model using multiple convolutional layers achieves an accuracy that is 9% higher then the model using the recurrent layer.
+
+![Comparing classification performance of both models](pics/table1_deeplearning_performance.JPG)
+
+![ROC and Precision Recall curves comparing both models](pics/Fig3DeepLearing_ROCandPR.JPG)
+
 
 ###motifs detected
+The motif detected by both models is shown in fig ??
+![significant motif matches (E<0.01) using TOMTOM for both models.  The motif on top is the motif from the JASPAR database, the motif below it, the motif derived from the model](pics/Fig4DeepLearning_motifs.JPG)
 
 
 # References
