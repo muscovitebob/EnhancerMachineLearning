@@ -109,7 +109,8 @@ Both models are tested on a balanced test set of 45333 sequences (20% of the tot
 ![ROC and Precision Recall curves comparing both models](pics/Fig3DeepLearing_ROCandPR.JPG)
 
 
-###motifs detected
+### Motifs detected
+
 The motifs detected by both models are shown in fig ??
 ![significant motif matches (E<0.01) using TOMTOM for both models.  The motif on top is the motif from the JASPAR database, the motif below it, the motif derived from the model](pics/Fig4DeepLearning_motifs.JPG)
 
