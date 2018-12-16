@@ -108,10 +108,16 @@ Accuracy is 0.531 can be seen from the accuracy crosstab, [@fig:accuracycrosstab
 
 ![Accuracy ](pics/RFcrosstab.JPG){#fig:accuracycrosstab}
 
+The ROC curve and AUC evalutation have better results than accuracy,the resulting AUC is 0.67 as can be seen in [@fig:RFroc1], but it is still not ideal. The propable reason might be the unbalance of the training set. There are 4662 class 1 sequences while the class 0 sequences are 11438, almost two times more than class 1, which can make bias in classification. Actually the prediction indeed goes for the majority -- class 0 as shown in the accuracy cross tab. Besides, the low accuracy and AUC could also resulted from the inappropriate selected features when building the RF model. Although boruta is supposed to select all relevant features, but it does not give guarantees considering it is a heuristic procedure designed to find all relevant attributes, including weakly relevant attributes [@Kursa]. Also, there's still a possibility that the truely causative features are not even contained in the original datat aquired from [@Verfaillie].
+In general, however, the final RF model is a good model since it outperforms than the totally by chance model.
+
+![Obtained ROC curve for the RF model](pics/ROC4_balanced.png){#fig:RFroc1}
+
 ### Motif logos
 
-The logos of the selected motifs are shown in [@fig:RFlogos]. 
-They are then ordered by their relative importances as classifiers in the constructed RF model, as shown in [@fig:featureImportances].
+The 19 selected features are: TFE3, MyoG, Sox10, Sox4, Sox9, AP-1, Fra2, Atf3, BATF, 10-DTCMGCTG, 4-GGAATGTA, 2-NMAGTCACATGA, 1-CACGTGAY, 6-GCTTTGTT, 3-GCCTTTGT, 3-AAAGARGCCTTT, 2-TTGAGTCA, 1-NNNNVTGASTCA and 1-DVTGASTCAB. Their logos are shown in [@fig:RFlogos]. They are then ordered by their relative importances as classifiers in the constructed RF model, as shown in [@fig:featureImportances].
+Compared with results of [@Verfaillie], both AP-1 and Sox10 are figured out. In RF model they are crucial features (they have relatively high importances can be seen in [@fig:featureImportances]) for the classification, in [@Verfaillie], they are significantly different active regulatory regions in invasive and proliferative regions respectively. 
+
 
 ![Logos of features selected by RF model](pics/RFlogos.png){#fig:RFlogos}
 
