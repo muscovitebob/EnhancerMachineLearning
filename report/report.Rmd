@@ -89,7 +89,7 @@ Starting from 20122 enhancer sequences,  228051 sequences are generated using th
 
 ### Motif extraction
 
-After training, the kernels of the first convolutional layer, can be screened for motifs.  To go from the kernel weights to a proper PSW matrix for a motif, each of the kernels are scored against each of the original DNA sequences.    This score represents the best match of a motif when slided across a particular sequence.   For each motif, the top 100 scoring sequences are stored, and these 100 sequences are then summarized into 1 PSWM.   These PSWM’s are then queried against the JASPAR motif database using TOMTOM [2]. Only motif matches with a threshold of E < 0.01 are considered significant.
+After training, the kernels of the first convolutional layer, can be screened for motifs.  To go from the kernel weights to a proper PSW matrix for a motif, each of the kernels are scored against each of the original DNA sequences.    This score represents the best match of a motif when slided across a particular sequence.   For each motif, the top 100 scoring sequences are stored, and these 100 sequences are then summarized into 1 PSWM.   These PSWM’s are then queried against the JASPAR motif database using TOMTOM [@Gupta]. Only motif matches with a threshold of E < 0.01 are considered significant.
 
 # Results and discussion
 
@@ -119,7 +119,7 @@ The logos of the selected motifs are shown in fig ???.
 
 ### Comparing classification performance
 
-Both models are tested on a balanced test set of 45333 sequences (20% of the total). From Table1 and Figure??  it is clear that model 1 outperforms model 2. The model using multiple convolutional layers achieves an accuracy that is 9% higher then the model using the recurrent layer.
+From Figure? and Figure??  it is clear that model 1 outperforms model 2. The model using multiple convolutional layers achieves an accuracy that is 9% higher then the model using the recurrent layer.
 
 ![Comparing classification performance of both models](pics/table1_deeplearning_performance.JPG)
 
