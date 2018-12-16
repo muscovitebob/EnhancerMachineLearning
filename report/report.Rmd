@@ -5,6 +5,7 @@ classoption: twocolumn
 output:
   pdf_document:
     fig_caption: true
+    pandoc_args: [--filter, ./pandoc-crossref]
 link-citations: yes
 bibliography: bib.bib
 ---
@@ -60,11 +61,11 @@ BORIS MAYBE HERE YOU COULD TAKE A LOOK AND CHECK ANYTHING ELSE SHOULD BE ADDED?
 
 ### Two architectures
 
-A schematic outline of how a neural network can be used in motif detection is given in figure ??.  By converting the sequence into a 1-hot vector, it becomes an image-like input which can be scanned with a number of kernels from the first convolutional layer. This information is then passed on to the rest of the network. During training, the network will adjust its weights in order to optimize the classification task. In the process, the kernel weights of the first convolutional layer will start to resemble the various DNA motifs which are then extracted and compared to a motif database (JASPAR). [@Min]
+A schematic outline of how a neural network can be used in motif detection is given in Fig. [@fig:deeplearningsetup] with a number of kernels from the first convolutional layer. This information is then passed on to the rest of the network. During training, the network will adjust its weights in order to optimize the classification task. In the process, the kernel weights of the first convolutional layer will start to resemble the various DNA motifs which are then extracted and compared to a motif database (JASPAR). [@Min]
 
 ![Overview of a deep learning set up for motif detection.  From Min, Xu et al (2017)](pics/Fig1Deeplearning_setupmotiffinding.JPG){#fig:deeplearningsetup}
 
-In our case,  2 model architectures were compared (see fig??).  Model 1 uses 3 CNN’s, Model 2 uses only 1 convolutional layer, and incorporates a recurrent layer (LSTM’s). A recurrent neural layer can pick up on sequential information and are therefore better suited to capture the context of the motifs (motif syntax).
+In our case, two model architectures were compared ([@fig:twomodelarchitectures]).  Model 1 uses 3 CNN’s, Model 2 uses only 1 convolutional layer, and incorporates a recurrent layer (LSTM’s). A recurrent neural layer can pick up on sequential information and are therefore better suited to capture the context of the motifs (motif syntax).
 
 ![The 2 model architectures.(left) Model1 : using 3 convolutional layers. (right) Model2 : using 1 CNN and LSTM](pics/Fig2DeepLearning_2arch.JPG){#fig:twomodelarchitectures}
 
@@ -72,7 +73,7 @@ Both models were built using the python Keras package on a Tensorflow backend.
 
 ### Data augmentation
 
-Even though a neural network can work with raw DNA sequences as input, there are still two issues that need to be overcome.  First, the input to the first convolutional layer needs to be of fixed length, and second, a deep neural network needs a vast amount of training data.  To overcome these 2 issues, a moving window approach as in [@Min] (with stride = 20) is used (Fig. [@fig:dataaugmentation]).   
+Even though a neural network can work with raw DNA sequences as input, there are still two issues that need to be overcome.  First, the input to the first convolutional layer needs to be of fixed length, and second, a deep neural network needs a vast amount of training data.  To overcome these 2 issues, a moving window approach as in [@Min] (with stride = 20) is used ([@fig:dataaugmentation]).   
 
 ![Diagram of data augmentation.  By using a sliding window approach, each enhancer sequence produces multiple sequences of equal length that can be used as input for the first convolutional layer.  Taken from Min, Xu et al (2017)](pics/Fig6_deeplearning_dataaugmentation.JPG){#fig:dataaugmentation}
 
@@ -96,38 +97,38 @@ After training, the kernels of the first convolutional layer, can be screened fo
 
 ### Selected features
 
-MAST reduced the 333 features in original training set to 164 significant features. Then Boruta takes the reduced feature matrix as input and selected 19 important features, which their names can be seen in Fig. [@fig:19selectedBoruta]. The 'Homer' postfix in some features name indicates they are de novo discovered motifs.
+MAST reduced the 333 features in original training set to 164 significant features. Then Boruta takes the reduced feature matrix as input and selected 19 important features, which their names can be seen in [@fig:19selectedBoruta]. The 'Homer' postfix in some features name indicates they are de novo discovered motifs.
 
 ![19 features selected by Boruta algorithm](pics/RF19selected.JPG){#fig:19selectedBoruta}
 
 ### Performance of the model built using reduced features
 
 Afterwards the 19 selected motifs are used as the features to train the RF model with the parameters mentioned above in methods. Then this trained classifier is tested and also used to make predictions on a balanced test set of 3 994 sequences (20% of the total). Performance of this model was evaluated by the accuracy , the ROC curve and the AUC.
-Accuracy is 0.531 can be seen from the accuracy crosstab, Fig. [@fig:accuracycrosstab]. It is calculated as the total amount of correctly predicted possitives and negatives divided by the total amount of predicted sequences. It is relatively low although it shows the RF model is doing better than random choice (0.5).
+Accuracy is 0.531 can be seen from the accuracy crosstab, [@fig:accuracycrosstab]. It is calculated as the total amount of correctly predicted possitives and negatives divided by the total amount of predicted sequences. It is relatively low although it shows the RF model is doing better than random choice (0.5).
 
 ![Accuracy ](pics/ROC_RF.jpg){#fig:accuracycrosstab}
 
-The ROC curve and AUC evalutation have better results than accuracy,the resulting AUC is 0.67 as can be seen in Fig. [@fig:RFroc1].
+The ROC curve and AUC evalutation have better results than accuracy,the resulting AUC is 0.67 as can be seen in [@fig:RFroc1].
 
 ![Obtained ROC curve for the RF model](pics/ROC4_balanced.png){#fig:RFroc1}
 
 ### Motif logos
 
-The logos of the selected motifs are shown in fig ???.
+The logos of the selected motifs are shown in Fig. NOT INSERTED.
 
 ## Deep learning
 
 ### Comparing classification performance
 
-Both models are tested on a balanced test set of 45333 sequences (20% of the total). From Table [@tab:comparingclassperf] and Figure [@fig:comparingclassperf]  it is clear that model one outperforms model two. The model using multiple convolutional layers achieves an accuracy that is 9% higher then the model using the recurrent layer.
+Both models are tested on a balanced test set of 45333 sequences (20% of the total). From [@fig:comparingclassperfTab] and [@fig:comparingclassperf]  it is clear that model one outperforms model two. The model using multiple convolutional layers achieves an accuracy that is 9% higher then the model using the recurrent layer.
 
-![Comparing classification performance of both models](pics/table1_deeplearning_performance.JPG){#tab:comparingclassperf}
+![Comparing classification performance of both models](pics/table1_deeplearning_performance.JPG){#fig:comparingclassperfTab}
 
 ![ROC and Precision Recall curves comparing both models](pics/Fig3DeepLearing_ROCandPR.JPG){#fig:comparingclassperf}
 
 ### Motifs detected
 
-The motifs detected by both models are shown in Fig. [@fig:deeplearnmotifmatches].
+The motifs detected by both models are shown in [@fig:deeplearnmotifmatches].
 
 ![Significant motif matches (E<0.01) using TOMTOM for both models.  The motif on top is the motif from the JASPAR database, the motif below it, the motif derived from the model](pics/Fig4DeepLearning_motifs.JPG){#fig:deeplearnmotifmatches}
 
