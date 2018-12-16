@@ -13,25 +13,15 @@ bibliography: bib.bib
 
 # Introduction
 
-<<<<<<< HEAD
 Melanoma is an aggressive cancer with a high level of therapy-resistance due to its high degree of heterogeneity and plasticity. Despite the great efforts put into the field of melanoma treatment, resulting in great advances, many challenges remain. The major challange in fighting melanoma relapse continues to be the tumor heterogeneity, as melanoma comprises a wide variety of phenotypically distinct subpopulations of cancer cells. To be able to adress this issue therapeutically, the underlying mechanisms of heterogeneity need to be characterized. In this paper, a distinction between two major types of melanoma cells is made: invasive and proliferative [@Verfaillie; @Shannan].
-=======
-Melanoma is an aggressive cancer with a high level of therapy-resistance due to its high degree of heterogeneity and plasticity. Despite the great efforts put into the field of melanoma treatment, resulting in great advances, many challenges remain. The major challenge in fighting melanoma relapse continues to be the tumor heterogeneity, as melanoma comprises a wide variety of phenotypically distinct subpopulations of cancer cells. To be able to adress this issue therapeutically, the underlying mechanisms of heterogeneity need to be characterized. In this paper, a distinction between two major types of melanoma cells is made: invasive and proliferative. [@Verfaillie; @Shannan]
->>>>>>> dd8dd0cddff8c6897eb3ff655e1a562ffe97bf8d
-
 
 Transcriptional reprogramming of melanoma cells in proliferative state into melanoma cells with invasive characteristics is a critical event at the origin of metastatic spreading of melanoma. Invasive cells have acquired the ability to migrate to other tissues, enter the bloodstream and therefore lie at the basis of the metastatic spreading of cancer in the body. While the transitional mechanisms from proliferative to invasive cancer cell are yet to be characterized more extensively, it is sure that one event lies at the basis of this transition: the transcriptional reprogramming of the cell. Studying the involved genes and regulatory elements using various bioinformatics approaches is therefore a hot topic in the area of melanoma research. Decoding the regulatory landscape could result into the ability to push melanoma cells towards a different cell state, which would be an interesting target from a therapeutic point of view [@Verfaillie].
 
 
 Transcriptomic, open chromatin and histone modification maps of melanoma cultures were constructed, revealing thousands of active cis-regulatory regions, both for proliferative and invasive cells [@Verfaillie]. It should be possible to discern which cis-regulatory regions are useful for the classification of cell states in melanoma samples if such states are truly distinct in terms of regulatory landscape. The aim of the project was the construction of classifiers predicting whether a regulatory region would be active in proliferative or invasive cell states. Another useful insight that would be gained from these classifiers, is which regulatory regions are the most significant for distinguishing between cell states, thus giving information about the underlying mechanisms and the critical genes and regulatory elements involved in cancer cell state transitions. 
 
-
-<<<<<<< HEAD
-Two distinct machine learning techniques were used for the creation of such classifiers, namely the random forests ensemble method and deep learning, with the use of convolutional neural networks. Random forest (RF) is a nonparametric tree-based method that builds an ensemble model from random subsets of features.[@Nguyen] RF has shown excellent performance for classification problems,it works well when the number of features is much larger than the number of samples. However, with randomizing mechanism in feature selection, RF could give poor accuracy when applied to high dimensional data. This is mainly caused by the subspace of features randomly sampled from hundreds of features to split a node of the tree is often dominated by uninformative features (or noise) when growing a tree from the data,. In this manner the tree grown from such subspace of features will result in a low accuracy RF model [@Nguyen]. Aiming at improving the performance of the RF model, we propose a feature selction algorithm before constructing the RF model, called Boruta. Boruta is an all-relevant feature selection method. It tries to capture all the important, interesting features that might be relatively important to the outcome variable.[@Kursa] In addition to the RF method, we also build convolutional neural networks parallelly. A neural network is able to extract features from raw DNA sequences. No prior manual feature selection is necessary. By converting the sequence into a 1-hot vector, it becomes an image-like input which can be scanned with a number of kernels from the first convolutional layer. This information is then passed on to the rest of the network. During training, the network will adjust its weights in order to optimize the classification task. In the process, the kernel weights of the first convolutional layer will start to resemble the various DNA motifs which are then extracted and compared to a motif database (JASPAR) [@Min]. Both models were trained on the same training set, which comprises the dataset of active cis-regulatory regions, mentioned hereabove. In this paper, both methods are described and their results are evaluated and compared.
-=======
 Two distinct machine learning techniques were used for the creation of such classifiers, namely the random forests ensemble method and deep learning, making use of convolutional neural networks. Both models were trained on the same training set, which comprises the dataset of active cis-regulatory regions, mentioned hereabove. In this paper, both methods are described and their results are evaluated and compared.
 
->>>>>>> dd8dd0cddff8c6897eb3ff655e1a562ffe97bf8d
 # Methods
 
 ## Random forests
@@ -71,14 +61,14 @@ BORIS MAYBE HERE YOU COULD TAKE A LOOK AND CHECK ANYTHING ELSE SHOULD BE ADDED?
 
 ## Deep learning
 
-### 2 architectures
+### Two architectures
 A schematic outline of how a neural network can be used in motif detection is given in figure ??.  By converting the sequence into a 1-hot vector, it becomes an image-like input which can be scanned with a number of kernels from the first convolutional layer. This information is then passed on to the rest of the network. During training, the network will adjust its weights in order to optimize the classification task. In the process, the kernel weights of the first convolutional layer will start to resemble the various DNA motifs which are then extracted and compared to a motif database (JASPAR). [@Min] 
 ![Overview of a deep learning set up for motif detection.  From Min, Xu et al (2017)](pics/Fig1Deeplearning_setupmotiffinding.JPG)
 
 In our case,  2 model architectures were compared (see fig??).  Model 1 uses 3 CNN’s, Model 2 uses only 1 convolutional layer, and incorporates a recurrent layer (LSTM’s). A recurrent neural layer can pick up on sequential information and are therefore better suited to capture the context of the motifs (motif syntax).
 ![The 2 model architectures.(left) Model1 : using 3 convolutional layers. (right) Model2 : using 1 CNN and LSTM](pics/Fig2DeepLearning_2arch.JPG)
 
-Both models were build using the python Keras package on a Tensorflow backend.
+Both models were built using the python Keras package on a Tensorflow backend.
 
 ### Data augmentation
 
@@ -88,20 +78,15 @@ Even though a neural network can work with raw DNA sequences as input, there are
 
 ### Training and validation
 
-We therefore had to engineer a pipeline to process the sequence data into a usable form, which took a considerable investment of time. Our reasoning on this front was as follows: the sequences themselves are not the principal target of our learning strategy, but rather whatever recurring motifs may be present.
-
 ### Input matrix creation
-=======
 Starting from 20122 enhancer sequences,  228051 sequences are generated using the data augmentation approach.  The sequences are randomly split in a 70/20/10 fashion (train/test/val).   The loss function was class weighted to counter the fact that the I-label is overrepresented in the input data.  Both the validation and test data were also balanced.
 
 ![Training metrics for both models](pics/Fig5_deeplearning_trainingKeras.JPG)
 
-Having identified the ensemble of differentially enriched motifs in these two cell states compared to each other, we used Cluster-Buster in order to score the Invasive and Proliferative sequence sets for each motif, independently [@Frith:2003aa]. This resulted in a log-likelihood score for every motif against every sequence in the sequence sets. The functions for this step of the analysis can be found in \texttt{motif\_processing\_main.sh}. We proceeded to assemble these into a feature matrix, with every row being the genomic region and every column a particular motif, hereafter referred to as features, with the log-likelihood scores as values in this matrix. We further inserted a \texttt{\_label} column which represented our binary outcome variable, with 0 for Invasive state and 1 for Proliferative state. This step of the analysis can be found in \texttt{feature\_matrices.py}, utilising the \texttt{feature\_matrix\_special} method of the \texttt{cbust\_result} class we created in order to handle the output of Cluster-Buster. We thus produced a complete data matrix for our subsequent random forest classifier training and exploration, with around three hundred features.
-
 ### Feature filtering
 
-
 ### Motif extraction
+
 After training, the kernels of the first convolutional layer, can be screened for motifs.  To go from the kernel weights to a proper PSW matrix for a motif, each of the kernels are scored against each of the original DNA sequences.    This score represents the best match of a motif when slided across a particular sequence.   For each motif, the top 100 scoring sequences are stored, and these 100 sequences are then summarized into 1 PSWM.   These PSWM’s are then queried against the JASPAR motif database using TOMTOM [2]. Only motif matches with a threshold of E < 0.01 are considered significant.
 
 # Results and discussion
@@ -110,10 +95,13 @@ After training, the kernels of the first convolutional layer, can be screened fo
 
 The trained classifier was tested on a balanced test set of 3 994 sequences (20% of the total). The performance was evaluated using two different measures: the AUC of the resulting ROC curve and its accuracy, calculated as the total amount of correctly predicted positives and negatives divided by the total amount of predicted sequences. The resulting AUC was about 0.67, as can be seen in Figure??. 
 
-![Obtained ROC curve for the RF model](pics/ROC_RF.jpg)
+---
+#![Obtained ROC curve for the RF model](pics/ROC_RF.jpg)
+---
 
 ## Deep learning
 ###Comparing classification performance
+
 Both models are tested on a balanced test set of 45333 sequences (20% of the total). From Table1 and Figure??  it is clear that model 1 outperforms model 2.   The model using multiple convolutional layers achieves an accuracy that is 9% higher then the model using the recurrent layer.
 
 ![Comparing classification performance of both models](pics/table1_deeplearning_performance.JPG)
