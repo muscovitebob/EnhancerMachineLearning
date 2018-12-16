@@ -114,7 +114,12 @@ The ROC curve and AUC evalutation have better results than accuracy,the resultin
 
 ### Motif logos
 
-The logos of the selected motifs are shown in Fig. NOT INSERTED.
+The logos of the selected motifs are shown in [@fig:RFlogos]. 
+They are then ordered by their relative importances as classifiers in the constructed RF model, as shown in [@fig:featureImportances].
+
+![Logos of features selected by RF model](pics/RFlogos.png){#fig:RFlogos}
+
+![Features importances](pics/RFfeatures_importance.png){#fig:featureImportancs}
 
 ## Deep learning
 
