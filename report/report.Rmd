@@ -104,13 +104,9 @@ MAST reduced the 333 features in original training set to 164 significant featur
 ### Performance of the model built using reduced features
 
 Afterwards the 19 selected motifs are used as the features to train the RF model with the parameters mentioned above in methods. Then this trained classifier is tested and also used to make predictions on a balanced test set of 3 994 sequences (20% of the total). Performance of this model was evaluated by the accuracy , the ROC curve and the AUC.
-Accuracy is 0.531 can be seen from the accuracy crosstab, [@fig:accuracycrosstab]. It is calculated as the total amount of correctly predicted possitives and negatives divided by the total amount of predicted sequences. It is relatively low although it shows the RF model is doing better than random choice (0.5).
+Accuracy is 0.531 can be seen from the accuracy crosstab, [@fig:accuracycrosstab]. It is calculated as the total amount of correctly predicted possitives and negatives divided by the total amount of predicted sequences. It is relatively low although it shows the RF model is doing better than random choice (0.5). Besides, most of the predictions are belong to class 0,
 
-![Accuracy ](pics/ROC_RF.jpg){#fig:accuracycrosstab}
-
-The ROC curve and AUC evalutation have better results than accuracy,the resulting AUC is 0.67 as can be seen in [@fig:RFroc1].
-
-![Obtained ROC curve for the RF model](pics/ROC4_balanced.png){#fig:RFroc1}
+![Accuracy ](pics/RFcrosstab.JPG){#fig:accuracycrosstab}
 
 ### Motif logos
 
