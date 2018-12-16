@@ -92,11 +92,20 @@ After training, the kernels of the first convolutional layer, can be screened fo
 # Results and discussion
 
 ## Random Forests
+###Selected features 
+MAST reduced the 333 features in original training set to 164 significant features. Then Boruta takes the reduced feature matrix as input and selected 19 important features, which their names can be seen in fig ???. The 'Homer' postfix in some features name indicates they are de novo discovered motifs.  
+![19 features selected by Boruta algorithm](pics/RF19selected.JPG )
 
-The trained classifier was tested on a balanced test set of 3 994 sequences (20% of the total). The performance was evaluated using two different measures: the AUC of the resulting ROC curve and its accuracy, calculated as the total amount of correctly predicted positives and negatives divided by the total amount of predicted sequences. The resulting AUC was about 0.67, as can be seen in Figure??. 
+###Performance of the model built using reduced features
+Afterwards the 19 selected motifs are used as the features to train the RF model with the parameters mentioned above in methods. Then this trained classifier is tested and also used to make predictions on a balanced test set of 3 994 sequences (20% of the total). Performance of this model was evaluated by the accuracy , the ROC curve and the AUC.
+Accuracy is 0.531 can be seen from the accuracy crosstab, fig ???. It is calculated as the total amount of correctly predicted possitives and negatives divided by the total amount of predicted sequences. It is relatively low although it shows the RF model is doing better than random choice (0.5).
+![Accuracy ](pics/ROC_RF.jpg)
+The ROC curve and AUC evalutation have better results than accuracy,the resulting AUC is 0.67 as can be seen in fig ???. 
+![Obtained ROC curve for the RF model](pics/ROC4\_balanced.png )
 
----
-#![Obtained ROC curve for the RF model](pics/ROC_RF.jpg)
+###Motif logos
+Then the logos of the selected motifs are shown in fig ???.
+
 ---
 
 ## Deep learning
