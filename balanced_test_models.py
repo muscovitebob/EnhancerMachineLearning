@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import joblib as jb
-from assistant_functions import ROC_curve
+from assistant_functions import *
 
 np.random.seed(100)
 
@@ -40,14 +40,13 @@ jb.dump(classifier1, "classifier1_balanced.joblib", compress=1)
 predictions1 = classifier1.predict(X_test)
 
 # see how many incorrect classifications we do
-crosstab1 = pd.crosstab(y_test, predictions1, rownames=['Actual'], colnames=['Predicted'])
-print(crosstab1)
-# print a matrix of tuples of feature names and feature importances
-classifier1_feature_importances = (zip(X_test.columns.values, classifier1.feature_importances_))
-plt.plot(classifier1.feature_importances_)
-probabilities1 = classifier1.predict_proba(X_test)
-fpr, tpr, thresholds = roc_curve(y_test, probabilities1[:,1], pos_label=1)
-ROC_curve(fpr, tpr, 'ROC4_balanced.png')
+confusion_matrix(classifier1, y_test, X_test)
+
+feature_importance_graph(classifier1, X_train.columns.values, 19)
+
+
+
+ROC_curve_auto(classifier1, y_test, X_test, 'ROC_final_balanced.png')
 
 
 
