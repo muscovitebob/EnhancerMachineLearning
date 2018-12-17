@@ -125,7 +125,7 @@ Compared with results of [@Verfaillie], both AP-1 and Sox10 are figured out. In 
 
 ### Comparing classification performance
 
-From [@fig:comparingclassperfTab] and [@fig:comparingclassperf]  it is clear that model one outperforms model two. The model using multiple convolutional layers achieves an accuracy that is 9% higher then the model using the recurrent layer. The reason for the weak performance of the LSTM model is not clear. It is demonstrated that deep learing approaches can outperform traditional approaches like SVM in this classification task[@Min]. On the other hand, it is also known that the performance of a neural network can vary quite a lot due to many design choices that need to be made (number of layers, kernels, training time, learning rate, etc.) No attempt was made to fully explore all these degrees of freedom.
+For the deep learning approach, from [@fig:comparingclassperfTab] and [@fig:comparingclassperf] it is clear that model one outperforms model two. The model using multiple convolutional layers achieves an accuracy that is 9% higher then the model using the recurrent layer. The reason for the weak performance of the LSTM model is not clear. It is demonstrated that deep learing approaches can outperform traditional approaches like SVM in this classification task[@Min]. On the other hand, it is also known that the performance of a neural network can vary quite a lot due to many design choices that need to be made (number of layers, kernels, training time, learning rate, etc). No attempt was made to fully explore all these degrees of freedom.
 
 ![Comparing classification performance of both models](pics/table1_deeplearning_performance.JPG){#fig:comparingclassperfTab}
 
@@ -134,7 +134,7 @@ From [@fig:comparingclassperfTab] and [@fig:comparingclassperf]  it is clear tha
 
 ### Motifs detected
 
-The motifs detected by both models are shown in [@fig:deeplearnmotifmatches]. SOX10 and AP-1 are considered to be master regulators for the proliferative gene network, and invasise gene network respectively [@Verfaillie]. Both motifs corresponding to those transcription factors are detected in case of model 1.  The SOX-motif shows up as the top motif in model 1, the AP-1 motif is the top motif in model 2. The AP-1 motif is also detected in case of model 2 (ranked 3rd), but the SOX-motif does not show up as a significant hit in case of model 2. The inferior motif detection of model 2 is in line with its weaker classification performance.
+The motifs detected by both deep learning models are shown in [@fig:deeplearnmotifmatches]. SOX10 and AP-1 are considered to be master regulators for the proliferative gene network, and invasive gene network respectively [@Verfaillie]. Both motifs corresponding to those transcription factors are detected in case of model one.  The SOX-motif shows up as the top motif in model one, the AP-1 motif is the top motif in model two. The AP-1 motif is also detected in case of model two (ranked 3rd), but the SOX-motif does not show up as a significant hit in case of model two. The inferior motif detection of model two is in line with its weaker classification performance.
 
 ![Significant motif matches (E<0.01) using TOMTOM for both models.  The motif on top is the motif from the JASPAR database, the motif below it, the motif derived from the model](pics/Fig4DeepLearning_motifs.JPG){#fig:deeplearnmotifmatches}
 
