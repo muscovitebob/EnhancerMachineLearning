@@ -44,7 +44,7 @@ def confusion_matrix(rfc, y_test, X_test):
     return pd.crosstab(y_test, predictions, rownames=['Actual'], colnames=['Predicted'])
 
 
-def f(rfc, training_feature_names, n_largest):
+def feature_importance_graph(rfc, training_feature_names, n_largest):
     '''
     :param rfc:
     :param training_feature_names: get these using X_train.columns.values
