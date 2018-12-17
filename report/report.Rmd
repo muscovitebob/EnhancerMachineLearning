@@ -1,5 +1,6 @@
 ---
 title: "Classification of regulatory sequences using machine learning techniques"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 author: "Boris Shilov, Wim Thiels, Lucas Coppens, Zixuan Xie"
 classoption: twocolumn
 output:
