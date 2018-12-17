@@ -50,7 +50,7 @@ The Model-based Analysis of Single Cell Transcriptomics (MAST) R package provide
 
 #### Boruta
 
-Boruta is an all-relevant feature selection method [@Homola]. The algorithm works as follows: first it duplicates the dataset and makes the values shuffling in each column which after that the duplicated dataset is called shadow features. Then an RF classifier is trained on the dataset, from which the importances for each of the features are generated. This is repeated for several iterations (one hundred by default). It trains the original dataset along with the shadow features dataset and checks for each if the real features have higher importance than the best of the shadow features in each iteration. If they do, it records this in a vector of hits and continues on with another iteration. Finally after the predefined set of iterations it generates a table of selected features. This analysis can be found in \texttt{boruta\_reduction.py}.
+Boruta is an all-relevant feature selection method [@Homola]. Boruta perfroms a top-down search for relative features, making use of an iterative algorithm. In each iteration, a random forests classifier is trained on two data sets: the original data and a shuffled set. In each of these iterations, the most predictive features are captured. It involves a wrapper of the random forests classifier algorithm, in an attempt to capture the important and relevant features for that specific classfier, rather than selecting significant features, like a log likelihood significance test would do. [@Pathak]
 
 ### Model construction
 
