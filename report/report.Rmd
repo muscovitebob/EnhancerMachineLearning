@@ -23,6 +23,8 @@ Two distinct machine learning techniques were used for the creation of such clas
 
 # Methods
 
+All analysis code and raw data, space-permitting, is available at https://github.com/muscovitebob/EnhancerMachineLearning.
+
 ## Random forests
 
 Random forest (RF) is a nonparametric tree-based method that builds an ensemble model from random subsets of features.[@Nguyen] RF has shown excellent performance for classification problems, it works well when the number of features is much larger than the number of samples. However, with its typical randomizing mechanism in feature selection, RF models risc having a poor performance when applied to high dimensional data. The main reason for this is that the RF ensemble method uses subset of features randomly sampled from hundreds of features in each iteration. If such a subset is poorly chosen, the choice of nodes for each decision tree is often dominated by uninformative features. This way, trees grown from such a subspace of uninformative features will result in a RF model yielding poor accuracy.[@Nguyen] Aiming at improving the performance of the RF model, a feature selction algorithm filtering out the uninformative features before constructing the RF model was proposed. Boruta is an all-relevant feature selection method. It tries to capture all the relevant features that might be relatively important to the outcome variable.[@Kursa]
@@ -45,17 +47,15 @@ The resulting feature matrix contained 333 features. As mentioned above, RF clas
 
 ### MAST
 
-The model-based Analysis of Single Cell Transcriptomics (MAST) R package provides methods and models for handling zero-inflated single cell assay data [@McDavid]. This packages wasn't originally created for the feature selection of feature matrices for learning purposes. However, it provides a method \texttt{LRT} that performs a likelyhood ratio test for single cell assay objects. When reformatting the feature matrix to a single cell assay object, this likelyhood ratio test can be used to detect the most significant features differentiating between invasive and proliferative cell states. The R script used for this reformatting and running the likelyhood ratio test can be found in \texttt{Mast\_reduce.R}. After running the likelyhood ratio test on the feature matrix for every motif, the most significantly differentiating features (P-value lower than 0.05) were selected. The resulting feature matrix contained 164 feature columns.
+The model-based Analysis of Single Cell Transcriptomics (MAST) R package provides methods and models for handling zero-inflated single cell assay data [@McDavid]. For this project, it is used for likelihood ratio testing via its \texttt{LRT} method. This likelihood ratio test is used to detect the most significant differential features between invasive and proliferative cell states. The R script used for this reformatting and running the likelihood ratio test can be found in \texttt{Mast\_reduce.R}. After running the likelihood ratio test on the feature matrix for every motif, the most significantly differentiatial features (P-value lower than 0.05) were selected. The resulting feature matrix contained 164 feature columns.
 
 ### Boruta
 
-Boruta is an all-relevant feature selection method, aiming at finding relevant features that are suitable for the prediction of the outcome [@Homola]. It seems to be similar to MAST, however, it has a different test mechanism to discover relevant features. First it duplicates the dataset and makes the values shuffling in each column which after that the duplicated dataset is called shadow features. Then training a RF classifier on the dataset, from which the importances for each of the features are generated. Boruta algorithm involves several iterations (default = 100). It trains the original dataset along with the shadow features dataset and checks for each of the real features if they have higher importance than the best of the shadow features in each of its iteration. If they do, boruta records this in a vector called a hits and continue with another iteration. Finally after the predefined set of iterations it ends up with a table of these selected features. The python implementation in \texttt{boruta\_reduction.py}
+Boruta is an all-relevant feature selection method [@Homola]. The algorithm works as follows: first it duplicates the dataset and makes the values shuffling in each column which after that the duplicated dataset is called shadow features. Then an RF classifier is trained on the dataset, from which the importances for each of the features are generated. This is repeated for several iterations (one hundred by default). It trains the original dataset along with the shadow features dataset and checks for each if the real features have higher importance than the best of the shadow features in each iteration. If they do, it records this in a vector of hits and continues on with another iteration. Finally after the predefined set of iterations it generates a table of selected features. This analysis can be found in \texttt{boruta\_reduction.py}.
 
 ### Construction of the model
 
 For the construction of the random forests ensemble model, the python package \texttt{scikit-learn} was used, more specifically, its class \texttt{sklearn.ensemble.RandomForestClassifier}, which offers a standard RF classifier. The classifier was constructed using following parameters: \texttt{n\_jobs=-1}, which means using all processors to work in parallel for both fit and predict; \texttt{n\_estimators=1000}, This is the number of trees in this forest, higher number of trees gives better performance but makes fitting slower;  \texttt{max\_depth=None}, the maximum depth of the tree, None means nodes are expanded until all leaves are pure or until all leaves contain less than 'min_samples_split samples'; \texttt{min\_samples\_split=2}, minimum number of samples required to split an internal node (default=2);  \texttt{class\_weight='balanced'}, weights associated with classes, “balanced” mode uses the values of y to automatically adjust weights inversely proportional to class frequencies in the input data as $n\_samples / (n\_classes \times np.bincount(y))$ [@Srivastava].
-
-BORIS MAYBE HERE YOU COULD TAKE A LOOK AND CHECK ANYTHING ELSE SHOULD BE ADDED?
 
 ## Deep learning
 
@@ -121,7 +121,7 @@ Compared with results of [@Verfaillie], both AP-1 and Sox10 are figured out. In 
 
 ![Logos of features selected by RF model](pics/RFlogos.png){#fig:RFlogos}
 
-![featureImportances](pics/featureImportances.png){#fig:featureImportancs}
+![featureImportances](pics/featureImportances.png){#fig:featureImportances}
 
 ## Deep learning
 
