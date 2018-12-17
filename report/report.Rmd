@@ -5,7 +5,7 @@ classoption: twocolumn
 output:
   pdf_document:
     fig_caption: true
-    pandoc_args: [--filter, ./pandoc-crossref]
+    pandoc_args: [--filter, ./pandoc-crossref.exe]
 link-citations: yes
 bibliography: bib.bib
 ---
@@ -49,7 +49,7 @@ The model-based Analysis of Single Cell Transcriptomics (MAST) R package provide
 
 ### Boruta
 
-Boruta is an all-relevant feature selection method, aiming at finding relevant features that are suitable for the prediction of the outcome [@Homola]. It seems to be similar to MAST, however, it has a different test mechanism to discover relevant features. First it duplicates the dataset and makes the values shuffling in each column which after that the duplicated dataset is called shadow features. Then training a RF classifier on the dataset, from which the  importances for each of the features are generated. Boruta algorithm involves several iterations (default = 100). It trains the original dataset along with the shadow features dataset and checks for each of the real features if they have higher importance than the best of the shadow features in each of its iteration. If they do, boruta records this in a vector called a hits and continue with another iteration. Finally after the predefined set of iterations it ends up with a table of these selected features. The python implementation in \texttt{boruta\_reduction.py}
+Boruta is an all-relevant feature selection method, aiming at finding relevant features that are suitable for the prediction of the outcome [@Homola]. It seems to be similar to MAST, however, it has a different test mechanism to discover relevant features. First it duplicates the dataset and makes the values shuffling in each column which after that the duplicated dataset is called shadow features. Then training a RF classifier on the dataset, from which the importances for each of the features are generated. Boruta algorithm involves several iterations (default = 100). It trains the original dataset along with the shadow features dataset and checks for each of the real features if they have higher importance than the best of the shadow features in each of its iteration. If they do, boruta records this in a vector called a hits and continue with another iteration. Finally after the predefined set of iterations it ends up with a table of these selected features. The python implementation in \texttt{boruta\_reduction.py}
 
 ### Construction of the model
 
@@ -121,7 +121,7 @@ Compared with results of [@Verfaillie], both AP-1 and Sox10 are figured out. In 
 
 ![Logos of features selected by RF model](pics/RFlogos.png){#fig:RFlogos}
 
-![Features importances](pics/RFfeatures\_importance.png){#fig:featureImportancs}
+![featureImportances](pics/featureImportances.png){#fig:featureImportancs}
 
 ## Deep learning
 
