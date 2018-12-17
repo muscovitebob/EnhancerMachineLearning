@@ -5,7 +5,7 @@ classoption: twocolumn
 output:
   pdf_document:
     fig_caption: true
-    pandoc_args: [--filter, ./pandoc-crossref.exe]
+    pandoc_args: [--filter, ./pandoc-crossref]
 link-citations: yes
 bibliography: bib.bib
 ---
