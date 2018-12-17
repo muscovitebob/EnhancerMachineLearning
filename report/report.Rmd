@@ -62,11 +62,11 @@ For the construction of the random forest \texttt{sklearn.ensemble.RandomForestC
 
 A schematic outline of how a neural network can be used in motif detection is given in [@fig:deeplearningsetup]. After transformation to a 1-hot representation, the DNA sequences can be inputted into a first convolutional layer. Here a number of kernels, acting as motif scanners, will go over the sequences. This first convolutional layer is then followed by consecutive convolutional layers, each time transforming the input data into more higher level features. At certain points drop out layers and batch normalization are used to reduce the number of parameters, and as a counterweight to overfitting. At the end, these extracted featured are combined through some dense layers and eventually passed through a softmax layer which outputs a probability distribution over the different classes. During training, the network will adjust its weights in order to optimize the classification task. In the process, the kernel weights of the first convolutional layer will start to resemble the various DNA motifs which are then extracted and compared to a motif database (JASPAR) [@Min].
 
-![Overview of a deep learning set up for motif detection.  From Min, Xu et al (2017)](pics/Fig1Deeplearning_setupmotiffinding.JPG){#fig:deeplearningsetup}
+![Overview of a deep learning set up for motif detection.  From Min, Xu et al. (2017)](pics/Fig1Deeplearning_setupmotiffinding.JPG){#fig:deeplearningsetup}
 
 In this case, two model architectures were compared ([@fig:twomodelarchitectures]).  Model 1 uses 3 CNN’s, Model 2 uses only 1 convolutional layer, and incorporates a recurrent layer (LSTM). A recurrent neural layer can pick up on sequential information and are therefore better suited to capture the context of the motifs (motif syntax).
 
-![The 2 model architectures.(left) Model1 : using 3 convolutional layers. (right) Model2 : using 1 CNN and LSTM](pics/Fig2DeepLearning_2arch.JPG){#fig:twomodelarchitectures}
+![The 2 model architectures.(left) Model1 : using 3 convolutional layers. (right) Model2 : using 1 CNN and LSTM.](pics/Fig2DeepLearning_2arch.JPG){#fig:twomodelarchitectures}
 
 Both models were built using the python Keras package on a Tensorflow backend (\texttt{Train\_Keras\_CNN.py}).
 
@@ -98,21 +98,19 @@ At this stage we rigorously split up the training and test sets for further use,
 
 We returned to the full dataset and applied the MAST hypothesis testing-based reduction to obtain a feature matrix of 164 significant features. One hundred iteration Boruta further reduced the feature set to 19 important features [@fig:featureImportances].
 
-![19 features selected by Boruta algorithm](pics/RF19selected.JPG){#fig:19selectedBoruta}
-
 The reduced feature matrix containing only the 19 differentially significant was used to train the random forests model, making use of the parameters mentioned above. The resulting classifier was tested on the balanced test set, amounting for 20 percent of the total data. The general performance of this model was evaluated using the area under the curve (AUC) of the receiver operator characteristic (ROC) curve.
 
 The resulting AUC was 0.67 [@fig:RFroc1]. Its maximum value being 1.0, the question of why the AUC is relatively low can be asked. There could be a few reasons for this. First of all, some information regarding the regulatory sequences gets lost when scanning for known motifs and de novo motifs using Homer, as these motifs are only a statistical representation of the actual sequences and thus comprise partial information. Secondly, some useful predictive information is filtered out using software packages MAST and BorutaPy. It is possible that a deepler exploration of the parameters of these tools could have preserved this information and that some of the current parameters used in these tools resulted in a suboptimal feature selection. A final reason that might clarify the relatively low AUC is a biological one: The starting data, comprising of regulatory sequences active in proliferative and invasive melanoma cells, obtained using lab techniques like chromatine immunoprecipitation and transcriptomics, probably doesn't contain enough information on itself to succesfully predict a cell state. A lot of different mechanisms and parameters are decisive for the state of cancer cells, and the discovered regulatory sequences data only captures a part of this. 
 
-![Obtained ROC curve for the RF model](pics/ROC4_balanced.png){#fig:RFroc1}
+![ROC curve for the Random Forests classifier.](pics/ROC4_balanced.png){#fig:RFroc1}
 
 ### Motif logos
 
 The 19 selected features are: TFE3, MyoG, Sox10, Sox4, Sox9, AP-1, Fra2, Atf3, BATF, 10-DTCMGCTG, 4-GGAATGTA, 2-NMAGTCACATGA, 1-CACGTGAY, 6-GCTTTGTT, 3-GCCTTTGT, 3-AAAGARGCCTTT, 2-TTGAGTCA, 1-NNNNVTGASTCA and 1-DVTGASTCAB. Their logos are shown in [@fig:RFlogos]. The relative importances of these features for the RF model are shown in [@fig:featureImportances]. We can see that the discovered motifs are comparable with the results of [@Verfaillie], as AP-1 and Sox10 are identified as important motifs both in the paper and in our results. 
 
-![Logos of features selected by RF model](pics/RFlogos.png){#fig:RFlogos}
+![Logos of the selected features for the random forests classifier.](pics/RFlogos.png){#fig:RFlogos}
 
-![featureImportances](pics/feature_importances.png){#fig:featureImportances}
+![Relative importances of the 19 selected features for the random forests classifier](pics/feature_importances.png){#fig:featureImportances}
 
 ## Deep learning
 
@@ -120,9 +118,9 @@ The 19 selected features are: TFE3, MyoG, Sox10, Sox4, Sox9, AP-1, Fra2, Atf3, B
 
 For the deep learning approach, from [@fig:comparingclassperfTab] and [@fig:comparingclassperf] it is clear that model one outperforms model two. The model using multiple convolutional layers achieves an accuracy that is 9% higher then the model using the recurrent layer. The reason for the weak performance of the LSTM model is not clear. It is demonstrated that deep learing approaches can outperform traditional approaches like SVM in this classification task[@Min]. On the other hand, it is also known that the performance of a neural network can vary quite a lot due to many design choices that need to be made (number of layers, kernels, training time, learning rate, etc). No attempt was made to fully explore all these degrees of freedom.
 
-![Comparing classification performance of both models](pics/table1_deeplearning_performance.JPG){#fig:comparingclassperfTab}
+![Comparision of the classification performance of both deep learning  models.](pics/table1_deeplearning_performance.JPG){#fig:comparingclassperfTab}
 
-![ROC and Precision Recall curves comparing both models](pics/Fig3DeepLearing_ROCandPR.JPG){#fig:comparingclassperf}
+![ROC curve and precision recall curves comparing both deep learning  models.](pics/Fig3DeepLearing_ROCandPR.JPG){#fig:comparingclassperf}
 
 ### Motifs detected
 
