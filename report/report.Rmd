@@ -106,7 +106,7 @@ The resulting AUC was 0.67 [@fig:RFroc1]. Its maximum value being 1.0, the quest
 
 ### Motif logos
 
-The 19 selected features are: TFE3, MyoG, Sox10, Sox4, Sox9, AP-1, Fra2, Atf3, BATF, 10-DTCMGCTG, 4-GGAATGTA, 2-NMAGTCACATGA, 1-CACGTGAY, 6-GCTTTGTT, 3-GCCTTTGT, 3-AAAGARGCCTTT, 2-TTGAGTCA, 1-NNNNVTGASTCA and 1-DVTGASTCAB. Their logos are shown in [@fig:RFlogos]. The relative importances of these features for the RF model are shown in [@fig:featureImportances]. We can see that the discovered motifs are comparable with the results of [@Verfaillie], as AP-1 and Sox10 are identified as important motifs both in the paper and in our results. 
+The relative importances of the 19 selected features for the RF model are shown in [@fig:featureImportances]. We can see that the discovered motifs are comparable with the results of [@Verfaillie], as AP-1 and Sox10 are identified as important motifs both in the paper and in our results. 
 
 ![Logos of the selected features for the random forests classifier.](pics/RFlogos.png){#fig:RFlogos}
 
