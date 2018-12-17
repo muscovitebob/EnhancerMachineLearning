@@ -106,8 +106,6 @@ We returned to the full dataset and applied the MAST hypothesis testing-based re
 Afterwards the 19 selected motifs are used as features to train the RF model with the parameters mentioned above. Then this trained classifier is tested on a balanced test set of 3994 sequences (20% of the total). Performance of this model is expressed in terms of accuracy and ROC-characteristics (AUC).
 Accuracy is 0.531 can be seen from the accuracy crosstab [@fig:accuracycrosstab]. It is relatively low although it shows the RF model is doing better than random chance (0.5). Besides, most of the predictions belong to class 0.
 
-![Accuracy ](pics/RFcrosstab.JPG){#fig:accuracycrosstab}
-
 The ROC curve and AUC evaluation have better results than accuracy,the resulting AUC is 0.67 as can be seen in [@fig:RFroc1], but it is still not ideal. The probable reason might be the unbalance of the training set. There are 4662 class 1 sequences while the class 0 sequences are 11438, almost two times more than class 1, which can make bias in classification. Actually the prediction indeed goes for the majority -- class 0 as shown in the accuracy cross tab. Besides, the low accuracy and AUC could also resulted from the inappropriate selected features when building the RF model. Although boruta is supposed to select all relevant features, but it does not give guarantees considering it is a heuristic procedure designed to find all relevant attributes, including weakly relevant attributes [@Kursa]. Also, there's still a possibility that the truly causative features are not even contained in the original dataset aquired from [@Verfaillie].
 In general, however, the final RF model is a good model since it outperforms than the totally by chance model.
 
