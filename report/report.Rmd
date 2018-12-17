@@ -87,7 +87,7 @@ Starting from 20122 enhancer sequences,  228051 sequences are generated using th
 
 ### Motif extraction
 
-After training, the kernels of the first convolutional layer, can be screened for motifs.  To go from the kernel weights to a proper PSW matrix for a motif, each of the kernels are scored against each of the original DNA sequences.    This score represents the best match of a motif when slided across a particular sequence.   For each motif, the top 100 scoring sequences are stored, and these 100 sequences are then summarized into 1 PSWM.   These PSWM’s are then queried against the JASPAR motif database using TOMTOM [@Gupta]. Only motif matches with a threshold of E < 0.01 are considered significant.
+After training, the kernels of the first convolutional layer, can be screened for motifs. To go from the kernel weights to a proper PSW matrix for a motif, each of the kernels are scored against each of the original DNA sequences. This score represents the best match of a motif when slided across a particular sequence.   For each motif, the top 100 scoring sequences are stored, and these 100 sequences are then summarized into 1 PSWM.   These PSWM’s are then queried against the JASPAR motif database using TOMTOM [@Gupta]. Only motif matches with a threshold of E < 0.01 are considered significant.
 
 # Results and discussion
 
@@ -101,9 +101,7 @@ We returned to the full dataset and applied the MAST hypothesis testing-based re
 
 ![19 features selected by Boruta algorithm](pics/RF19selected.JPG){#fig:19selectedBoruta}
 
-### Performance of the model built using reduced features
-
-Afterwards the 19 selected motifs are used as features to train the RF model with the parameters mentioned above. Then this trained classifier is tested on a balanced test set of 3994 sequences (20% of the total). Performance of this model is expressed in terms of accuracy and ROC-characteristics (AUC).
+The reduced feature matrix containing only the 19 differentially significant was used to train the random forests model, making use of the parameters mentioned above. The resulting classifier was tested on a balanced test set containing 3994 sequences, amounting for 20 percent of the total data. The generally performance of this model was evaluated in terms of accuracy and ROC-characteristics (AUC).
 Accuracy is 0.531 can be seen from the accuracy crosstab [@fig:accuracycrosstab]. It is relatively low although it shows the RF model is doing better than random chance (0.5). Besides, most of the predictions belong to class 0.
 
 The ROC curve and AUC evaluation have better results than accuracy,the resulting AUC is 0.67 as can be seen in [@fig:RFroc1], but it is still not ideal. The probable reason might be the unbalance of the training set. There are 4662 class 1 sequences while the class 0 sequences are 11438, almost two times more than class 1, which can make bias in classification. Actually the prediction indeed goes for the majority -- class 0 as shown in the accuracy cross tab. Besides, the low accuracy and AUC could also resulted from the inappropriate selected features when building the RF model. Although boruta is supposed to select all relevant features, but it does not give guarantees considering it is a heuristic procedure designed to find all relevant attributes, including weakly relevant attributes [@Kursa]. Also, there's still a possibility that the truly causative features are not even contained in the original dataset aquired from [@Verfaillie].
@@ -119,7 +117,7 @@ Compared with results of [@Verfaillie], both AP-1 and Sox10 are figured out. In 
 
 ![Logos of features selected by RF model](pics/RFlogos.png){#fig:RFlogos}
 
-![featureImportances](pics/featureImportances.png){#fig:featureImportances}
+![featureImportances](pics/feature_importances.png){#fig:featureImportances}
 
 ## Deep learning
 
