@@ -46,7 +46,7 @@ The resulting feature matrix contained 333 features, one for each known or \text
 
 #### MAST
 
-The model-based Analysis of Single Cell Transcriptomics (MAST) R package provides methods and models for handling zero-inflated single cell assay data [@McDavid]. For this project, it is used for likelihood ratio testing via its \texttt{LRT} method. This likelihood ratio test is used to detect the most significant differential features between invasive and proliferative cell states. The R script used for this reformatting and running the likelihood ratio test can be found in \texttt{Mast\_reduce.R}. After running the likelihood ratio test on the feature matrix for every motif, the most significantly differentiatial features (P-value lower than 0.05) were selected. The resulting feature matrix contained 164 feature columns.
+The Model-based Analysis of Single Cell Transcriptomics (MAST) R package provides methods and models for handling zero-inflated single cell assay data [@McDavid]. For this project, it is used for likelihood ratio testing via its \texttt{LRT} method. This likelihood ratio test is used to detect the most significant differential features between invasive and proliferative cell states. The R script used for this reformatting and running the likelihood ratio test can be found in \texttt{Mast\_reduce.R}. After running the likelihood ratio test on the feature matrix for every motif, the most significantly differentiatial features (P-value lower than 0.05) were selected. The resulting feature matrix contained 164 feature columns.
 
 #### Boruta
 
